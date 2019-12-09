@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6d9f4e8f_a3d7c359",
+        "filename": "dns/generate_dns_snippets.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2019-12-09T23:32:31Z",
+      "side": 1,
+      "message": "[nit] I realize it\u0027s an extra api call, but it seems better to get this from the API (dcim.choices()) than to hard code these.",
+      "revId": "f8f5b764731560c5ddf0c297ce34e6658f36251a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
