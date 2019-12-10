@@ -34,6 +34,24 @@
       "revId": "f8f5b764731560c5ddf0c297ce34e6658f36251a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c749b285_53a4a933",
+        "filename": "dns/generate_dns_snippets.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2019-12-10T16:59:36Z",
+      "side": 1,
+      "message": "I have in the past considered the label to be more stable, and it is more convenient from a reading-the-code perspective (in fact I notice lower down you use a label to match). I don\u0027t think there\u0027s any reason to believe, though, that either are unstable in particular, and thus we can just move on however it is done.",
+      "parentUuid": "99909866_990a020e",
+      "revId": "f8f5b764731560c5ddf0c297ce34e6658f36251a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
