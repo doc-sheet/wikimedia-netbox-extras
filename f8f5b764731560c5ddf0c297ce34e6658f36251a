@@ -16,6 +16,24 @@
       "revId": "f8f5b764731560c5ddf0c297ce34e6658f36251a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "99909866_990a020e",
+        "filename": "dns/generate_dns_snippets.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2019-12-10T10:02:39Z",
+      "side": 1,
+      "message": "I don\u0027t mind adding the call, I\u0027m just wondering if we\u0027ll have any benefit.\nThe call to choices gives us tuples of ID,Label, so I need to hardcode here either the IDs or the Labels. And I\u0027m not sure if it\u0027s best to hardcode a label or an ID.\nMost likely none of them will ever change, at most they will add more, but in a generic case, would you consider more stable an ID or a Label?",
+      "parentUuid": "6d9f4e8f_a3d7c359",
+      "revId": "f8f5b764731560c5ddf0c297ce34e6658f36251a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
