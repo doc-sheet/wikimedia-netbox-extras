@@ -45,6 +45,7 @@ def parse_args():
         default="/etc/netbox/scripts.cfg",
     )
     parser.add_argument("-v", "--verbose", help="Output more verbosity.", action="store_true")
+    parser.add_argument("-d", "--dry_run", help="Only simulate import.", action="store_true")
     args = parser.parse_args()
     return args
 
@@ -84,7 +85,7 @@ def parse_rr(infile, record_types):
     return records
 
 
-def resolve_dns_with_netbox(api, host_dict, asset_dict):
+def resolve_dns_with_netbox(api, host_dict, asset_dict, dry_run=False):
     """Resolve the management interface states in Netbox with the states represented by host_dict and asset_dict."""
     statuses = [
         x['value'] for x in api.dcim.choices()['device:status'] if x['label'] in ('Active', 'Planned', 'Staged')
@@ -117,13 +118,21 @@ def resolve_dns_with_netbox(api, host_dict, asset_dict):
             if interface.type.value != iface_type:
                 interface.type = iface_type
                 logger.info('Updated mgmt interface type for %s', host.name)
-
-            interface.save()
+            if dry_run:
+                logger.info("[DRY RUN] would save changes to mgmt interface on %s", host)
+            else:
+                interface.save()
         else:
-            interface = api.dcim.interfaces.create(device=host.id, name='mgmt', type=iface_type, mgmt_only=True)
-            logger.info("Created mgmt interface for %s", host.name)
+            if dry_run:
+                logger.info("[DRY RUN] would create mgmt interface on %s", host)
+            else:
+                interface = api.dcim.interfaces.create(device=host.id, name='mgmt', type=iface_type, mgmt_only=True)
+                logger.info("Created mgmt interface for %s", host.name)
 
-        ip = api.ipam.ip_addresses.get(interface_id=interface.id)
+        try:
+            ip = api.ipam.ip_addresses.get(interface_id=interface.id)
+        except pynetbox.RequestError:
+            ip = None
         if ip:
             if not iface_ip == ip.address:
                 ip.address = iface_ip
@@ -134,12 +143,18 @@ def resolve_dns_with_netbox(api, host_dict, asset_dict):
             if ip.tenant and not ip_tenant == ip.tenant.id:
                 ip.tenant = ip_tenant
                 logger.info('Updated mgmt interface %s tenant.', host.name)
-            ip.save()
+            if dry_run:
+                logger.info("[DRY RUN] would save ip address for %s", host)
+            else:
+                ip.save()
         else:
-            api.ipam.ip_addresses.create(
-                address=iface_ip, dns_name=iface_fqdn, device=host.id, interface=interface.id, tenant=ip_tenant
-            )
-            logger.info('Created mgmt ip address for %s', host.name)
+            if dry_run:
+                logger.info("[DRY RUN] would create management ip for %s", host)
+            else:
+                api.ipam.ip_addresses.create(
+                    address=iface_ip, dns_name=iface_fqdn, device=host.id, interface=interface.id, tenant=ip_tenant
+                )
+                logger.info('Created mgmt ip address for %s', host.name)
 
     return 0
 
@@ -162,7 +177,7 @@ def main():
 
     api = pynetbox.api(url=netbox_api, token=netbox_token)
 
-    return resolve_dns_with_netbox(api, mgmt_by_host, mgmt_by_asset)
+    return resolve_dns_with_netbox(api, mgmt_by_host, mgmt_by_asset, dry_run=args.dry_run)
 
 
 if __name__ == "__main__":
