@@ -1,0 +1,7 @@
+Code-Review+2: CRusnov <crusnov@wikimedia.org>
+Verified+2: jenkins-bot
+Submitted-by: CRusnov <crusnov@wikimedia.org>
+Submitted-at: Fri, 03 Jan 2020 20:08:55 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/560367
+Project: operations/software/netbox-extras
+Branch: refs/heads/master
