@@ -1,15 +1,72 @@
 #!/bin/bash
+#
+# Perform maintenance on sequential dumps of Netbox tables using the dumpbackup.py script.
+# This script keeps a continuous copy of the last 16 immediate backups, and preserves the latest of those
+# which represent a particular day, month and year in an ongoing basis (keeping 60, 12 and 10, respectively).
+#
+
 
 DUMPPATH=/srv/netbox-dumps
 VENVPYTHON=/srv/deployment/netbox/venv/bin/python
 DUMPSCRIPT=/srv/deployment/netbox/deploy/scripts/dumpbackup.py
-KEEP=16
+KEEP_HOURLY=16
+KEEP_DAILY=60
+KEEP_MONTHLY=12
+KEEP_YEARLY=10
 
-for dir in $(ls -d $DUMPPATH/20* | sort -h -r | tail -n +$KEEP); do
+TODAY=$(date +'%Y-%m-%d-%H:%M')
+
+# Preserve the newest member of non-existant monthly, yearly and daily sets.
+allhours=$(ls -d $DUMPPATH/20??-??-??-??:?? | sort -h -r)
+for dir in $allhours; do
+    echo $dir | cut -d'-' -f1,2,3 --output-delimiter=' ' | while read year month day; do
+	# fallback in case we don't have old rotation rules
+	if [ '!' -e "$DUMPPATH/$year-$month-$day" ]; then
+	    cp -R "$DUMPPATH/$dir" "$DUMPPATH/$year-$month-$day"
+	fi
+	if [ '!' -e "$DUMPPATH/$year-$month" ]; then
+	    cp -R "$DUMPPATH/$dir" "$DUMPPATH/$year-$month"
+	fi
+	if [ '!' -e "$DUMPPATH/$year" ]; then
+	    cp -R "$DUMPPATH/$dir" "$DUMPPATH/$year"
+	fi
+    done
+done
+
+# Clean HOURLY directories
+for dir in $(echo $allhours |tr ' ' '\n' | tail -n +$KEEP_HOURLY); do
     # carefully clean old directories
-    rm -v -f "$dir/*.csv"
-    rm -v -f "$dir/*.json"
+    rm -v -f "$dir"/*
     rmdir -v "$dir"
 done
 
-$VENVPYTHON $DUMPSCRIPT -m "$DUMPPATH/$(date +'%Y-%m-%d-%H:%M')"
+# Clean DAILY directories
+for dir in $(ls -d $DUMPPATH/20??-??-?? | sort -h -r | tail -n +$KEEP_DAILY); do
+    # carefully clean old daily directories
+    rm -v -f "$dir"/*
+    rmdir -v "$dir"
+done
+
+# Clean MONTHLY directories
+for dir in $(ls -d $DUMPPATH/20??-?? | sort -h -r | tail -n +$KEEP_MONTHLY); do
+    # carefully clean old monthly directories
+    rm -v -f "$dir"/*
+    rmdir -v "$dir"
+done
+
+# Clean YEARLY directories
+for dir in $(ls -d $DUMPPATH/20?? | sort -h -r | tail -n +$KEEP_YEARLY); do
+    # carefully clean old yearly directories
+    rm -v -f "$dir"/*
+    rmdir -v "$dir"
+done
+
+
+# Dump newest dump for this HOURLY run
+$VENVPYTHON $DUMPSCRIPT -m "$DUMPPATH/$TODAY"
+
+# Make preservation copies so that the monthly, daily and yearly collections represent
+# the latest hourly run for that period.
+cp -R "$DUMPPATH/$TODAY" "$DUMPPATH/$(date +'%Y-%m-%d')"
+cp -R "$DUMPPATH/$TODAY" "$DUMPPATH/$(date +'%Y-%m')"
+cp -R "$DUMPPATH/$TODAY" "$DUMPPATH/$(date +'%Y')"
