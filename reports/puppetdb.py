@@ -175,7 +175,7 @@ class PuppetDB(Report):
         for vm in vms:
             if (vm.name not in self.puppetdb_devices) and (vm.name not in VM_BLACKLIST):
                 self.log_failure(vm, "missing VM from PuppetDB")
-            elif not vm.name in self.puppetdb_devices:
+            elif vm.name not in self.puppetdb_devices:
                 self.log_failure(vm, "expected VM marked as Physical in PuppetDB")
             else:
                 success += 1
