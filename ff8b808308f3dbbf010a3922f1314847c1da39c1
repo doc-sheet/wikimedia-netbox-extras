@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a09cac8_cb86ba44",
+        "filename": "tools/rotatedump",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-01-21T17:34:13Z",
+      "side": 1,
+      "message": "This is now more than today...",
+      "revId": "ff8b808308f3dbbf010a3922f1314847c1da39c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eb59bec3_dae242e6",
+        "filename": "tools/rotatedump",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-01-21T17:34:13Z",
+      "side": 1,
+      "message": "I think this doesn\u0027t work because the DUMPPATH contains a \u0027-\u0027 in the path. It would be better to work only on the directory name and not the whole path IMHO.",
+      "revId": "ff8b808308f3dbbf010a3922f1314847c1da39c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "091a9f1c_f596070c",
+        "filename": "tools/rotatedump",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-01-21T17:34:13Z",
+      "side": 1,
+      "message": "mixed tabs and spaces",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 1
+      },
+      "revId": "ff8b808308f3dbbf010a3922f1314847c1da39c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0df92869_c86dade9",
+        "filename": "tools/rotatedump",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-01-21T17:34:13Z",
+      "side": 1,
+      "message": "Why quotes around the negation operator?",
+      "range": {
+        "startLine": 24,
+        "startChar": 6,
+        "endLine": 24,
+        "endChar": 10
+      },
+      "revId": "ff8b808308f3dbbf010a3922f1314847c1da39c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b2df5e67_8b6f6fd6",
+        "filename": "tools/rotatedump",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-01-21T17:34:13Z",
+      "side": 1,
+      "message": "So this is here to \"fix\" the past, creating the daily/monthly/yearly copies?",
+      "revId": "ff8b808308f3dbbf010a3922f1314847c1da39c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48c8d1ca_01cabda9",
+        "filename": "tools/rotatedump",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-01-21T17:34:13Z",
+      "side": 1,
+      "message": "Quite some duplicated code that could be factored out in a function, those three blocks all do the same.",
+      "revId": "ff8b808308f3dbbf010a3922f1314847c1da39c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
