@@ -1,0 +1,29 @@
+
+j2nb
+
+Notes:
+- Standalone devices and Virtual Chassis
+- Junos only (junos-pyez)
+- Can be run by Cron to keep Netbox in sync with the real world
+- Need all the devices already existing in Netbox
+- Need the VCs already configured in Netbox (FQDN as "domain" field)
+- Supports VLANs
+- Supports VC links
+- Not tested on pfw
+- Supports VRRP
+
+Need to fix:
+- Doesn't support interfaces with the same name on multiple VC members (that's also poorly implemented in Netbox)
+Easy fix is to have FPC specific names (eg. em0-1, vcp-3/0/24)
+
+To implement:
+- Cross devices links (needed? they don't all have LLDP)
+- SRX NAT IPs (might be easier to do it manually as they don't change often)
+- L3 VLAN interfaces
+- General fine tuning
+
+How to use:
+- Rename config.yml.example to config.yml (and configure it)
+- Setup venv
+- Install python requirements
+- run with `python3 j2nb.py` (--dryrun optional)

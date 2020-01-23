@@ -1,0 +1,45 @@
+---
+InterfacesTable:
+  rpc: get-interface-information
+  args_key: interface_name
+  item: physical-interface
+  view: InterfacesView
+
+InterfacesView:
+  fields:
+    admin : admin-status
+    description: description
+    mtu: mtu
+    link_mode: link-mode
+    speed: speed
+    macaddr: current-physical-address
+    subinterfaces: _SubinterfacesTable
+
+_SubinterfacesTable:
+  item: logical-interface
+  view: _SubinterfacesView
+
+_SubinterfacesView:
+  fields:
+    description: description
+    mtu: mtu
+    vlan: link-address
+    af: _AfTable
+
+_AfTable:
+  item: address-family
+  view: _AfView
+
+_AfView:
+  fields:
+    name: address-family-name
+    addresses: _AddressesTable
+
+_AddressesTable:
+  item: interface-address
+  view: _AddressesView
+
+_AddressesView:
+  fields:
+    ip: ifa-local
+    network: ifa-destination
