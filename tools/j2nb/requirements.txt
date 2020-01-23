@@ -1,0 +1,2 @@
+junos-eznc~=2.3.0
+pynetbox~=4.0.6

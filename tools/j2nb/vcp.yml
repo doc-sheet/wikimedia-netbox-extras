@@ -1,0 +1,24 @@
+---
+VcpTable:
+  rpc: get-virtual-chassis-port-information
+  item: multi-routing-engine-item
+  key:  re-name
+  view: VcpView
+
+VcpView:
+  fields:
+    name: re-name
+    members: _PortsTable
+
+_PortsTable:
+    item: .//port-information
+    key: port-name
+    view: _PortsView
+
+_PortsView:
+    fields:
+        id: port-name
+        status: port-status
+        speed: { port-speed : int }
+        neighbor: { neighbor-id : int }
+        neighbor_port: neighbor-interface
