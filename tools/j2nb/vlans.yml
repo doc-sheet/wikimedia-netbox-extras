@@ -1,0 +1,25 @@
+---
+VlanTable:
+  rpc: get-vlan-information
+  item: l2ng-l2ald-vlan-instance-group
+  key:  l2ng-l2rtb-vlan-tag
+  view: VlanView
+  args:
+    extensive: True
+
+VlanView:
+  fields:
+    name: l2ng-l2rtb-name
+    tag: l2ng-l2rtb-vlan-tag
+    members: _VlansMembersTable
+
+_VlansMembersTable:
+    item: l2ng-l2rtb-vlan-member
+    key: l2ng-l2rtb-vlan-member-interface
+    view: _VlansMembersView
+
+_VlansMembersView:
+    fields:
+        interface: l2ng-l2rtb-vlan-member-interface
+        tagness: l2ng-l2rtb-vlan-member-tagness
+        interface-mode: l2ng-l2rtb-vlan-member-interface-mode

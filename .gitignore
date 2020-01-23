@@ -2,3 +2,5 @@
 .tox/
 *~
 *.pyc
+env
+config.yml
