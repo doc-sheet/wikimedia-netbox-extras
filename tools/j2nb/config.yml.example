@@ -1,0 +1,13 @@
+---
+netbox:
+  url: https://netbox.example.com
+  api_key: 1a1a1a1a1a1a1a1a1a1a1a1a1a1
+
+# Username to SSH to devices with
+network:
+  username: foobar
+
+# Netbox name, then SSH name
+devices:
+   device1: device1.example.com
+   device2: device2.example.com

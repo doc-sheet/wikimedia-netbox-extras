@@ -1,0 +1,15 @@
+---
+VrrpTable:
+  rpc: get-vrrp-information
+  item: vrrp-interface
+  key:  local-interface-address
+  view: VrrpView
+
+VrrpView:
+  fields:
+    interface: interface
+    group: { group : int }
+    state: vrrp-state
+    mode: vrrp-mode
+    local_interface_address: local-interface-address
+    virtual_ip_address: virtual-ip-address
