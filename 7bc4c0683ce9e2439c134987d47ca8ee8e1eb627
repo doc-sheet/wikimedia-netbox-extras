@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "535e8136_72b38c5d",
+        "filename": "tools/rotatedump",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-01-24T20:58:46Z",
+      "side": 1,
+      "message": "[security nits] avoid dangerous patterns\n1) use *.csv as pattern\n2) ensure that $1 is not empty, not \u0027*\u0027 and not an absolute path. Probably easier to check that it starts with \u002720\u0027 at this point I guess.\n3) make the whole script work inside the $DUMPPATH directory so that with the above points ensures that we\u0027ll never delete all backups by mistake calling this method\n\nAlternatively, being called only once and being just 2 lines long maybe there is no need to define rm_directory. Up to you. Moving the code where it\u0027s used might save some check code compared to a standalone function.",
+      "revId": "7bc4c0683ce9e2439c134987d47ca8ee8e1eb627",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
