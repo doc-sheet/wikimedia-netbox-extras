@@ -44,6 +44,7 @@ MODEL_EXCLUDES = (
             "c2l36te-ycmfam99",  # Smart Link PRO2 (36) - secondary device
             "c2x42ce-2caf2m00",  # Switched Expansion PRO2 - secondary device
             "c2x36te-epaf2m99",  # PRO2 Switched link - secondary device
+            "mx104",  # Since upgrade to Junos 17.3 it doesn't expose its inventory over SNMP
         ),
     )
 )
