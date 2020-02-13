@@ -30,7 +30,7 @@ from git.util import get_user_id
 logger = logging.getLogger()
 GIT_USER_NAME = 'generate-dns-snippets'
 GIT_USER_EMAIL = 'noc@wikimedia.org'
-NETBOX_DEVICE_STATUSES = (1, 2, 3, 4, 5, 6)  # Active, Planned, Staged, Failed, Inventory, Decommissioning
+NETBOX_DEVICE_STATUSES = ('active', 'planned', 'staged', 'failed', 'inventory', 'decommissioning',)
 NETBOX_DEVICE_MGMT_ONLY_STATUSES = ('Inventory', 'Decommissioning')
 DIRECT_LJUST_LEN = 40  # Fixed justification to avoid large diffs
 NO_CHANGES_RETURN_CODE = 99
