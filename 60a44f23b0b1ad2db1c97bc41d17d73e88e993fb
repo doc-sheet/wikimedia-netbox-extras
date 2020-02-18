@@ -22,6 +22,30 @@
       "revId": "60a44f23b0b1ad2db1c97bc41d17d73e88e993fb",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96714c52_d0197be2",
+        "filename": "dns/generate_dns_snippets.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2020-02-18T17:19:31Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "676e7a9c_d1645522",
+      "range": {
+        "startLine": 170,
+        "startChar": 21,
+        "endLine": 170,
+        "endChar": 26
+      },
+      "revId": "60a44f23b0b1ad2db1c97bc41d17d73e88e993fb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
