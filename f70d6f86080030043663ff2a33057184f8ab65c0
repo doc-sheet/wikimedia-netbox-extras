@@ -1,0 +1,164 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f42d4132_f8595951",
+        "filename": "customscripts/getstats.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-02-25T14:28:07Z",
+      "side": 1,
+      "message": "I guess being inside Netbox we could just import them and use them directly where you need them\n\n  from dcim.choices import DeviceStatusChoices\n  DeviceStatusChoices.values()",
+      "revId": "f70d6f86080030043663ff2a33057184f8ab65c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "762069de_c59ae9be",
+        "filename": "customscripts/getstats.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-02-25T14:28:07Z",
+      "side": 1,
+      "message": "Let\u0027s add for Prometheus",
+      "revId": "f70d6f86080030043663ff2a33057184f8ab65c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a7b7753_2d8f1f73",
+        "filename": "customscripts/getstats.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-02-25T14:28:07Z",
+      "side": 1,
+      "message": "This has a cardinality of 1176.\nPossible fields that we might be interested, depending on how much cardinality we want to reach:\n\n- status (card. 7, tot. 7)\n- site (card. 8, tot. 56)\n- rack group [our rows] (card. 14, tot. 784)\n- device role (card. 13, tot. 10192) [might overlap with manufacturer]\n- manufacturer (card. 21, tot. 214032)\n\nAll seems too much, so we could aggregate differently I guess, here is a multi-dimentional proposal with related grafana dashboards:\n\n- status (7), site (8), rack_group (14): 784\n  - dashboard parameters: site \u0026 row, show numbers per status\n  - dashboard parameters: site \u0026 status, show numbers per row\n- status(7), site(8), manufacturer (21): 1176\n  - dashboard parameters: site \u0026 manufacturer, show numbers per status\n  - dashboard parameters: site \u0026 status, show numbers per manufacturer\n- status (7) [pre-aggregated here, way cheaper than aggregating them later]\n- site (8) [pre-aggregated here, way cheaper than aggregating them later]\n- status (7), site (8): 56 [pre-aggregated here, way cheaper than aggregating them later]\n\ntotal: 2031 metrics\nTBD if doing all three aggregation or just one or two.",
+      "revId": "f70d6f86080030043663ff2a33057184f8ab65c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b817f96_38f87bad",
+        "filename": "customscripts/getstats.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-02-25T14:28:07Z",
+      "side": 1,
+      "message": "Use:\n\n  for params, count in counts.items()",
+      "range": {
+        "startLine": 25,
+        "startChar": 21,
+        "endLine": 25,
+        "endChar": 27
+      },
+      "revId": "f70d6f86080030043663ff2a33057184f8ab65c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "152d4e2f_30516386",
+        "filename": "customscripts/getstats.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-02-25T14:28:07Z",
+      "side": 1,
+      "message": "no need for \"\"\" as it\u0027s a single line string.",
+      "range": {
+        "startLine": 27,
+        "startChar": 16,
+        "endLine": 27,
+        "endChar": 19
+      },
+      "revId": "f70d6f86080030043663ff2a33057184f8ab65c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0fa9877c_806b7b54",
+        "filename": "customscripts/getstats.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-02-25T14:28:07Z",
+      "side": 1,
+      "message": "can be:\n\n  *params, count",
+      "range": {
+        "startLine": 28,
+        "startChar": 20,
+        "endLine": 28,
+        "endChar": 48
+      },
+      "revId": "f70d6f86080030043663ff2a33057184f8ab65c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1be60330_3571d881",
+        "filename": "tools/custom_script_proxy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-02-25T14:28:07Z",
+      "side": 1,
+      "message": "Use a python dict",
+      "revId": "f70d6f86080030043663ff2a33057184f8ab65c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b09e2c9e_add2c7a1",
+        "filename": "tools/custom_script_proxy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-02-25T14:28:07Z",
+      "side": 1,
+      "message": "use json\u003ddata, it will also set the application/json header automatically.",
+      "range": {
+        "startLine": 35,
+        "startChar": 53,
+        "endLine": 35,
+        "endChar": 62
+      },
+      "revId": "f70d6f86080030043663ff2a33057184f8ab65c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
