@@ -130,6 +130,26 @@ class Coherence(Report):
 
         self.log_success(None, "{} correctly formatted procurement tickets".format(success_count))
 
+    def test_device_name(self):
+        """Device names should be lower case."""
+        success = 0
+        warnings = []
+        for device in _get_devices_query():
+            if device.name.lower() != device.name:
+                if device.status == DeviceStatusChoices.STATUS_ACTIVE:
+                    self.log_failure(device, "malformed device name for active device")
+                else:
+                    warnings.append(device)
+            else:
+                success += 1
+
+        [self.log_warning(x, "malformed device name for inactive device") for x in warnings]
+        self.log_success(None, "{} correctly formatted device names".format(success))
+
+
+class Rack(Report):
+    description = "Several integrity/coherence checks against the rack related data."
+
     def test_offline_rack(self):
         """Determine if offline boxes are (erroneously) assigned a rack."""
         devices = _get_devices_query().filter(status=DeviceStatusChoices.STATUS_OFFLINE).exclude(rack=None)
@@ -170,18 +190,10 @@ class Coherence(Report):
             if not good:
                 self.log_failure(device, " ".join(msgs))
 
-    def test_device_name(self):
-        """Device names should be lower case."""
-        success = 0
-        warnings = []
-        for device in _get_devices_query():
-            if device.name.lower() != device.name:
-                if device.status == DeviceStatusChoices.STATUS_ACTIVE:
-                    self.log_failure(device, "malformed device name for active device")
-                else:
-                    warnings.append(device)
-            else:
-                success += 1
+    def test_rack_noposition(self):
+        """Report errors on devices that have no rack position."""
+        for device in _get_devices_query().filter(
+            device_type__u_height__gte=1, position__isnull=True, rack__isnull=False
+        ):
 
-        [self.log_warning(x, "malformed device name for inactive device") for x in warnings]
-        self.log_success(None, "{} correctly formatted device names".format(success))
+            self.log_failure(device, "no position set for racked device with U height")
