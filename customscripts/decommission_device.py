@@ -1,6 +1,7 @@
 from configparser import ConfigParser
 from datetime import date
 
+from django.core.exceptions import ObjectDoesNotExist
 from google.oauth2 import service_account
 from googleapiclient import discovery
 
@@ -11,6 +12,7 @@ from extras.scripts import Script, StringVar
 GOOGLE_API_CONFIG_FILE = '/etc/netbox/gsheets.cfg'
 GOOGLE_SHEET_NAME_FORMAT = 'Decommissioned Devices {year} Q{quarter}'
 GOOGLE_DRIVE_PARENT_FOLDER_ID = '181AFOXai6e8SR9E6sadqYiWyE1VdnlPD'
+MGMT_INTERFACE_NAME = 'mgmt'
 SITES = ['eqiad', 'codfw', 'ulsfo', 'esams', 'eqsin']
 
 
@@ -57,10 +59,40 @@ class DecommissionDevice(Script):
 
         device.status = 'decommissioning'
         device.save()
+        self._delete_mgmt(device)
 
         return ("Successfully decommissioned device {name} and updated Google Spreadsheet '{sheet_name}': "
                 "https://docs.google.com/spreadsheets/d/{sheet_id}").format(
                     name=device.name, sheet_name=sheet_name, sheet_id=sheet['id'])
+
+    def _delete_mgmt(self, device):
+        """Delete the management interface and its related IP."""
+        try:
+            interface = device.interfaces.get(name=MGMT_INTERFACE_NAME, mgmt_only=True)
+        except ObjectDoesNotExist:
+            self.log_info('No management interface found to delete')
+            return
+
+        self._delete_ips(interface)
+        interface.delete()
+        self.log_info('Deleted management interface {iface}'.format(name=interface))
+
+    def _delete_ips(self, interface, expected_count=1):
+        """Delete all the IPs of a given interface, only if the count matches the expected one."""
+        ips = interface.ip_addresses.all()
+        if not ips:
+            self.log_info('No IPs found for interface {iface} to delete'.format(iface=interface))
+            return
+
+        if len(ips) > expected_count:
+            self.log_failure(
+                'Found {n} IPs for interface {iface}, expecting {exp}. Not deleting them: {ips}'.format(
+                    n=len(ips), iface=interface, exp=expected_count, ips=ips))
+            return
+
+        for ip in ips:
+            ip.delete()
+            self.log_info('Deleted IP {ip}'.format(ip=ip))
 
     def _get_sheet_title(self):
         """Get the Google Spreadsheet title."""
