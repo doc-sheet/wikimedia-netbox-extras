@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "263a5241_2cdfce35",
+        "filename": "customscripts/decommission_device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-03-10T16:11:07Z",
+      "side": 1,
+      "message": "I\u0027m actually not totally sure anymore if we should delete the mgmt interfaces immediately or when they go offline. Surely we\u0027ll need to delete the normal interfaces to get them out of DNS. But if we do that we\u0027ll loose the track of them here and maybe in switches and physical cables.\nI guess we might need to discuss this a bit more.",
+      "revId": "30b8c43e146cea81e6d6fb0e216f3a92d9870749",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
