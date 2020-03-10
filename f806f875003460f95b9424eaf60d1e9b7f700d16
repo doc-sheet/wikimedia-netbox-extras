@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "31db1604_dba3897e",
+        "filename": "dns/generate_dns_snippets.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2020-03-10T19:10:52Z",
+      "side": 1,
+      "message": "this feels unnecessary and weird. maybe just put \u0027snippets\u0027 here - isn\u0027t the whole point of tmpdir to get a unique name?",
+      "range": {
+        "startLine": 34,
+        "startChar": 22,
+        "endLine": 34,
+        "endChar": 33
+      },
+      "revId": "f806f875003460f95b9424eaf60d1e9b7f700d16",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
