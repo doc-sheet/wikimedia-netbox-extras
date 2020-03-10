@@ -22,6 +22,30 @@
       "revId": "f806f875003460f95b9424eaf60d1e9b7f700d16",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "98844769_cae58c9a",
+        "filename": "dns/generate_dns_snippets.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-03-10T19:15:20Z",
+      "side": 1,
+      "message": "Yes but at line 95 I added a check when we are in the \u0027push\u0027 phase that the directory passed as CLI param starts with this prefix, and \u0027dns-snippets\u0027 might be a too common name. I didn\u0027t want to complicate things to check the remote for example, but open for suggestions.",
+      "parentUuid": "31db1604_dba3897e",
+      "range": {
+        "startLine": 34,
+        "startChar": 22,
+        "endLine": 34,
+        "endChar": 33
+      },
+      "revId": "f806f875003460f95b9424eaf60d1e9b7f700d16",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
