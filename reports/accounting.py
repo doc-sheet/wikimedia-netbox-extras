@@ -50,7 +50,16 @@ class Accounting(Report):
         sheet = service.spreadsheets()
 
         # and fetch the spreadsheet's contents
-        result = sheet.values().get(spreadsheetId=sheet_id, range=range).execute()
+        result = (
+            sheet.values()
+            .get(
+                spreadsheetId=sheet_id,
+                range=range,
+                valueRenderOption="FORMULA",  # do not calculate formula values
+                dateTimeRenderOption="FORMATTED_STRING",
+            )
+            .execute()
+        )
         values = result.get("values", [])
         if not values:
             return values
@@ -137,7 +146,11 @@ class Accounting(Report):
                 )
                 continue
 
-            if asset_tag != device.asset_tag:
+            if asset_tag.startswith("=NETBOX"):
+                # asset tag is set to a formula polling Netbox, so avoid pointlessly checking
+                # if that matches, as well as the circular reference that takes a while to resolve
+                pass
+            elif asset_tag != device.asset_tag:
                 self.log_failure(
                     device,
                     "Asset tag mismatch for s/n "
