@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7362def3_006347de",
+        "filename": "reports/accounting.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-03-26T19:16:53Z",
+      "side": 1,
+      "message": "Ok to me as is too, but maybe we want to count them and add one line that says something like: Skipped N devices with dynamic asset tag queried from Netbox.",
+      "revId": "bda0534b71fde4e227c9245e49bc78e3f553c4b1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
