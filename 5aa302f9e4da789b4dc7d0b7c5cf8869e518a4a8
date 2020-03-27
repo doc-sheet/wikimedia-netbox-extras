@@ -51,6 +51,24 @@
       "revId": "5aa302f9e4da789b4dc7d0b7c5cf8869e518a4a8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4b240363_cc5dcc57",
+        "filename": "reports/accounting.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2020-03-27T19:01:18Z",
+      "side": 1,
+      "message": "Yep, although of course we can just skip the serial test (unless we can) so we still need to check the value of asset_tag in the next part.",
+      "parentUuid": "ba4c71a1_201dc2b6",
+      "revId": "5aa302f9e4da789b4dc7d0b7c5cf8869e518a4a8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
