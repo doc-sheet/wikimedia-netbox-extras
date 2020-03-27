@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f04dab8e_42be59ce",
+        "filename": "reports/accounting.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-03-27T18:40:21Z",
+      "side": 1,
+      "message": "To avoid the duplication, I\u0027d just do:\n\nif asset_tag.startswith(\"\u003dNETBOX\"):\n    asset_tag \u003d \"N/A\"\n\n…and then have a single log_failure + continue block.",
+      "revId": "5aa302f9e4da789b4dc7d0b7c5cf8869e518a4a8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
