@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9198cf2d_35c469f9",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-04-15T11:37:57Z",
+      "side": 1,
+      "message": "Is this script going to be ran manually? Automatically? As a one off? Or regularly?\nTo make sure that prompting the user is the best way to use it.",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 101
+      },
+      "revId": "f2c3b3fd4d73fc835f1ad3ddb4b940111bf2040f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3e725306_e7b133fc",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-04-15T11:37:57Z",
+      "side": 1,
+      "message": "I *think* here it should be if the IP is one of vip/anycast/etc. As virtual devices (like LVS sub interfaces) have unique IPs.",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 102,
+        "endChar": 19
+      },
+      "revId": "f2c3b3fd4d73fc835f1ad3ddb4b940111bf2040f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c970a3e5_103c7456",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-04-15T11:37:57Z",
+      "side": 1,
+      "message": "Same, a virtual device can have unicast IPs.",
+      "range": {
+        "startLine": 113,
+        "startChar": 28,
+        "endLine": 113,
+        "endChar": 32
+      },
+      "revId": "f2c3b3fd4d73fc835f1ad3ddb4b940111bf2040f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "71e453aa_7271efbb",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-04-15T11:37:57Z",
+      "side": 1,
+      "message": "nit, should it be iface \u003d\u003d \"lo\" ?\nAlso from for example https://netbox.wikimedia.org/dcim/interfaces/2852/ \"lo\" should be virtual.",
+      "range": {
+        "startLine": 193,
+        "startChar": 59,
+        "endLine": 193,
+        "endChar": 74
+      },
+      "revId": "f2c3b3fd4d73fc835f1ad3ddb4b940111bf2040f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c8f1213_75138991",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-04-15T11:37:57Z",
+      "side": 1,
+      "message": "I find that variable name confusing as we have both virtual interface type, and virtual machines (which I originally thought vdev mean).",
+      "range": {
+        "startLine": 202,
+        "startChar": 19,
+        "endLine": 202,
+        "endChar": 26
+      },
+      "revId": "f2c3b3fd4d73fc835f1ad3ddb4b940111bf2040f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2849eecb_25626ca6",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-04-15T11:37:57Z",
+      "side": 1,
+      "message": "From for example https://netbox.wikimedia.org/dcim/interfaces/2852/ you can also skip the MTU on all virtual interfaces.",
+      "range": {
+        "startLine": 208,
+        "startChar": 16,
+        "endLine": 208,
+        "endChar": 51
+      },
+      "revId": "f2c3b3fd4d73fc835f1ad3ddb4b940111bf2040f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
