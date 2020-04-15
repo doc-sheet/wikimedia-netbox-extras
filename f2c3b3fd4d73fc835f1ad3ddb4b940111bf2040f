@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "1b2f4e52_7826eefb",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2020-04-15T15:30:36Z",
+      "side": 1,
+      "message": "maybe this is a gap in my knowledge but are there specific ranges or classes IPs that are VIP or anycast? Like I am using this as a shorthand to knowing that the ip is likely a VIP, but if there is no like objective criteria that i can derive from the information at hand it gets difficult :)",
+      "parentUuid": "3e725306_e7b133fc",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 102,
+        "endChar": 19
+      },
+      "revId": "f2c3b3fd4d73fc835f1ad3ddb4b940111bf2040f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c970a3e5_103c7456",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 10
@@ -117,6 +141,30 @@
     },
     {
       "key": {
+        "uuid": "32899a8c_7c9f1a05",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2020-04-15T15:30:36Z",
+      "side": 1,
+      "message": "that is a good point i will change it.",
+      "parentUuid": "1c8f1213_75138991",
+      "range": {
+        "startLine": 202,
+        "startChar": 19,
+        "endLine": 202,
+        "endChar": 26
+      },
+      "revId": "f2c3b3fd4d73fc835f1ad3ddb4b940111bf2040f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2849eecb_25626ca6",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 10
@@ -128,6 +176,30 @@
       "writtenOn": "2020-04-15T11:37:57Z",
       "side": 1,
       "message": "From for example https://netbox.wikimedia.org/dcim/interfaces/2852/ you can also skip the MTU on all virtual interfaces.",
+      "range": {
+        "startLine": 208,
+        "startChar": 16,
+        "endLine": 208,
+        "endChar": 51
+      },
+      "revId": "f2c3b3fd4d73fc835f1ad3ddb4b940111bf2040f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3fada96_fd860f7d",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2020-04-15T15:30:36Z",
+      "side": 1,
+      "message": "okay that\u0027s reasonable",
+      "parentUuid": "2849eecb_25626ca6",
       "range": {
         "startLine": 208,
         "startChar": 16,
