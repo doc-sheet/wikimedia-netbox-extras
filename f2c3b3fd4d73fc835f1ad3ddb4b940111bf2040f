@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "7b46c351_be608d71",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-04-29T08:49:39Z",
+      "side": 1,
+      "message": "Internally yes, kind off as we have conventions, but I think it\u0027s better to rely on the `role` field of the IP.",
+      "parentUuid": "1b2f4e52_7826eefb",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 102,
+        "endChar": 19
+      },
+      "revId": "f2c3b3fd4d73fc835f1ad3ddb4b940111bf2040f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c970a3e5_103c7456",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 10
