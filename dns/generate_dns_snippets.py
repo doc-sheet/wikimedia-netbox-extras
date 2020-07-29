@@ -330,6 +330,10 @@ class Records:
         records_count = 0
         for name, device_data in self.netbox.devices.items():
             for address in device_data['addresses']:
+                if not address.dns_name:
+                    logger.info('Skipping address %s because has no DNS name', address)
+                    continue
+
                 hostname, zone = Records._split_dns_name(address.dns_name)
                 records = Records._generate_address_records(
                     zone, hostname, address, device_data['device'], device_data['physical'])
