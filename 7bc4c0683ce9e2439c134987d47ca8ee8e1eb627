@@ -16,6 +16,24 @@
       "revId": "7bc4c0683ce9e2439c134987d47ca8ee8e1eb627",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e472dd0_9372da91",
+        "filename": "tools/rotatedump",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2020-08-04T23:56:46Z",
+      "side": 1,
+      "message": "I have opted for the later choice as it simplifies things substantially from my perspective.",
+      "parentUuid": "535e8136_72b38c5d",
+      "revId": "7bc4c0683ce9e2439c134987d47ca8ee8e1eb627",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
