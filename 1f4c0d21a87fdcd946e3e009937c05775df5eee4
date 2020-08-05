@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c029962a_bbb900f7",
+        "filename": "tools/rotatedump",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-08-05T12:35:55Z",
+      "side": 1,
+      "message": "why disabled instead of just using read -r ? It seems to work as expected in this case too.",
+      "revId": "1f4c0d21a87fdcd946e3e009937c05775df5eee4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
