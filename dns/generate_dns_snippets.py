@@ -24,6 +24,9 @@ from typing import Any, DefaultDict, Dict, List, Mapping, Optional, Sequence, Se
 import git
 import pynetbox
 
+from requests import PreparedRequest, Response, Session
+from requests.adapters import HTTPAdapter
+
 
 logger = logging.getLogger()
 GIT_USER_NAME = 'generate-dns-snippets'
@@ -100,6 +103,32 @@ def parse_args(args: Optional[Sequence[str]] = None) -> argparse.Namespace:
     return parsed_args
 
 
+class TimeoutHTTPAdapter(HTTPAdapter):
+
+    def __init__(self, **kwargs: Any):
+        """Initialize the adapter with a custom timeout.
+
+        Params:
+            As required by requests's HTTPAdapter:
+            https://2.python-requests.org/en/master/api/#requests.adapters.HTTPAdapter
+
+        """
+        self.timeout = 900
+        super().__init__(**kwargs)
+
+    def send(self, request: PreparedRequest, **kwargs: Any) -> Response:  # type: ignore
+        """Override the send method to pass the adapter.
+
+        Params:
+            As required by requests's HTTPAdapter:
+            https://2.python-requests.org/en/master/api/#requests.adapters.HTTPAdapter.send
+            The type ignore is needed unless the exact signature is replicated.
+
+        """
+        kwargs['timeout'] = self.timeout
+        return super().send(request, **kwargs)
+
+
 class Netbox:
     """Class to manage all data from Netbox."""
 
@@ -115,7 +144,13 @@ class Netbox:
             token (str): the Netbox API token.
 
         """
+        adapter = TimeoutHTTPAdapter()
+        session = Session()
+        session.mount("http://", adapter)
+        session.mount("https://", adapter)
+
         self.api = pynetbox.api(url=url, token=token)
+        self.api.http_session = session
         self.devices = defaultdict(lambda: {'addresses': set()})  # type: DefaultDict
         self.addresses = {}  # type: dict
         self.physical_interfaces = {}  # type: dict
@@ -187,12 +222,22 @@ class RecordBase:
         self.interface = ipaddress.ip_interface(ip_interface)
         self.ip = self.interface.ip
 
+    def __hash__(self) -> int:
+        """Object hash.
+
+        Params:
+            According to Python's data model:
+            https://docs.python.org/3/reference/datamodel.html#object.__hash__
+
+        """
+        return hash((self.zone, self.hostname, self.ip))
+
     def __eq__(self, other: object) -> bool:
         """Equality operator.
 
         Params:
             According to Python's data model:
-            https://docs.python.org/3/reference/datamodel.html?highlight=__lt__#object.__eq__
+            https://docs.python.org/3/reference/datamodel.html#object.__eq__
 
         """
         if not isinstance(other, RecordBase):
@@ -215,7 +260,7 @@ class RecordBase:
 
     @abstractmethod
     def to_tuple(self) -> Tuple:
-        """Tuple representatin suitable to be used for sorting records.
+        """Tuple representation suitable to be used for sorting records.
 
         Returns:
             tuple: the tuple representation.
@@ -249,13 +294,13 @@ class ReverseRecord(RecordBase):
         return '{ptr} 1H IN PTR {hostname}.'.format(ptr=self.pointer.ljust(3), hostname=self.hostname)
 
     def to_tuple(self) -> Tuple:
-        """Tuple representatin suitable to be used for sorting records.
+        """Tuple representation suitable to be used for sorting records.
 
         Returns:
             tuple: the tuple representation.
 
         """
-        return tuple([int(i) for i in self.pointer.split('.')] + [self.hostname])  # type: ignore
+        return tuple([int(i, 16) for i in self.pointer.split('.')] + [self.hostname])  # type: ignore
 
 
 class ForwardRecord(RecordBase):
@@ -274,7 +319,7 @@ class ForwardRecord(RecordBase):
             hostname=self.hostname.ljust(40), type=record_type, ip=self.ip.compressed)
 
     def to_tuple(self) -> Tuple:
-        """Tuple representatin suitable to be used for sorting records.
+        """Tuple representation suitable to be used for sorting records.
 
         Returns:
             tuple: the tuple representation.
@@ -306,7 +351,7 @@ class ForwardRecord(RecordBase):
                 if max_prefix.prefixlen > 24:
                     zone = max_prefix.reverse_pointer.replace('/', '-')
                 else:
-                    zone = max_prefix.network_address.reverse_pointer
+                    zone = max_prefix.network_address.reverse_pointer.split('.', 1)[1]
 
         return ReverseRecord(zone, '.'.join((self.hostname, self.zone)), str(self.interface), pointer)
 
@@ -324,7 +369,7 @@ class Records:
         """
         self.netbox = netbox
         self.min_records = min_records
-        self.zones = {'direct': defaultdict(list), 'reverse': defaultdict(list)}  # type: Dict
+        self.zones = {'direct': defaultdict(set), 'reverse': defaultdict(set)}  # type: Dict
 
     def generate(self) -> None:
         """Generate all DNS record based on Netbox data."""
@@ -337,9 +382,9 @@ class Records:
                     zone, hostname, address, device_data['device'], device_data['physical'])
                 records_count += len(records)
                 for record in records:
-                    self.zones['direct'][zone].append(record)
+                    self.zones['direct'][zone].add(record)
                     reverse = record.get_reverse(self.netbox.prefixes)
-                    self.zones['reverse'][reverse.zone].append(reverse)
+                    self.zones['reverse'][reverse.zone].add(reverse)
 
         logger.info('Generated %d direct and reverse records (%d each) in %d direct zones and %d reverse zones',
                     records_count * 2, records_count, len(self.zones['direct']), len(self.zones['reverse']))
@@ -413,11 +458,7 @@ class Records:
 
         """
         parts = dns_name.strip().split('.')
-        max_len = 2
-        if 'frack' in parts:
-            max_len += 1
-        if 'mgmt' in parts:
-            max_len += 1
+        max_len = 2 + sum(1 for i in ('frack', 'mgmt', 'svc') if i in parts)
 
         split_len = min(len(parts) - 1, max_len)
         hostname = '.'.join(parts[:-split_len])
