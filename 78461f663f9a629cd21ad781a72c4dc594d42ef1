@@ -16,6 +16,24 @@
       "revId": "78461f663f9a629cd21ad781a72c4dc594d42ef1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1e73c87_5d7f999d",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-09-03T17:07:17Z",
+      "side": 1,
+      "message": "To the best of my knowledge we have this use case only for cassandra hosts, in all other cases we just use a different port on the same IP.\nAnd even the cassandra use case might change in the future as this is a pretty specific hack.\nAlso the naming convention of -a/-b/... is specific to cassandra AFAIK.",
+      "parentUuid": "0e229338_d2105b9a",
+      "revId": "78461f663f9a629cd21ad781a72c4dc594d42ef1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
