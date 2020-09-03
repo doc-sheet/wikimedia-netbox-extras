@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e229338_d2105b9a",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2020-09-03T16:03:01Z",
+      "side": 1,
+      "message": "We should say \u0027Leave 0 if this is not a cassandra instance\u0027 - but perhaps, instead, given that other services seem to have similar address scenarios, we can be like \u0027How many additional primary IP addresses to add to the interface (for cassandra, etc). They will be named $HOSTNAME-a, $HOSTNAME-b, etc.\u0027",
+      "revId": "78461f663f9a629cd21ad781a72c4dc594d42ef1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
