@@ -1,12 +1,14 @@
 import ipaddress
 
+from string import ascii_lowercase
+
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Q
 
 from dcim.choices import InterfaceTypeChoices
 from dcim.models import Device, Interface
 from extras.constants import LOG_LEVEL_CODES
-from extras.scripts import BooleanVar, ChoiceVar, ObjectVar, Script, StringVar
+from extras.scripts import BooleanVar, ChoiceVar, IntegerVar, ObjectVar, Script, StringVar
 from ipam.models import IPAddress, Prefix, VLAN
 from utilities.forms import APISelect
 
@@ -43,8 +45,17 @@ class AssignIPs(Script):
     if PRIMARY_IPS_ENABLED:  # Temporary to hide unnecessary parameters at the moment
         skip_ipv6_dns = BooleanVar(
             label="Skip IPv6 DNS records",
-            description=("Skip the generation of the IPv6 DNS records. Enable if the devices don't yet fully support "
+            description=("Skip the generation of the IPv6 DNS records.  if the devices don't yet fully support "
                          "IPv6."),
+        )
+        cassandra_instances = IntegerVar(
+            required=False,
+            default=0,
+            min_value=0,
+            max_value=9,
+            label="# of Cassandra instances (default: 0)",
+            description=("How many additional IPv4 for Cassandra instances should be allocated. Their DNS name will "
+                         "be set to $HOSTNAME-a, $HOSTNAME-b, etc."),
         )
         vlan_type = ChoiceVar(
             required=False,
@@ -130,7 +141,8 @@ class AssignIPs(Script):
             if not self._is_vlan_valid(vlan, device):
                 return
 
-            self._assign_primary(device, vlan, skip_ipv6_dns=data["skip_ipv6_dns"])
+            self._assign_primary(device, vlan, skip_ipv6_dns=data["skip_ipv6_dns"],
+                                 cassandra_instances=data["cassandra_instances"])
 
         self._assign_mgmt(device)
 
@@ -166,8 +178,13 @@ class AssignIPs(Script):
 
         self._add_ip(ip_address, dns_name, prefix, iface, device)
 
-    def _assign_primary(self, device, vlan, *, skip_ipv6_dns=False):
-        """Create a primary interface in the device and assign to it an IPv4, a mapped IPv6 and related DNS records."""
+    def _assign_primary(self, device, vlan, *, skip_ipv6_dns=False, cassandra_instances=0):
+        """Create a primary interface in the device and assign to it an IPv4, a mapped IPv6 and related DNS records.
+
+        If Cassandra instances is greater than zero allocate additional IPs for those with hostname
+        $HOSTNAME-a, $HOSTNAME-b, etc.
+
+        """
         prefixes_v4 = vlan.prefixes.filter(prefix__family=4, status="active")  # Must always be one
         prefixes_v6 = vlan.prefixes.filter(prefix__family=6, status="active")  # Can either be one or not exists
         if len(prefixes_v4) != 1 or len(prefixes_v6) > 1:
@@ -191,12 +208,13 @@ class AssignIPs(Script):
 
         if prefix_v4.prefix.is_private():
             if device.tenant and device.tenant.slug == FRACK_TENANT_SLUG:
-                dns_name = f"{device.name}.frack.{device.site.slug}.wmnet"
+                dns_suffix = f"frack.{device.site.slug}.wmnet"
             else:
-                dns_name = f"{device.name}.{device.site.slug}.wmnet"
+                dns_suffix = f"{device.site.slug}.wmnet"
         else:
-            dns_name = f"{device.name}.wikimedia.org"
+            dns_suffix = "wikimedia.org"
 
+        dns_name = f"{device.name}.{dns_suffix}"
         ip_v4 = self._add_ip(ip_address, dns_name, prefix_v4, iface, device)
         device.primary_ip4 = ip_v4
         device.save()
@@ -209,6 +227,12 @@ class AssignIPs(Script):
                              f"[DNS Transition](https://wikitech.wikimedia.org/wiki/Server_Lifecycle/DNS_Transition)."
                              f"\n\n    IPv4:  {ip_address_v4}\n    PTRv4: {ip_address_v4.reverse_pointer}"
                              f"\n    DNSv4: {dns_name}")
+
+        # Allocate additional IPs
+        for letter in ascii_lowercase[:cassandra_instances]:
+            extra_ip_address = prefix_v4.get_first_available_ip()
+            extra_dns_name = f"{device.name}-letter.{dns_suffix}"
+            self._add_ip(extra_ip_address, extra_dns_name, prefix_v4, iface, device)
 
         if prefix_v6 is None:
             self.log_warning(f"No IPv6 prefix found for VLAN {vlan.name}, skipping IPv6 allocation.")
