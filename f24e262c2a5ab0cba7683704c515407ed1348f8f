@@ -16,6 +16,24 @@
       "revId": "f24e262c2a5ab0cba7683704c515407ed1348f8f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05270f49_c91e0ca2",
+        "filename": "tools/dumpbackup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2020-09-11T16:08:46Z",
+      "side": 1,
+      "message": "It has one row per parent object, that has all of the custom fields for that parent object.",
+      "parentUuid": "ba564a0f_84cc7630",
+      "revId": "f24e262c2a5ab0cba7683704c515407ed1348f8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
