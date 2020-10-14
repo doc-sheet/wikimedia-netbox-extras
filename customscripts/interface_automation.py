@@ -13,8 +13,8 @@ from string import ascii_lowercase
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Q
 
-from dcim.choices import InterfaceTypeChoices
-from dcim.models import Device, Interface
+from dcim.choices import CableStatusChoices, InterfaceTypeChoices
+from dcim.models import Cables, Device, Interface
 from extras.constants import LOG_LEVEL_CODES
 from extras.scripts import BooleanVar, ChoiceVar, ObjectVar, Script, StringVar, TextVar
 from ipam.models import IPAddress, Prefix, VLAN
@@ -350,8 +350,13 @@ class Importer:
         self._maybe_assign_rdns(ipaddr)
         ipaddr.save()
 
-    def _import_interfaces_for_device(self, device, net_driver, networking, is_virtual=False):
-        """Resolve one device's interfaces and ip addresses based on a net_driver and networking dictionary
+    def _get_real_switch(self, neighbor, interface=None):
+        """Return a Netbox device based on a hostname and optionally a port (if VC member)."""
+        # TODO
+        return None
+
+    def _import_interfaces_for_device(self, device, net_driver, networking, lldp, is_virtual=False):
+        """Resolve one device's interfaces and ip addresses based on a net_driver, networking and lldp dictionary
            as would be obtained from PuppetDB under those key names."""
         output = []
 
@@ -436,6 +441,111 @@ class Importer:
                                                                    iface,
                                                                    isprimary,
                                                                    True)
+            # Now that we have tackled the interfaces and their IPs, it's time for the cables and vlan using LLDP
+            if iface in lldp:
+                # If neighbor + port set, find the real switch (either standalone or VC member)
+                if 'neighbor' in lldp[iface] and 'port' in lldp[iface]:
+                    # Thanks to Juniper we have either the hostname or FQDN (see PR1383295)
+                    if '.' in lldp['neighbor']:
+                        z_device = lldp['neighbor'].split('.')[0]
+                    else:
+                        z_device = lldp['neighbor']
+                    z_iface = lldp['port']
+                    z_nbdevice = self._get_real_switch(z_device, z_iface)  # Z for remote side
+
+                    try:
+                        z_nbiface = z_nbdevice.interfaces.get(name=z_iface)
+                    except ObjectDoesNotExist:  # If interface doesn't exist: create it
+                        self.log_info(f"Creating interface {iface} for device {device}".format(z_iface, z_nbdevice))
+
+                        mtu = None
+                        if 'mtu' in lldp[iface] and lldp[iface]['mtu'] != 1514:
+                            mtu = lldp[iface]['mtu']
+
+                        iface_fmt = InterfaceTypeChoices.TYPE_1GE_FIXED  # Default to 1G
+                        if z_iface.startswith('xe-'):  # 10G start with xe-
+                            iface_fmt = InterfaceTypeChoices.TYPE_10GE_SFP_PLUS
+
+                        z_nbiface = Interface(name=z_iface,
+                                              mgmt_only=False,
+                                              device=device,
+                                              type=iface_fmt,
+                                              mtu=mtu)
+                        z_nbiface.save()
+
+                # Now update the port vlan config if needed
+                if 'vlans' in lldp[iface]:
+                    mode = lldp[iface]['vlans']['mode']
+                    nb_tagged_vlans = []
+                    for vlan_tag in lldp[iface]['vlans']['tagged_vlans']:
+                        # TODO unlikely to happen as we use unique access vlan VID (tag),
+                        # but this will fail if two vlans have the same VID (tag)
+                        nb_tagged_vlans.append(VLAN.objects.get(vid=vlan_tag))
+                    nb_untagged_vlan = None
+                    if 'untagged_vlan' in lldp[iface]['vlans']:
+                        nb_untagged_vlan = VLAN.objects.get(vid=lldp[iface]['vlans']['untagged_vlan'])
+
+                    changed = False
+                    if z_nbiface.mode != mode:
+                        z_nbiface.mode = mode
+                        changed = True
+                    if z_nbiface.untagged_vlan != nb_untagged_vlan:
+                        z_nbiface.untagged_vlan = nb_untagged_vlan
+                        changed = True
+                    if z_nbiface.tagged_vlans != nb_tagged_vlans:
+                        z_nbiface.tagged_vlans = nb_tagged_vlans
+                        changed = True
+                    if changed:
+                        self.log_info(f"Updating interface {iface} VLANS for device {device}".format(z_iface, z_device))
+                        z_nbiface.save()
+
+                # Now we create or update the cable
+                # First we check if there is a cable on either sides
+                try:
+                    nbcable = Cables.objects.get(nbiface.cable)
+                except ObjectDoesNotExist:
+                    nbcable = None
+                try:
+                    z_nbcable = Cables.objects.get(z_nbiface.cable)
+                except ObjectDoesNotExist:
+                    z_nbcable = None
+
+                # Get the cable ID if any
+                label = None
+                if 'descr' in lldp[iface]:
+                    re_search = re.search('{#(?P<cable_id>[^}]+)}', lldp[iface]['descr'])
+                    if re_search:
+                        label = re_search.groupdict()['cable_id']
+
+                # If the cables on both sides don't match delete them
+                # As well as if only one side exist (as it can't go to the good place)
+                if nbcable != z_nbcable:
+                    if nbcable is not None:
+                        self.log_info(f"Remove cable from {device}:{iface}".format(device, iface))
+                        nbcable.delete()
+                        nbcable = None
+                    if z_nbcable is not None:
+                        self.log_info(f"Remove cable from {device}:{iface}".format(z_device, z_iface))
+                        z_nbcable.delete()
+                        z_nbcable = None
+                elif nbcable is not None:
+                    # If they match and are not None, we still need to check if the cable ID is good
+                    if label and nbcable.label != label:
+                        nbcable.label = label
+                        self.log_info(f"Update label for {nbcable} : {label}".format(str(nbcable), label))
+                        nbcable.save()
+                # Now we either have a fully correct cable, or nbcable == z_nbcable == None
+                # In the 2nd case, we create the cable
+                if nbcable is None:
+                    cable = Cables(termination_a=nbiface,
+                                   termination_a_type='dcim.interface',
+                                   termination_b=z_nbiface,
+                                   termination_b_type='dcim.interface',
+                                   label=label,
+                                   status=CableStatusChoices.STATUS_CONNECTED)
+                    cable.save()
+                    self.log_info(f"Created cable {cable}".format(str(nbcable)))
+
         return output
 
     def _validate_device(self, device):
@@ -504,7 +614,10 @@ class ImportNetworkFacts(Script, Importer):
         net_driver = {}
         if "net_driver" in facts:
             net_driver = facts["net_driver"]
-        messages = self._import_interfaces_for_device(device, net_driver, facts["networking"], is_vm)
+        lldp = {}
+        if "lldp" in facts:
+            net_driver = facts["lldp"]
+        messages = self._import_interfaces_for_device(device, net_driver, facts["networking"], lldp, is_vm)
         self.log_info(f"{device} done.")
 
         return "\n".join(messages)
@@ -526,7 +639,7 @@ class ImportPuppetDB(Script, Importer):
         return super()._validate_device(device)
 
     def _get_networking_facts(self, cfg, device):
-        """Access PuppetDB for `networking` and `net_driver` facts."""
+        """Access PuppetDB for `networking`, `net_driver` and `lldp` facts."""
         # Get networking facts
         puppetdb_url = "/".join([cfg["puppetdb"]["url"], "v1/facts", "{}", device.name])
         response = requests.get(puppetdb_url.format("networking"), verify=cfg["puppetdb"]["ca_cert"])
@@ -540,7 +653,13 @@ class ImportPuppetDB(Script, Importer):
             self.log_failure(f"Cannot retrieve PuppetDB `net_driver` facts about {device.name}")
             return None, None
         net_driver = response.json()
-        return net_driver, networking
+        # Get lldp facts
+        response = requests.get(puppetdb_url.format("lldp"), verify=cfg["puppetdb"]["ca_cert"])
+        if response.status_code != 200:
+            self.log_failure(f"Cannot retrieve PuppetDB `lldp` facts about {device.name}")
+            return None, None
+        lldp = response.json()
+        return net_driver, networking, lldp
 
     def run(self, data, commit):
         """Execute script as per Script interface."""
@@ -558,18 +677,18 @@ class ImportPuppetDB(Script, Importer):
         for device in devices:
             self.log_info(f"Processing device {device}")
             if self._validate_device(device):
-                net_driver, networking = self._get_networking_facts(cfg, device)
+                net_driver, networking, lldp = self._get_networking_facts(cfg, device)
                 if net_driver is None:
                     continue
-                messages.extend(self._import_interfaces_for_device(device, net_driver, networking, False))
+                messages.extend(self._import_interfaces_for_device(device, net_driver, networking, lldp, False))
             self.log_info(f"{device} done.")
         for device in vmdevices:
             self.log_info(f"Processing virtual device {device}")
             if self._validate_vm(device):
-                net_driver, networking = self._get_networking_facts(cfg, device)
+                net_driver, networking, lldp = self._get_networking_facts(cfg, device)
                 if net_driver is None:
                     continue
-                messages.extend(self._import_interfaces_for_device(device, net_driver, networking, True))
+                messages.extend(self._import_interfaces_for_device(device, net_driver, networking, lldp, True))
             self.log_info(f"{device} done.")
 
         return "\n".join(messages)
