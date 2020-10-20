@@ -15,7 +15,7 @@ from django.db.models import Q
 
 from django.contrib.contenttypes.models import ContentType
 
-from dcim.choices import CableStatusChoices, InterfaceTypeChoices
+from dcim.choices import CableStatusChoices, CableTypeChoices, InterfaceTypeChoices
 from dcim.models import Cable, Device, Interface, VirtualChassis
 from extras.constants import LOG_LEVEL_CODES
 from extras.scripts import BooleanVar, ChoiceVar, ObjectVar, Script, StringVar, TextVar
@@ -751,13 +751,39 @@ class AssignIPs(Script):
 
     class Meta:
         name = "Add interfaces and IPs to devices"
-        description = ("Create a management and primary interface for the specified device(s) and assign them the"
-                       "necessary IP addresses.")
+        description = ("Create a management, primary interface, switch interface and cable for the specified device, "
+                       "assign it the necessary IP addresse(s).")
 
-    devices = StringVar(
-        label="Device(s)",
-        description="Device name(s), space separated if more than one",
+    # TODO convert to NB 2.9 with proper select
+    device = ObjectVar(
+        description=("Inventory or planned server."),
+        queryset=Device.objects.filter(device_role__slug='server', status__in=('inventory', 'planned')),
+        widget=APISelect(
+            api_url="/api/dcim/devices/",
+            additional_query_params={
+                'device_role__slug': 'server',
+                'status__in': ('inventory', 'planned'),
+            }
+        ),
     )
+
+    # TODO convert to NB 2.9 with proper select, to only show the ToR of the selected device
+    z_nbdevice = ObjectVar(
+        label="Switch",
+        description=("Top of rack switch."),
+        queryset=Device.objects.filter(device_role__slug__in=('asw', 'cloudsw'), status__in=('active', 'staged')),
+        widget=APISelect(
+            api_url="/api/dcim/devices/",
+            additional_query_params={
+                'device_role__slug__in': ('asw', 'cloudsw'),
+                'status__in': ('active', 'staged'),
+            }
+        ),
+    )
+
+    # TODO convert to NB 2.9 with proper select, to only show the interfaces of the selected switch
+    z_iface = StringVar(label="Switch interface")
+    cable_id = StringVar(label="Cable ID", required=False)
 
     skip_ipv6_dns = BooleanVar(
         label="Skip IPv6 DNS records",
@@ -810,20 +836,26 @@ class AssignIPs(Script):
             self.log_failure("Only one parameter between VLAN Type and VLAN can be specified, aborting.")
             return
 
-        devices = Device.objects.filter(name__in=data["devices"].split())  # Additional checks performed below
-        if not devices:
-            self.log_failure(f"No devices found for: {data['devices']}.")
-            return
+        self._process_device(data)
 
-        for device in devices:
-            self._process_device(device, data)
-
-    def _process_device(self, device, data):
+    def _process_device(self, data):
         """Process a single device."""
+        device = data['device']
+        z_nbdevice = data['z_nbdevice']
+        z_iface = data['z_iface']
+        cable_id = data['cable_id']
+
+        # Keeping those checks for the possible future bulk (CSV) import
         self.log_info(f"Processing device {device.name}")
         if device.status not in ("inventory", "planned"):
             self.log_failure(
                 f"Skipping device {device.name} with status {device.status}, expected Inventory or Planned."
+            )
+            return
+
+        if z_nbdevice.status not in ('active', 'staged'):
+            self.log_failure(
+                f"Skipping device {z_nbdevice.name} with status {z_nbdevice.status}, expected Active or Staged."
             )
             return
 
@@ -834,6 +866,18 @@ class AssignIPs(Script):
         if device.device_role.slug != "server":
             self.log_failure(
                 f"Skipping device {device.name} with role {device.device_role}, only servers are supported."
+            )
+            return
+
+        if z_nbdevice.device_role.slug not in ('asw', 'cloudsw'):
+            self.log_failure(
+                f"Skipping device {z_nbdevice.name} with role {z_nbdevice.device_role}, only switches are supported."
+            )
+            return
+
+        if not z_nbdevice or not z_iface:
+            self.log_failure(
+                f"Switch or switch interface missing for {device.name}."
             )
             return
 
@@ -854,14 +898,86 @@ class AssignIPs(Script):
         if not self._is_vlan_valid(vlan, device):
             return
 
+        iface_fmt = InterfaceTypeChoices.TYPE_1GE_FIXED  # Default to 1G
+        if z_iface.startswith('xe-'):  # 10G start with xe-
+            iface_fmt = InterfaceTypeChoices.TYPE_10GE_SFP_PLUS
+
         if device.tenant is not None and device.tenant.slug == FRACK_TENANT_SLUG:
             self.log_warning("Skipping Primary IP allocation for device {device} with tenant {device.tenant}."
                              "Primary IP allocation for Fundraising Tech is done manually in the DNS repository.")
         else:
-            self._assign_primary(device, vlan, skip_ipv6_dns=data["skip_ipv6_dns"],
-                                 cassandra_instances=int(data["cassandra_instances"]))
+            nbiface = self._assign_primary(device, vlan, type=iface_fmt, skip_ipv6_dns=data["skip_ipv6_dns"],
+                                           cassandra_instances=int(data["cassandra_instances"]))
+
+            # Now that we're done with the primary interface, we tackle the switch side
+            z_nbiface = self._update_z_iface(z_nbdevice, z_iface, vlan, iface_fmt)
+
+            # TODO default colors: black DAC, blue: copper
+            # And now the cable between the two
+            self._add_cable(nbiface, z_nbiface, cable_id)
 
         self._assign_mgmt(device)
+
+    def _add_cable(self, nbiface, z_nbiface, cable_id=''):
+        """Create a cable between two interfaces."""
+        # If the switch port already have a cable, we don't try to delete it
+        if z_nbiface.cable:
+            self.log_warning(f"There is already a cable on {z_nbiface.device}:{z_nbiface} (typo?), "
+                             f"Skipping cable creation, please do it manually")
+            return
+
+        # Get the cable ID if any
+        label = ''
+        if cable_id:
+            label = cable_id
+
+        color = None
+        type = None
+        color_human = ''
+        # Most of our infra are either blue 1G copper, or black 10G DAC.
+        # Exceptions are yellow fibers for longer distances like LVS, or special sites like ulsfo
+        if nbiface.type == InterfaceTypeChoices.TYPE_1GE_FIXED:
+            color = '2196f3'
+            color_human = 'blue'
+            type = CableTypeChoices.TYPE_CAT5E
+        elif nbiface.type == InterfaceTypeChoices.TYPE_10GE_SFP_PLUS:
+            color = '111111'
+            color_human = 'black'
+            type = CableTypeChoices.TYPE_DAC_PASSIVE
+
+        cable = Cable(termination_a=nbiface,
+                      termination_a_type=interface_ct,
+                      termination_b=z_nbiface,
+                      termination_b_type=interface_ct,
+                      label=label,
+                      color=color,
+                      type=type,
+                      status=CableStatusChoices.STATUS_CONNECTED)
+        cable.save()
+        self.log_success(f"Created cable {cable}, assuming {color_human} {type} because interface: {nbiface.type}. "
+                         "Please edit if not.")
+
+    def _update_z_iface(self, z_nbdevice, z_iface, vlan, type):
+        """Create switch interface if needed and set vlan info."""
+        try:
+            # Try to find if the interface exists
+            z_nbiface = z_nbdevice.interfaces.get(name=z_iface)
+        except ObjectDoesNotExist:  # If interface doesn't exist: create it
+            self.log_info(f"Creating interface {z_iface} for device {z_nbdevice}")
+
+            z_nbiface = Interface(name=z_iface,
+                                  mgmt_only=False,
+                                  device=z_nbdevice,
+                                  type=type)
+            z_nbiface.save()
+
+        # Then configure it
+        z_nbiface.mode = 'access'
+        z_nbiface.untagged_vlan = vlan
+        z_nbiface.enabled = True
+        self.log_info(f"Setting {z_nbiface} VLANs for device {z_nbiface.device}")
+        z_nbiface.save()
+        return z_nbiface
 
     def _format_logs(self):
         """Return all log messages properly formatted."""
@@ -871,7 +987,8 @@ class AssignIPs(Script):
 
     def _assign_mgmt(self, device):
         """Create a management interface in the device and assign to it a management IP."""
-        iface = self._add_iface(MGMT_IFACE_NAME, device, mgmt=True)
+        type = InterfaceTypeChoices.TYPE_1GE_FIXED
+        iface = self._add_iface(MGMT_IFACE_NAME, device, type=type, mgmt=True)
 
         # determine prefix appropriate to site of device
         try:
@@ -895,7 +1012,7 @@ class AssignIPs(Script):
 
         self._add_ip(ip_address, dns_name, prefix, iface, device)
 
-    def _assign_primary(self, device, vlan, *, skip_ipv6_dns=False, cassandra_instances=0):
+    def _assign_primary(self, device, vlan, *, type, skip_ipv6_dns=False, cassandra_instances=0):
         """Create a primary interface in the device and assign to it an IPv4, a mapped IPv6 and related DNS records.
 
         If Cassandra instances is greater than zero allocate additional IPs for those with hostname
@@ -921,7 +1038,7 @@ class AssignIPs(Script):
             self.log_failure(f"Unable to find an available IP in prefix {prefix_v4.prefix}")
             return
 
-        iface = self._add_iface(PRIMARY_IFACE_NAME, device, mgmt=False)
+        iface = self._add_iface(PRIMARY_IFACE_NAME, device, type=type, mgmt=False)
 
         if prefix_v4.prefix.is_private():
             if device.tenant and device.tenant.slug == FRACK_TENANT_SLUG:
@@ -950,7 +1067,8 @@ class AssignIPs(Script):
 
         if prefix_v6 is None:
             self.log_warning(f"No IPv6 prefix found for VLAN {vlan.name}, skipping IPv6 allocation.")
-            return
+            # Whatever happen, as long as the interface is created, return it
+            return iface
 
         dns_name_v6 = dns_name
         if skip_ipv6_dns:
@@ -969,6 +1087,8 @@ class AssignIPs(Script):
 
         if device.site.slug not in MIGRATED_PRIMARY_SITES and dns_name_v6:
             self._print_info_for_commit(device.site.slug, ip_v6, dns_name_v6)
+        # Whatever happen, as long as the interface is created, return it
+        return iface
 
     def _print_info_for_commit(self, site, address, dns_name):
         """Print a warning message that a manual commit is required with the details of the record."""
@@ -1027,9 +1147,9 @@ class AssignIPs(Script):
 
         return True
 
-    def _add_iface(self, name, device, *, mgmt=False):
+    def _add_iface(self, name, device, *, type, mgmt=False):
         """Add an interface to the device."""
-        iface = Interface(name=name, mgmt_only=mgmt, device=device, type=InterfaceTypeChoices.TYPE_1GE_FIXED)
+        iface = Interface(name=name, mgmt_only=mgmt, device=device, type=type)
         iface.save()
         self.log_success(f"Created interface {name} on device {device.name} (mgmt={mgmt})")
         return iface
