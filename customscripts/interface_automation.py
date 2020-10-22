@@ -1,4 +1,6 @@
 import configparser
+import csv
+import io
 import ipaddress
 import re
 import json
@@ -18,7 +20,7 @@ from django.contrib.contenttypes.models import ContentType
 from dcim.choices import CableStatusChoices, CableTypeChoices, InterfaceTypeChoices
 from dcim.models import Cable, Device, Interface, VirtualChassis
 from extras.constants import LOG_LEVEL_CODES
-from extras.scripts import BooleanVar, ChoiceVar, ObjectVar, Script, StringVar, TextVar
+from extras.scripts import BooleanVar, ChoiceVar, FileVar, ObjectVar, Script, StringVar, TextVar
 from ipam.models import IPAddress, Prefix, VLAN
 from ipam.filters import PrefixFilterSet
 from utilities.forms import APISelect
@@ -757,9 +759,18 @@ class AssignIPs(Script):
         description = ("Create a management, primary interface, switch interface and cable for the specified device, "
                        "assign it the necessary IP addresse(s).")
 
+    # TODO add link to template in the description
+    csv_file = FileVar(
+        required=False,
+        label="CSV import",
+        description=("Ignores the remaining of the form if a CSV file is uploaded.",
+                     "Template and example on https://phabricator.wikimedia.org/F32411089")
+    )
+
     # TODO convert to NB 2.9 with proper select
     device = ObjectVar(
-        description=("Inventory or planned server."),
+        required=False,
+        description=("Inventory or planned server. (Required)"),
         queryset=Device.objects.filter(device_role__slug='server', status__in=('inventory', 'planned')),
         widget=APISelect(
             api_url="/api/dcim/devices/",
@@ -772,8 +783,9 @@ class AssignIPs(Script):
 
     # TODO convert to NB 2.9 with proper select, to only show the ToR of the selected device
     z_nbdevice = ObjectVar(
+        required=False,
         label="Switch",
-        description=("Top of rack switch."),
+        description=("Top of rack switch. (Required)"),
         queryset=Device.objects.filter(device_role__slug__in=('asw', 'cloudsw'), status__in=('active', 'staged')),
         widget=APISelect(
             api_url="/api/dcim/devices/",
@@ -785,11 +797,12 @@ class AssignIPs(Script):
     )
 
     # TODO convert to NB 2.9 with proper select, to only show the interfaces of the selected switch
-    z_iface = StringVar(label="Switch interface")
+    z_iface = StringVar(label="Switch interface", description="Switch interface. (Required)", required=False)
     cable_id = StringVar(label="Cable ID", required=False)
 
     skip_ipv6_dns = BooleanVar(
-        label="Skip IPv6 DNS records",
+        required=False,  # It's a bool so doesn't matter, but adding it for consistency
+        label="Skip IPv6 DNS records.",
         description=("Skip the generation of the IPv6 DNS records. Enable if the devices don't yet fully support "
                      "IPv6."),
     )
@@ -832,14 +845,51 @@ class AssignIPs(Script):
 
     def _run_script(self, data):
         """Run the script."""
-        if not data["vlan_type"] and not data["vlan"]:
-            self.log_failure("One parameter between VLAN Type and VLAN must be specified, aborting.")
-            return
-        if data["vlan_type"] and data["vlan"]:
-            self.log_failure("Only one parameter between VLAN Type and VLAN can be specified, aborting.")
-            return
 
-        self._process_device(data)
+        if data['csv_file']:
+            reader = csv.DictReader(io.StringIO(data['csv_file'].read().decode('utf-8')))
+            try:
+                for row in reader:
+                    # TODO replace the names with the objects
+                    data = self._transform_csv(row)
+                    if not data:
+                        # If any issue with the transform (eg. typoed host), ignore the row
+                        continue
+                    self._process_device(data)
+            except csv.Error as e:
+                self.log_failure(f"Issue row {reader.line_num}: {e}")
+                return
+        else:  # If no CSV uploaded, process the form
+            if data['device'] and data['z_nbdevice'] and data['z_iface']:
+                self._process_device(data)
+            else:
+                self.log_failure("Required field missing.")
+                return
+
+    def _transform_csv(self, row):
+        "Transform the CSV fields to Netbox objects."
+        try:
+            row['device'] = Device.objects.get(name=row['device'])
+        except ObjectDoesNotExist:
+            self.log_failure(f"{row['device']}: device not found, skipping.")
+            return None
+        try:
+            row['z_nbdevice'] = Device.objects.get(name=row['z_nbdevice'])
+        except ObjectDoesNotExist:
+            self.log_failure(f"{row['device']}: switch {row['z_nbdevice']} not found, skipping.")
+            return None
+        if row['vlan'] != '':
+            try:
+                row['vlan'] = VLAN.objects.get(name=row['vlan'], site=row['device'].site)
+            except ObjectDoesNotExist:
+                # TODO LOG
+                self.log_failure(f"{row['device']}: vlan {row['vlan']} not found, skipping.")
+                return None
+        row['skip_ipv6_dns'] = bool(int(row['skip_ipv6_dns']))
+        if row['cassandra_instances'] == '':
+            row['cassandra_instances'] = 0
+
+        return row
 
     def _process_device(self, data):
         """Process a single device."""
@@ -850,6 +900,14 @@ class AssignIPs(Script):
 
         # Keeping those checks for the possible future bulk (CSV) import
         self.log_info(f"Processing device {device.name}")
+        if not data["vlan_type"] and not data["vlan"]:
+            self.log_failure("One parameter between VLAN Type and VLAN must be specified, aborting.")
+            return
+
+        if data["vlan_type"] and data["vlan"]:
+            self.log_failure("Only one parameter between VLAN Type and VLAN can be specified, aborting.")
+            return
+
         if device.status not in ("inventory", "planned"):
             self.log_failure(
                 f"Skipping device {device.name} with status {device.status}, expected Inventory or Planned."
