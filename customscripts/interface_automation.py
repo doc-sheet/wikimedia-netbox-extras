@@ -793,11 +793,10 @@ class AssignIPs(Script, Importer):
         description = ("Create a management, primary interface, switch interface and cable for the specified device, "
                        "assign it the necessary IP addresse(s).")
 
-    # TODO add link to template in the description
     csv_file = FileVar(
         required=False,
         label="CSV import",
-        description=("Ignores the remaining of the form if a CSV file is uploaded.",
+        description=("Ignores the remaining of the form if a CSV file is uploaded. "
                      "Template and example on https://phabricator.wikimedia.org/F32411089")
     )
 
@@ -873,7 +872,7 @@ class AssignIPs(Script, Importer):
 
     def run(self, data):
         """Run the script and return all the log messages."""
-        self.log_info(f"Called with parameters: {data}")
+        self.log_debug(f"Called with parameters: {data}")
         self._run_script(data)
         return self._format_logs()
 
@@ -932,54 +931,50 @@ class AssignIPs(Script, Importer):
         z_iface = data['z_iface']
         cable_id = data['cable_id']
 
-        # Keeping those checks for the possible future bulk (CSV) import
-        self.log_info(f"Processing device {device.name}")
         if not data["vlan_type"] and not data["vlan"]:
-            self.log_failure("One parameter between VLAN Type and VLAN must be specified, aborting.")
+            self.log_failure(f"{device}: one parameter between VLAN Type and VLAN must be specified, skipping.")
             return
 
         if data["vlan_type"] and data["vlan"]:
-            self.log_failure("Only one parameter between VLAN Type and VLAN can be specified, aborting.")
+            self.log_failure(f"{device}: only one parameter between VLAN Type and VLAN can be specified, skipping.")
             return
 
         if device.status not in ("inventory", "planned"):
             self.log_failure(
-                f"Skipping device {device.name} with status {device.status}, expected Inventory or Planned."
+                f"{device}: status {device.status}, expected Inventory or Planned, skipping."
+            )
+            return
+
+        if not z_nbdevice or z_iface == '':
+            self.log_failure(
+                f"{device}: switch or switch interface missing, skipping."
             )
             return
 
         if z_nbdevice.status not in ('active', 'staged'):
-            self.log_failure(
-                f"Skipping device {z_nbdevice.name} with status {z_nbdevice.status}, expected Active or Staged."
-            )
+            self.log_failure(f"{device}: switch {z_nbdevice} with status {z_nbdevice.status}, "
+                             "expected Active or Staged, skipping.")
             return
 
         if not device.rack:
-            self.log_failure(f"Skipping device {device.name}, missing rack information.")
+            self.log_failure(f"{device}: missing rack information, skipping.")
             return
 
         if device.device_role.slug != "server":
             self.log_failure(
-                f"Skipping device {device.name} with role {device.device_role}, only servers are supported."
+                f"{device.name}: role {device.device_role}, only servers are supported, skipping."
             )
             return
 
         if z_nbdevice.device_role.slug not in ('asw', 'cloudsw'):
-            self.log_failure(
-                f"Skipping device {z_nbdevice.name} with role {z_nbdevice.device_role}, only switches are supported."
-            )
-            return
-
-        if not z_nbdevice or not z_iface:
-            self.log_failure(
-                f"Switch or switch interface missing for {device.name}."
-            )
+            self.log_failure(f"{device}: switch {z_nbdevice} with role {z_nbdevice.device_role}, "
+                             "only switches are supported, skipping.")
             return
 
         ifaces = device.interfaces.all()
         if ifaces:
             ifaces_list = ", ".join(i.name for i in ifaces)
-            self.log_failure(f"Skipping device {device.name}, interfaces already defined: {ifaces_list}")
+            self.log_failure(f"{device}: interfaces already defined: {ifaces_list}, skipping.")
             return
 
         # Assigning first the primary IPs as it can fail some validation step
@@ -998,7 +993,7 @@ class AssignIPs(Script, Importer):
             iface_fmt = InterfaceTypeChoices.TYPE_10GE_SFP_PLUS
 
         if device.tenant is not None and device.tenant.slug == FRACK_TENANT_SLUG:
-            self.log_warning("Skipping Primary IP allocation for device {device} with tenant {device.tenant}."
+            self.log_warning(f"{device}: Skipping Primary IP allocation with tenant {device.tenant}. "
                              "Primary IP allocation for Fundraising Tech is done manually in the DNS repository.")
         else:
             nbiface = self._assign_primary(device, vlan, iface_type=iface_fmt, skip_ipv6_dns=data["skip_ipv6_dns"],
@@ -1027,20 +1022,19 @@ class AssignIPs(Script, Importer):
             # Try to find if the interface exists
             z_nbiface = z_nbdevice.interfaces.get(name=z_iface)
         except ObjectDoesNotExist:  # If interface doesn't exist: create it
-            self.log_info(f"Creating interface {z_iface} for device {z_nbdevice}")
-
             z_nbiface = Interface(name=z_iface,
                                   mgmt_only=False,
                                   device=z_nbdevice,
                                   type=type)
             z_nbiface.save()
+            self.log_success(f"{z_nbdevice}: created interface {z_iface}.")
 
         # Then configure it
         z_nbiface.mode = 'access'
         z_nbiface.untagged_vlan = vlan
         z_nbiface.enabled = True
-        self.log_info(f"Setting {z_nbiface} VLANs for device {z_nbiface.device}")
         z_nbiface.save()
+        self.log_success(f"{z_nbiface.device}:{z_nbiface} configured vlan.")
         return z_nbiface
 
     def _format_logs(self):
@@ -1060,13 +1054,13 @@ class AssignIPs(Script, Importer):
                 site=device.site, role__slug="management", tenant=device.tenant, status="active"
             )
         except ObjectDoesNotExist:
-            self.log_failure(f"Can't find management prefix for device {device.name} on site {device.site.slug}.")
+            self.log_failure(f"{device}: can't find management prefix for site {device.site.slug}.")
             return
 
-        self.log_info(f"Selecting address from prefix {prefix.prefix}")
+        self.log_debug(f"{device}: selecting address from prefix {prefix.prefix}")
         ip_address = prefix.get_first_available_ip()
         if ip_address is None:
-            self.log_failure(f"Unable to find an available IP in prefix {prefix.prefix}")
+            self.log_failure(f"{device}: unable to find an available IP in prefix {prefix.prefix}")
             return
 
         if device.tenant and device.tenant.slug == FRACK_TENANT_SLUG:
@@ -1083,26 +1077,36 @@ class AssignIPs(Script, Importer):
         $HOSTNAME-a, $HOSTNAME-b, etc.
 
         """
+        # We create the interface so IP assignment doesn't impact the physical layer
+        iface = self._add_iface(PRIMARY_IFACE_NAME, device, type=type, mgmt=False)
+
         prefixes_v4 = vlan.prefixes.filter(prefix__family=4, status="active")  # Must always be one
         prefixes_v6 = vlan.prefixes.filter(prefix__family=6, status="active")  # Can either be one or not exists
         if len(prefixes_v4) != 1 or len(prefixes_v6) > 1:
-            self.log_failure(f"Unsupported case, found {len(prefixes_v4)} v4 prefixes and {len(prefixes_v6)} v6 "
-                             f"prefixes, expected 1 and 0 or 1 respectively.")
-            return
+            self.log_warning(f"{device}: unsupported case, found {len(prefixes_v4)} v4 prefixes and "
+                             f"{len(prefixes_v6)} v6 prefixes, expected 1 and 0 or 1 respectively, "
+                             "skipping IP allocation.")
+            return iface
 
         prefix_v4 = prefixes_v4[0]
         prefix_v6 = None
         if prefixes_v6:
             prefix_v6 = prefixes_v6[0]
 
-        self.log_info(f"Selecting address from prefix {prefix_v4.prefix}")
+        self.log_debug(f"{device}: selecting address from prefix {prefix_v4.prefix}")
 
         ip_address = prefix_v4.get_first_available_ip()
         if ip_address is None:
+<<<<<<< HEAD
             self.log_failure(f"Unable to find an available IP in prefix {prefix_v4.prefix}")
             return
 
         iface = self._add_iface(PRIMARY_IFACE_NAME, device, iface_type=iface_type, mgmt=False)
+=======
+            self.log_warning(f"{device}: unable to find an available IP in prefix {prefix_v4.prefix}, "
+                             "skipping IP allocation.")
+            return iface
+>>>>>>> 33d8b1a... AssingIPs, cleanup and standardize logs format
 
         if prefix_v4.prefix.is_private():
             if device.tenant and device.tenant.slug == FRACK_TENANT_SLUG:
@@ -1116,7 +1120,7 @@ class AssignIPs(Script, Importer):
         ip_v4 = self._add_ip(ip_address, dns_name, prefix_v4, iface, device)
         device.primary_ip4 = ip_v4
         device.save()
-        self.log_success(f"Marked IPv4 address {ip_v4} as primary IPv4 for device {device.name}")
+        self.log_success(f"{device}: marked IPv4 address {ip_v4} as primary IPv4 for device.")
 
         if device.site.slug not in MIGRATED_PRIMARY_SITES:
             self._print_info_for_commit(device.site.slug, ip_v4, dns_name)
@@ -1130,13 +1134,13 @@ class AssignIPs(Script, Importer):
                 self._print_info_for_commit(device.site.slug, extra_ip_address, extra_dns_name)
 
         if prefix_v6 is None:
-            self.log_warning(f"No IPv6 prefix found for VLAN {vlan.name}, skipping IPv6 allocation.")
+            self.log_warning(f"{device}: no IPv6 prefix found for VLAN {vlan.name}, skipping IPv6 allocation.")
             # Whatever happen, as long as the interface is created, return it
             return iface
 
         dns_name_v6 = dns_name
         if skip_ipv6_dns:
-            self.log_warning("Not assigning DNS name to the IPv6 address as requested.")
+            self.log_info(f"{device}: Not assigning DNS name to the IPv6 address as requested.")
             dns_name_v6 = ""
 
         # Generate the IPv6 address embedding the IPv4 address, for example from an IPv4 address 10.0.0.1 and an
@@ -1147,7 +1151,7 @@ class AssignIPs(Script, Importer):
         ip_v6 = self._add_ip(ipv6_address, dns_name_v6, prefix_v6, iface, device)
         device.primary_ip6 = ip_v6
         device.save()
-        self.log_success(f"Marked IPv6 address {ip_v6} as primary IPv6 for device {device.name}")
+        self.log_success(f"{device}: marked IPv6 address {ip_v6} as primary IPv6.")
 
         if device.site.slug not in MIGRATED_PRIMARY_SITES and dns_name_v6:
             self._print_info_for_commit(device.site.slug, ip_v6, dns_name_v6)
@@ -1170,7 +1174,7 @@ class AssignIPs(Script, Importer):
             vlan_name = f"{vlan_type}1-{device.rack.group.slug.split('-')[-1]}-{device.site.slug}"
         else:
             if vlan_type not in VLAN_POP_TYPES:
-                self.log_failure(f"VLAN type {vlan_type} not available in site {device.site.slug}, skipping")
+                self.log_failure(f"{device}: VLAN type {vlan_type} not available in site {device.site.slug}, skipping.")
                 return
 
             vlan_name = f"{vlan_type}1-{device.site.slug}"
@@ -1178,21 +1182,21 @@ class AssignIPs(Script, Importer):
         try:
             return VLAN.objects.get(name=vlan_name, status="active")
         except ObjectDoesNotExist:
-            self.log_failure(f"Unable to find VLAN with name {vlan_name}")
+            self.log_failure(f"{device}: unable to find VLAN with name {vlan_name}, skipping.")
 
     def _is_vlan_valid(self, vlan, device):
         """Try to ensure that the VLAN matches the device location."""
         if vlan.site != device.site:
             self.log_failure(
-                f"Skipping device {device.name}, mismatch site for VLAN {vlan.name}: "
-                f"{device.site.slug} (device) != {vlan.site.slug} (VLAN)."
+                f"{device}: mismatch site for VLAN {vlan.name}: "
+                f"{device.site.slug} (device) != {vlan.site.slug} (VLAN), skipping."
             )
             return False
 
         if vlan.tenant != device.tenant:
             self.log_failure(
-                f"Skipping device {device.name}, mismatch tenant for VLAN {vlan.name}: "
-                f"{device.tenant} (device) != {vlan.tenant} (VLAN)"
+                f"{device}: , mismatch tenant for VLAN {vlan.name}: "
+                f"{device.tenant} (device) != {vlan.tenant} (VLAN), skipping."
             )
             return False
 
@@ -1202,12 +1206,12 @@ class AssignIPs(Script, Importer):
         if len(possible_rows) == 1:
             if row != possible_rows[0]:
                 self.log_failure(
-                    f"Skipping device {device.name}, mismatch row for VLAN {vlan.name}: "
-                    f"{row} (device) != {possible_rows[0]} (VLAN)"
+                    f"{device}: mismatch row for VLAN {vlan.name}: "
+                    f"{row} (device) != {possible_rows[0]} (VLAN), skipping."
                 )
                 return False
         else:
-            self.log_warning(f"Unable to verify if VLAN {vlan.name} matches row {row} of device {device.name}")
+            self.log_warning(f"{device} unable to verify if VLAN {vlan.name} matches row {row} of device.")
 
         return True
 
@@ -1215,7 +1219,7 @@ class AssignIPs(Script, Importer):
         """Add an interface to the device."""
         iface = Interface(name=name, mgmt_only=mgmt, device=device, type=iface_type)
         iface.save()
-        self.log_success(f"Created interface {name} on device {device.name} (mgmt={mgmt})")
+        self.log_success(f"{device}: created interface {name} (mgmt={mgmt})")
         return iface
 
     def _add_ip(self, address, dns_name, prefix, iface, device):
@@ -1229,7 +1233,7 @@ class AssignIPs(Script, Importer):
             tenant=device.tenant,
         )
         address.save()
-        self.log_success(f"Assigned IPv{prefix.family} {address} to interface {iface.name} on device {device.name} "
+        self.log_success(f"{device}: assigned IPv{prefix.family} {address} to interface {iface.name} "
                          f"with DNS name '{dns_name}'.")
 
         return address
