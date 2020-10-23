@@ -1,0 +1,147 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b1b81368_3a9b6328",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-10-23T14:11:46Z",
+      "side": 1,
+      "message": "typo, I\u0027d use \u0027Prefix\u0027 instead",
+      "range": {
+        "startLine": 43,
+        "startChar": 2,
+        "endLine": 43,
+        "endChar": 10
+      },
+      "revId": "853304589e55d51c30230eaa14341f67d3aed8fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ca0bc848_96f5ab98",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-10-23T14:11:46Z",
+      "side": 1,
+      "message": "I\u0027d use PREFIX somewhere in the name too",
+      "revId": "853304589e55d51c30230eaa14341f67d3aed8fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d0d954f_8a89db04",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-10-23T14:11:46Z",
+      "side": 1,
+      "message": "if you expect only one result use get() instead",
+      "range": {
+        "startLine": 363,
+        "startChar": 49,
+        "endLine": 363,
+        "endChar": 55
+      },
+      "revId": "853304589e55d51c30230eaa14341f67d3aed8fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e1e4d133_d3bd7590",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-10-23T14:11:46Z",
+      "side": 1,
+      "message": "This could raise an exception, I would try/except guard it",
+      "revId": "853304589e55d51c30230eaa14341f67d3aed8fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d34cb953_0d199e28",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-10-23T14:11:46Z",
+      "side": 1,
+      "message": "add a comment on why 1514",
+      "range": {
+        "startLine": 396,
+        "startChar": 60,
+        "endLine": 396,
+        "endChar": 64
+      },
+      "revId": "853304589e55d51c30230eaa14341f67d3aed8fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b20d81e_f33e3d3f",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-10-23T14:11:46Z",
+      "side": 1,
+      "message": "typo? shouldn\u0027t be lldp?",
+      "range": {
+        "startLine": 657,
+        "startChar": 12,
+        "endLine": 657,
+        "endChar": 22
+      },
+      "revId": "853304589e55d51c30230eaa14341f67d3aed8fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13b20df3_c8c1ba0a",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-10-23T14:11:46Z",
+      "side": 1,
+      "message": "We\u0027re at 3 facts now, we could start considering modifying the API to return multiple facts at once. Low prio and unrelated to this patch.",
+      "revId": "853304589e55d51c30230eaa14341f67d3aed8fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
