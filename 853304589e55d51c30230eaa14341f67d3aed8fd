@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b8b071f5_0c263764",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-10-23T14:48:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b1b81368_3a9b6328",
+      "range": {
+        "startLine": 43,
+        "startChar": 2,
+        "endLine": 43,
+        "endChar": 10
+      },
+      "revId": "853304589e55d51c30230eaa14341f67d3aed8fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ca0bc848_96f5ab98",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 7
@@ -39,6 +63,24 @@
       "revId": "853304589e55d51c30230eaa14341f67d3aed8fd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "34ff6d1a_6a004215",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-10-23T14:48:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ca0bc848_96f5ab98",
+      "revId": "853304589e55d51c30230eaa14341f67d3aed8fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "9e4bcdb2_afb42d6a",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-10-23T14:48:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d0d954f_8a89db04",
+      "range": {
+        "startLine": 363,
+        "startChar": 49,
+        "endLine": 363,
+        "endChar": 55
+      },
+      "revId": "853304589e55d51c30230eaa14341f67d3aed8fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e1e4d133_d3bd7590",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 7
@@ -79,6 +145,24 @@
       "revId": "853304589e55d51c30230eaa14341f67d3aed8fd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d9e02ad_e4b0d7ba",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-10-23T14:48:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e1e4d133_d3bd7590",
+      "revId": "853304589e55d51c30230eaa14341f67d3aed8fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -105,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "d3f41b70_0a1b4d0d",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-10-23T14:48:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d34cb953_0d199e28",
+      "range": {
+        "startLine": 396,
+        "startChar": 60,
+        "endLine": 396,
+        "endChar": 64
+      },
+      "revId": "853304589e55d51c30230eaa14341f67d3aed8fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6b20d81e_f33e3d3f",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 7
@@ -128,6 +236,30 @@
     },
     {
       "key": {
+        "uuid": "7b716f9a_8cec11a2",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-10-23T14:48:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6b20d81e_f33e3d3f",
+      "range": {
+        "startLine": 657,
+        "startChar": 12,
+        "endLine": 657,
+        "endChar": 22
+      },
+      "revId": "853304589e55d51c30230eaa14341f67d3aed8fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "13b20df3_c8c1ba0a",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 7
@@ -142,6 +274,24 @@
       "revId": "853304589e55d51c30230eaa14341f67d3aed8fd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b190ff6_b09e080f",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-10-23T14:48:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "13b20df3_c8c1ba0a",
+      "revId": "853304589e55d51c30230eaa14341f67d3aed8fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
