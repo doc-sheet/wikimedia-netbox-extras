@@ -28,6 +28,7 @@ import pynetbox
 
 from requests import PreparedRequest, Response, Session
 from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
 
 
 logger = logging.getLogger()
@@ -158,7 +159,8 @@ class Netbox:
             token (str): the Netbox API token.
 
         """
-        adapter = TimeoutHTTPAdapter()
+        retry_strategy = Retry(total=3, backoff_factor=1.0, status_forcelist=[429, 500, 502, 503, 504])
+        adapter = TimeoutHTTPAdapter(max_retries=retry_strategy)
         session = Session()
         session.mount("http://", adapter)
         session.mount("https://", adapter)
