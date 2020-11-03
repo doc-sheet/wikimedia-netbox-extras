@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "11e7072a_87a4c11b",
+        "filename": "reports/cables.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-03T14:07:54Z",
+      "side": 1,
+      "message": "Use parentheses instead of \\ and proper indentation",
+      "revId": "b871f39226f0a2f94ae88e806a07b65004edcae3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ae7695e_896b0d2d",
+        "filename": "reports/cables.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-03T14:07:54Z",
+      "side": 1,
+      "message": "this can be an \u0027if\u0027, I think that pylint would complain",
+      "range": {
+        "startLine": 150,
+        "startChar": 8,
+        "endLine": 150,
+        "endChar": 12
+      },
+      "revId": "b871f39226f0a2f94ae88e806a07b65004edcae3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
