@@ -1,0 +1,153 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "61b02769_dbb2a6b9",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-03T19:32:21Z",
+      "side": 1,
+      "message": "I think we could easily get the switch from location and VLAN but I could be proven wrong :)",
+      "revId": "db291acd65f40356bd40f8ec60b150338ee47840",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "83b66110_a7915835",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 873,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-03T19:32:21Z",
+      "side": 1,
+      "message": "[optional] maybe we can drop the \u0027nb\u0027 part, it\u0027s all netbox stuff here, z_device might work as well.",
+      "range": {
+        "startLine": 873,
+        "startChar": 8,
+        "endLine": 873,
+        "endChar": 18
+      },
+      "revId": "db291acd65f40356bd40f8ec60b150338ee47840",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e0da0ef2_00403e30",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 887,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-03T19:32:21Z",
+      "side": 1,
+      "message": "this seems confusing, we\u0027re skipping {device.name} here, even if it\u0027s because of the switch mismatch",
+      "range": {
+        "startLine": 887,
+        "startChar": 27,
+        "endLine": 887,
+        "endChar": 33
+      },
+      "revId": "db291acd65f40356bd40f8ec60b150338ee47840",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "72883ee6_7829b0e4",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 931,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-03T19:32:21Z",
+      "side": 1,
+      "message": "this could be moved to a constant",
+      "range": {
+        "startLine": 931,
+        "startChar": 30,
+        "endLine": 931,
+        "endChar": 35
+      },
+      "revId": "db291acd65f40356bd40f8ec60b150338ee47840",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e1b91ca0_b5478115",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 938,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-03T19:32:21Z",
+      "side": 1,
+      "message": "ditto for the \u0027nb\u0027 prefix here and below",
+      "range": {
+        "startLine": 938,
+        "startChar": 12,
+        "endLine": 938,
+        "endChar": 19
+      },
+      "revId": "db291acd65f40356bd40f8ec60b150338ee47840",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60791a17_2998ed8e",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 963,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-03T19:32:21Z",
+      "side": 1,
+      "message": "This block logic it\u0027s already implemented in the same file for the PuppetDB import, let\u0027s take it out and avoid duplication.",
+      "revId": "db291acd65f40356bd40f8ec60b150338ee47840",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e543b1f4_a850e797",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1044,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-03T19:32:21Z",
+      "side": 1,
+      "message": "don\u0027t mask the python\u0027s type() builtin",
+      "range": {
+        "startLine": 1044,
+        "startChar": 47,
+        "endLine": 1044,
+        "endChar": 51
+      },
+      "revId": "db291acd65f40356bd40f8ec60b150338ee47840",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
