@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd2b204d_de9ed12d",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-03T17:10:29Z",
+      "side": 1,
+      "message": "if you expect some human action probably better to use a warning for htat part? not sure though. Ok to merge as is and iterate later",
+      "revId": "a530711f664ad548454cdeb2c682b0ea6e0de433",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
