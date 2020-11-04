@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "08404060_546558bf",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-04T09:24:30Z",
+      "side": 1,
+      "message": "[optional] the above block could be skipped entirely if using here:\n\n  , label\u003dcable_id if cable_id else \u0027\u0027)",
+      "range": {
+        "startLine": 962,
+        "startChar": 57,
+        "endLine": 962,
+        "endChar": 62
+      },
+      "revId": "33ca90fed27728e518541324bfa03ec9093a9ea7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}

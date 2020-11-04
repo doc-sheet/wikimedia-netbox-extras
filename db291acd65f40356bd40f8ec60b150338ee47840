@@ -178,6 +178,30 @@
     },
     {
       "key": {
+        "uuid": "a76932b3_a1217a9e",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 931,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-04T09:24:30Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "61fc69f7_4ee926fe",
+      "range": {
+        "startLine": 931,
+        "startChar": 30,
+        "endLine": 931,
+        "endChar": 35
+      },
+      "revId": "db291acd65f40356bd40f8ec60b150338ee47840",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e1b91ca0_b5478115",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 6
@@ -295,6 +319,30 @@
       "side": 1,
       "message": "Done, note that the Netbox Interface object calls it type:\niface \u003d Interface(name\u003dname, mgmt_only\u003dmgmt, device\u003ddevice, type\u003diface_type)",
       "parentUuid": "e543b1f4_a850e797",
+      "range": {
+        "startLine": 1044,
+        "startChar": 47,
+        "endLine": 1044,
+        "endChar": 51
+      },
+      "revId": "db291acd65f40356bd40f8ec60b150338ee47840",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a7ca2c9_5a6aa86b",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1044,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-04T09:24:30Z",
+      "side": 1,
+      "message": ":/",
+      "parentUuid": "e2f224f9_5001338f",
       "range": {
         "startLine": 1044,
         "startChar": 47,
