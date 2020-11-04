@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "58f9badf_62eea05d",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-11-04T09:02:32Z",
+      "side": 1,
+      "message": "Not sure how I can prove you it\u0027s difficult, here you should prove me it\u0027s easy instead :)",
+      "parentUuid": "61b02769_dbb2a6b9",
+      "revId": "db291acd65f40356bd40f8ec60b150338ee47840",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "83b66110_a7915835",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 6
@@ -39,6 +57,30 @@
       "revId": "db291acd65f40356bd40f8ec60b150338ee47840",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "44a995e0_ac851b26",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 873,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-11-04T09:02:32Z",
+      "side": 1,
+      "message": "This is to stay consistent, for example the interface name before we get the Netbox object is z_iface, which becomes z_nbiface.",
+      "parentUuid": "83b66110_a7915835",
+      "range": {
+        "startLine": 873,
+        "startChar": 8,
+        "endLine": 873,
+        "endChar": 18
+      },
+      "revId": "db291acd65f40356bd40f8ec60b150338ee47840",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "a3913abb_2e0caefe",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 887,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-11-04T09:02:32Z",
+      "side": 1,
+      "message": "Clarified in a following CR: https://gerrit.wikimedia.org/r/c/operations/software/netbox-extras/+/635853/6/customscripts/interface_automation.py",
+      "parentUuid": "e0da0ef2_00403e30",
+      "range": {
+        "startLine": 887,
+        "startChar": 27,
+        "endLine": 887,
+        "endChar": 33
+      },
+      "revId": "db291acd65f40356bd40f8ec60b150338ee47840",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "72883ee6_7829b0e4",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 6
@@ -76,6 +142,30 @@
       "writtenOn": "2020-11-03T19:32:21Z",
       "side": 1,
       "message": "this could be moved to a constant",
+      "range": {
+        "startLine": 931,
+        "startChar": 30,
+        "endLine": 931,
+        "endChar": 35
+      },
+      "revId": "db291acd65f40356bd40f8ec60b150338ee47840",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61fc69f7_4ee926fe",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 931,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-11-04T09:02:32Z",
+      "side": 1,
+      "message": "If we start having more than 1 10G prefix, sure. But I don\u0027t think it\u0027s worth here.",
+      "parentUuid": "72883ee6_7829b0e4",
       "range": {
         "startLine": 931,
         "startChar": 30,
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "447fbd12_28f160b4",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 938,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-11-04T09:02:32Z",
+      "side": 1,
+      "message": "Explained above.",
+      "parentUuid": "e1b91ca0_b5478115",
+      "range": {
+        "startLine": 938,
+        "startChar": 12,
+        "endLine": 938,
+        "endChar": 19
+      },
+      "revId": "db291acd65f40356bd40f8ec60b150338ee47840",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "60791a17_2998ed8e",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 6
@@ -125,6 +239,24 @@
       "revId": "db291acd65f40356bd40f8ec60b150338ee47840",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "38b52cbb_b986d4d4",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 963,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-11-04T09:02:32Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "60791a17_2998ed8e",
+      "revId": "db291acd65f40356bd40f8ec60b150338ee47840",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -148,6 +280,30 @@
       "revId": "db291acd65f40356bd40f8ec60b150338ee47840",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2f224f9_5001338f",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1044,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-11-04T09:02:32Z",
+      "side": 1,
+      "message": "Done, note that the Netbox Interface object calls it type:\niface \u003d Interface(name\u003dname, mgmt_only\u003dmgmt, device\u003ddevice, type\u003diface_type)",
+      "parentUuid": "e543b1f4_a850e797",
+      "range": {
+        "startLine": 1044,
+        "startChar": 47,
+        "endLine": 1044,
+        "endChar": 51
+      },
+      "revId": "db291acd65f40356bd40f8ec60b150338ee47840",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
