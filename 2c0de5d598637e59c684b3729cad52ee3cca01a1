@@ -1,0 +1,153 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a82c8ac0_2ef55631",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 798,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-05T16:53:19Z",
+      "side": 1,
+      "message": "[ni] multiple servers?",
+      "range": {
+        "startLine": 798,
+        "startChar": 28,
+        "endLine": 798,
+        "endChar": 36
+      },
+      "revId": "2c0de5d598637e59c684b3729cad52ee3cca01a1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dcca4587_c9e01ac8",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-05T16:53:19Z",
+      "side": 1,
+      "message": "I\u0027m unsure what\u0027s more convenient for DCOps if a FileVar or a text field where to paste the CSV. If you can ask them in the meeting. I don\u0027t have strong preferences.",
+      "range": {
+        "startLine": 801,
+        "startChar": 15,
+        "endLine": 801,
+        "endChar": 22
+      },
+      "revId": "2c0de5d598637e59c684b3729cad52ee3cca01a1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2f29cea_6bc18e7d",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 816,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-05T16:53:19Z",
+      "side": 1,
+      "message": "This block must be de-indented once, as is will never run ;)",
+      "revId": "2c0de5d598637e59c684b3729cad52ee3cca01a1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e44b820d_90ea01b8",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 839,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-05T16:53:19Z",
+      "side": 1,
+      "message": "here and below, \u0027return None\u0027 is totally equivalent of \u0027return\u0027, no need to specify None ;)",
+      "range": {
+        "startLine": 839,
+        "startChar": 16,
+        "endLine": 839,
+        "endChar": 27
+      },
+      "revId": "2c0de5d598637e59c684b3729cad52ee3cca01a1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c73874c0_3989b1d9",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 850,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-05T16:53:19Z",
+      "side": 1,
+      "message": "as I\u0027m not sure if row[\u0027vlan\u0027] can be also None (,, vs ,\"\", in the CSV), better do:\n\n  if row[\u0027vlan\u0027]:\n\nso that anything truthfully will work",
+      "range": {
+        "startLine": 850,
+        "startChar": 11,
+        "endLine": 850,
+        "endChar": 22
+      },
+      "revId": "2c0de5d598637e59c684b3729cad52ee3cca01a1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d3568bc9_ee20516e",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 858,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-05T16:53:19Z",
+      "side": 1,
+      "message": "Ditto for \u0027\u0027 and None, I\u0027d say if:\n\n  if row[\u0027cassandra_instances\u0027]:\n      row[\u0027cassandra_instances\u0027] \u003d int(row[\u0027cassandra_instances\u0027])\n  else:\n      row[\u0027cassandra_instances\u0027] \u003d 0",
+      "revId": "2c0de5d598637e59c684b3729cad52ee3cca01a1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "67d7a8ad_344ea3a9",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 904,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-05T16:53:19Z",
+      "side": 1,
+      "message": "the others have it too, it\u0027s ok also without the comment :D",
+      "range": {
+        "startLine": 904,
+        "startChar": 25,
+        "endLine": 904,
+        "endChar": 87
+      },
+      "revId": "2c0de5d598637e59c684b3729cad52ee3cca01a1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}

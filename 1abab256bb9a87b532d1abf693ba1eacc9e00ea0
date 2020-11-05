@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7bbae7a4_6bec1c87",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-05T16:53:19Z",
+      "side": 1,
+      "message": "Seems a bit outdated",
+      "revId": "1abab256bb9a87b532d1abf693ba1eacc9e00ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "adbe17d2_c4c9c4de",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 790,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-05T16:53:19Z",
+      "side": 1,
+      "message": "[nit] add newline above",
+      "revId": "1abab256bb9a87b532d1abf693ba1eacc9e00ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0530667c_8285a2eb",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 791,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-05T16:53:19Z",
+      "side": 1,
+      "message": "I\u0027d say multiple servers, one per line/row",
+      "range": {
+        "startLine": 791,
+        "startChar": 25,
+        "endLine": 791,
+        "endChar": 44
+      },
+      "revId": "1abab256bb9a87b532d1abf693ba1eacc9e00ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
