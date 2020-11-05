@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "15a08145_7fdf59cb",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-05T09:04:56Z",
+      "side": 1,
+      "message": "As partially discussed on IRC with you and separately with Cas I think it would be much cleaner to have the AssignIPs script handle just a single device and a separate script with a single text field form to accept a CSV and run the AssignIPs script for each line of the CSV.\n\nIt\u0027s as simple as creating another class in this same file that inherits from Script and then instantiate an AssignIPs() instance and call its run() method passing to it a data dictionary with the parameters for that single device. Feel free to ping me offline for more details.\n\nP.S. [unrelated] we should change the run() signature to accept 2 parameters run(data, commit) as specified in Netbox docs, see the None in https://netbox.readthedocs.io/en/stable/additional-features/custom-scripts/#writing-custom-scripts",
+      "revId": "271595053b66e281326079120ece402dfdac6c68",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
