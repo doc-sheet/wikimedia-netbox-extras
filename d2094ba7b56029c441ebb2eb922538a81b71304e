@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "46fbd9a6_57045e74",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 809,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-10T05:45:22Z",
+      "side": 1,
+      "message": "is this necessary? Can\u0027t we just pass data[\u0027csv_file\u0027] to csv.DictReader? I think it should just work unless I\u0027m missing something obvious.",
+      "range": {
+        "startLine": 809,
+        "startChar": 32,
+        "endLine": 809,
+        "endChar": 84
+      },
+      "revId": "d2094ba7b56029c441ebb2eb922538a81b71304e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5fa815f2_57330db3",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 815,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-10T05:45:22Z",
+      "side": 1,
+      "message": "[nit] it\u0027s a bit confusing to me, maybe something like \"Error parsing row #{num}\"?",
+      "range": {
+        "startLine": 815,
+        "startChar": 35,
+        "endLine": 815,
+        "endChar": 44
+      },
+      "revId": "d2094ba7b56029c441ebb2eb922538a81b71304e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e9cdbaf_1e2c0e34",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 827,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-10T05:45:22Z",
+      "side": 1,
+      "message": "To avoid re-defining it for every row we could move this to a module constant CSV_HEADERS and use a tuple instead of a list to make it immutable.",
+      "revId": "d2094ba7b56029c441ebb2eb922538a81b71304e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "87471d20_7777c7fe",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-10T05:45:22Z",
+      "side": 1,
+      "message": "According to https://docs.python.org/3/library/csv.html#csv.DictReader this block doesn\u0027t ensure that all rows have been properly filled, assuming I understood your intentions here.\n\nTo be a bit more strict we could do something like this (includes the above comment too):\n\n1) This ensures that the row has the correct headers and no additional values (as those would have been mapped to the None key)\n\n  if tuple(row.keys()) !\u003d CSV_HEADERS:\n      # log_failure and return\n\n\n2) Ensure that there are no missing values. No need to set \u0027restval\u0027 to something else, given that AFAIK there is no way to have None as value from a CSV\n\n  if any(value is None for value in row.values()):\n      # log_failure and return\n\nThey could be combined in a single if, but separate we can give a more specific message to the user. Up to you.",
+      "revId": "d2094ba7b56029c441ebb2eb922538a81b71304e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d59226e6_fc909e81",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 855,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-10T05:45:22Z",
+      "side": 1,
+      "message": "leftover?",
+      "range": {
+        "startLine": 855,
+        "startChar": 16,
+        "endLine": 855,
+        "endChar": 26
+      },
+      "revId": "d2094ba7b56029c441ebb2eb922538a81b71304e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}

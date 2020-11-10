@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "cc7b775f_7f36f9da",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-10T05:45:22Z",
+      "side": 1,
+      "message": "Ack, we can change it as needed",
+      "parentUuid": "2d2a621d_100f9fe5",
+      "range": {
+        "startLine": 801,
+        "startChar": 15,
+        "endLine": 801,
+        "endChar": 22
+      },
+      "revId": "2c0de5d598637e59c684b3729cad52ee3cca01a1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a2f29cea_6bc18e7d",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 14
@@ -304,6 +328,30 @@
       "revId": "2c0de5d598637e59c684b3729cad52ee3cca01a1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df45a9e2_5d4e3d8f",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 904,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-10T05:45:22Z",
+      "side": 1,
+      "message": "Apparently it didn\u0027t get removed ;)",
+      "parentUuid": "9960398e_d8f3608f",
+      "range": {
+        "startLine": 904,
+        "startChar": 25,
+        "endLine": 904,
+        "endChar": 87
+      },
+      "revId": "2c0de5d598637e59c684b3729cad52ee3cca01a1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
