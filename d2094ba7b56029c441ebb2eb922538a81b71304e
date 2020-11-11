@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5aa434b4_e0985d9b",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 809,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-11-11T08:25:32Z",
+      "side": 1,
+      "message": "Without it I get:\nError: iterator should return strings, not bytes (did you open the file in text mode?)",
+      "parentUuid": "46fbd9a6_57045e74",
+      "range": {
+        "startLine": 809,
+        "startChar": 32,
+        "endLine": 809,
+        "endChar": 84
+      },
+      "revId": "d2094ba7b56029c441ebb2eb922538a81b71304e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fa815f2_57330db3",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 16
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "ca68d6c5_931d689c",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 815,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-11-11T08:25:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5fa815f2_57330db3",
+      "range": {
+        "startLine": 815,
+        "startChar": 35,
+        "endLine": 815,
+        "endChar": 44
+      },
+      "revId": "d2094ba7b56029c441ebb2eb922538a81b71304e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e9cdbaf_1e2c0e34",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 16
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "c1ff098a_21405292",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 827,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-11-11T08:25:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e9cdbaf_1e2c0e34",
+      "revId": "d2094ba7b56029c441ebb2eb922538a81b71304e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87471d20_7777c7fe",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 16
@@ -79,6 +145,24 @@
       "revId": "d2094ba7b56029c441ebb2eb922538a81b71304e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a48ad57_5df9ffc8",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-11-11T08:25:32Z",
+      "side": 1,
+      "message": "That is just to check that the headers are present, not the values.\n\nMy code is agnostic to the position of the headers (which I think is better) and tells which column is missing.",
+      "parentUuid": "87471d20_7777c7fe",
+      "revId": "d2094ba7b56029c441ebb2eb922538a81b71304e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -102,6 +186,30 @@
       "revId": "d2094ba7b56029c441ebb2eb922538a81b71304e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d184018_29178465",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 855,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-11-11T08:25:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d59226e6_fc909e81",
+      "range": {
+        "startLine": 855,
+        "startChar": 16,
+        "endLine": 855,
+        "endChar": 26
+      },
+      "revId": "d2094ba7b56029c441ebb2eb922538a81b71304e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
