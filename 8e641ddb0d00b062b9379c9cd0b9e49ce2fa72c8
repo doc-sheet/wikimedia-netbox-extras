@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "12c9a1ea_1ce55a0b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-16T15:24:29Z",
+      "side": 1,
+      "message": "This rename requires some post-merge follow up, for sure it\u0027s linked on wikitech in more than one place, not sure if also in some cookbook or other place.",
+      "revId": "8e641ddb0d00b062b9379c9cd0b9e49ce2fa72c8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2bcc91ab_1906224b",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 808,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-16T15:24:29Z",
+      "side": 1,
+      "message": "typo: attributes",
+      "range": {
+        "startLine": 808,
+        "startChar": 51,
+        "endLine": 808,
+        "endChar": 61
+      },
+      "revId": "8e641ddb0d00b062b9379c9cd0b9e49ce2fa72c8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e4c636bf_c18ae0c4",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 809,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-16T15:24:29Z",
+      "side": 1,
+      "message": "typo: including",
+      "range": {
+        "startLine": 809,
+        "startChar": 55,
+        "endLine": 809,
+        "endChar": 63
+      },
+      "revId": "8e641ddb0d00b062b9379c9cd0b9e49ce2fa72c8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ca334962_d6de09af",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 871,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-16T15:24:29Z",
+      "side": 1,
+      "message": "ditto typo",
+      "range": {
+        "startLine": 871,
+        "startChar": 45,
+        "endLine": 871,
+        "endChar": 55
+      },
+      "revId": "8e641ddb0d00b062b9379c9cd0b9e49ce2fa72c8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "793c4a57_662b1e95",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 872,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-16T15:24:29Z",
+      "side": 1,
+      "message": "ditto typo",
+      "range": {
+        "startLine": 872,
+        "startChar": 55,
+        "endLine": 872,
+        "endChar": 63
+      },
+      "revId": "8e641ddb0d00b062b9379c9cd0b9e49ce2fa72c8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}

@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "18dc14f5_de45a41e",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 809,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-16T15:24:29Z",
+      "side": 1,
+      "message": "From a quick look at the docs and code of both Netbox and Django, the Netbox FileVar becomes a Django FileField that by default opens the files in \u0027rb\u0027 mode. It\u0027s customizable but it seems that Netbox doesn\u0027t expose it in a way that allow it to be customized from within a script.\nLet\u0027s keep it this way for now although sub-optimal.",
+      "parentUuid": "5aa434b4_e0985d9b",
+      "range": {
+        "startLine": 809,
+        "startChar": 32,
+        "endLine": 809,
+        "endChar": 84
+      },
+      "revId": "d2094ba7b56029c441ebb2eb922538a81b71304e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fa815f2_57330db3",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 16
@@ -163,6 +187,24 @@
       "revId": "d2094ba7b56029c441ebb2eb922538a81b71304e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "748d1acf_19507f32",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-11-16T15:24:29Z",
+      "side": 1,
+      "message": "Ok to keep the order flexible. What I would suggest though is to add a check that all rows have the right amount of values. The CSV module uses:\n\n  If a row has more fields than fieldnames, the remaining data is put in a list and stored with \n  the fieldname specified by restkey (which defaults to None). If a non-blank row has fewer \n  fields than fieldnames, the missing values are filled-in with the value of restval (which \n  defaults to None).\n\nThat basically means checking if there is a None key in the row and if there is any value with None (point (2) from my previous comment).\n\nIt\u0027s not mandatory but IMHO we should fail and tell the user if the number of values differ from the number of columns in the CSV because it\u0027s a mistake and might lead to use wrong values for other fields that might still be \"valid\" and not make the script fail but allocate the device with wrong parameters.",
+      "parentUuid": "8a48ad57_5df9ffc8",
+      "revId": "d2094ba7b56029c441ebb2eb922538a81b71304e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     },
     {
       "key": {
