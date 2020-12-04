@@ -12,10 +12,10 @@ set -e
 DUMPPATH=/srv/netbox-dumps
 VENVPYTHON=/srv/deployment/netbox/venv/bin/python
 DUMPSCRIPT=/srv/deployment/netbox-extras/tools/dumpbackup.py
-KEEP_HOURLY=16
-KEEP_DAILY=60
-KEEP_MONTHLY=12
-KEEP_YEARLY=10
+KEEP_HOURLY=17
+KEEP_DAILY=61
+KEEP_MONTHLY=13
+KEEP_YEARLY=11
 #
 
 # Clean all dumps matching a pattern with a given count
@@ -44,24 +44,6 @@ do_copy() {
 CURRENT=$(date +'%Y-%m-%d-%H:%M')
 
 pushd "$DUMPPATH"
-
-# This is temporary, to fix up existing old backups.
-# Preserve the newest member of non-existant monthly, yearly and daily sets.
-for dir in $(find "$DUMPPATH" -name "20??-??-??-??:??" -type d | sort -h -r); do
-    dir=$(basename "$dir")
-    echo "$dir" | cut -d'-' -f1,2,3 --output-delimiter=' ' | while read year month day; do
-        # fallback in case we don't have old rotation rules
-        if [ ! -e "$DUMPPATH/$year-$month-$day" ]; then
-            cp -R "$DUMPPATH/$dir" "$DUMPPATH/$year-$month-$day"
-        fi
-        if [ ! -e "$DUMPPATH/$year-$month" ]; then
-            cp -R "$DUMPPATH/$dir" "$DUMPPATH/$year-$month"
-        fi
-        if [ ! -e "$DUMPPATH/$year" ]; then
-            cp -R "$DUMPPATH/$dir" "$DUMPPATH/$year"
-        fi
-    done
-done
 
 # Clean dumps
 clean_dumps '20??-??-??-??:??' $KEEP_HOURLY

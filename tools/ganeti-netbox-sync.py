@@ -259,6 +259,38 @@ def sync_ganeti_nodes_to_netbox(netbox_api, netbox_token, cluster_name, ganeti_n
     logger.info("removed %d hosts from cluster %s", results["remove"], cluster_name)
 
 
+def run_import_script(netbox_api, netbox_token, imports, dry_run):
+    """Execute the PuppetDB import script for a given list of hosts."""
+    api_url = '{}api/extras/scripts/{}/'.format(netbox_api, 'interface_automation.ImportPuppetDB')
+    headers = {'Authorization': 'Token {}'.format(netbox_token)}
+    data = {"data": {"device": " ".join(imports)}, "commit": {True: 1, False: 0}[dry_run]}
+    result = requests.post(api_url, headers=headers, json=data)
+    if result.status_code == 200:
+        logger.debug("Executed import, result: %s", str(result.content))
+    else:
+        logger.error("Error executing import. Data: %s", str(result.content))
+
+
+def nb_fix_ganeti_interfaces(netbox_api, netbox_token, cluster_name, dry_run):
+    """
+    Iterate all host interfaces in a particular cluster, and cause a PuppetDB reimport on devices
+    with unimported default interfaces.
+    """
+    nbapi = pynetbox.api(netbox_api, token=netbox_token)
+    nb_cluster_id = nbapi.virtualization.clusters.get(name=cluster_name).id
+    hosts = [x.name for x in nbapi.virtualization.virtual_machines.filter(cluster=nb_cluster_id,
+                                                                          role='server',
+                                                                          state='active')]
+    reimports = set()
+    for iface in nbapi.dcim.interfaces.filter(virtual_machine=hosts):
+        if iface.name == '##PRIMARY##':
+            reimports.add(iface.virtual_machine.name)
+            logger.debug("will puppetdb import %s", iface.virtual_machine.name)
+    if reimports:
+        run_import_script(netbox_api, netbox_token, reimports, dry_run)
+    logger.info("fixed %d devices interfaces in cluster %s", len(reimports), cluster_name)
+
+
 def main():
     """Entry point for Ganeti->Netbox Sync."""
     args = parse_command_line_args()
