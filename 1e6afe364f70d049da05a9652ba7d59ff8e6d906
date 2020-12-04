@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b4086485_887195ab",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-12-04T11:33:28Z",
+      "side": 1,
+      "message": "Why are we getting a new API each time? It seems we could re-use the same API object.",
+      "revId": "1e6afe364f70d049da05a9652ba7d59ff8e6d906",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af5c47f9_f7e51155",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-12-04T11:33:28Z",
+      "side": 1,
+      "message": "You\u0027re getting first all the virtual machines and then all the interfaces for all the virtual machines. It looks quite suboptimal IMHO. Have you tried instead for example to use the \u0027virtualization/interfaces/?name\u003d%23%23PRIMARY%23%23\u0027 endpoint? Seems much quicker and simpler. We already have the list of VMs in a cluster on line 141.",
+      "revId": "1e6afe364f70d049da05a9652ba7d59ff8e6d906",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "393c793a_66ae418c",
+        "filename": "tools/rotatedump",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2020-12-04T11:33:28Z",
+      "side": 1,
+      "message": "Totally unrelated changes, should not be part of this patch.",
+      "revId": "1e6afe364f70d049da05a9652ba7d59ff8e6d906",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
