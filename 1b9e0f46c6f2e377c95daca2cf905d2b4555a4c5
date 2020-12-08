@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "156963ad_3bbb4061",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2020-12-08T22:08:43Z",
+      "side": 1,
+      "message": "I think at this point it\u0027s better to make it compatible with \u003e\u003d2.9 only and merge it after the upgrade.",
+      "range": {
+        "startLine": 285,
+        "startChar": 6,
+        "endLine": 285,
+        "endChar": 85
+      },
+      "revId": "1b9e0f46c6f2e377c95daca2cf905d2b4555a4c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
