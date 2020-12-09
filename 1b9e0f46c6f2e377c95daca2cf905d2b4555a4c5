@@ -22,6 +22,30 @@
       "revId": "1b9e0f46c6f2e377c95daca2cf905d2b4555a4c5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c69ddb5_92434420",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2020-12-09T16:45:03Z",
+      "side": 1,
+      "message": "i would tend to agree with that to be honest. This code will be a lot nicer with the VM reorganization.",
+      "parentUuid": "156963ad_3bbb4061",
+      "range": {
+        "startLine": 285,
+        "startChar": 6,
+        "endLine": 285,
+        "endChar": 85
+      },
+      "revId": "1b9e0f46c6f2e377c95daca2cf905d2b4555a4c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
