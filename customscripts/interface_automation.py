@@ -321,9 +321,10 @@ class Importer:
             # We skip link local and loopback addresses
             return None
 
-        # Warn the user if one of the IP is an auto-config IP
+        # Warn the user if one of the IP is an auto-config IP and skip it
         if is_ipv6 and address.exploded[27:32] == 'ff:fe':
             self.log_warning(f"{address} is a SLAAC IP")
+            return None
 
         if (vip_exempt):
             # FIXME
