@@ -544,13 +544,15 @@ class Importer:
                                             type=iface_fmt,
                                             mtu=mtu)
                     nbiface.save()
+                if nbiface is None:
+                    continue
 
             # FIXME /32 bug things here
             vipexempt = any([r.match(device.name) for r in NO_VIP_RE])
             if "bindings" in iface_dict:
                 for binding in iface_dict["bindings"]:
                     address = self._process_binding_address(binding, False, is_anycast, (vipexempt and not is_vdev))
-                    if address is None or nbiface is None:
+                    if address is None:
                         continue
                     # process ipv4 addresses
                     isprimary = False
@@ -565,9 +567,9 @@ class Importer:
             if "bindings6" in iface_dict:
                 for binding in iface_dict["bindings6"]:
                     address = self._process_binding_address(binding, True, is_anycast, (vipexempt and not is_vdev))
-                    if address is None or nbiface is None:
+                    if address is None:
                         continue
-                    # process ipv4 addresses
+                    # process ipv6 addresses
                     isprimary = False
                     if "ip" in iface_dict and binding["address"] == iface_dict["ip6"]:
                         isprimary = True
