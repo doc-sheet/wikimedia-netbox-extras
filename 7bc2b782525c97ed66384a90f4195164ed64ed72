@@ -16,6 +16,24 @@
       "revId": "7bc2b782525c97ed66384a90f4195164ed64ed72",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "41cc4fa7_986154c8",
+        "filename": "tools/custom_script_proxy.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2021-01-13T19:24:15Z",
+      "side": 1,
+      "message": "In flask, if you don\u0027t return that it defaults to 200 response with the document, this mimics the previous implementation.",
+      "parentUuid": "d3ffa835_8c1ec054",
+      "revId": "7bc2b782525c97ed66384a90f4195164ed64ed72",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
