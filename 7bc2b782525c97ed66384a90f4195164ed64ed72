@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d3ffa835_8c1ec054",
+        "filename": "tools/custom_script_proxy.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-01-13T19:21:29Z",
+      "side": 1,
+      "message": "don\u0027t we have to return a make_response here too?",
+      "revId": "7bc2b782525c97ed66384a90f4195164ed64ed72",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
