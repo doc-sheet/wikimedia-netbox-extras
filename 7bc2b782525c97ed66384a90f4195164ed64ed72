@@ -34,6 +34,24 @@
       "revId": "7bc2b782525c97ed66384a90f4195164ed64ed72",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae2ebce7_d8c1f0ab",
+        "filename": "tools/custom_script_proxy.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-01-13T19:26:27Z",
+      "side": 1,
+      "message": "Ack, thx",
+      "parentUuid": "41cc4fa7_986154c8",
+      "revId": "7bc2b782525c97ed66384a90f4195164ed64ed72",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
