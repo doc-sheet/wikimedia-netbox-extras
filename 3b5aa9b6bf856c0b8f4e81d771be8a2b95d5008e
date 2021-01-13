@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ecd22b0e_afc68866",
+        "filename": "tools/custom_script_proxy.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-01-13T19:13:20Z",
+      "side": 1,
+      "message": "the job result can have multiple values (errored, failed, etc.), just check for [\u0027data\u0027] being not None.",
+      "revId": "3b5aa9b6bf856c0b8f4e81d771be8a2b95d5008e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
