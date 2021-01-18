@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "02a897c8_af983292",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-01-18T17:28:58Z",
+      "side": 1,
+      "message": "isn\u0027t it virtual_machine?",
+      "range": {
+        "startLine": 497,
+        "startChar": 30,
+        "endLine": 497,
+        "endChar": 36
+      },
+      "revId": "e000c6dcb756096783994645e6da232c42bda043",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2d20444e_66dd9943",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-01-18T17:28:58Z",
+      "side": 1,
+      "message": "Ho can it be virtual if we\u0027re making a physical iface here?",
+      "revId": "e000c6dcb756096783994645e6da232c42bda043",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "231726d1_72b47c70",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-01-18T17:28:58Z",
+      "side": 1,
+      "message": "Those bits seems duplicated from _make_interface_vm(), they could take it out",
+      "revId": "e000c6dcb756096783994645e6da232c42bda043",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
