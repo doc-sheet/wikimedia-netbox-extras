@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3add1aa1_a966ea8e",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2021-01-18T17:35:54Z",
+      "side": 1,
+      "message": "Good point 😊",
+      "parentUuid": "02a897c8_af983292",
+      "range": {
+        "startLine": 497,
+        "startChar": 30,
+        "endLine": 497,
+        "endChar": 36
+      },
+      "revId": "e000c6dcb756096783994645e6da232c42bda043",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2d20444e_66dd9943",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 2
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "3cdf6679_fc510adb",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2021-01-18T17:35:54Z",
+      "side": 1,
+      "message": "is_vdev marks devices that are things like eth0:0 and such, like not real independent hardware interfaces but \u0027virtual\u0027 interfaces.",
+      "parentUuid": "2d20444e_66dd9943",
+      "revId": "e000c6dcb756096783994645e6da232c42bda043",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "231726d1_72b47c70",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 2
@@ -56,6 +98,24 @@
       "revId": "e000c6dcb756096783994645e6da232c42bda043",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d2dd4a11_f19195b6",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2021-01-18T17:35:54Z",
+      "side": 1,
+      "message": "Yep good point, moved to caller.",
+      "parentUuid": "231726d1_72b47c70",
+      "revId": "e000c6dcb756096783994645e6da232c42bda043",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
