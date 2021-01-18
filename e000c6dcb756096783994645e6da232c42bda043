@@ -102,6 +102,24 @@
     },
     {
       "key": {
+        "uuid": "dff65391_f7d7a3f6",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2021-01-18T18:10:04Z",
+      "side": 1,
+      "message": "We don\u0027t blacklist every virtual device (there are a great number of virtual interfaces along the lines of eno1.2002 and such), I think by intention; but if not, perhaps we shouldn\u0027t change the semantics in this patch.",
+      "parentUuid": "4c1c80a1_6c2347fa",
+      "revId": "e000c6dcb756096783994645e6da232c42bda043",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "231726d1_72b47c70",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 2
@@ -160,6 +178,30 @@
     },
     {
       "key": {
+        "uuid": "34d1f3dd_48a40105",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2021-01-18T18:10:04Z",
+      "side": 1,
+      "message": "This is reasonable yes.",
+      "parentUuid": "1cb3f016_bf89db79",
+      "range": {
+        "startLine": 526,
+        "startChar": 82,
+        "endLine": 526,
+        "endChar": 92
+      },
+      "revId": "e000c6dcb756096783994645e6da232c42bda043",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "154fa5cd_723d844f",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 2
@@ -180,6 +222,30 @@
       "revId": "e000c6dcb756096783994645e6da232c42bda043",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6447bc9_c0eb976c",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2021-01-18T18:10:04Z",
+      "side": 1,
+      "message": "You are correct that we haven\u0027t seen an error from this line, but I\u0027d rather be explicit.",
+      "parentUuid": "154fa5cd_723d844f",
+      "range": {
+        "startLine": 535,
+        "startChar": 21,
+        "endLine": 535,
+        "endChar": 35
+      },
+      "revId": "e000c6dcb756096783994645e6da232c42bda043",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
