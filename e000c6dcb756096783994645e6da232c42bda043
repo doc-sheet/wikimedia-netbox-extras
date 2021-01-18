@@ -56,6 +56,52 @@
       "revId": "e000c6dcb756096783994645e6da232c42bda043",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1cb3f016_bf89db79",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-01-18T17:33:40Z",
+      "side": 1,
+      "message": "unrelated to this CR but \"is_virtual\" is close to \"is_vdev\", maybe it\u0027s better to rename it \"is_vm\"?",
+      "range": {
+        "startLine": 526,
+        "startChar": 82,
+        "endLine": 526,
+        "endChar": 92
+      },
+      "revId": "e000c6dcb756096783994645e6da232c42bda043",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "154fa5cd_723d844f",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-01-18T17:33:40Z",
+      "side": 1,
+      "message": "afaik VMs don\u0027t have a \"net_driver[networking[\u0027primary\u0027]][\"speed\"] \u003d\u003d 10000\"",
+      "range": {
+        "startLine": 535,
+        "startChar": 21,
+        "endLine": 535,
+        "endChar": 35
+      },
+      "revId": "e000c6dcb756096783994645e6da232c42bda043",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
