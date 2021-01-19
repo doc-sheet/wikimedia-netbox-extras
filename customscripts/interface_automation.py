@@ -519,8 +519,8 @@ class Importer:
            as would be obtained from PuppetDB under those key names."""
         output = []
 
-        # clean up potential ##PRIMARY## interface
         for dif in device.interfaces.all():
+            # Clean up potential ##PRIMARY## interfaces
             if dif.name == '##PRIMARY##' and 'primary' in networking:
                 dif.name = networking['primary']
                 if ((not is_vm) and (net_driver[networking['primary']]["speed"] == 10000)):
@@ -528,6 +528,16 @@ class Importer:
                 dif.save()
                 self.log_success(f"{device.name}: renamed ##PRIMARY## interface to {dif.name}")
                 break
+            # Remove interfaces that have been removed by reimaging or similar.
+            elif dif.name not in networking["interfaces"] and dif.name not in ("mgmt", "##PRIMARY##"):
+                # clean up interface if there are no IPs assigned, and there are no cables connected
+                nowires = all([wire[1] is None for wire in dif.trace()[0]])
+                if ((IPAddress.objects.filter(assigned_object_id=dif.id).count() == 0) and nowires):
+                    self.log_info(f"{device.name}: removing interface no longer in puppet {dif.name}")
+                    dif.delete()
+                else:
+                    self.log_warning(f"{device.name}: would remove device that not longer exists in puppet {dif.name}"
+                                     f"but it still has a cable or IP address.")
 
         for iface, iface_dict in networking["interfaces"].items():
             is_vdev = ((":" in iface) or ("." in iface) or ("lo" == iface))
