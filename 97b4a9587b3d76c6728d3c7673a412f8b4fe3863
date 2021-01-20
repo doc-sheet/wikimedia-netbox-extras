@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "f1d9d5c2_4d3a1ef5",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2021-01-20T17:52:57Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3c51d2d1_8e647ff8",
+      "range": {
+        "startLine": 522,
+        "startChar": 12,
+        "endLine": 522,
+        "endChar": 15
+      },
+      "revId": "97b4a9587b3d76c6728d3c7673a412f8b4fe3863",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "456693d4_4fe8b1fa",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 1
@@ -116,6 +140,54 @@
       "revId": "97b4a9587b3d76c6728d3c7673a412f8b4fe3863",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "00343716_522ee8d2",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2021-01-20T17:52:57Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b37e2e4c_051d9458",
+      "range": {
+        "startLine": 534,
+        "startChar": 16,
+        "endLine": 534,
+        "endChar": 23
+      },
+      "revId": "97b4a9587b3d76c6728d3c7673a412f8b4fe3863",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3bcd70ff_af1d5b90",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2021-01-20T17:52:57Z",
+      "side": 1,
+      "message": "Apparently I missed that member when I was digging through the model and found trace instead. You\u0027re correct that this is what I wanted.",
+      "parentUuid": "456693d4_4fe8b1fa",
+      "range": {
+        "startLine": 534,
+        "startChar": 26,
+        "endLine": 534,
+        "endChar": 75
+      },
+      "revId": "97b4a9587b3d76c6728d3c7673a412f8b4fe3863",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -189,6 +261,54 @@
     },
     {
       "key": {
+        "uuid": "227c44d7_b7373709",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2021-01-20T17:52:57Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "64b2a903_9fde9f41",
+      "range": {
+        "startLine": 539,
+        "startChar": 67,
+        "endLine": 539,
+        "endChar": 73
+      },
+      "revId": "97b4a9587b3d76c6728d3c7673a412f8b4fe3863",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1db1ae65_5f6a9994",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2021-01-20T17:52:57Z",
+      "side": 1,
+      "message": "It is possible that due to error or bug we encounter a situation where an IP address or cable remains connected to the interface, and it seems as though it\u0027d be better to keep that logged. I have reworked the phrasing so that there\u0027s a call to action.",
+      "parentUuid": "ea84311d_600894c2",
+      "range": {
+        "startLine": 539,
+        "startChar": 25,
+        "endLine": 539,
+        "endChar": 36
+      },
+      "revId": "97b4a9587b3d76c6728d3c7673a412f8b4fe3863",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "11cb14ed_8d736628",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 1
@@ -209,6 +329,30 @@
       "revId": "97b4a9587b3d76c6728d3c7673a412f8b4fe3863",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "241249e5_529943d3",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2021-01-20T17:52:57Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "11cb14ed_8d736628",
+      "range": {
+        "startLine": 563,
+        "startChar": 20,
+        "endLine": 563,
+        "endChar": 39
+      },
+      "revId": "97b4a9587b3d76c6728d3c7673a412f8b4fe3863",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
