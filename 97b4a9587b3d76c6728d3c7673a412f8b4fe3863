@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3c51d2d1_8e647ff8",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-01-20T10:20:46Z",
+      "side": 1,
+      "message": "I guess device interface but it could use a better name for sure ;)",
+      "parentUuid": "cd2c2393_b45922d4",
+      "range": {
+        "startLine": 522,
+        "startChar": 12,
+        "endLine": 522,
+        "endChar": 15
+      },
+      "revId": "97b4a9587b3d76c6728d3c7673a412f8b4fe3863",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "456693d4_4fe8b1fa",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 1
@@ -59,6 +83,30 @@
       "writtenOn": "2021-01-20T08:18:21Z",
       "side": 1,
       "message": "I think it\u0027s better to use \"cable\" for consistency.",
+      "range": {
+        "startLine": 534,
+        "startChar": 16,
+        "endLine": 534,
+        "endChar": 23
+      },
+      "revId": "97b4a9587b3d76c6728d3c7673a412f8b4fe3863",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b37e2e4c_051d9458",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-01-20T10:20:46Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "16b0ecce_358b2689",
       "range": {
         "startLine": 534,
         "startChar": 16,
@@ -110,6 +158,30 @@
         "startChar": 67,
         "endLine": 539,
         "endChar": 73
+      },
+      "revId": "97b4a9587b3d76c6728d3c7673a412f8b4fe3863",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea84311d_600894c2",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-01-20T10:20:46Z",
+      "side": 1,
+      "message": "We could hit this if there is an interface in Netbox with an IP OR a cable that is not anymore in Puppet\u0027s facts. In that case we\u0027re not automatically deleting it but we should log it and the user should check it out.\nSo I\u0027d say we should phrase it differently to explicit the above part and link to someplace in wikitech for more details.",
+      "parentUuid": "a53be6dc_4e0b8950",
+      "range": {
+        "startLine": 539,
+        "startChar": 25,
+        "endLine": 539,
+        "endChar": 36
       },
       "revId": "97b4a9587b3d76c6728d3c7673a412f8b4fe3863",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
