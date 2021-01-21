@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3c546491_d2ee20b8",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-01-21T09:47:24Z",
+      "side": 1,
+      "message": "This should be removed I think, otherwise we\u0027ll exit the loop as soon as we encounter the primary without removing the others.",
+      "revId": "0837e28b7e6b3aebae846a4722336299b96c5e81",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "abafcf80_ddf3188a",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-01-21T09:47:24Z",
+      "side": 1,
+      "message": "how does this work with Interface vs VMInterface objects with the same ID? I guess you have to provide the assigned_object type too... Have you tried to pass directly assigned_object\u003ddevice_interface? It might just work.",
+      "range": {
+        "startLine": 535,
+        "startChar": 26,
+        "endLine": 535,
+        "endChar": 89
+      },
+      "revId": "0837e28b7e6b3aebae846a4722336299b96c5e81",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cce083bc_2c4ef810",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-01-21T09:47:24Z",
+      "side": 1,
+      "message": "[nit] no need for the double parentheses",
+      "revId": "0837e28b7e6b3aebae846a4722336299b96c5e81",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fbb5567c_447bbd5c",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-01-21T09:47:24Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 541,
+        "startChar": 71,
+        "endLine": 541,
+        "endChar": 81
+      },
+      "revId": "0837e28b7e6b3aebae846a4722336299b96c5e81",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
