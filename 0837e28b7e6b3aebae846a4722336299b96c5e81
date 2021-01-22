@@ -60,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "e8c6d377_08c003aa",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2021-01-22T02:29:07Z",
+      "side": 1,
+      "message": "With assigned_object I get:\n\n`django.core.exceptions.FieldError: Field \u0027assigned_object\u0027 does not generate an automatic reverse relation and therefore cannot be used for reverse querying. If it is a GenericForeignKey, consider adding a GenericRelation.` \n\nSo I guess not. Passing the _type also is a good idea you are correct.",
+      "parentUuid": "abafcf80_ddf3188a",
+      "range": {
+        "startLine": 535,
+        "startChar": 26,
+        "endLine": 535,
+        "endChar": 89
+      },
+      "revId": "0837e28b7e6b3aebae846a4722336299b96c5e81",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cce083bc_2c4ef810",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 3
