@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "23f19046_4b97acc3",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2021-01-30T00:37:22Z",
+      "side": 1,
+      "message": "nit: This comment needs to be updated for the below change.",
+      "revId": "4294daf30337f97ab349996b00d6d81c506d7382",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
