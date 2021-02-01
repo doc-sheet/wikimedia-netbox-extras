@@ -16,6 +16,24 @@
       "revId": "4294daf30337f97ab349996b00d6d81c506d7382",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "57ad481b_2fa065c1",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2021-02-01T10:38:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23f19046_4b97acc3",
+      "revId": "4294daf30337f97ab349996b00d6d81c506d7382",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }

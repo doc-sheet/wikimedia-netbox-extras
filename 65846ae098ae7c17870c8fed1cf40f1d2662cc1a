@@ -16,6 +16,24 @@
       "revId": "65846ae098ae7c17870c8fed1cf40f1d2662cc1a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ccf7624b_7af1e197",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2021-02-01T10:38:37Z",
+      "side": 0,
+      "message": "updated the message, im not really a consumer of theses logs so don\u0027t have a strong opinion on info vs warning.  however i think that if there is a SLAAC address it suggests something has gone wrong and the host in questions dose not have a tokenized interface (we could update the message to include this hint but in not 100% confident there aren\u0027t other edge cases) .  eitherway just let me know if you want this changed to log_info",
+      "parentUuid": "1a33d060_4e5a20e0",
+      "revId": "65846ae098ae7c17870c8fed1cf40f1d2662cc1a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
