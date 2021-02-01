@@ -34,6 +34,24 @@
       "revId": "65846ae098ae7c17870c8fed1cf40f1d2662cc1a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3277913_a6a9fa45",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-02-01T11:02:16Z",
+      "side": 0,
+      "message": "IMHO we should leave the warning and add a link to a paragraph on wikitech that adds more info/points to who to ping or how to troubleshoot. My 2 cents.",
+      "parentUuid": "ccf7624b_7af1e197",
+      "revId": "65846ae098ae7c17870c8fed1cf40f1d2662cc1a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
