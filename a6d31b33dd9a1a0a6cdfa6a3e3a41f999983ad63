@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3bc31e3e_2ad02c32",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-02-01T14:14:37Z",
+      "side": 1,
+      "message": "typo: networking",
+      "range": {
+        "startLine": 597,
+        "startChar": 99,
+        "endLine": 597,
+        "endChar": 108
+      },
+      "revId": "a6d31b33dd9a1a0a6cdfa6a3e3a41f999983ad63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
