@@ -259,6 +259,29 @@ def sync_ganeti_nodes_to_netbox(netbox_api, netbox_token, cluster_name, ganeti_n
     logger.info("removed %d hosts from cluster %s", results["remove"], cluster_name)
 
 
+def run_import_script(netbox_api, netbox_token, imports, dry_run):
+    """Execute the PuppetDB import script for a given list of hosts."""
+    api_url = '{}api/extras/scripts/{}/'.format(netbox_api, 'interface_automation.ImportPuppetDB')
+    headers = {'Authorization': 'Token {}'.format(netbox_token)}
+    data = {"data": {"device": " ".join(imports)}, "commit": not dry_run}
+    result = requests.post(api_url, headers=headers, json=data)
+    if result.status_code == 200:
+        logger.debug("Executed import, result: %s", str(result.content))
+    else:
+        logger.error("Error executing import. Data: %s", str(result.content))
+
+
+def nb_fix_ganeti_interfaces(netbox_api, netbox_token, hosts, dry_run):
+    """Execute PuppetDB import on any host in a list of hosts with a placeholder Interface."""
+    nbapi = pynetbox.api(netbox_api, token=netbox_token)
+    reimport = [str(x.virtual_machine) for x in
+                nbapi.virtualization.interfaces.filter(name='##PRIMARY##',
+                                                       virtual_machine=list(hosts.keys()))]
+    if reimport:
+        logger.info("Will import interfaces for {} instances.".format(len(reimport)))
+        run_import_script(netbox_api, netbox_token, reimport, dry_run)
+
+
 def main():
     """Entry point for Ganeti->Netbox Sync."""
     args = parse_command_line_args()
@@ -309,6 +332,7 @@ def main():
     ganeti_nodes = [x["id"].split(".", 1)[0] for x in ganeti_nodes_json]
     logger.debug("loaded %d nodes from ganeti api", len(ganeti_nodes))
     sync_ganeti_nodes_to_netbox(netbox_api, netbox_token, netbox_cluster, ganeti_nodes, args.dry_run)
+    nb_fix_ganeti_interfaces(netbox_api, netbox_token, ganeti_hosts, args.dry_run)
 
     return 0
 
