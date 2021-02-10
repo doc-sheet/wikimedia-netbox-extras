@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4a4feae5_aa052966",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2021-02-10T00:18:29Z",
+      "side": 1,
+      "message": "This will cause an error if the script fails to work immediately, but I have noticed since they have deferred results, we don\u0027t properly capture every potential outcome for the this execution - most cases will result in a job that has to be queried for success if desired. I feel like maybe that should be outside of the hands of this mechanism and in the hands of a report, if you see what I mean.",
+      "parentUuid": "f562b21a_d0f0caee",
+      "revId": "62e01adb8d681ce99ca6cb6a735b25bac44c956a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0ee4668d_7fc4b9b6",
         "filename": "tools/ganeti-netbox-sync.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2021-02-09T22:04:33Z",
       "side": 1,
       "message": "In my experience VMs might go on for days without being installed. In this case we\u0027ll run the failing import all the time very 15 minutes or so (I don\u0027t recall the frequency of the timer). Without keeping the state, is there anything we could check to prevent this to be run all the time? How quick is the check per host?",
+      "revId": "62e01adb8d681ce99ca6cb6a735b25bac44c956a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "882cc017_49e1adf0",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 6439
+      },
+      "writtenOn": "2021-02-10T00:18:29Z",
+      "side": 1,
+      "message": "That\u0027s interesting, I\u0027m not sure what we can do about it. I can say that this execution is incredibly fast overall, and whole data centers get resolved on -dev in just a few seconds, so the overhead might be okay to live with.  I\u0027ll have to think a bit about how to not repeat work constantly, given that this does run every 15 minutes.",
+      "parentUuid": "0ee4668d_7fc4b9b6",
       "revId": "62e01adb8d681ce99ca6cb6a735b25bac44c956a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
