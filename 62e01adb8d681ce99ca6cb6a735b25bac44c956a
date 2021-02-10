@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "54943566_590feabd",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-02-10T13:38:17Z",
+      "side": 1,
+      "message": "Ack, then I think it\u0027s ok for now. I guess we could poll for the job result but what for if we should not fail on failure anyway?",
+      "parentUuid": "4a4feae5_aa052966",
+      "revId": "62e01adb8d681ce99ca6cb6a735b25bac44c956a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0ee4668d_7fc4b9b6",
         "filename": "tools/ganeti-netbox-sync.py",
         "patchSetId": 3
@@ -69,6 +87,24 @@
       "revId": "62e01adb8d681ce99ca6cb6a735b25bac44c956a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9841b7d0_dc7e595e",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-02-10T13:38:17Z",
+      "side": 1,
+      "message": "Ack, then probably not worth the overhead, also because from a quick look at the API it\u0027s impossible to get the info from the /extras/job-results/ API as you can filter by job name (the script name) but not on the parameters and the only way to infer the parameter would be to parse the logs.",
+      "parentUuid": "882cc017_49e1adf0",
+      "revId": "62e01adb8d681ce99ca6cb6a735b25bac44c956a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
