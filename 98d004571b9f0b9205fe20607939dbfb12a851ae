@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a96e71f3_ae02c352",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-02-15T22:50:50Z",
+      "side": 1,
+      "message": "typo: cables",
+      "range": {
+        "startLine": 605,
+        "startChar": 84,
+        "endLine": 605,
+        "endChar": 91
+      },
+      "revId": "98d004571b9f0b9205fe20607939dbfb12a851ae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
