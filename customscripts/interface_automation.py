@@ -538,7 +538,7 @@ class Importer:
                     self.log_info(f"{device.name}: removing interface no longer in puppet {device_interface.name}")
                     device_interface.delete()
                 else:
-                    self.log_error(f"{device.name}: We want to remove interface {device_interface.name}, however "
+                    self.log_failure(f"{device.name}: We want to remove interface {device_interface.name}, however "
                                    "it still has a cable or IP address associated with it. "
                                    "See https://wikitech.wikimedia.org/wiki/Netbox#Would_like_to_remove_interface")
         for iface, iface_dict in networking["interfaces"].items():
