@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ed728d45_3dc81acc",
+        "filename": "reports/accounting.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-02-22T18:46:51Z",
+      "side": 0,
+      "message": "I think this is still needed or you might have referenced before assignment on line 165 of the new code",
+      "revId": "98d004571b9f0b9205fe20607939dbfb12a851ae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
