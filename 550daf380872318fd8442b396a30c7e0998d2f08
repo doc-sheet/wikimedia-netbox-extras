@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e770ce71_96d6cad8",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-22T19:04:51Z",
+      "side": 1,
+      "message": "I\u0027m getting \"AttributeError: \u0027DeviceRole\u0027 object has no attribute \u0027value\u0027\"\nUnless you meant something else?",
+      "parentUuid": "84100625_d6e8714d",
+      "range": {
+        "startLine": 32,
+        "startChar": 56,
+        "endLine": 32,
+        "endChar": 67
+      },
+      "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d9ed69f9_73d5e827",
         "filename": "customscripts/capirca.py",
         "patchSetId": 5
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "40bdf887_092330d9",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-22T19:04:51Z",
+      "side": 1,
+      "message": "I need a human readable unique identifier to be used in the policies.\nSo it\u0027s not a problem (and on purpose) but the hostnames are quite long, what would you think of stripping the suffix \".wmnet/.wikimedia.org\" for the sake of simplicity?",
+      "parentUuid": "d9ed69f9_73d5e827",
+      "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3d350890_280f9bb4",
         "filename": "customscripts/capirca.py",
         "patchSetId": 5
@@ -53,6 +95,24 @@
       "writtenOn": "2021-03-22T15:48:03Z",
       "side": 1,
       "message": "I think we should generate a sorted output at each nested level, to prevent to have diffs just for re-ordering. The current output on netbox-next looks randomly sorted.",
+      "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05e16b48_46780102",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-22T19:04:51Z",
+      "side": 1,
+      "message": "Sure, that\u0027s a good idea. Do you have pointers on how to do it?\nNote that it\u0027s not a requirement for now, but might become one depending on future Netbox speedup plans.",
+      "parentUuid": "3d350890_280f9bb4",
       "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
@@ -82,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "ac3dabc5_3a2a1d6b",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-22T19:04:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0badc85a_e612e9b7",
+      "range": {
+        "startLine": 71,
+        "startChar": 10,
+        "endLine": 71,
+        "endChar": 18
+      },
+      "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1677dbd3_e6b21849",
         "filename": "customscripts/capirca.py",
         "patchSetId": 5
@@ -99,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "13396bb6_3d86e424",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-22T19:04:51Z",
+      "side": 1,
+      "message": "The idea is to store the IP on the lines bellow. But I think it should be \"if ipaddress.address\" instead.\nPlease reopen if you\u0027re thinking of something else.",
+      "parentUuid": "1677dbd3_e6b21849",
+      "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d7194a88_9624dd03",
         "filename": "customscripts/capirca.py",
         "patchSetId": 5
@@ -113,6 +215,24 @@
       "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "781e09cb_404cb769",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-22T19:04:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7194a88_9624dd03",
+      "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -139,6 +259,30 @@
     },
     {
       "key": {
+        "uuid": "ed9c88ee_4ecea28a",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-22T19:04:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "480d4aa8_4f36a9bb",
+      "range": {
+        "startLine": 85,
+        "startChar": 55,
+        "endLine": 85,
+        "endChar": 63
+      },
+      "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "52c54953_5a69d455",
         "filename": "customscripts/capirca.py",
         "patchSetId": 5
@@ -150,6 +294,24 @@
       "writtenOn": "2021-03-22T15:48:03Z",
       "side": 1,
       "message": "This doesn\u0027t match a bunch of dev hosts that don\u0027t end with the numbers like cloudcontrol2001-dev.",
+      "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c7a09fa9_710b0425",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-22T19:04:51Z",
+      "side": 1,
+      "message": "Indeed, that\u0027s why there is the TODO :)\nCurrent version is fine for the POC but not for production. Are you aware of any regex used in our infra that already does that?",
+      "parentUuid": "52c54953_5a69d455",
       "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
@@ -170,6 +332,24 @@
       "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "000ec57b_fbe601a8",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-22T19:04:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27066c84_b399234e",
+      "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
