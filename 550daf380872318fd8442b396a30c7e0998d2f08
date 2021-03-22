@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "cf2f3252_30998239",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-03-22T20:47:00Z",
+      "side": 1,
+      "message": "Sorry, I meant \u0027.slug\u0027",
+      "parentUuid": "e770ce71_96d6cad8",
+      "range": {
+        "startLine": 32,
+        "startChar": 56,
+        "endLine": 32,
+        "endChar": 67
+      },
+      "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d9ed69f9_73d5e827",
         "filename": "customscripts/capirca.py",
         "patchSetId": 5
@@ -84,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "ebda4c35_69c2d79b",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-03-22T20:47:00Z",
+      "side": 1,
+      "message": "Ack. Yes you could drop the .wmnet and .wikimedia.org, but:\n- are we sure the resulting groups are unique (basically do we have any foo.$dc.wmnet and foo.wikimedia.org that will clash the name if removed the suffixes?)\n- the DNS ensures uniqueness\n- if we need to match those with stuff coming from netbox/puppet it might be confusing\n\nI think I\u0027d keep the FQDN for now.",
+      "parentUuid": "40bdf887_092330d9",
+      "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3d350890_280f9bb4",
         "filename": "customscripts/capirca.py",
         "patchSetId": 5
@@ -113,6 +155,24 @@
       "side": 1,
       "message": "Sure, that\u0027s a good idea. Do you have pointers on how to do it?\nNote that it\u0027s not a requirement for now, but might become one depending on future Netbox speedup plans.",
       "parentUuid": "3d350890_280f9bb4",
+      "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e892428d_342b1be3",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-03-22T20:47:00Z",
+      "side": 1,
+      "message": "sorted(singles.items()) in the loop and then sorted_networks \u003d sorted(networks) inside the loop here, same for the other loop below.",
+      "parentUuid": "05e16b48_46780102",
       "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
@@ -198,6 +258,24 @@
       "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2794a977_c3b4871b",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-03-22T20:47:00Z",
+      "side": 1,
+      "message": "I don\u0027t understand how we could process the same IP twice given that we\u0027re getting the IPs from Netbox and shouldn\u0027t have duplicates.",
+      "parentUuid": "13396bb6_3d86e424",
+      "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     },
     {
       "key": {
@@ -312,6 +390,24 @@
       "side": 1,
       "message": "Indeed, that\u0027s why there is the TODO :)\nCurrent version is fine for the POC but not for production. Are you aware of any regex used in our infra that already does that?",
       "parentUuid": "52c54953_5a69d455",
+      "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aeb235c3_2129a20a",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-03-22T20:47:00Z",
+      "side": 1,
+      "message": "modules/profile/files/puppetdb/check_puppet_run_changes.py has something similar but for a different use case.\n\nIn general I\u0027m not sure this is the right approach in the long term, but I don\u0027t have a better solution right now.\n\nWhat you could do is to just:\n\n  re.sub(\u0027\\d{4}\u0027, \u0027\u0027, hostname)\n\nThe problem of matching both foo-dev1001 and foo1001-dev, is that both will result in being grouped with \u0027foo-dev\u0027, while probably belonging to two different groups. AFAIK we don\u0027t have this weird case right now, so you might do that anyway, but seems a bit risky IMHO in the longer term, but ok for now.",
+      "parentUuid": "c7a09fa9_710b0425",
       "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a3cdac8a_e3913cb9",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-03-22T20:47:00Z",
+      "side": 1,
+      "message": "Is this comment still needed?",
+      "revId": "9ebb99e5284327194f6c7b22c926231dad44722f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
