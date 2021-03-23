@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "45d14257_a1410902",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-23T10:42:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cf2f3252_30998239",
+      "range": {
+        "startLine": 32,
+        "startChar": 56,
+        "endLine": 32,
+        "endChar": 67
+      },
+      "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d9ed69f9_73d5e827",
         "filename": "customscripts/capirca.py",
         "patchSetId": 5
@@ -126,6 +150,24 @@
     },
     {
       "key": {
+        "uuid": "22dcbd34_1051c877",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-23T10:42:41Z",
+      "side": 1,
+      "message": "Cool yeah, FQDN makes sens.",
+      "parentUuid": "ebda4c35_69c2d79b",
+      "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3d350890_280f9bb4",
         "filename": "customscripts/capirca.py",
         "patchSetId": 5
@@ -176,6 +218,24 @@
       "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a5902c7_4f084611",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-23T10:42:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e892428d_342b1be3",
+      "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -276,6 +336,24 @@
       "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "23dfc3d6_e44781d6",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-23T10:42:41Z",
+      "side": 1,
+      "message": "I was going to say that most VRRP IPs are duplicated, but for them it makes sens to have them on several devices, so I removed that block.\nThe risk was if we had duplicated VIPs, but we already ensure upstream that we don\u0027t.",
+      "parentUuid": "2794a977_c3b4871b",
+      "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -411,6 +489,24 @@
       "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8bb83ad9_23280591",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-23T10:42:41Z",
+      "side": 1,
+      "message": "Indeed, but good enough for now.",
+      "parentUuid": "aeb235c3_2129a20a",
+      "revId": "550daf380872318fd8442b396a30c7e0998d2f08",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
