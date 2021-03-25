@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "91263372_d649bf5d",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-25T14:56:37Z",
+      "side": 1,
+      "message": "Yes, but not useful enough to add complexity here.",
+      "parentUuid": "48c34e65_e7b1430b",
+      "revId": "434a71c01dfc353071e2bfbacdbc498b055bb444",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e24da560_8e93ea3e",
         "filename": "customscripts/capirca.py",
         "patchSetId": 8
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "3ead2b14_2506b9dc",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-25T14:56:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e24da560_8e93ea3e",
+      "range": {
+        "startLine": 52,
+        "startChar": 75,
+        "endLine": 52,
+        "endChar": 80
+      },
+      "revId": "434a71c01dfc353071e2bfbacdbc498b055bb444",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f014c50_196b6f51",
         "filename": "customscripts/capirca.py",
         "patchSetId": 8
@@ -62,6 +104,30 @@
       "revId": "434a71c01dfc353071e2bfbacdbc498b055bb444",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "01b9be5b_17c03637",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-25T14:56:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f014c50_196b6f51",
+      "range": {
+        "startLine": 60,
+        "startChar": 71,
+        "endLine": 60,
+        "endChar": 76
+      },
+      "revId": "434a71c01dfc353071e2bfbacdbc498b055bb444",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
