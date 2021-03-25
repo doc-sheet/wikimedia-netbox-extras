@@ -16,6 +16,24 @@
       "revId": "9ebb99e5284327194f6c7b22c926231dad44722f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6d30a39_c23d7057",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-25T16:31:35Z",
+      "side": 1,
+      "message": "Yes. It stole at least 1 hour of my life.",
+      "parentUuid": "a3cdac8a_e3913cb9",
+      "revId": "9ebb99e5284327194f6c7b22c926231dad44722f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
