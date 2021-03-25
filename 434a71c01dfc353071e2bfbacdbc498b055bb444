@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "48c34e65_e7b1430b",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-03-25T11:51:02Z",
+      "side": 1,
+      "message": "[question] could be useful to have all the *.svc.* sorted but listed before/after the hostnames?",
+      "revId": "434a71c01dfc353071e2bfbacdbc498b055bb444",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e24da560_8e93ea3e",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-03-25T11:51:02Z",
+      "side": 1,
+      "message": "use pop(0) to pick the first item from the list and not the last that will be out of sort",
+      "range": {
+        "startLine": 52,
+        "startChar": 75,
+        "endLine": 52,
+        "endChar": 80
+      },
+      "revId": "434a71c01dfc353071e2bfbacdbc498b055bb444",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3f014c50_196b6f51",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-03-25T11:51:02Z",
+      "side": 1,
+      "message": "ditto for pop(0)",
+      "range": {
+        "startLine": 60,
+        "startChar": 71,
+        "endLine": 60,
+        "endChar": 76
+      },
+      "revId": "434a71c01dfc353071e2bfbacdbc498b055bb444",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
