@@ -407,13 +407,15 @@ class Importer:
         else:
             z_device = lldp_iface['neighbor']
         z_iface = lldp_iface['port']
-        # First we try to see if the neighbor name match a device
-        try:
-            z_nbdevice = Device.objects.get(name=z_device)  # Z for remote side
-        except ObjectDoesNotExist:
-            # If not we have to get the proper VC member
-            z_nbdevice = self._get_vc_member(z_device, z_iface)
-
+        # Currently in ulsfo the VC name matches one of the members name
+        # So we first check if the neighbor is a VC, and then a device
+        z_nbdevice = self._get_vc_member(z_device, z_iface)  # Z for remote side
+        if not z_nbdevice:
+            try:
+                z_nbdevice = Device.objects.get(name=z_device)
+            except ObjectDoesNotExist:
+                self.log_failure(f"{z_device} doesn't match any Netbox Virtual Chassis nor device.")
+                return None
         try:
             z_nbiface = z_nbdevice.interfaces.get(name=z_iface)
         except ObjectDoesNotExist:  # If interface doesn't exist: create it
