@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee5fad80_bee48e08",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-03-29T16:32:33Z",
+      "side": 1,
+      "message": "It\u0027s ok to return just None? It doesn\u0027t seem to be checked where used, I think it might cause other issues with the cable. Should instead just fail here? Thoughts?",
+      "revId": "550d18e54a8272d4d0cd468310a8b9cad80c9d70",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
