@@ -78,7 +78,7 @@ class Network(Report):
                                            .exclude(type__in=VIRTUAL_IFACE_TYPES)
                                            .exclude(mgmt_only=True)
                                            .exclude(enabled=False)):
-            self.log_failure(interface, "Interface enabled but not connected.")
+            self.log_failure(interface, "Interface enabled but not connected on {}.".format(interface.device))
 
     def test_primary_ipv6(self):
         """Report servers that either have a missing primary_ip6 or have a primary_ip6 without a DNS name set.
@@ -89,7 +89,7 @@ class Network(Report):
         success = 0
         # Exclude fr-tech as long as they're v4 only
         for device in (Device.objects.filter(device_role__slug="server")
-                                     .exclude(tenant__slug="fr-tech")
+                                     .exclude(tenant__isnull=True)
                                      .exclude(status__in=EXCLUDE_STATUSES)):
             if not device.primary_ip6:
                 self.log_warning(device, "Missing primary IPv6")
@@ -127,7 +127,7 @@ class Network(Report):
 
         success = 0
         for device in (Device.objects.filter(device_role__slug="server")
-                                     .exclude(tenant__slug="fr-tech")
+                                     .exclude(tenant__isnull=True)
                                      .exclude(status__in=EXCLUDE_STATUSES)):
             if not device.primary_ip4 or not device.primary_ip4.dns_name:
                 self.log_failure(device, "Device with no primary IPv4 or DNS name.")
