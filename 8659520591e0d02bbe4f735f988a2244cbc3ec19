@@ -52,6 +52,57 @@
       "revId": "8659520591e0d02bbe4f735f988a2244cbc3ec19",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "31cdf73f_a0ab1e20",
+        "filename": "reports/network.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-03-31T08:21:20Z",
+      "side": 1,
+      "message": "Should we just check *all* IPs for duplicates with different netmasks?",
+      "revId": "8659520591e0d02bbe4f735f988a2244cbc3ec19",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17a96a1d_b8b235f7",
+        "filename": "reports/network.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-03-31T08:21:20Z",
+      "side": 1,
+      "message": "This will create an entry in the defaultdict, and may cause issues in the logic. I would rather use just a set() for seen_ipaddress, should be simpler I think. See also:\n\n  \u003e\u003e\u003e a \u003d defaultdict(int)\n  \u003e\u003e\u003e if a[\u0027foo\u0027]:\n  ...     pass\n  ...\n  \u003e\u003e\u003e a\n  defaultdict(\u003cclass \u0027int\u0027\u003e, {\u0027foo\u0027: 0})",
+      "revId": "8659520591e0d02bbe4f735f988a2244cbc3ec19",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b2f2effd_45258c96",
+        "filename": "reports/network.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-03-31T08:21:20Z",
+      "side": 1,
+      "message": "Maybe this would warrant a warning? They should all have both AFAIK.",
+      "revId": "8659520591e0d02bbe4f735f988a2244cbc3ec19",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
