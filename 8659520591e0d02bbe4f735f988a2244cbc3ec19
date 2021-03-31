@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "54e28e77_276f3246",
+        "filename": "reports/network.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-31T09:19:32Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "821253a8_ce3fb23c",
+      "revId": "8659520591e0d02bbe4f735f988a2244cbc3ec19",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "31cdf73f_a0ab1e20",
         "filename": "reports/network.py",
         "patchSetId": 3
@@ -69,6 +87,24 @@
       "revId": "8659520591e0d02bbe4f735f988a2244cbc3ec19",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fa4d0e91_b031a853",
+        "filename": "reports/network.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-31T09:19:32Z",
+      "side": 1,
+      "message": "Only some IP roles can be duplicated, so I changed it to use the constant \"IPADDRESS_ROLES_NONUNIQUE\", no need to iterate over more to save time.",
+      "parentUuid": "31cdf73f_a0ab1e20",
+      "revId": "8659520591e0d02bbe4f735f988a2244cbc3ec19",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -89,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "51c5e2a3_9e07b3bf",
+        "filename": "reports/network.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-31T09:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17a96a1d_b8b235f7",
+      "revId": "8659520591e0d02bbe4f735f988a2244cbc3ec19",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b2f2effd_45258c96",
         "filename": "reports/network.py",
         "patchSetId": 3
@@ -103,6 +157,24 @@
       "revId": "8659520591e0d02bbe4f735f988a2244cbc3ec19",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8254ecaf_4eb3864d",
+        "filename": "reports/network.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-03-31T09:19:32Z",
+      "side": 1,
+      "message": "Yep, it\u0027s done in \"test_primary_ipv6\", unless I\u0027m misunderstanding.",
+      "parentUuid": "b2f2effd_45258c96",
+      "revId": "8659520591e0d02bbe4f735f988a2244cbc3ec19",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
