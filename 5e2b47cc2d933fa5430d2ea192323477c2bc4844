@@ -22,6 +22,30 @@
       "revId": "5e2b47cc2d933fa5430d2ea192323477c2bc4844",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d477a0ce_2dffcaab",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-04-28T17:05:06Z",
+      "side": 1,
+      "message": "Sure, good catch, thanks. Done.",
+      "parentUuid": "88418a3c_168e9499",
+      "range": {
+        "startLine": 237,
+        "startChar": 10,
+        "endLine": 237,
+        "endChar": 28
+      },
+      "revId": "5e2b47cc2d933fa5430d2ea192323477c2bc4844",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
