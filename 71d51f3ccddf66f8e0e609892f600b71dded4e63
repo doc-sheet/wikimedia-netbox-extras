@@ -1,0 +1,8 @@
+Verified+2: jenkins-bot
+Code-Review+1: Ayounsi <ayounsi@wikimedia.org>
+Code-Review+2: Volans <rcoccioli@wikimedia.org>
+Submitted-by: Volans <rcoccioli@wikimedia.org>
+Submitted-at: Thu, 29 Apr 2021 07:58:16 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/c/operations/software/netbox-extras/+/683365
+Project: operations/software/netbox-extras
+Branch: refs/heads/master
