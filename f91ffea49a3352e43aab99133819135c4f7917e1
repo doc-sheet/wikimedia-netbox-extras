@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae22c947_3d2c3ef0",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-04-29T07:18:39Z",
+      "side": 1,
+      "message": "No \".value\" I think, eg: https://github.com/netbox-community/netbox/blob/9e5d41c48af5d5b93e1c23973300e524a6e46f2b/netbox/ipam/models/ip.py#L609",
+      "range": {
+        "startLine": 238,
+        "startChar": 22,
+        "endLine": 238,
+        "endChar": 28
+      },
+      "revId": "f91ffea49a3352e43aab99133819135c4f7917e1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "81c28bbb_be000a24",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2021-04-29T07:18:39Z",
+      "side": 1,
+      "message": "I don\u0027t think outpout is used anywhere in this function, but as it\u0027s the current status-quo, i\u0027m fine keeping it.",
+      "range": {
+        "startLine": 241,
+        "startChar": 19,
+        "endLine": 241,
+        "endChar": 25
+      },
+      "revId": "f91ffea49a3352e43aab99133819135c4f7917e1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
