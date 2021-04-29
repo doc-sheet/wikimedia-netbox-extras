@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "da0ff6bb_30cb72d3",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-04-29T07:54:44Z",
+      "side": 1,
+      "message": "Right, sorry.",
+      "parentUuid": "ae22c947_3d2c3ef0",
+      "range": {
+        "startLine": 238,
+        "startChar": 22,
+        "endLine": 238,
+        "endChar": 28
+      },
+      "revId": "f91ffea49a3352e43aab99133819135c4f7917e1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "81c28bbb_be000a24",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "f91ffea49a3352e43aab99133819135c4f7917e1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2fdf7822_35ab3f65",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-04-29T07:54:44Z",
+      "side": 1,
+      "message": "No, it\u0027s always called as:\n\n  output \u003d output + self._assign_ip_to_interface\n\nexpecting it to return output, defined on line 220",
+      "parentUuid": "81c28bbb_be000a24",
+      "range": {
+        "startLine": 241,
+        "startChar": 19,
+        "endLine": 241,
+        "endChar": 25
+      },
+      "revId": "f91ffea49a3352e43aab99133819135c4f7917e1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
