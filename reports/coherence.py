@@ -121,6 +121,8 @@ class Coherence(Report):
                     self.log_failure(device, "malformed device name for active device")
                 else:
                     warnings.append(device)
+            elif any(x in device.name for x in ['future', 'spare']) and device.status == DeviceStatusChoices.STATUS_ACTIVE:
+                self.log_failure(device, "Future or spare in active device name.")
             else:
                 success += 1
 
