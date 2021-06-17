@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "77209dfb_13096dca",
+        "filename": "reports/coherence.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-06-17T18:09:48Z",
+      "side": 1,
+      "message": "[nit] I\u0027ll probably move this to the top in a constant like the others",
+      "range": {
+        "startLine": 124,
+        "startChar": 47,
+        "endLine": 124,
+        "endChar": 67
+      },
+      "revId": "d663cdb83fbdba9ee126cbed3d81bf6e0382158b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b0d834ef_5af4bd0a",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-06-17T18:09:48Z",
+      "side": 1,
+      "message": "[nit] to prevent issues that foo1001 and foo1001-dev both matches, I\u0027d add a \u0027.\u0027 to the end of the device.name",
+      "range": {
+        "startLine": 135,
+        "startChar": 63,
+        "endLine": 135,
+        "endChar": 74
+      },
+      "revId": "d663cdb83fbdba9ee126cbed3d81bf6e0382158b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "21113134_4fd8a3e4",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-06-17T18:09:48Z",
+      "side": 1,
+      "message": "[nit] would be nice to have the dns record here (the hostname is already in the device name column)",
+      "range": {
+        "startLine": 136,
+        "startChar": 82,
+        "endLine": 136,
+        "endChar": 90
+      },
+      "revId": "d663cdb83fbdba9ee126cbed3d81bf6e0382158b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06927d98_33315b10",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-06-17T18:09:48Z",
+      "side": 1,
+      "message": "[nit] in this case I\u0027d check the whole FQDN as we can generate it from {device.name}.mgmt.{device.site.slug}.wmnet",
+      "range": {
+        "startLine": 157,
+        "startChar": 80,
+        "endLine": 157,
+        "endChar": 91
+      },
+      "revId": "d663cdb83fbdba9ee126cbed3d81bf6e0382158b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f895387_2479eeb9",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-06-17T18:09:48Z",
+      "side": 1,
+      "message": "[nit] \u0027fine\u0027? correct?",
+      "range": {
+        "startLine": 162,
+        "startChar": 35,
+        "endLine": 162,
+        "endChar": 39
+      },
+      "revId": "d663cdb83fbdba9ee126cbed3d81bf6e0382158b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
