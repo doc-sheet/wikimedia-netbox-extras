@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5bad9170_c96c2688",
+        "filename": "tools/dumpbackup.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-06-18T08:57:03Z",
+      "side": 1,
+      "message": "typo: below",
+      "range": {
+        "startLine": 230,
+        "startChar": 60,
+        "endLine": 230,
+        "endChar": 66
+      },
+      "revId": "7dcaedc611446abfa121e003a0dedddb7b2b4cb5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
