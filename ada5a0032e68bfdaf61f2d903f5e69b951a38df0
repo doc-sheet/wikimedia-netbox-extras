@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8cb8786d_deebf4f9",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-06-22T10:24:22Z",
+      "side": 1,
+      "message": "still true? In which cases?",
+      "range": {
+        "startLine": 316,
+        "startChar": 29,
+        "endLine": 316,
+        "endChar": 60
+      },
+      "revId": "ada5a0032e68bfdaf61f2d903f5e69b951a38df0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
