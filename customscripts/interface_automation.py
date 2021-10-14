@@ -1376,7 +1376,7 @@ class ProvisionServerNetwork(Script, Importer):
             )
             return False
 
-        # Attempt to validate the row
+        # Attempt to validate the row for old vlan names, for the new names the vlans are per-row
         row = device.rack.group.slug.split("-")[-1]
         possible_rows = [part for part in vlan.name.split("-") if len(part) == 1]
         if len(possible_rows) == 1:
@@ -1386,8 +1386,6 @@ class ProvisionServerNetwork(Script, Importer):
                     f"{row} (device) != {possible_rows[0]} (VLAN), skipping."
                 )
                 return False
-        else:
-            self.log_warning(f"{device} unable to verify if VLAN {vlan.name} matches row {row} of device.")
 
         return True
 
