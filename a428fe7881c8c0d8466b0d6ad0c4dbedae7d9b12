@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e13722a_481c0f63",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2021-10-22T09:18:52Z",
+      "side": 1,
+      "message": "LGTM but best wait for volans to comment.",
+      "revId": "a428fe7881c8c0d8466b0d6ad0c4dbedae7d9b12",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
