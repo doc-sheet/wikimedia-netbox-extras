@@ -35,6 +35,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "aad93b34_f8fe14c6",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2021-11-11T11:38:02Z",
+      "side": 1,
+      "message": "I think the final output will be one yaml file per host,. i.e. the script that ingests this output will need to split it per host.  as such i thought at this point it didn\u0027t matter much so may as well stick with in-built libs",
+      "parentUuid": "6ebdae74_a5ec61b6",
+      "revId": "88ab11b7374e81ae526291faf01542d56935f27a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4af93195_dd3c8161",
@@ -48,6 +66,30 @@
       "writtenOn": "2021-11-11T09:17:55Z",
       "side": 1,
       "message": "typo: their",
+      "range": {
+        "startLine": 16,
+        "startChar": 44,
+        "endLine": 16,
+        "endChar": 49
+      },
+      "revId": "88ab11b7374e81ae526291faf01542d56935f27a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d71c7d26_7339a72a",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2021-11-11T11:38:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4af93195_dd3c8161",
       "range": {
         "startLine": 16,
         "startChar": 44,
@@ -75,6 +117,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e65ce62a_aff63eff",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2021-11-11T11:38:02Z",
+      "side": 1,
+      "message": "I have dropped this im not sure its useful to filter",
+      "parentUuid": "ff5e094d_80c51871",
+      "revId": "88ab11b7374e81ae526291faf01542d56935f27a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b8f30113_39cecdc0",
@@ -88,6 +148,24 @@
       "writtenOn": "2021-11-11T09:17:55Z",
       "side": 1,
       "message": "Instead of this you can just use \u0027_\u0027 as variable name for the commit parameter",
+      "revId": "88ab11b7374e81ae526291faf01542d56935f27a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b587f774_57e8726e",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2021-11-11T11:38:02Z",
+      "side": 1,
+      "message": "This function is called with named parameteres as such we get an error: missing named parameter \u0027commit\u0027 when using `_`",
+      "parentUuid": "b8f30113_39cecdc0",
       "revId": "88ab11b7374e81ae526291faf01542d56935f27a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
@@ -109,6 +187,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c1c980a_4ee5b1b3",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2021-11-11T11:38:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97e8c732_11e4793f",
+      "revId": "88ab11b7374e81ae526291faf01542d56935f27a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8c852ae8_676431d2",
@@ -122,6 +218,24 @@
       "writtenOn": "2021-11-11T09:17:55Z",
       "side": 1,
       "message": "[question] do we want all devices? I think we should still exclude those that are not racked like those in \u0027offline\u0027 status.",
+      "revId": "88ab11b7374e81ae526291faf01542d56935f27a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b7c3fd2_4d154c3e",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2021-11-11T11:38:02Z",
+      "side": 1,
+      "message": "Im not sure, i wondered if online devices may be useful.  i.e. we could refuse to run puppet if a system is marked as offline??",
+      "parentUuid": "8c852ae8_676431d2",
       "revId": "88ab11b7374e81ae526291faf01542d56935f27a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
