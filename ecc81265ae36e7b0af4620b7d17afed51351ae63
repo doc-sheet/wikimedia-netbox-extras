@@ -16,6 +16,23 @@
       "message": "Some context for the reviewers that might not have followed the IRC chat.\n\nDuring the reimage of the dns hosts in the new drmrs datacenter, the reimage cookbook runs at the end the Netbox script to import the data from PuppetDB to create the proper interfaces on Netbox.\nThe run though did add the DNS Name in netbox for ns0/1/2 and nsa wikimedia.org records, that are instead manually managed on Netbox.\nThe code path that added the records is a legacy code path that was there during the transition period and was used to populate in Netbox all used IPs and their DNS, when present.\nAs the transition has long been completed and we\u0027re in a stable situation, we can safely remove those code path and don\u0027t mangle the DNS Names in Netbox getting the data from DNS resolution when importing data from PuppetDB.\nI plan to run a full test of this patch on Monday running the script for all servers on netbox-next after importing a clean DB from current production.",
       "revId": "ecc81265ae36e7b0af4620b7d17afed51351ae63",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2daef46c_8365a566",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-11-16T11:50:05Z",
+      "side": 1,
+      "message": "Tested on netbox-next on all devices.",
+      "revId": "ecc81265ae36e7b0af4620b7d17afed51351ae63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
