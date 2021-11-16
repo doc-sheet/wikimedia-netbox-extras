@@ -145,6 +145,24 @@
       "parentUuid": "1a93e03b_433eabb3",
       "revId": "cdaf8e778652e709b6a2d74cecf4c6472355eccc",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eabfd98e_cb5e705c",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-11-16T20:30:21Z",
+      "side": 1,
+      "message": "Yes, Device are only physical devices. To get VMs you have to get the data from another model: VirtualMachine.\nThose objects don\u0027t have the rack property at all but you could get the cluster and if we complete also the above T262446 we\u0027ll could get the row information.",
+      "parentUuid": "f1806db9_53761d9c",
+      "revId": "cdaf8e778652e709b6a2d74cecf4c6472355eccc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
