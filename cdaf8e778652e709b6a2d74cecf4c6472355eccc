@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f6abf25_2aa17593",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-11-16T16:50:21Z",
+      "side": 1,
+      "message": "LGTM, couple of minor nits inline",
+      "revId": "cdaf8e778652e709b6a2d74cecf4c6472355eccc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46215135_a43337fe",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-11-16T16:50:21Z",
+      "side": 1,
+      "message": "[nit] maybe move it to a class constant or similar",
+      "range": {
+        "startLine": 46,
+        "startChar": 17,
+        "endLine": 46,
+        "endChar": 40
+      },
+      "revId": "cdaf8e778652e709b6a2d74cecf4c6472355eccc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a67fe8f_2ba83131",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-11-16T16:50:21Z",
+      "side": 1,
+      "message": "[question] do we want to call it \u0027row\u0027 for consistency with the rest of the infra? Or try to push for the Netbox name?\nOr maybe have a more structured \"location\" hiera that has site, row, rack in a single key?",
+      "range": {
+        "startLine": 50,
+        "startChar": 40,
+        "endLine": 50,
+        "endChar": 50
+      },
+      "revId": "cdaf8e778652e709b6a2d74cecf4c6472355eccc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a93e03b_433eabb3",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-11-16T16:50:21Z",
+      "side": 1,
+      "message": "[question] what do we want to do with VMs? Do we want to report some info too? See also https://phabricator.wikimedia.org/T262446",
+      "revId": "cdaf8e778652e709b6a2d74cecf4c6472355eccc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}

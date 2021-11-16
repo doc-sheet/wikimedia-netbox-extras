@@ -53,6 +53,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a7f8d86_5a4c4921",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-11-16T16:50:21Z",
+      "side": 1,
+      "message": "+1 to keep JSON",
+      "parentUuid": "aad93b34_f8fe14c6",
+      "revId": "88ab11b7374e81ae526291faf01542d56935f27a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4af93195_dd3c8161",
@@ -236,6 +254,24 @@
       "side": 1,
       "message": "Im not sure, i wondered if online devices may be useful.  i.e. we could refuse to run puppet if a system is marked as offline??",
       "parentUuid": "8c852ae8_676431d2",
+      "revId": "88ab11b7374e81ae526291faf01542d56935f27a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "612ff9cd_39fdc253",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-11-16T16:50:21Z",
+      "side": 1,
+      "message": "Not sure but I guess we could :) In that case feel free to export the data for all server devices",
+      "parentUuid": "5b7c3fd2_4d154c3e",
       "revId": "88ab11b7374e81ae526291faf01542d56935f27a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
