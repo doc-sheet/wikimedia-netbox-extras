@@ -145,6 +145,30 @@
       },
       "revId": "3a40f90900a6dbce789001ac20a17988320152d0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e98adbf_156a2060",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2021-11-17T13:32:18Z",
+      "side": 1,
+      "message": "Ack, works for me. As for the row information the data in Netbox is different from the one used (codfw-row-b vs B). I\u0027m not sure what to do here, as it depends how it\u0027s used downstream.",
+      "parentUuid": "423f6539_974106e7",
+      "range": {
+        "startLine": 50,
+        "startChar": 28,
+        "endLine": 50,
+        "endChar": 44
+      },
+      "revId": "3a40f90900a6dbce789001ac20a17988320152d0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
