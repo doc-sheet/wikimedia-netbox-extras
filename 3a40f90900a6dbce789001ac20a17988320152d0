@@ -35,6 +35,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1116af73_073933ee",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2021-11-17T11:28:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ab1a50fe_53298838",
+      "revId": "3a40f90900a6dbce789001ac20a17988320152d0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cdc43660_1168c6d7",
@@ -58,6 +76,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3caa91ae_d90cecd7",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2021-11-17T11:28:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cdc43660_1168c6d7",
+      "range": {
+        "startLine": 48,
+        "startChar": 16,
+        "endLine": 48,
+        "endChar": 17
+      },
+      "revId": "3a40f90900a6dbce789001ac20a17988320152d0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d2735cbe_dc995e70",
@@ -71,6 +113,30 @@
       "writtenOn": "2021-11-16T20:30:21Z",
       "side": 1,
       "message": "should we apply .lower() here? Not sure what is more expected on the Puppet side",
+      "range": {
+        "startLine": 50,
+        "startChar": 28,
+        "endLine": 50,
+        "endChar": 44
+      },
+      "revId": "3a40f90900a6dbce789001ac20a17988320152d0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "423f6539_974106e7",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2021-11-17T11:28:06Z",
+      "side": 1,
+      "message": "Currently we only use theses in regex.yaml which user upper case characters; however other then that i have no opinion",
+      "parentUuid": "d2735cbe_dc995e70",
       "range": {
         "startLine": 50,
         "startChar": 28,
