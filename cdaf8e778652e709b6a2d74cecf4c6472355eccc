@@ -163,6 +163,24 @@
       "parentUuid": "f1806db9_53761d9c",
       "revId": "cdaf8e778652e709b6a2d74cecf4c6472355eccc",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e463c48e_67bd3d1c",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2021-11-17T12:09:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eabfd98e_cb5e705c",
+      "revId": "cdaf8e778652e709b6a2d74cecf4c6472355eccc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
