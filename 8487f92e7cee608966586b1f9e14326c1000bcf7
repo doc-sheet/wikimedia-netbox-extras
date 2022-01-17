@@ -1,6 +1,40 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "23ef9d9e_45bfee00",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-01-17T12:19:04Z",
+      "side": 1,
+      "message": "typo: valid\nDo we have any easy way to spot the valid errors while keep this new logic that seems much simpler?",
+      "revId": "8487f92e7cee608966586b1f9e14326c1000bcf7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77296ad1_5a520e33",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-01-17T12:19:04Z",
+      "side": 1,
+      "message": "I\u0027m not sure, warnings should still be something to fix, maybe report with log_info()?\nHow spammy would they be in the report output? If too many might clutter the UI and make harder to notice any issue.",
+      "revId": "8487f92e7cee608966586b1f9e14326c1000bcf7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "9140d2ad_2b928c2a",
@@ -14,6 +48,23 @@
       "writtenOn": "2022-01-13T16:06:26Z",
       "side": 1,
       "message": "Seems reasonable to me",
+      "revId": "8487f92e7cee608966586b1f9e14326c1000bcf7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d49a4d4d_5b4fc137",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-01-17T12:19:04Z",
+      "side": 1,
+      "message": "Comments inline",
       "revId": "8487f92e7cee608966586b1f9e14326c1000bcf7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
