@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed8d3d68_6338cefd",
+        "filename": "reports/librenms.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-01-18T11:04:45Z",
+      "side": 1,
+      "message": "[nit] \"Netbox devices\" to keep the same naming convention of the line below and the rest",
+      "range": {
+        "startLine": 164,
+        "startChar": 36,
+        "endLine": 164,
+        "endChar": 43
+      },
+      "revId": "5ae758f63d3afd479b3f5b915d723f82a57b86ca",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
