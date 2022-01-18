@@ -18,6 +18,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "576f39c8_9cffca1b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-01-18T10:35:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23ef9d9e_45bfee00",
+      "revId": "8487f92e7cee608966586b1f9e14326c1000bcf7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "77296ad1_5a520e33",
@@ -31,6 +49,24 @@
       "writtenOn": "2022-01-17T12:19:04Z",
       "side": 1,
       "message": "I\u0027m not sure, warnings should still be something to fix, maybe report with log_info()?\nHow spammy would they be in the report output? If too many might clutter the UI and make harder to notice any issue.",
+      "revId": "8487f92e7cee608966586b1f9e14326c1000bcf7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6519b52_73137eff",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-01-18T10:35:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "77296ad1_5a520e33",
       "revId": "8487f92e7cee608966586b1f9e14326c1000bcf7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
