@@ -16,6 +16,80 @@
       "message": "LGTM",
       "revId": "0ecbc25e3ed04425076438d683e18cf6811ca699",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c84dc1cb_1113abf4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-01-27T15:18:02Z",
+      "side": 1,
+      "message": "LGTM, couple of very very minor nits inline, all optional.",
+      "revId": "0ecbc25e3ed04425076438d683e18cf6811ca699",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aeb2ec5a_6555878d",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-01-27T15:18:02Z",
+      "side": 1,
+      "message": "typo: necessary",
+      "range": {
+        "startLine": 40,
+        "startChar": 24,
+        "endLine": 40,
+        "endChar": 33
+      },
+      "revId": "0ecbc25e3ed04425076438d683e18cf6811ca699",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6ed57dd_932b51e3",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-01-27T15:18:02Z",
+      "side": 1,
+      "message": "[nit] it seems that defaultdict is not needed anymore a you do \u003d {...} on line 52 in all cases AFAICT. Feel free to keep it if you want though, doesn\u0027t harm.",
+      "revId": "0ecbc25e3ed04425076438d683e18cf6811ca699",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf596dfa_f1baf477",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-01-27T15:18:02Z",
+      "side": 1,
+      "message": "[nit] I think this will disable it from here on, while if you want it just for the method it should be inline with the next line",
+      "revId": "0ecbc25e3ed04425076438d683e18cf6811ca699",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
