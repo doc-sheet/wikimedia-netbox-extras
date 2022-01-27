@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4970d963_9fb4c44d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 24
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-01-27T16:39:00Z",
+      "side": 1,
+      "message": "LGTM, feel free to test it on netbox-next before merging it you want to be sure it works as expected.",
+      "revId": "4147d589cb27970409cdb997c61af48ada748533",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}

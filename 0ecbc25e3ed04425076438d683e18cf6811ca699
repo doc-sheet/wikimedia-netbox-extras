@@ -58,6 +58,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a8ac861_98790fbb",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-01-27T16:39:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aeb2ec5a_6555878d",
+      "range": {
+        "startLine": 40,
+        "startChar": 24,
+        "endLine": 40,
+        "endChar": 33
+      },
+      "revId": "0ecbc25e3ed04425076438d683e18cf6811ca699",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d6ed57dd_932b51e3",
@@ -75,6 +99,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f72b6613_26cf5b6d",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-01-27T16:39:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d6ed57dd_932b51e3",
+      "revId": "0ecbc25e3ed04425076438d683e18cf6811ca699",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cf596dfa_f1baf477",
@@ -88,6 +130,24 @@
       "writtenOn": "2022-01-27T15:18:02Z",
       "side": 1,
       "message": "[nit] I think this will disable it from here on, while if you want it just for the method it should be inline with the next line",
+      "revId": "0ecbc25e3ed04425076438d683e18cf6811ca699",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0fd9591_822320f3",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-01-27T16:39:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cf596dfa_f1baf477",
       "revId": "0ecbc25e3ed04425076438d683e18cf6811ca699",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
