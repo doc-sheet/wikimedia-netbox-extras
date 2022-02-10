@@ -1,0 +1,129 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fea8a226_17eab6e8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-02-10T12:08:08Z",
+      "side": 1,
+      "message": "typo: prevent",
+      "range": {
+        "startLine": 9,
+        "startChar": 40,
+        "endLine": 9,
+        "endChar": 48
+      },
+      "revId": "6b7916b421ed27bf82beeb7d3cc1231bb7c07cd0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9d388d2_47afed13",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-02-10T12:08:08Z",
+      "side": 1,
+      "message": "You can test those on netbox-next.w.o",
+      "revId": "6b7916b421ed27bf82beeb7d3cc1231bb7c07cd0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "79b73701_46480a41",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-02-10T12:08:08Z",
+      "side": 1,
+      "message": "Thanks for working on this! Looks mostly good, some minor nits/suggestions inline.",
+      "revId": "6b7916b421ed27bf82beeb7d3cc1231bb7c07cd0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "737c5096_cb1f2bd7",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-02-10T12:08:08Z",
+      "side": 1,
+      "message": "To force split to only split once in case of multiple \u0027-\u0027 you can use split(\u0027-\u0027, 1):\n\n  \u003e\u003e\u003e \u00271-2-3-4\u0027.split(\u0027-\u0027, 1)\n  [\u00271\u0027, \u00272-3-4\u0027]",
+      "revId": "6b7916b421ed27bf82beeb7d3cc1231bb7c07cd0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95bb690b_e423f25d",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-02-10T12:08:08Z",
+      "side": 1,
+      "message": "I think you can simplify it quite a lot letting django do the heavy lifting for you ;)\n\n  z_nbdevice_ints \u003d Interface.objects.filter(device_id\u003dz_nbdevice.id, name__endswith\u003dport_num)\n\nThe matching ones are all to be orphaned",
+      "revId": "6b7916b421ed27bf82beeb7d3cc1231bb7c07cd0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d535d50a_fcb9db8a",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-02-10T12:08:08Z",
+      "side": 1,
+      "message": "I would log an error here",
+      "revId": "6b7916b421ed27bf82beeb7d3cc1231bb7c07cd0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c98c6fe_f288bd3a",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-02-10T12:08:08Z",
+      "side": 1,
+      "message": "Just for a pure style exercise, here is an alternative approach :) :\n\n  formats \u003d {\n    \u0027xe-\u0027: InterfaceTypeChoices.TYPE_10GE_SFP_PLUS.\n    \u0027et-\u0027: InterfaceTypeChoices.TYPE_25GE_SFP28,\n  }\n  return formats.get(iface_name[0:3], InterfaceTypeChoices.TYPE_1GE_FIXED)\n\nOr even the more concise:\n\n  return {\n    \u0027xe-\u0027: InterfaceTypeChoices.TYPE_10GE_SFP_PLUS.\n    \u0027et-\u0027: InterfaceTypeChoices.TYPE_25GE_SFP28,\n  }.get(iface_name[0:3], InterfaceTypeChoices.TYPE_1GE_FIXED)",
+      "revId": "6b7916b421ed27bf82beeb7d3cc1231bb7c07cd0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
