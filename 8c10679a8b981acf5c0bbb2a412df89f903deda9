@@ -35,6 +35,23 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7662d9ab_4306f395",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-02-14T14:41:45Z",
+      "side": 1,
+      "message": "Some replies inline.  Will upload new patchset for the log message, Was gonna leave the other one as is for now but if you feel its important can dig back in.",
+      "revId": "8c10679a8b981acf5c0bbb2a412df89f903deda9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1974ebed_ebf78db2",
@@ -71,6 +88,48 @@
       "writtenOn": "2022-02-14T11:23:04Z",
       "side": 1,
       "message": "I would rephrase this message as it\u0027s lacking some info from the user perspective.\nJust \"Conflict: int ge-0/0/0 on asw-c-eqiad has a connection\" doesn\u0027t tell me:\n- why is that a problem that an interface is connected?\n- what\u0027s the actual failure?\n- what was the operation that was attempted that failed/has a conflict\n- what the operator should do?\n\nI would rather put something along the line of:\n\n  Unable to delete existing interface {z_nbdevice_int.name} on {z_nbdevice} because it\u0027s connected. It should have been deleted to prevent conflicts with the interface to be created {z_iface}.",
+      "revId": "8c10679a8b981acf5c0bbb2a412df89f903deda9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "982c6631_1e8db7cf",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-02-14T14:41:45Z",
+      "side": 1,
+      "message": "I\u0027d definitely be better to quit here.  But per our chat on irc last if it\u0027s tricky it\u0027s maybe not worth the effort.  If and when this even happens we will get another warning from our report when it detects the overlapping interface IDs.  So we can maybe decide to leave things as they are for now, and deal with this if and when we find it actually happens.\n\nBut I\u0027m easy enough, happy to add it if we think we can do it simply.  I probably would need some guidance on how to do it properly.",
+      "parentUuid": "1974ebed_ebf78db2",
+      "range": {
+        "startLine": 358,
+        "startChar": 21,
+        "endLine": 358,
+        "endChar": 32
+      },
+      "revId": "8c10679a8b981acf5c0bbb2a412df89f903deda9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "81504200_9258789c",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-02-14T14:41:45Z",
+      "side": 1,
+      "message": "Yep, if I can get a bit of help with how to format that to get past CI.  Tbh I made the string quite short cos it gave out.",
+      "parentUuid": "414e58eb_cfa9ca29",
       "revId": "8c10679a8b981acf5c0bbb2a412df89f903deda9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
