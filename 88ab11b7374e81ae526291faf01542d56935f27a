@@ -274,6 +274,24 @@
       "parentUuid": "5b7c3fd2_4d154c3e",
       "revId": "88ab11b7374e81ae526291faf01542d56935f27a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec09d5b9_e77348f7",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-02-14T11:36:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "612ff9cd_39fdc253",
+      "revId": "88ab11b7374e81ae526291faf01542d56935f27a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
