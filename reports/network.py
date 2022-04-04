@@ -78,6 +78,9 @@ class Network(Report):
                                            .exclude(type__in=VIRTUAL_IFACE_TYPES)
                                            .exclude(mgmt_only=True)
                                            .exclude(enabled=False)):
+            # Ignore interfaces with "no-mon" in the description
+            if interface.description and "no-mon" not in interface.description:
+                self.log_warning(interface, "[no-mon] Interface enabled but not connected on {}".format(interface.device))
             self.log_failure(interface, "Interface enabled but not connected on {}".format(interface.device))
 
     def test_primary_ipv6(self):
