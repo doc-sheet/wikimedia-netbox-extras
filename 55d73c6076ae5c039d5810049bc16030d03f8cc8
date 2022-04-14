@@ -16,6 +16,159 @@
       "message": "Tested in https://netbox-next.wikimedia.org/extras/scripts/replace_device.ReplaceDevice/",
       "revId": "55d73c6076ae5c039d5810049bc16030d03f8cc8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "25478b8c_ef2e44f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-04-14T15:43:10Z",
+      "side": 1,
+      "message": "Some improvement suggestions inline",
+      "revId": "55d73c6076ae5c039d5810049bc16030d03f8cc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e0e8812_119c2a6a",
+        "filename": "customscripts/replace_device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-04-14T15:43:10Z",
+      "side": 1,
+      "message": "Make explicit this is only for network devices and not servers",
+      "revId": "55d73c6076ae5c039d5810049bc16030d03f8cc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bef6059_866a9972",
+        "filename": "customscripts/replace_device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-04-14T15:43:10Z",
+      "side": 1,
+      "message": "If we can only run this script on network devices I think it would be safer to just get here a netbox select with a query that filters only those devices.",
+      "revId": "55d73c6076ae5c039d5810049bc16030d03f8cc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "653e79e9_d7e21aa7",
+        "filename": "customscripts/replace_device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-04-14T15:43:10Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "55d73c6076ae5c039d5810049bc16030d03f8cc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "06188e65_71bf1439",
+        "filename": "customscripts/replace_device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-04-14T15:43:10Z",
+      "side": 1,
+      "message": "Fail if source and destination are the same device.",
+      "revId": "55d73c6076ae5c039d5810049bc16030d03f8cc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ba540c3_bf877298",
+        "filename": "customscripts/replace_device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-04-14T15:43:10Z",
+      "side": 1,
+      "message": "[nit] use f-string should be more readable",
+      "revId": "55d73c6076ae5c039d5810049bc16030d03f8cc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7cafc1f_3620a6f6",
+        "filename": "customscripts/replace_device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-04-14T15:43:10Z",
+      "side": 1,
+      "message": "this block is identical to the above one with the exception of the removal of the attribute from the source. It can be factored out into something like:\n\n  def _copy_attributes(self, src, dst, attrs, remove_old\u003dFalse)",
+      "revId": "55d73c6076ae5c039d5810049bc16030d03f8cc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b35ff41_84abdee4",
+        "filename": "customscripts/replace_device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-04-14T15:43:10Z",
+      "side": 1,
+      "message": "This block too can be included in the above logic:\n* rack and face can be added to the remove-old attributes (if already_racked is true)\n* position can be added to the not-remove-old atttributes (if already_racked is true)",
+      "revId": "55d73c6076ae5c039d5810049bc16030d03f8cc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c2c8884_4678aaa8",
+        "filename": "customscripts/replace_device.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-04-14T15:43:10Z",
+      "side": 1,
+      "message": "This block and the ones below can be generalized a bit with getattr, the logic of delete all, move all is the same for all the attributes.",
+      "revId": "55d73c6076ae5c039d5810049bc16030d03f8cc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
