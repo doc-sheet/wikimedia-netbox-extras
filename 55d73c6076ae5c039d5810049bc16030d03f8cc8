@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e30f85d_850b73c1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-04-14T14:18:28Z",
+      "side": 1,
+      "message": "Tested in https://netbox-next.wikimedia.org/extras/scripts/replace_device.ReplaceDevice/",
+      "revId": "55d73c6076ae5c039d5810049bc16030d03f8cc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
