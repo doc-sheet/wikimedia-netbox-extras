@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "563007c0_906fa7dd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-04-14T10:34:29Z",
+      "side": 1,
+      "message": "lgtm!  nice work, I\u0027m planning a few updates to this file once I can confirm the QFX support for mixed speeds / port blocks, so good example of how to error out.",
+      "revId": "841180645ea678b12701f9124a01a9bdb124888b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
