@@ -132,6 +132,30 @@
       "parentUuid": "414e58eb_cfa9ca29",
       "revId": "8c10679a8b981acf5c0bbb2a412df89f903deda9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f36b3ad_05a79204",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-04-14T16:27:11Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "982c6631_1e8db7cf",
+      "range": {
+        "startLine": 358,
+        "startChar": 21,
+        "endLine": 358,
+        "endChar": 32
+      },
+      "revId": "8c10679a8b981acf5c0bbb2a412df89f903deda9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
