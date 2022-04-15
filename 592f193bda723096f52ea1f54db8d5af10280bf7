@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "018b7264_01221ead",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-04-15T05:47:02Z",
+      "side": 1,
+      "message": "Thanks, it\u0027s satisfying to go from 160 lines to 122 :)",
+      "revId": "592f193bda723096f52ea1f54db8d5af10280bf7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
