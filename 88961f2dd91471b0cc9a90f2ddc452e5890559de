@@ -16,6 +16,23 @@
       "message": "Tested in netbox-next",
       "revId": "88961f2dd91471b0cc9a90f2ddc452e5890559de",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0909097b_00e30637",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-04-20T15:17:41Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "88961f2dd91471b0cc9a90f2ddc452e5890559de",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
