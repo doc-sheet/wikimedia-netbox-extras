@@ -1,0 +1,9 @@
+Verified+2: jenkins-bot
+Verified+2: Ayounsi <ayounsi@wikimedia.org>
+Code-Review+2: Ayounsi <ayounsi@wikimedia.org>
+Code-Review+1: Cathal Mooney <cmooney@wikimedia.org>
+Submitted-by: jenkins-bot
+Submitted-at: Mon, 09 May 2022 07:17:23 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/c/operations/software/netbox-extras/+/789857
+Project: operations/software/netbox-extras
+Branch: refs/heads/master
