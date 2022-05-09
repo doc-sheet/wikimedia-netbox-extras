@@ -16,6 +16,23 @@
       "message": "Looks good to me!  Obviously we should test before merging though.",
       "revId": "fb9ab8ed05baccbd87b16876a6078c1ed25d8f19",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a51ba9b_b9938776",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-05-09T07:15:50Z",
+      "side": 1,
+      "message": "Tested on netbox-dev:\n```\nLine \tLevel \tMessage\n1 \tInfo \tCalled with parameters: {\u0027device\u0027: , \u0027z_nbdevice\u0027: , \u0027z_iface\u0027: \u0027ge-3/0/4\u0027, \u0027cable_id\u0027: \u0027foobar\u0027, \u0027skip_ipv6_dns\u0027: False, \u0027cassandra_instances\u0027: \u00270\u0027, \u0027vlan_type\u0027: \u0027public\u0027, \u0027vlan\u0027: None}\n2 \tFailure \tcivi1002: Interface name ge-3/0/4 invalid, first digit of port number should be 0 as cloudsw1-c8-eqiad is not a virtual chassis.\n3 \tInfo \tDatabase changes have been reverted automatically.\n```\n\nError is not there if I try with ge-0/0/4\nneither with ge-3/0/4 on asw2-a3-eqiad",
+      "revId": "fb9ab8ed05baccbd87b16876a6078c1ed25d8f19",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
