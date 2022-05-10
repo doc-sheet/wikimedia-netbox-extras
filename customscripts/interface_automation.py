@@ -13,12 +13,12 @@ from django.core.exceptions import ObjectDoesNotExist
 
 from django.contrib.contenttypes.models import ContentType
 
-from dcim.choices import CableStatusChoices, CableTypeChoices, InterfaceTypeChoices
+from dcim.choices import CableTypeChoices, InterfaceTypeChoices, LinkStatusChoices
 from dcim.models import Cable, Device, Interface, VirtualChassis
 from extras.scripts import BooleanVar, ChoiceVar, FileVar, ObjectVar, Script, StringVar, TextVar
 from ipam.constants import IPADDRESS_ROLES_NONUNIQUE
 from ipam.models import IPAddress, Prefix, VLAN
-from ipam.filters import PrefixFilterSet
+from ipam.filtersets import PrefixFilterSet
 from utilities.choices import ColorChoices
 from virtualization.models import VirtualMachine, VMInterface
 
@@ -591,7 +591,7 @@ class Importer:
                       label=label,
                       color=color,
                       type=cable_type,
-                      status=CableStatusChoices.STATUS_CONNECTED)
+                      status=LinkStatusChoices.STATUS_CONNECTED)
         cable.save()
         self.log_success(f"{nbiface.device}: created cable {cable}")
         self.log_warning(f"{nbiface.device}: assuming {color_human} {cable_type} because {nbiface.type}")
