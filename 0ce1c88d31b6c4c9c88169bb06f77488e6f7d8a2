@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed8cfd67_9bdddb3b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-05-11T14:48:46Z",
+      "side": 1,
+      "message": "This is manually deployed on netbox-dev2002, setting to -1 until we have rebuild the netbox frontends",
+      "revId": "0ce1c88d31b6c4c9c88169bb06f77488e6f7d8a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
