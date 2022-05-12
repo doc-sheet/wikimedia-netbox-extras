@@ -16,6 +16,23 @@
       "message": "Tested in Netbox next:\n\n```\nLine \tLevel \tMessage\n1 \tInfo \tCalled with parameters: {xxx\u0027z_iface\u0027: \u0027et-0/0/0\u0027, \u0027cable_id\u0027: \u002711032\u0027, xxxxx, \u0027vlan\u0027: None}\n2 \tFailure Cable ID 11032 already assigned in eqiad.\n3 \tInfo \tDatabase changes have been reverted automatically.\n```",
       "revId": "9bf8f8da2e563626e27ef85b2ece29fc4262f64c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1283735b_2662598a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-05-12T09:46:31Z",
+      "side": 1,
+      "message": "Seems reasonable to me",
+      "revId": "9bf8f8da2e563626e27ef85b2ece29fc4262f64c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
