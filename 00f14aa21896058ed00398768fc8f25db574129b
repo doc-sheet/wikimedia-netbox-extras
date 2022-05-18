@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "35c06086_bb36894c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-05-18T12:23:34Z",
+      "side": 1,
+      "message": "done thanks",
+      "revId": "00f14aa21896058ed00398768fc8f25db574129b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ca288213_0e5398be",
@@ -24,6 +41,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "db612c41_5d75ba4c",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-05-18T12:23:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ca288213_0e5398be",
+      "range": {
+        "startLine": 42,
+        "startChar": 21,
+        "endLine": 42,
+        "endChar": 65
+      },
+      "revId": "00f14aa21896058ed00398768fc8f25db574129b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0847a345_14ad4093",
@@ -37,6 +78,30 @@
       "writtenOn": "2022-05-17T21:58:34Z",
       "side": 1,
       "message": "typo?",
+      "range": {
+        "startLine": 108,
+        "startChar": 12,
+        "endLine": 108,
+        "endChar": 20
+      },
+      "revId": "00f14aa21896058ed00398768fc8f25db574129b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b6fe0bc_f7819700",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-05-18T12:23:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0847a345_14ad4093",
       "range": {
         "startLine": 108,
         "startChar": 12,
