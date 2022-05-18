@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90d1e6ce_94a72195",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-05-18T10:08:49Z",
+      "side": 1,
+      "message": "makes sense to me.",
+      "revId": "ab7bfe194e401162f2d3d6cfc75df6f2ac5f35ff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "690af215_fe7b7c03",
+        "filename": "reports/network.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-05-18T10:08:49Z",
+      "side": 1,
+      "message": "typo? ultimately",
+      "range": {
+        "startLine": 121,
+        "startChar": 36,
+        "endLine": 121,
+        "endChar": 46
+      },
+      "revId": "ab7bfe194e401162f2d3d6cfc75df6f2ac5f35ff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
