@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "988cbffd_ee157027",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-05-19T16:28:06Z",
+      "side": 1,
+      "message": "Self merging to unblock DCOps",
+      "revId": "d6d55a8a40aa0f9931f37524ed097d357e5ab317",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
