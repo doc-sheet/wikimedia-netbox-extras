@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "502093b0_8a28752b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-05-25T08:43:42Z",
+      "side": 1,
+      "message": "Although this means that in most cases we\u0027ll do 2 queries for the new name that will fail and then the old one that will succeed, it seems ok to me. I\u0027ve checked the vlan names on Netbox and I don\u0027t see any case in which this will cause an issue.",
+      "revId": "c0b51a7a7d06bc859f1f2373e6f06de9a69c13d2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
