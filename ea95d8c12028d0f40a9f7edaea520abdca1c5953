@@ -16,6 +16,23 @@
       "message": "As I mentioned in Icc65dc8961983b2e40638abf19beda7363f20a57 this was some previous work that I did to refactor the script in order to be able to add group support, that is in the next CR in the series.",
       "revId": "ea95d8c12028d0f40a9f7edaea520abdca1c5953",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11829684_452bfece",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-01T18:43:30Z",
+      "side": 1,
+      "message": "To test it you can run on netbox-dev2002 as root:\n\nREQUESTS_CA_BUNDLE\u003d/etc/ssl/certs/ca-certificates.crt /srv/deployment/netbox/venv/bin/python3 /home/volans/ganeti-netbox-sync.py -c /home/volans/ganeti-sync.cfg ulsfo",
+      "revId": "ea95d8c12028d0f40a9f7edaea520abdca1c5953",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
