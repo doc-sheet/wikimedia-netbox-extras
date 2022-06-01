@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "635835d4_581bf6a9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-01T08:28:43Z",
+      "side": 1,
+      "message": "@Arzhel, I wish you had told me before starting to work on this. I have a local branch where I had started a huge refactor of this script that is totally unmaintainable in its current format and I think we shouldn\u0027t pile in additional technical debt.\nThat said, I\u0027m unsure what\u0027s the best way to proceed right now given you\u0027ve already spent time on it.",
+      "revId": "e9694e0b3efd2bb5b5508fdbd59e72fa801ce523",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
