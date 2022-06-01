@@ -7,6 +7,7 @@ department.
 Requires google-api-python-client and google-auth-oauthlib.
 """
 
+import os
 import configparser
 from datetime import date, datetime, timedelta
 
@@ -26,6 +27,7 @@ class Accounting(Report):
 
     def run(self, job_results):
         """Load the config file and initializes the Google Sheets API."""
+        os.environ['HTTPS_PROXY'] = 'http://webproxy:8080'
         config = configparser.ConfigParser(interpolation=None)
         config.read(CONFIG_FILE)
 
