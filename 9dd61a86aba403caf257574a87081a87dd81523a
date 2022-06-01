@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1c4771f_d39630a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-01T18:41:39Z",
+      "side": 1,
+      "message": "And this is the group support part, that I finished today. I think it works (from my tests on netbox-next) but it would need some more tests to make sure it works on all corner cases.\nCould be considered an alternative to Icc65dc8961983b2e40638abf19beda7363f20a57. I don\u0027t have strong opinions, but as I had already done 80+% of the work I thought was worth to push it to gerrit at least.",
+      "revId": "9dd61a86aba403caf257574a87081a87dd81523a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
