@@ -16,6 +16,69 @@
       "message": "And this is the group support part, that I finished today. I think it works (from my tests on netbox-next) but it would need some more tests to make sure it works on all corner cases.\nCould be considered an alternative to Icc65dc8961983b2e40638abf19beda7363f20a57. I don\u0027t have strong opinions, but as I had already done 80+% of the work I thought was worth to push it to gerrit at least.",
       "revId": "9dd61a86aba403caf257574a87081a87dd81523a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df8967dc_c7302e1e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-06-02T11:31:31Z",
+      "side": 1,
+      "message": "nit tested but lgtm",
+      "revId": "9dd61a86aba403caf257574a87081a87dd81523a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d295fdc7_0988a4a3",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-06-02T11:31:31Z",
+      "side": 1,
+      "message": "nit: why not wmflib.Actions?",
+      "range": {
+        "startLine": 253,
+        "startChar": 13,
+        "endLine": 253,
+        "endChar": 20
+      },
+      "revId": "9dd61a86aba403caf257574a87081a87dd81523a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6cf6dea5_603c0bf5",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-06-02T11:31:31Z",
+      "side": 1,
+      "message": "fimlar comment to previous patch: why njot use \n  netbox_clusters: Dict \u003d field(default_factory\u003ddict)",
+      "range": {
+        "startLine": 254,
+        "startChar": 13,
+        "endLine": 254,
+        "endChar": 28
+      },
+      "revId": "9dd61a86aba403caf257574a87081a87dd81523a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
