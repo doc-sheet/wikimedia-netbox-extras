@@ -33,6 +33,69 @@
       "message": "To test it you can run on netbox-dev2002 as root:\n\nREQUESTS_CA_BUNDLE\u003d/etc/ssl/certs/ca-certificates.crt /srv/deployment/netbox/venv/bin/python3 /home/volans/ganeti-netbox-sync.py -c /home/volans/ganeti-sync.cfg ulsfo",
       "revId": "ea95d8c12028d0f40a9f7edaea520abdca1c5953",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66224a0d_9e41a536",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-06-02T11:23:05Z",
+      "side": 1,
+      "message": "LGTM couple of nit/Qs",
+      "revId": "ea95d8c12028d0f40a9f7edaea520abdca1c5953",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8823e1d_e9a62c25",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-06-02T11:23:05Z",
+      "side": 1,
+      "message": "nit: should this not be lower if verbose is False",
+      "range": {
+        "startLine": 45,
+        "startChar": 4,
+        "endLine": 45,
+        "endChar": 61
+      },
+      "revId": "ea95d8c12028d0f40a9f7edaea520abdca1c5953",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84eaf782_d5c31e06",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-06-02T11:23:05Z",
+      "side": 1,
+      "message": "nit: why cant we do the following above?\n\n  actions: ConterType \u003d field(default_factory\u003dCounter)",
+      "range": {
+        "startLine": 204,
+        "startChar": 8,
+        "endLine": 204,
+        "endChar": 45
+      },
+      "revId": "ea95d8c12028d0f40a9f7edaea520abdca1c5953",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
