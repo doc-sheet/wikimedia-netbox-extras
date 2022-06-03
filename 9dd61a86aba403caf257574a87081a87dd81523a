@@ -35,6 +35,23 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2a26868_de777276",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-06-03T09:43:19Z",
+      "side": 1,
+      "message": "I haven\u0027t look at the code but I think you tested it with the ulsfo cluster on netbox-next.\n\nLooking for example at https://netbox-next.wikimedia.org/search/?q\u003dbast4003\u0026obj_type\u003d it looks like it created new VMs instead of moving the existing ones.\nMaybe that\u0027s an earlier bug and it has been fixed since?",
+      "revId": "9dd61a86aba403caf257574a87081a87dd81523a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d295fdc7_0988a4a3",
