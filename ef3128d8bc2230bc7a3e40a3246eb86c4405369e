@@ -16,6 +16,24 @@
       "message": "Sorry, I messed up with the rebase, I squashed the 2 CR into this latest PS, I\u0027ll fix it later re-splitting the two.",
       "revId": "ef3128d8bc2230bc7a3e40a3246eb86c4405369e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "569815c2_872a0160",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-06T21:26:44Z",
+      "side": 1,
+      "message": "Fixed, the real diff can be seen in:\nhttps://gerrit.wikimedia.org/r/c/operations/software/netbox-extras/+/802178/1..3",
+      "parentUuid": "660ba702_a9e0849e",
+      "revId": "ef3128d8bc2230bc7a3e40a3246eb86c4405369e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
