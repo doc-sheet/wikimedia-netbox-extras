@@ -95,6 +95,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "369e3d7e_f3a6a3af",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-06T18:19:51Z",
+      "side": 1,
+      "message": "We just need a counter, not a list of action messages for each host.",
+      "parentUuid": "d295fdc7_0988a4a3",
+      "range": {
+        "startLine": 253,
+        "startChar": 13,
+        "endLine": 253,
+        "endChar": 20
+      },
+      "revId": "9dd61a86aba403caf257574a87081a87dd81523a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6cf6dea5_603c0bf5",
         "filename": "tools/ganeti-netbox-sync.py",
         "patchSetId": 1
@@ -106,6 +130,30 @@
       "writtenOn": "2022-06-02T11:31:31Z",
       "side": 1,
       "message": "fimlar comment to previous patch: why njot use \n  netbox_clusters: Dict \u003d field(default_factory\u003ddict)",
+      "range": {
+        "startLine": 254,
+        "startChar": 13,
+        "endLine": 254,
+        "endChar": 28
+      },
+      "revId": "9dd61a86aba403caf257574a87081a87dd81523a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73e05868_32d243ed",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-06T18:19:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6cf6dea5_603c0bf5",
       "range": {
         "startLine": 254,
         "startChar": 13,
