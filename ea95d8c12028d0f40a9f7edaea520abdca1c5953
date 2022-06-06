@@ -52,6 +52,23 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7227fbcb_048d2066",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-06T18:19:30Z",
+      "side": 1,
+      "message": "addressed comments",
+      "revId": "ea95d8c12028d0f40a9f7edaea520abdca1c5953",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f8823e1d_e9a62c25",
@@ -75,6 +92,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9a332db_70c67eb3",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-06T18:19:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f8823e1d_e9a62c25",
+      "range": {
+        "startLine": 45,
+        "startChar": 4,
+        "endLine": 45,
+        "endChar": 61
+      },
+      "revId": "ea95d8c12028d0f40a9f7edaea520abdca1c5953",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "84eaf782_d5c31e06",
@@ -88,6 +129,30 @@
       "writtenOn": "2022-06-02T11:23:05Z",
       "side": 1,
       "message": "nit: why cant we do the following above?\n\n  actions: ConterType \u003d field(default_factory\u003dCounter)",
+      "range": {
+        "startLine": 204,
+        "startChar": 8,
+        "endLine": 204,
+        "endChar": 45
+      },
+      "revId": "ea95d8c12028d0f40a9f7edaea520abdca1c5953",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9458fac7_97e61700",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-06T18:19:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "84eaf782_d5c31e06",
       "range": {
         "startLine": 204,
         "startChar": 8,
