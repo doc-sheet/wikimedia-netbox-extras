@@ -117,6 +117,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4db3ed43_5b77b088",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-06-07T09:59:17Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "369e3d7e_f3a6a3af",
+      "range": {
+        "startLine": 253,
+        "startChar": 13,
+        "endLine": 253,
+        "endChar": 20
+      },
+      "revId": "9dd61a86aba403caf257574a87081a87dd81523a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6cf6dea5_603c0bf5",
