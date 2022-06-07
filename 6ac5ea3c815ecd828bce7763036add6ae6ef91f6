@@ -16,6 +16,23 @@
       "message": "un-squashed commits",
       "revId": "6ac5ea3c815ecd828bce7763036add6ae6ef91f6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "962802df_fc832cd6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-06-07T10:00:16Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "6ac5ea3c815ecd828bce7763036add6ae6ef91f6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
