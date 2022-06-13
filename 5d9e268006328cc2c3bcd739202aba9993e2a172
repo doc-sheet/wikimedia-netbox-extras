@@ -51,6 +51,24 @@
       "message": "reply inline",
       "revId": "5d9e268006328cc2c3bcd739202aba9993e2a172",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "743aabae_32057039",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-06-13T14:01:17Z",
+      "side": 1,
+      "message": "\u003e Using the FQDN could allow to easily use that in other automation when connecting to ganeti APIs or similar I think. Also there i no direct mapping, for example the current \u0027codfw_test\u0027 has a FQDN of \u0027ganeti-test01.svc.codfw.wmnet\u0027.\n\nAgreed, but I meant in Netbox make the distinction between the cluster name and the cluster FQDN (eg. by adding the cluster FQDN in a custom field, or IP object), or not displaying at all if not required. I could also imagine the cluster name (with the .svc. record) moving to something else.\nI agree about keeping the FQDN in the config file though.\n\n\u003e We could also make port 5080 the default if not provided, to simplify things.\nYeah, that\u0027s better.",
+      "parentUuid": "86a29baf_142f8a12",
+      "revId": "5d9e268006328cc2c3bcd739202aba9993e2a172",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
