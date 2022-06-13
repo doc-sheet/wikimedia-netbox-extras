@@ -16,6 +16,41 @@
       "message": "I haven\u0027t done a deep review of the python side, but the logic sgtm!\n\nI\u0027m a bit on the fence on using the FQDN as cluster group name, \"drmrs01\" for example seems cleaner), the FQDN could maybe be a custom field.\n\nIf I understand correctly there must be some puppet code first to define profile_config[\u0027site\u0027] in the config file.\nI also think that you\u0027re not using the \"api\" line from the config file and use the \"cluster\" one instead, but I fail to see where you\u0027re setting the port to 5080.\n\nOther than that I think this is great to add the feature to the existing script without changing the behavior much.\n\nA different approach, maybe for a latter iteration would be that the cluster groups are defined authoritatively in Netbox (manually, as they don\u0027t change often), then the script uses the Netbox data to find which endpoint to query to populate the cluster. Moving the source of truth to Netbox instead in having it in the config file.",
       "revId": "5d9e268006328cc2c3bcd739202aba9993e2a172",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86a29baf_142f8a12",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-13T12:56:25Z",
+      "side": 1,
+      "message": "\u003e I haven\u0027t done a deep review of the python side, but the logic sgtm!\n\u003e \n\u003e I\u0027m a bit on the fence on using the FQDN as cluster group name, \"drmrs01\" for example seems cleaner), the FQDN could maybe be a custom field.\n\nUsing the FQDN could allow to easily use that in other automation when connecting to ganeti APIs or similar I think. Also there i no direct mapping, for example the current \u0027codfw_test\u0027 has a FQDN of \u0027ganeti-test01.svc.codfw.wmnet\u0027.\n\n\u003e If I understand correctly there must be some puppet code first to define profile_config[\u0027site\u0027] in the config file.\n\u003e I also think that you\u0027re not using the \"api\" line from the config file and use the \"cluster\" one instead, but I fail to see where you\u0027re setting the port to 5080.\n\nYes, I forgot to mention that I thought it would be easier if the config file would be changed to this format:\n\n  [profile:drmrs01]\n  site\u003ddrmrs\n  cluster\u003dganeti01.svc.drmrs.wmnet\n  port\u003d5080\n\nI can send the related puppet patch too. We could also make port 5080 the default if not provided, to simplify things. Thoughts?\n\n\u003e Other than that I think this is great to add the feature to the existing script without changing the behavior much.\n\u003e \n\u003e A different approach, maybe for a latter iteration would be that the cluster groups are defined authoritatively in Netbox (manually, as they don\u0027t change often), then the script uses the Netbox data to find which endpoint to query to populate the cluster. Moving the source of truth to Netbox instead in having it in the config file.\n\nYes indeed!",
+      "parentUuid": "0e2efeae_43e03de4",
+      "revId": "5d9e268006328cc2c3bcd739202aba9993e2a172",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0860ab9b_e88dc051",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-13T12:56:25Z",
+      "side": 1,
+      "message": "reply inline",
+      "revId": "5d9e268006328cc2c3bcd739202aba9993e2a172",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
