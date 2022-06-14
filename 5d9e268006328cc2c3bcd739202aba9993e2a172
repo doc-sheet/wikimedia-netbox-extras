@@ -69,6 +69,24 @@
       "parentUuid": "86a29baf_142f8a12",
       "revId": "5d9e268006328cc2c3bcd739202aba9993e2a172",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d71ec82_c942838e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-14T10:41:06Z",
+      "side": 1,
+      "message": "The latest PS has the change to use the short name for the cluster groups. It also adds capability to move a cluster between cluster groups if we change our mind later.\nIt requires a modified config file, changed in https://gerrit.wikimedia.org/r/c/operations/puppet/+/805337/\nIt also sets port 5080 as the default.\nTested on netbox-next, see https://netbox-next.wikimedia.org/virtualization/cluster-groups/ and related.",
+      "parentUuid": "743aabae_32057039",
+      "revId": "5d9e268006328cc2c3bcd739202aba9993e2a172",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
