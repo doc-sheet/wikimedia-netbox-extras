@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ee4ac84_6c90c0f9",
+        "filename": "reports/network.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-06-17T15:43:47Z",
+      "side": 1,
+      "message": "Where we can, we add a log_success with a counter, like:\n\"XXX host IPs have a matching switch vlan\"\n\nThat way it indicates that the script ran fine, even if there are no errors reported.",
+      "range": {
+        "startLine": 235,
+        "startChar": 8,
+        "endLine": 235,
+        "endChar": 26
+      },
+      "revId": "6e82ac646d1ffa83ab069e8ccd3eb3e5d2ef7784",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}

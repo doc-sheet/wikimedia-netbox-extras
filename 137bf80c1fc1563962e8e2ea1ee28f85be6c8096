@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50a9128c_a6dd3546",
+        "filename": "reports/network.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-06-17T15:43:47Z",
+      "side": 1,
+      "message": "To make it more readable I\u0027d suggest to use the device type slug, and include the cloud switch as well, I think something like:\ninterface.connected_endpoint.device.device_role.slug in (\u0027cloudsw\u0027, \u0027asw\u0027)",
+      "range": {
+        "startLine": 244,
+        "startChar": 51,
+        "endLine": 244,
+        "endChar": 70
+      },
+      "revId": "137bf80c1fc1563962e8e2ea1ee28f85be6c8096",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "530af2c8_d890b582",
+        "filename": "reports/network.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-06-17T15:43:47Z",
+      "side": 1,
+      "message": "If there is a small possibility this returns more than 1 device, it might be better to use .filter() instead and then add a check like:\nif len(vlan_pfx) !\u003d 0 (or \u003e1), log a failure, then continue with vlan_pfx[0]\nThat will prevent the whole script to fail because of it.",
+      "range": {
+        "startLine": 246,
+        "startChar": 83,
+        "endLine": 246,
+        "endChar": 86
+      },
+      "revId": "137bf80c1fc1563962e8e2ea1ee28f85be6c8096",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
