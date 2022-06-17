@@ -231,3 +231,22 @@ class Network(Report):
             else:
                 success += 1
         self.log_success(None, "{} correct mgmt DNS names".format(success))
+
+    def test_matching_vlan(self):
+        """Check IPs are assigned to server ports match the connected Vlan 
+
+        Every IP address bound to a host interface should come from the correct 
+        subnet, matching the Vlan the equivalent switch port is bound to.
+        """
+
+        for interface in (Interface.objects.filter(device__device_role__slug="server", ip_addresses__gte=1)
+                                           .exclude(cable__isnull=True)):
+            if interface.connected_endpoint.device.device_role_id == 4:
+                for family in [4, 6]:
+                    vlan_pfx = interface.connected_endpoint.untagged_vlan.prefixes.get(prefix__family=family)
+                    for ip_addr in interface.ip_addresses.filter(address__family=family):
+                        if ip_addr.address.network != vlan_pfx.prefix.network or \
+                                ip_addr.address.prefixlen != vlan_pfx.prefix.prefixlen:
+                                    self.log_failure(interface.device.name, 
+                                                     f"{ip_addr.address} does not match connected Vlan "
+                                                     f"{interface.connected_endpoint.untagged_vlan}")
