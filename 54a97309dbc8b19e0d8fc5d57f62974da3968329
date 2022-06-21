@@ -16,6 +16,57 @@
       "message": "To be tested but logic sgtm!",
       "revId": "54a97309dbc8b19e0d8fc5d57f62974da3968329",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f7205ff_0ec7602b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-21T13:10:24Z",
+      "side": 1,
+      "message": "Idea might be ok (modulo race conditions), but the implementation has errors.",
+      "revId": "54a97309dbc8b19e0d8fc5d57f62974da3968329",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99f08db9_d5894019",
+        "filename": "customscripts/getstats.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-21T13:10:24Z",
+      "side": 1,
+      "message": "this doesn\u0027t work, is the wrong object. The object type is \u003cContentType: extras | script\u003e. You need:\n\n  from django.contrib.contenttypes.models import ContentType\n  ContentType.objects.get_for_model(models.Script)",
+      "revId": "54a97309dbc8b19e0d8fc5d57f62974da3968329",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "023a0112_a37d7cd0",
+        "filename": "customscripts/getstats.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-21T13:10:24Z",
+      "side": 1,
+      "message": "The name of the job in the DB is getstats.GetDeviceStats, so it should be both the name of the file and the name of the class.",
+      "revId": "54a97309dbc8b19e0d8fc5d57f62974da3968329",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
