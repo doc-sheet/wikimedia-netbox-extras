@@ -5,6 +5,8 @@ from io import StringIO
 
 from dcim.models import Device
 
+from extras import models
+from extras.choices import JobResultStatusChoices
 from extras.scripts import Script
 
 
@@ -14,6 +16,15 @@ class GetDeviceStats(Script):
         description = "Dump a set of statistics about various devices for Prometheus."
 
     def run(self, data, commit):
+        # Delete old versions of this report
+        jobs = models.JobResult.objects.filter(
+            obj_type=models.Script,
+            name=__name__,
+            status__in=JobResultStatusChoices.TERMINAL_STATE_CHOICES,
+        )
+        # Make sure we call delete on each job to trigger any customized delete methods
+        for job in jobs:
+            job.delete()
         counts = Counter()
         output = StringIO()
         for device in Device.objects.all().values_list(
