@@ -138,6 +138,24 @@
       "parentUuid": "023a0112_a37d7cd0",
       "revId": "54a97309dbc8b19e0d8fc5d57f62974da3968329",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c2aeaa8_9caed4b4",
+        "filename": "customscripts/getstats.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-21T16:16:48Z",
+      "side": 1,
+      "message": "I usually use \".\".join((self.__module__, self.__class__.__name__)), but it totally depends on how netbox imports them for the __module__ or __name__ approach. It should be tested.",
+      "parentUuid": "c8f29a9d_0c8a6150",
+      "revId": "54a97309dbc8b19e0d8fc5d57f62974da3968329",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
