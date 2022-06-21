@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c745d66b_f836604d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-06-21T09:42:04Z",
+      "side": 1,
+      "message": "lgtm but worth waiting for riccardo just in case",
+      "revId": "d9d38ee1087fe43ae0c3c1931d9829977fd22080",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
