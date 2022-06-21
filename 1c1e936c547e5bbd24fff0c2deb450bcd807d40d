@@ -16,6 +16,23 @@
       "message": "I\u0027ve cleanup netbox-next and run the script for all clusters:\n\nResults:\n- new cluster groups: https://netbox-next.wikimedia.org/virtualization/cluster-groups/\n- new clusters (rows): https://netbox-next.wikimedia.org/virtualization/clusters/ [note as all old clusters have 0 VMs as they have been migrated to the new clusters and 0 Devices as the cluster ID has been updated]\n- log of the runs: https://phabricator.wikimedia.org/P29938",
       "revId": "1c1e936c547e5bbd24fff0c2deb450bcd807d40d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e42ff1e3_83897d82",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-06-21T15:36:52Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "1c1e936c547e5bbd24fff0c2deb450bcd807d40d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
