@@ -35,6 +35,41 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd101512_01b4b3f7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-06-21T13:50:16Z",
+      "side": 1,
+      "message": "thanks updated",
+      "revId": "54a97309dbc8b19e0d8fc5d57f62974da3968329",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d15631d_3c71b6fa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-06-21T13:50:16Z",
+      "side": 1,
+      "message": "\u003e modulo race conditions\nhave update to not delete the last 5 minutes but happy to consider alternate approaches",
+      "parentUuid": "9f7205ff_0ec7602b",
+      "revId": "54a97309dbc8b19e0d8fc5d57f62974da3968329",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "99f08db9_d5894019",
@@ -52,6 +87,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "49cedc40_5bbf173b",
+        "filename": "customscripts/getstats.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-06-21T13:50:16Z",
+      "side": 1,
+      "message": "thanks, updated",
+      "parentUuid": "99f08db9_d5894019",
+      "revId": "54a97309dbc8b19e0d8fc5d57f62974da3968329",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "023a0112_a37d7cd0",
@@ -65,6 +118,24 @@
       "writtenOn": "2022-06-21T13:10:24Z",
       "side": 1,
       "message": "The name of the job in the DB is getstats.GetDeviceStats, so it should be both the name of the file and the name of the class.",
+      "revId": "54a97309dbc8b19e0d8fc5d57f62974da3968329",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8f29a9d_0c8a6150",
+        "filename": "customscripts/getstats.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-06-21T13:50:16Z",
+      "side": 1,
+      "message": "i have update this to use:\n  name \u003d f\u0027{__name__}.{type(self).__name__}\u0027\nhowever:\n 1. i suspect there is a better way to do this\n 2. do we need to handle the case when __name__ \u003d\u003d \u0027__main__\u0027?",
+      "parentUuid": "023a0112_a37d7cd0",
       "revId": "54a97309dbc8b19e0d8fc5d57f62974da3968329",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
