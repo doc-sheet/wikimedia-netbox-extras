@@ -156,6 +156,24 @@
       "parentUuid": "c8f29a9d_0c8a6150",
       "revId": "54a97309dbc8b19e0d8fc5d57f62974da3968329",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9101487_f27cafc7",
+        "filename": "customscripts/getstats.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-06-21T16:29:36Z",
+      "side": 1,
+      "message": "updated thanks",
+      "parentUuid": "3c2aeaa8_9caed4b4",
+      "revId": "54a97309dbc8b19e0d8fc5d57f62974da3968329",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
