@@ -1,10 +1,16 @@
 """Produce Prometheus-formatted statistics about devices."""
 
 from collections import Counter
+from datetime import timedelta
 from io import StringIO
+
+from django.contrib.contenttypes.models import ContentType
+from django.utils import timezone
 
 from dcim.models import Device
 
+from extras import models
+from extras.choices import JobResultStatusChoices
 from extras.scripts import Script
 
 
@@ -14,6 +20,20 @@ class GetDeviceStats(Script):
         description = "Dump a set of statistics about various devices for Prometheus."
 
     def run(self, data, commit):
+        # Delete old versions of this report
+        obj_type = ContentType.objects.get_for_model(models.Script)
+        name = f'{__name__}.{type(self).__name__}'
+        # Keep any reports from the last 5 minutes to make this less racy
+        cutoff = timezone.now() - timedelta(minutes=5)
+        jobs = models.JobResult.objects.filter(
+            obj_type=obj_type,
+            name=name,
+            status__in=JobResultStatusChoices.TERMINAL_STATE_CHOICES,
+            created__lt=cutoff,
+        )
+        # Make sure we call delete on each job to trigger any customized delete methods
+        for job in jobs:
+            job.delete()
         counts = Counter()
         output = StringIO()
         for device in Device.objects.all().values_list(
