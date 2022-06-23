@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "749206a1_67adf574",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-23T10:37:53Z",
+      "side": 1,
+      "message": "LGTM test it on netbox-next if possible.",
+      "revId": "96b7b535c555e6c31746c4bbe1127e759a8d70f0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27bc0c84_2f531916",
+        "filename": "customscripts/getstats.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-23T10:37:53Z",
+      "side": 1,
+      "message": "typo: handling",
+      "range": {
+        "startLine": 20,
+        "startChar": 35,
+        "endLine": 20,
+        "endChar": 44
+      },
+      "revId": "96b7b535c555e6c31746c4bbe1127e759a8d70f0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
