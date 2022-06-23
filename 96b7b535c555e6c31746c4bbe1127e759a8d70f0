@@ -18,6 +18,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a575ca5_723586ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-06-23T11:09:22Z",
+      "side": 1,
+      "message": "done seems to work as expected",
+      "parentUuid": "749206a1_67adf574",
+      "revId": "96b7b535c555e6c31746c4bbe1127e759a8d70f0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "27bc0c84_2f531916",
@@ -31,6 +49,30 @@
       "writtenOn": "2022-06-23T10:37:53Z",
       "side": 1,
       "message": "typo: handling",
+      "range": {
+        "startLine": 20,
+        "startChar": 35,
+        "endLine": 20,
+        "endChar": 44
+      },
+      "revId": "96b7b535c555e6c31746c4bbe1127e759a8d70f0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "343a7d76_01cf9738",
+        "filename": "customscripts/getstats.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-06-23T11:09:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27bc0c84_2f531916",
       "range": {
         "startLine": 20,
         "startChar": 35,
