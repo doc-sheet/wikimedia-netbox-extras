@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6abc6b6_0ee3ab8c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-06-23T16:45:50Z",
+      "side": 1,
+      "message": "Small steps towards v6 consistency, nice :)\n\nInstead of \"NO_V6_DEVICE_NAME_PREFIXES\" what do you think of having a dict of {prefixes:count}, where count is the number of (active) devices with a primary AAAA.\nAnd then alert if devices have the same prefix, no AAAA and count \u003e 0 (or X).\nThat will probably take more time to run (it needs to iterate over all the devices twice?) but will remove the need of a manually curated list.",
+      "revId": "3b5469b83ac86cb0ce1dc8ea9aa6dfde1d3da205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66d29ae6_7d272b9c",
+        "filename": "reports/network.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-06-23T16:45:50Z",
+      "side": 1,
+      "message": "How did this list get created?\nFor example there are \"parse\" servers with AAAA. Does that mean it\u0027s breaking something, or it\u0027s a signal that the other similar servers should get v6 enabled?",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 26
+      },
+      "revId": "3b5469b83ac86cb0ce1dc8ea9aa6dfde1d3da205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5da6664d_f4fa63fe",
+        "filename": "reports/network.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-06-23T16:45:50Z",
+      "side": 1,
+      "message": "Here and the other \"log_failure\": there is a risk that teams responsible for the servers currently alerting (based on netbox-next data) take a while to do so. In that case the report will alert for a long time.",
+      "range": {
+        "startLine": 196,
+        "startChar": 21,
+        "endLine": 196,
+        "endChar": 32
+      },
+      "revId": "3b5469b83ac86cb0ce1dc8ea9aa6dfde1d3da205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abd3a2dd_d068b655",
+        "filename": "reports/network.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-06-23T16:45:50Z",
+      "side": 1,
+      "message": "that goes back to my above comment on \"NO_V6_DEVICE_NAME_PREFIXES\".\n no v6 configured on all its members !\u003d does not support it.",
+      "range": {
+        "startLine": 202,
+        "startChar": 94,
+        "endLine": 202,
+        "endChar": 115
+      },
+      "revId": "3b5469b83ac86cb0ce1dc8ea9aa6dfde1d3da205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
