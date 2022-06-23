@@ -18,6 +18,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7235d2dc_c08e099b",
+        "filename": "reports/network.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-06-23T10:06:47Z",
+      "side": 1,
+      "message": "I\u0027m going to fix the last ones right after merging it to be sure it alerts as expected.",
+      "parentUuid": "25dd8daf_ce133d10",
+      "revId": "ef5f4c7eff191f05b568f992ec4f9304079df48d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dffae170_4943d758",
@@ -31,6 +49,24 @@
       "writtenOn": "2022-06-23T09:38:10Z",
       "side": 1,
       "message": "missmatch -\u003e mismatch (the same typo is in another couple of places that would be good to fix with this change)",
+      "revId": "ef5f4c7eff191f05b568f992ec4f9304079df48d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32da66a7_bfd47fa8",
+        "filename": "reports/network.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-06-23T10:06:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dffae170_4943d758",
       "revId": "ef5f4c7eff191f05b568f992ec4f9304079df48d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
