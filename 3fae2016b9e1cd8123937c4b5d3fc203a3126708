@@ -16,6 +16,23 @@
       "message": "Thanks Arzhel, tried to address in latest patchset let me know what you think.  Went with the try/except as what the filter returns is different depending on if it\u0027s a single element or multiple, and the \u0027multiple\u0027 case is going to be extremely rare.",
       "revId": "3fae2016b9e1cd8123937c4b5d3fc203a3126708",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d30a7f8_410b181e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-06-23T08:06:57Z",
+      "side": 1,
+      "message": "That\u0027s great! ",
+      "revId": "3fae2016b9e1cd8123937c4b5d3fc203a3126708",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
