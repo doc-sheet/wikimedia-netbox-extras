@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25dd8daf_ce133d10",
+        "filename": "reports/network.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2022-06-23T09:38:10Z",
+      "side": 1,
+      "message": "Should the remaining 4 alerts of this type be fixed before this is converted to a failure?",
+      "revId": "ef5f4c7eff191f05b568f992ec4f9304079df48d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dffae170_4943d758",
+        "filename": "reports/network.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2022-06-23T09:38:10Z",
+      "side": 1,
+      "message": "missmatch -\u003e mismatch (the same typo is in another couple of places that would be good to fix with this change)",
+      "revId": "ef5f4c7eff191f05b568f992ec4f9304079df48d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
