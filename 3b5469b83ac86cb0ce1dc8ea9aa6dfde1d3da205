@@ -18,6 +18,23 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "30c914a7_b93d3d90",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-27T10:06:24Z",
+      "side": 1,
+      "message": "replies inline",
+      "revId": "3b5469b83ac86cb0ce1dc8ea9aa6dfde1d3da205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "66d29ae6_7d272b9c",
@@ -31,6 +48,30 @@
       "writtenOn": "2022-06-23T16:45:50Z",
       "side": 1,
       "message": "How did this list get created?\nFor example there are \"parse\" servers with AAAA. Does that mean it\u0027s breaking something, or it\u0027s a signal that the other similar servers should get v6 enabled?",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 26
+      },
+      "revId": "3b5469b83ac86cb0ce1dc8ea9aa6dfde1d3da205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53a090bd_12109b2f",
+        "filename": "reports/network.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-27T10:06:24Z",
+      "side": 1,
+      "message": "This list got created starting with the current old report, selecting prefixes for which we had more than one host missing the DNS name in netbox.\nWith this new list it\u0027s now possible to make the current check that checks both ways:\n* hosts that are not in the prefixes must have v6 enabled\n* host that are in prefixes should not have it, but if they have is a warning, to tell us that in some way some hosts have it and some not. This can happen for multiple reasons:\n * The no AAAA record in the provision script in Netbox was not flagged by mistake (not communicated to DCOps, forgot, etc..)\n * Some of the host got migrated to support AAAA records (migrating to a new OS, or a new version of a software, etc...)\n\nIn the cases where some hosts have it and some not we either have continuous retries (v6-\u003efail-\u003eretry v4) that we should investigate, or is a good indication that the software actually supports AAAA records and we could easily enable the whole cluster.",
+      "parentUuid": "66d29ae6_7d272b9c",
       "range": {
         "startLine": 26,
         "startChar": 0,
@@ -66,6 +107,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "04070801_049f1322",
+        "filename": "reports/network.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-27T10:06:24Z",
+      "side": 1,
+      "message": "Current result with live data is here:\nhttps://netbox.wikimedia.org/extras/reports/results/3427197/\n(I quickly tested and reverted).\nFor the 3 outstanding errors I\u0027ve already contacted the service owners and was hoping to get them fixed this week.",
+      "parentUuid": "5da6664d_f4fa63fe",
+      "range": {
+        "startLine": 196,
+        "startChar": 21,
+        "endLine": 196,
+        "endChar": 32
+      },
+      "revId": "3b5469b83ac86cb0ce1dc8ea9aa6dfde1d3da205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "abd3a2dd_d068b655",
         "filename": "reports/network.py",
         "patchSetId": 1
@@ -77,6 +142,30 @@
       "writtenOn": "2022-06-23T16:45:50Z",
       "side": 1,
       "message": "that goes back to my above comment on \"NO_V6_DEVICE_NAME_PREFIXES\".\n no v6 configured on all its members !\u003d does not support it.",
+      "range": {
+        "startLine": 202,
+        "startChar": 94,
+        "endLine": 202,
+        "endChar": 115
+      },
+      "revId": "3b5469b83ac86cb0ce1dc8ea9aa6dfde1d3da205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "020e91a5_3a1bbdf4",
+        "filename": "reports/network.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-27T10:06:24Z",
+      "side": 1,
+      "message": "How would you phrase it? Doesn\u0027t seem to support, has multiple hosts without it? I\u0027m open for suggestion.",
+      "parentUuid": "abd3a2dd_d068b655",
       "range": {
         "startLine": 202,
         "startChar": 94,
