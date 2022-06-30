@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c73c55c1_c81d35eb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-06-30T16:53:31Z",
+      "side": 1,
+      "message": "Self-merging to unblock the dumps.\nThe original error is available from: https://phabricator.wikimedia.org/P30656",
+      "revId": "17f00149883371359f0b8062e0cb176f7aa0bb02",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
