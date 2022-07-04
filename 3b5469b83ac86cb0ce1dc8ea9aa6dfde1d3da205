@@ -70,6 +70,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a8658b4_8068d0e2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-07-04T14:54:00Z",
+      "side": 1,
+      "message": "OK, thanks! Yeah it would be nice that service owners document why it\u0027s not supported, ideally on their Wikitech page, linking back to the report so if one day they support it, we don\u0027t forget to remove it.",
+      "parentUuid": "3fbef628_be0bf07b",
+      "revId": "3b5469b83ac86cb0ce1dc8ea9aa6dfde1d3da205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "66d29ae6_7d272b9c",
@@ -107,6 +125,30 @@
       "side": 1,
       "message": "This list got created starting with the current old report, selecting prefixes for which we had more than one host missing the DNS name in netbox.\nWith this new list it\u0027s now possible to make the current check that checks both ways:\n* hosts that are not in the prefixes must have v6 enabled\n* host that are in prefixes should not have it, but if they have is a warning, to tell us that in some way some hosts have it and some not. This can happen for multiple reasons:\n * The no AAAA record in the provision script in Netbox was not flagged by mistake (not communicated to DCOps, forgot, etc..)\n * Some of the host got migrated to support AAAA records (migrating to a new OS, or a new version of a software, etc...)\n\nIn the cases where some hosts have it and some not we either have continuous retries (v6-\u003efail-\u003eretry v4) that we should investigate, or is a good indication that the software actually supports AAAA records and we could easily enable the whole cluster.",
       "parentUuid": "66d29ae6_7d272b9c",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 26
+      },
+      "revId": "3b5469b83ac86cb0ce1dc8ea9aa6dfde1d3da205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e906dae_aba59a3c",
+        "filename": "reports/network.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-07-04T14:54:00Z",
+      "side": 1,
+      "message": "Thanks for the clarification.",
+      "parentUuid": "53a090bd_12109b2f",
       "range": {
         "startLine": 26,
         "startChar": 0,
@@ -164,6 +206,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e62f368a_ceda8708",
+        "filename": "reports/network.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-07-04T14:54:00Z",
+      "side": 1,
+      "message": "From IRC, all outstanding errors resolved.",
+      "parentUuid": "04070801_049f1322",
+      "range": {
+        "startLine": 196,
+        "startChar": 21,
+        "endLine": 196,
+        "endChar": 32
+      },
+      "revId": "3b5469b83ac86cb0ce1dc8ea9aa6dfde1d3da205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "abd3a2dd_d068b655",
@@ -201,6 +267,30 @@
       "side": 1,
       "message": "How would you phrase it? Doesn\u0027t seem to support, has multiple hosts without it? I\u0027m open for suggestion.",
       "parentUuid": "abd3a2dd_d068b655",
+      "range": {
+        "startLine": 202,
+        "startChar": 94,
+        "endLine": 202,
+        "endChar": 115
+      },
+      "revId": "3b5469b83ac86cb0ce1dc8ea9aa6dfde1d3da205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68a825f9_2b58b3f0",
+        "filename": "reports/network.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-07-04T14:54:00Z",
+      "side": 1,
+      "message": "\"Primary IPv6 has DNS name on a cluster that is listed as not supporting IPv6\" maybe",
+      "parentUuid": "020e91a5_3a1bbdf4",
       "range": {
         "startLine": 202,
         "startChar": 94,
