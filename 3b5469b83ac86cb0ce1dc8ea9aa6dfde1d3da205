@@ -88,6 +88,23 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bbed47b_aa2e56d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-07-04T14:54:18Z",
+      "side": 1,
+      "message": "Small suggestion, LGTM otherwise!",
+      "revId": "3b5469b83ac86cb0ce1dc8ea9aa6dfde1d3da205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "66d29ae6_7d272b9c",
