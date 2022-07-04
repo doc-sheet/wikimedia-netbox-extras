@@ -35,6 +35,41 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "50e9e1bd_e875f2b6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-07-04T09:13:04Z",
+      "side": 1,
+      "message": "reply inline",
+      "revId": "3b5469b83ac86cb0ce1dc8ea9aa6dfde1d3da205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fbef628_be0bf07b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-07-04T09:13:04Z",
+      "side": 1,
+      "message": "I\u0027m not sure the added complexity will pay off here, we also have some hosts without the NNNN number format to take into account.\nThe hardcoded list is the one of clusters that are not supposed to support AAAA.\nOf those some do have some hosts with AAAA records. I was planning to create a task for each cluster in this situation to ask the service owner to check if it\u0027s all good and add the AAAA records if their service is ready or remove them from the other hosts if it\u0027s causing issues.",
+      "parentUuid": "f6abc6b6_0ee3ab8c",
+      "revId": "3b5469b83ac86cb0ce1dc8ea9aa6dfde1d3da205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "66d29ae6_7d272b9c",
