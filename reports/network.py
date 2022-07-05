@@ -318,3 +318,38 @@ class Network(Report):
 
         if success > 0:
             self.log_success(None, f"{success} server IP allocations matched attached switch port Vlan.")
+
+    def test_port_block_consistency(self):
+        """Validate that port types within each block of 4 are consistent for QFX5120 series
+
+        Trident 3 based devices like the QFX5120 have a constraint that port speeds (1/10/25Gb)
+        must be consistent within each block of 4 (i.e. 0-3, 4-7, 8-11 etc).  This check validates
+        the data in Netbox conforms to this constraint.
+
+        Only the SFP28 slots 0-47 are considered as the constraint does not apply to QSFP28 ports.
+        """
+
+        success = 0
+        for device in (Device.objects.filter(device_type__slug="qfx5120-48y-8c")):
+            port_blocks = {}
+            device_failed = False
+            for interface in device.interfaces.exclude(type='virtual').exclude(mgmt_only=True):
+                port = int(interface.name.split('/')[-1])
+                if port >= 48:
+                    continue
+
+                block = port - (port % 4)
+                if block not in port_blocks.keys():
+                    port_blocks[block] = interface.type
+                elif port_blocks[block] != interface.type:
+                    other_ports = [x for x in range(block, 4) if x != port]
+                    self.log_failure(interface,
+                                     f"Interface type '{interface.type}' inconsistent with "
+                                     f"the other ports {other_ports} in same block of 4 on {device.name}")
+                    device_failed = True
+
+            if not device_failed:
+                success += 1
+
+        if success > 0:
+            self.log_success(None, f"{success} QFX5120 devices have no port speed inconsistencies within blocks of 4.")
