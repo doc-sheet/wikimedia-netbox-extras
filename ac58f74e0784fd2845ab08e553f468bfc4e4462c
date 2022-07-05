@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e499599f_a3aa9f8b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-07-05T17:14:59Z",
+      "side": 1,
+      "message": "Nice! Some comments.",
+      "revId": "ac58f74e0784fd2845ab08e553f468bfc4e4462c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27bd27f9_0fe493f3",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-07-05T17:14:59Z",
+      "side": 1,
+      "message": "This will fail if we start using breakout cables one day.\n\n```\n\u003e\u003e\u003e int(\u0027xe-1/1/1:0\u0027.split(\u0027/\u0027)[-1])\nTraceback (most recent call last):\n  File \"\u003cstdin\u003e\", line 1, in \u003cmodule\u003e\nValueError: invalid literal for int() with base 10: \u00271:0\u0027\n```",
+      "range": {
+        "startLine": 331,
+        "startChar": 23,
+        "endLine": 331,
+        "endChar": 57
+      },
+      "revId": "ac58f74e0784fd2845ab08e553f468bfc4e4462c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4165e01c_69145329",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-07-05T17:14:59Z",
+      "side": 1,
+      "message": "I noticed that some ports are miss-configured with \u00271000base-t\u0027 (fixed) instead of \u00271000base-x-sfp\u0027 (SFP), as this test only applies to SFP switches it might be a good opportunity to reports for those as well.",
+      "range": {
+        "startLine": 336,
+        "startChar": 19,
+        "endLine": 336,
+        "endChar": 56
+      },
+      "revId": "ac58f74e0784fd2845ab08e553f468bfc4e4462c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2dae805_3b953335",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-07-05T17:14:59Z",
+      "side": 1,
+      "message": "here and everywhere else, what do you think of storing/comparing the interface type directly instead? Is there a possibility that a group of 4 ports is of the same speed but different types? (I\u0027m not familiar with all the types)\nFor reference: https://github.com/netbox-community/netbox/blob/master/netbox/dcim/choices.py#L737\n\nThis would make the script slightly simpler, and point the user directly at what to change in the error message.",
+      "range": {
+        "startLine": 337,
+        "startChar": 20,
+        "endLine": 337,
+        "endChar": 25
+      },
+      "revId": "ac58f74e0784fd2845ab08e553f468bfc4e4462c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35a4f6da_57daae82",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-07-05T17:14:59Z",
+      "side": 1,
+      "message": "This will crash if a port is missconfigured (doesn\u0027t have base or gbase).\n\n```\n\u003e\u003e\u003e int(\u00276gfc-sfpp\u0027.split(\u0027gbase\u0027)[0])\nTraceback (most recent call last):\n  File \"\u003cstdin\u003e\", line 1, in \u003cmodule\u003e\nValueError: invalid literal for int() with base 10: \u00276gfc-sfpp\u0027\n```\n\nWhat do you think of a elif for gbase, and cleanly catch miss-configs with else log_failure ?",
+      "range": {
+        "startLine": 339,
+        "startChar": 28,
+        "endLine": 339,
+        "endChar": 65
+      },
+      "revId": "ac58f74e0784fd2845ab08e553f468bfc4e4462c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "661f0343_7c6451a2",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-07-05T17:14:59Z",
+      "side": 1,
+      "message": "this should be the interface, to point directly at where the issue is.",
+      "range": {
+        "startLine": 346,
+        "startChar": 37,
+        "endLine": 346,
+        "endChar": 43
+      },
+      "revId": "ac58f74e0784fd2845ab08e553f468bfc4e4462c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b05da6f_7ba61621",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-07-05T17:14:59Z",
+      "side": 1,
+      "message": "And something like:\n\"[eqiad] Interface type (1G) inconsistent with others in block starting with port 3 (25G)\"\nHere i mention type instead of speed as that\u0027s the name of the field the user needs to edit.",
+      "range": {
+        "startLine": 347,
+        "startChar": 39,
+        "endLine": 348,
+        "endChar": 61
+      },
+      "revId": "ac58f74e0784fd2845ab08e553f468bfc4e4462c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
