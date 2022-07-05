@@ -41,6 +41,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e5f8e8b_1f8cb758",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-07-05T17:59:14Z",
+      "side": 1,
+      "message": "This test is only looking at ports 0-47 on QFX5120 devices though, which don\u0027t support break-out cables.",
+      "parentUuid": "27bd27f9_0fe493f3",
+      "range": {
+        "startLine": 331,
+        "startChar": 23,
+        "endLine": 331,
+        "endChar": 57
+      },
+      "revId": "ac58f74e0784fd2845ab08e553f468bfc4e4462c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4165e01c_69145329",
@@ -54,6 +78,30 @@
       "writtenOn": "2022-07-05T17:14:59Z",
       "side": 1,
       "message": "I noticed that some ports are miss-configured with \u00271000base-t\u0027 (fixed) instead of \u00271000base-x-sfp\u0027 (SFP), as this test only applies to SFP switches it might be a good opportunity to reports for those as well.",
+      "range": {
+        "startLine": 336,
+        "startChar": 19,
+        "endLine": 336,
+        "endChar": 56
+      },
+      "revId": "ac58f74e0784fd2845ab08e553f468bfc4e4462c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb377aa1_2af79488",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-07-05T17:59:14Z",
+      "side": 1,
+      "message": "Hmm yeah, probably complicated by the fact we use 1000Base-T modules in the SFP ports.  But yes we can report on this.",
+      "parentUuid": "4165e01c_69145329",
       "range": {
         "startLine": 336,
         "startChar": 19,
@@ -89,6 +137,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4a253568_439ba81a",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-07-05T17:59:14Z",
+      "side": 1,
+      "message": "I\u0027m all for a simpler script yep!  Thinking about it it\u0027s a little tricky to model, in that the type of port the modules slot into remains an SFP28 port, which is compatible with various PHYs, including 1000base-t.  Anyway just an observation, I think this suggestion makes sense so I\u0027ll do that.",
+      "parentUuid": "c2dae805_3b953335",
+      "range": {
+        "startLine": 337,
+        "startChar": 20,
+        "endLine": 337,
+        "endChar": 25
+      },
+      "revId": "ac58f74e0784fd2845ab08e553f468bfc4e4462c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "35a4f6da_57daae82",
         "filename": "reports/network.py",
         "patchSetId": 2
@@ -100,6 +172,30 @@
       "writtenOn": "2022-07-05T17:14:59Z",
       "side": 1,
       "message": "This will crash if a port is missconfigured (doesn\u0027t have base or gbase).\n\n```\n\u003e\u003e\u003e int(\u00276gfc-sfpp\u0027.split(\u0027gbase\u0027)[0])\nTraceback (most recent call last):\n  File \"\u003cstdin\u003e\", line 1, in \u003cmodule\u003e\nValueError: invalid literal for int() with base 10: \u00276gfc-sfpp\u0027\n```\n\nWhat do you think of a elif for gbase, and cleanly catch miss-configs with else log_failure ?",
+      "range": {
+        "startLine": 339,
+        "startChar": 28,
+        "endLine": 339,
+        "endChar": 65
+      },
+      "revId": "ac58f74e0784fd2845ab08e553f468bfc4e4462c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e41e33d2_7a7b1ef9",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-07-05T17:59:14Z",
+      "side": 1,
+      "message": "I think your previous suggestion is probably the simplest way - confirm they are all of the same type, and that will help enforce we use the same type.",
+      "parentUuid": "35a4f6da_57daae82",
       "range": {
         "startLine": 339,
         "startChar": 28,
@@ -135,6 +231,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6b62c074_820ab43f",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-07-05T17:59:14Z",
+      "side": 1,
+      "message": "Ah ok, not an expert on reports.  I take it any first-class Netbox object can be passed back?  Thanks for the tip.",
+      "parentUuid": "661f0343_7c6451a2",
+      "range": {
+        "startLine": 346,
+        "startChar": 37,
+        "endLine": 346,
+        "endChar": 43
+      },
+      "revId": "ac58f74e0784fd2845ab08e553f468bfc4e4462c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4b05da6f_7ba61621",
         "filename": "reports/network.py",
         "patchSetId": 2
@@ -146,6 +266,30 @@
       "writtenOn": "2022-07-05T17:14:59Z",
       "side": 1,
       "message": "And something like:\n\"[eqiad] Interface type (1G) inconsistent with others in block starting with port 3 (25G)\"\nHere i mention type instead of speed as that\u0027s the name of the field the user needs to edit.",
+      "range": {
+        "startLine": 347,
+        "startChar": 39,
+        "endLine": 348,
+        "endChar": 61
+      },
+      "revId": "ac58f74e0784fd2845ab08e553f468bfc4e4462c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df047e96_ce133c08",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-07-05T17:59:14Z",
+      "side": 1,
+      "message": "Ok.  Let me think through how to re-work the logic to support that, probably as simple as sorting the interfaces prior to iterating over them.  Or can record every type and iterate twice, and output a more detailed message, will think it over.",
+      "parentUuid": "4b05da6f_7ba61621",
       "range": {
         "startLine": 347,
         "startChar": 39,
