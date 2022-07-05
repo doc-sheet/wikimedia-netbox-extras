@@ -303,6 +303,10 @@ class Network(Report):
                         self.log_failure(interface.device, f"Vlan {interface.connected_endpoint.untagged_vlan} "
                                                            f"has more than one IPv{family} prefix assigned")
                         vlan_pfx = interface.connected_endpoint.untagged_vlan.prefixes.filter(prefix__family=family)[0]
+                    except Prefix.DoesNotExist:
+                        self.log_warning(None, f"Vlan '{interface.connected_endpoint.untagged_vlan}' has "
+                                               f"no IPv{family} prefix assigned.")
+                        continue
                     for ip_addr in interface.ip_addresses.filter(address__family=family):
                         if (ip_addr.address.network != vlan_pfx.prefix.network
                            or ip_addr.address.prefixlen != vlan_pfx.prefix.prefixlen):
@@ -314,3 +318,44 @@ class Network(Report):
 
         if success > 0:
             self.log_success(None, f"{success} server IP allocations matched attached switch port Vlan.")
+
+    def test_port_block_consistency(self):
+        """Validate that port types within each block of 4 are consistent for QFX5120 series
+
+        Trident 3 based devices like the QFX5120 have a constraint that port speeds (1/10/25Gb)
+        must be consistent within each block of 4 (i.e. 0-3, 4-7, 8-11 etc).  This check validates
+        the data in Netbox conforms to this constraint.
+
+        Only the SFP28 slots 0-47 are considered as the constraint does not apply to QSFP28 ports.
+        """
+
+        success = 0
+        for device in (Device.objects.filter(device_type__slug="qfx5120-48y-8c")):
+            port_blocks = {}
+            device_failed = False
+            for interface in device.interfaces.exclude(type='virtual').exclude(mgmt_only=True):
+                try:
+                    port = int(interface.name.split(':')[0].split('/')[-1])
+                except ValueError:
+                    self.log_failure(interface,
+                                     f"[eqiad] Invalid interface name on Juniper QFX5120 device '{device.name}'")
+                    continue
+                if port >= 48:
+                    continue
+
+                block = port - (port % 4)
+                if block not in port_blocks.keys():
+                    port_blocks[block] = interface.type
+                elif port_blocks[block] != interface.type:
+                    block_members = ", ".join(str(x) for x in range(block, 3)) + f" and {block+4}"
+                    self.log_failure(interface,
+                                     f"[{device.site.slug}] Interface type '{interface.type}' does not match "
+                                     f"'{port_blocks[block]}' set on other(s) in same block on {device.name}. "
+                                     f"Ports {block_members} need to be same type.")
+                    device_failed = True
+
+            if not device_failed:
+                success += 1
+
+        if success > 0:
+            self.log_success(None, f"{success} QFX5120 devices have no port speed inconsistencies within blocks of 4.")
