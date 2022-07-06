@@ -159,6 +159,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "303188ac_724705a4",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-07-06T11:29:07Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4a253568_439ba81a",
+      "range": {
+        "startLine": 337,
+        "startChar": 20,
+        "endLine": 337,
+        "endChar": 25
+      },
+      "revId": "ac58f74e0784fd2845ab08e553f468bfc4e4462c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "35a4f6da_57daae82",
@@ -253,6 +277,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2684fb6_c5d256fa",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-07-06T11:29:07Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6b62c074_820ab43f",
+      "range": {
+        "startLine": 346,
+        "startChar": 37,
+        "endLine": 346,
+        "endChar": 43
+      },
+      "revId": "ac58f74e0784fd2845ab08e553f468bfc4e4462c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4b05da6f_7ba61621",
@@ -290,6 +338,30 @@
       "side": 1,
       "message": "Ok.  Let me think through how to re-work the logic to support that, probably as simple as sorting the interfaces prior to iterating over them.  Or can record every type and iterate twice, and output a more detailed message, will think it over.",
       "parentUuid": "4b05da6f_7ba61621",
+      "range": {
+        "startLine": 347,
+        "startChar": 39,
+        "endLine": 348,
+        "endChar": 61
+      },
+      "revId": "ac58f74e0784fd2845ab08e553f468bfc4e4462c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9570fa6_5c0ae946",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-07-06T11:29:07Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "df047e96_ce133c08",
       "range": {
         "startLine": 347,
         "startChar": 39,
