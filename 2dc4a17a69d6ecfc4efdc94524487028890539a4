@@ -63,6 +63,30 @@
       },
       "revId": "2dc4a17a69d6ecfc4efdc94524487028890539a4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "27307c8d_2e1b7a52",
+        "filename": "reports/network.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-07-06T15:54:05Z",
+      "side": 1,
+      "message": "Done.  I re-worded it slightly.  I\u0027m anxious we don\u0027t also suggest that the interface that triggered the error is the one that is \"wrong\".  If a new interface is added somehow that doesn\u0027t match, the failure could trigger on a pre-existing interface or on the new one, depending on the order they are evaluated in.",
+      "parentUuid": "8f4d558b_1abc1fc0",
+      "range": {
+        "startLine": 346,
+        "startChar": 25,
+        "endLine": 346,
+        "endChar": 36
+      },
+      "revId": "2dc4a17a69d6ecfc4efdc94524487028890539a4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
