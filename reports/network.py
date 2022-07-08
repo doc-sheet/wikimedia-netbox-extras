@@ -347,7 +347,7 @@ class Network(Report):
                 if block not in port_blocks.keys():
                     port_blocks[block] = interface.type
                 elif port_blocks[block] != interface.type:
-                    block_members = ", ".join(str(x) for x in range(block, 3)) + f" and {block+4}"
+                    block_members = ", ".join(str(x) for x in range(block, 3)) + f" and {block+3}"
                     self.log_failure(interface,
                                      f"[{device.site.slug}] Interface type '{interface.type}' does not match "
                                      f"'{port_blocks[block]}' set on other(s) in same block on {device.name}. "
