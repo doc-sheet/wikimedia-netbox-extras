@@ -941,6 +941,10 @@ class MoveServer(Script, Importer):
                                  "virtual-chassis postition.")
                 return
 
+        if z_nbdevice.device_type.slug == "qfx5120-48y-8c":
+            if self._is_invalid_switchport_combo(z_nbdevice, z_iface):
+                return
+
         # find main interface
         ifaces_connected = device.interfaces.filter(mgmt_only=False).exclude(cable=None)
         if len(ifaces_connected) != 1:
@@ -1123,6 +1127,10 @@ class ProvisionServerNetwork(Script, Importer):
             if int(z_iface.split("-")[1].split("/")[0]) != 0:
                 self.log_failure(f"{device}: Interface name {z_iface} invalid, first digit of port "
                                  f"number should be 0 as {z_nbdevice.name} is not a virtual chassis.")
+                return
+
+        if z_nbdevice.device_type.slug == "qfx5120-48y-8c":
+            if self._is_invalid_switchport_combo(z_nbdevice, z_iface):
                 return
 
         # Check that we don't reuse a cable ID, if present
@@ -1351,6 +1359,35 @@ class ProvisionServerNetwork(Script, Importer):
                              f"unable to automatically verify if that's correct, please double check.")
 
         return True
+
+    def _is_invalid_switchport_combo(self, device, new_iface):
+        """Check interface speed/type complies with port block restriction on QFX5120."""
+        try:
+            new_iface_num = int(new_iface.split(':')[0].split('/')[-1])
+        except ValueError:
+            self.log_failure(f"Interface name '{new_iface}' is not a valid name for "
+                             f"QFX5120 device {device.name}")
+            return True
+
+        if new_iface_num>=48:
+            # QSFP ports can be of any speed so we're ok
+            return False
+
+        new_iface_block = new_iface_num - (new_iface_num % 4)
+        new_iface_type = self._get_iface_fmt(new_iface)
+
+        for interface in device.interfaces.exclude(type='virtual').exclude(mgmt_only=True):
+            interface_num = int(interface.name.split(':')[0].split('/')[-1])
+            interface_block = interface_num - (interface_num % 4)
+
+            if interface_block == new_iface_block and interface.type != new_iface_type:
+                block_members = ", ".join(str(x) for x in range(interface_block, 3)) + f" and {interface_block+3}"
+                self.log_failure(f"Interface type error, interface name {new_iface} implies type "
+                                 f"'{new_iface_type}' but {interface.name} is of type '{interface.type}'. "
+                                 f"Ports {block_members} need to have same speed/type on QFX5120.")
+                return True
+
+        return False
 
     def _add_iface(self, name, device, *, iface_type, mgmt=False):
         """Add an interface to the device."""
