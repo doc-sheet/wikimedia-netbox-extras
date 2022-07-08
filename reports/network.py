@@ -303,8 +303,9 @@ class Network(Report):
                                                            f"has more than one IPv{family} prefix assigned")
                         vlan_pfx = interface.connected_endpoint.untagged_vlan.prefixes.filter(prefix__family=family)[0]
                     except Prefix.DoesNotExist:
-                        self.log_warning(None, f"Vlan '{interface.connected_endpoint.untagged_vlan}' has "
-                                               f"no IPv{family} prefix assigned.")
+                        self.log_warning(interface.connected_endpoint.untagged_vlan, 
+                                         f"Vlan '{interface.connected_endpoint.untagged_vlan}' has "
+                                         f"no IPv{family} prefix assigned.")
                         continue
                     for ip_addr in interface.ip_addresses.filter(address__family=family):
                         if (ip_addr.address.network != vlan_pfx.prefix.network
