@@ -16,6 +16,23 @@
       "message": "Nice work! We can probably improve with the full data in puppetdb via custom_facts, which will also support cases where the interfaces don\u0027t match the naming convention, but AFAIK we don\u0027t have any of those anyway.  I\u0027ll see if I can work on that.",
       "revId": "a3e6e19a2a3b77acdd2cede9e554bed378cc44bb",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98631aef_a3a78bb0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-07-11T09:20:20Z",
+      "side": 1,
+      "message": "Tested on netbox-next and works as expected:\nhttps://netbox-next.wikimedia.org/extras/changelog/?request_id\u003d59d4e218-aba9-4c1a-963b-d9a309ace354\nhttps://netbox-next.wikimedia.org/dcim/devices/4141/interfaces/",
+      "revId": "a3e6e19a2a3b77acdd2cede9e554bed378cc44bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
