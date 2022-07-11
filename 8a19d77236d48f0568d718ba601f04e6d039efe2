@@ -33,6 +33,23 @@
       "message": "LGTM! as mentioned in I4a857d6c14c227a810233ff1259d5b01635005b0 it would be useful for users to have the rack/row location for VMs as well. But that\u0027s for a later time.",
       "revId": "8a19d77236d48f0568d718ba601f04e6d039efe2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0a54cb6_a6ca4982",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-07-11T09:57:15Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "8a19d77236d48f0568d718ba601f04e6d039efe2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
