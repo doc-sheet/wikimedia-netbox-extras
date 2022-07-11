@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "448cf765_206024ab",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-07-11T08:49:21Z",
+      "side": 1,
+      "message": "Not 100% sure yet, but I think this could be a Custom Validator now, see T310590.",
+      "revId": "03562644909042e2bb087407f4fa6b6f5329325a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
