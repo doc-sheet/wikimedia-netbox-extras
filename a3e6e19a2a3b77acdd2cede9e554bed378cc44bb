@@ -33,6 +33,69 @@
       "message": "Tested on netbox-next and works as expected:\nhttps://netbox-next.wikimedia.org/extras/changelog/?request_id\u003d59d4e218-aba9-4c1a-963b-d9a309ace354\nhttps://netbox-next.wikimedia.org/dcim/devices/4141/interfaces/",
       "revId": "a3e6e19a2a3b77acdd2cede9e554bed378cc44bb",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6f4f4a0_80a4bb69",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-07-11T12:17:49Z",
+      "side": 1,
+      "message": "see inline",
+      "revId": "a3e6e19a2a3b77acdd2cede9e554bed378cc44bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e3b7899_1dfc3803",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-07-11T12:17:49Z",
+      "side": 1,
+      "message": "nit: do we want to return something if \u0027.\u0027 is no in the name?  perhaps just:\n  return iface",
+      "range": {
+        "startLine": 441,
+        "startChar": 8,
+        "endLine": 441,
+        "endChar": 24
+      },
+      "revId": "a3e6e19a2a3b77acdd2cede9e554bed378cc44bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a70ac004_fd3f825e",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-07-11T12:17:49Z",
+      "side": 1,
+      "message": "nit: seems to be the  default behaviour as of py37\nre: https://stackoverflow.com/questions/9001509/how-can-i-sort-a-dictionary-by-key/47017849#47017849",
+      "range": {
+        "startLine": 490,
+        "startChar": 77,
+        "endLine": 490,
+        "endChar": 103
+      },
+      "revId": "a3e6e19a2a3b77acdd2cede9e554bed378cc44bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
