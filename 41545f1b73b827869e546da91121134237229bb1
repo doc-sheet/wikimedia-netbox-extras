@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e51175e3_5816c3ae",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-07-18T10:54:22Z",
+      "side": 1,
+      "message": "Self merging to clear the Netbox report. Feel free to do a post merge review.",
+      "revId": "41545f1b73b827869e546da91121134237229bb1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
