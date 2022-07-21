@@ -1,0 +1,8 @@
+Code-Review+1: Muehlenhoff <mmuhlenhoff@wikimedia.org>
+Code-Review+2: Volans <rcoccioli@wikimedia.org>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Thu, 21 Jul 2022 14:48:29 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/c/operations/software/netbox-extras/+/815997
+Project: operations/software/netbox-extras
+Branch: refs/heads/master
