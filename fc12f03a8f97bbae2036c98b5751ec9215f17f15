@@ -53,6 +53,23 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "399a1592_d38fe248",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1629
+      },
+      "writtenOn": "2022-07-27T11:06:41Z",
+      "side": 1,
+      "message": "Thank you for the review!\n\nComments make sense to me, I\u0027ll hold off the implementation depending on whether this might be good enough or we want to start from all mgmt interfaces instead",
+      "revId": "fc12f03a8f97bbae2036c98b5751ec9215f17f15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cc8f4f93_27cb5623",
@@ -100,6 +117,24 @@
       "writtenOn": "2022-07-27T10:47:02Z",
       "side": 1,
       "message": "For what this additional data is needed? Prometheus labels? It\u0027s all duplicated from what we\u0027re already exporting for each host.",
+      "revId": "fc12f03a8f97bbae2036c98b5751ec9215f17f15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7eb2c56f_484bf368",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1629
+      },
+      "writtenOn": "2022-07-27T11:06:41Z",
+      "side": 1,
+      "message": "The info might end up in Prometheus labels too yeah. The primary use case for me is going to be able to say \"a few management hosts from all rows\" or sth similar, namely to avoid hardcoding a list like we\u0027re doing in Smokeping now.",
+      "parentUuid": "a3bd4b7c_f9674f71",
       "revId": "fc12f03a8f97bbae2036c98b5751ec9215f17f15",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
