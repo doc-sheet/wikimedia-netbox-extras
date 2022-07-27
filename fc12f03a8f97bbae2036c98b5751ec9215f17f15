@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "269859ef_16b4db1b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1629
+      },
+      "writtenOn": "2022-07-27T10:07:58Z",
+      "side": 1,
+      "message": "The result is sth like the following:\n\n  mgmt:\n    codfw:\n      alert2001.mgmt.codfw.wmnet:\n        rack: \"C3\"\n        row: \"codfw-row-c\"\n\nWhich works but isn\u0027t complete, in the sense that covers only hosts. I\u0027m wondering what\u0027s a better approach here: perhaps start from IPAM mgmt prefixes, collect all interfaces on those prefixes and from there get the devices ? Of course similar to what dns/generate_dns_snippets.py does, what do you think ?",
+      "revId": "fc12f03a8f97bbae2036c98b5751ec9215f17f15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
