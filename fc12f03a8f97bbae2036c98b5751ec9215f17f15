@@ -16,6 +16,126 @@
       "message": "The result is sth like the following:\n\n  mgmt:\n    codfw:\n      alert2001.mgmt.codfw.wmnet:\n        rack: \"C3\"\n        row: \"codfw-row-c\"\n\nWhich works but isn\u0027t complete, in the sense that covers only hosts. I\u0027m wondering what\u0027s a better approach here: perhaps start from IPAM mgmt prefixes, collect all interfaces on those prefixes and from there get the devices ? Of course similar to what dns/generate_dns_snippets.py does, what do you think ?",
       "revId": "fc12f03a8f97bbae2036c98b5751ec9215f17f15",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3278849_cd329228",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-07-27T10:47:02Z",
+      "side": 1,
+      "message": "If you want all mgmt you should start from interfaces with mgmt_only\u003dTrue:\nhttps://netbox.wikimedia.org/dcim/interfaces/?mgmt_only\u003dTrue\n\nI\u0027ve reviewed the code based on the current implementation of doing it only for devices.\nIf instead we want to cover all mgmt then the approach should probably be to start from interfaces, get the assigned IP and it\u0027s related DNS name.\n@xionox @jbond thoughts?",
+      "parentUuid": "269859ef_16b4db1b",
+      "revId": "fc12f03a8f97bbae2036c98b5751ec9215f17f15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8b05e41_849a3827",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-07-27T10:47:02Z",
+      "side": 1,
+      "message": "Reviewed current implementation, replied to comment with alternative approach.",
+      "revId": "fc12f03a8f97bbae2036c98b5751ec9215f17f15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc8f4f93_27cb5623",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-07-27T10:47:02Z",
+      "side": 1,
+      "message": "instead of looping them all you can get the mgmt one by using get() with is_mgmt\u003dTrue and name\u003d\u0027mgmt\u0027.",
+      "revId": "fc12f03a8f97bbae2036c98b5751ec9215f17f15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "482643f7_0c1e66d0",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-07-27T10:47:02Z",
+      "side": 1,
+      "message": "You should use the dns_name property of the mgmt IP instead.",
+      "revId": "fc12f03a8f97bbae2036c98b5751ec9215f17f15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3bd4b7c_f9674f71",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-07-27T10:47:02Z",
+      "side": 1,
+      "message": "For what this additional data is needed? Prometheus labels? It\u0027s all duplicated from what we\u0027re already exporting for each host.",
+      "revId": "fc12f03a8f97bbae2036c98b5751ec9215f17f15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59a552d5_e5d8e5e4",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-07-27T10:47:02Z",
+      "side": 1,
+      "message": "I think using a defaultdict will simplify the code here.",
+      "revId": "fc12f03a8f97bbae2036c98b5751ec9215f17f15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b72e9434_193cf576",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-07-27T10:47:02Z",
+      "side": 1,
+      "message": "I don\u0027t think we can use hw_devices here, as this is excluding all HW_EXCLUDE_STATUSES, while we probably want to keep monitoring mgmt additional statuses too. As you check already the presence of the mgmt iface I think we could just exclude OFFLINE here.",
+      "revId": "fc12f03a8f97bbae2036c98b5751ec9215f17f15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
