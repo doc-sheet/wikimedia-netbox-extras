@@ -67,10 +67,38 @@ class HieraExport(Script):
                     hosts[device.name]['location']['ganeti_cluster'] = device.cluster.group.name
         return hosts
 
+    @staticmethod
+    def _generate_mgmt(devices: List[Device]) -> Dict:
+        """Generate the list of management hostnames, keyed by site
+
+        Arguments:
+            devices (List[Device]): a list of netbox devices
+
+        Returns:
+            dict: a dictionary of values for hiera
+
+        """
+        mgmt = {}
+
+        for device in devices:
+            if 'mgmt' not in [x.name for x in device.interfaces.all()]:
+                continue
+
+            fqdn = f'{device.name}.mgmt.{device.site.slug}.wmnet'
+            data = {
+                'row': device.rack.location.slug,
+                'rack': device.rack.name,
+            }
+
+            site_mgmt = mgmt.setdefault(device.site.slug, {})
+            site_mgmt[fqdn] = data
+
+        return mgmt
+
     def run(self, data: Dict, commit: bool) -> str:
         """Required by netbox"""
         # pylint: disable=unused-argument
-        results = {'hosts': {}}
+        results = {'hosts': {}, 'mgmt': {}}
         hw_devices = Device.objects.filter(
             device_role__slug="server", tenant__isnull=True
         ).exclude(status__in=HW_EXCLUDE_STATUSES)
@@ -78,4 +106,5 @@ class HieraExport(Script):
             status__in=VM_EXCLUDE_STATUSES)
         results['hosts'].update(self._generate_hosts(hw_devices))
         results['hosts'].update(self._generate_hosts(vm_devices))
+        results['mgmt'].update(self._generate_mgmt(hw_devices))
         return json.dumps(results)
