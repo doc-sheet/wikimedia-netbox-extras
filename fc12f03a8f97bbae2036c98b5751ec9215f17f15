@@ -72,6 +72,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f21e0aa0_7d129546",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-08-01T11:33:52Z",
+      "side": 1,
+      "message": "In Netbox the data is organized like:\ndevices -\u003e interfaces -\u003e IP(fqdn)\n\nWe need data from devices (status, rack, row, site) and from IPs.\n\nIf we didn\u0027t need that data (except site) the most efficient would be to directly iterate over the IPs in the prefixes listed in:\nhttps://netbox.wikimedia.org/ipam/roles/6/\n\nAs for the other functions we iterate over servers (hw_devices being incorrectly named) we could have a similar query to iterate over all devices, this would keep the script consistent.\n\nUsing interfaces is probably a bit more efficient, so it makes sens to go that way  as long as it doesn\u0027t make the code too complex.\n\nUnrelated I\u0027d recommend to have  a `site: codfw` instead of a single key to match `infra_devices` for example.\n\nLast instead of later on relying on DNS for the name resolution, I\u0027d suggest to hardcode the IP directly from Netbox as it\u0027s the source of truth.\n\n-----------\n\nThat was my first thought, but a radically different option is to upgrade \"_generate_hosts()\".\n\nIn `hw_devices` add the devices we care about instead of `device_role__slug\u003d\"server\"` same for `status__in`\n\nThen in `_generate_hosts()`, when relevant, add key values for `mgmt_fqdn` `mgmt_ip`.\n\nI\u0027m not sure there is much value to maintain 2 different hiera dicts which will both mostly consist of servers.",
+      "parentUuid": "b3278849_cd329228",
+      "revId": "fc12f03a8f97bbae2036c98b5751ec9215f17f15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cc8f4f93_27cb5623",
         "filename": "customscripts/hiera_export.py",
         "patchSetId": 1
