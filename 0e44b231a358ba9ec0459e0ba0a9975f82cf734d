@@ -16,6 +16,23 @@
       "message": "Manually tested and works fine.",
       "revId": "0e44b231a358ba9ec0459e0ba0a9975f82cf734d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f36ca352_07b089cc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-08-08T15:10:15Z",
+      "side": 1,
+      "message": "But we need to deploy I482631ebf972e755cd9ef1f11175854c0581bcae first if not already done.",
+      "revId": "0e44b231a358ba9ec0459e0ba0a9975f82cf734d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
