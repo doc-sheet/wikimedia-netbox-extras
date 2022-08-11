@@ -34,7 +34,6 @@ IP_PTR_BLOCKLIST_RE = tuple()
 
 # Statuses that devices must be to import
 IMPORT_STATUS_ALLOWLIST = ("active",
-                           "staged",
                            "failed",
                            "planned")
 
@@ -120,7 +119,7 @@ class Importer:
         try:
             ipaddr = IPAddress.objects.get(address=str(address))
         except ObjectDoesNotExist:
-            self.log_info(f"Creating {address}")
+            self.log_info(f"Creating {address} and assigning to interface '{nbiface.name}'")
             ipaddr = IPAddress(address=str(address),
                                assigned_object=nbiface, role=role)
             ipaddr.save()
@@ -440,20 +439,22 @@ class Importer:
         if nbcable is None:
             self._create_cable(nbiface, z_nbiface, label=label)
 
-    def _get_parent_interface(self, device, iface):
-        """Returns the matching parent interface if any."""
-        if '.' in iface:
-            try:
-                return Interface.objects.get(name=iface.split('.')[0], device=device)
-            except Interface.DoesNotExist:
-                return None
+    def _get_parent_interface(self, device, iface_dict, parent_type):
+        """Returns the matching parent interface if any. parent_type can be 'parent_link'
+           (for vlan sub-int parent physical), or 'parent_bridge' (for bridge member parent
+           bridge)."""
+        try:
+            return Interface.objects.get(name=iface_dict[parent_type], device=device)
+        except (Interface.DoesNotExist, KeyError):
+            return None
+        return None
 
     def _make_interface_vm(self, device, iface, mtu):
         # only set MTU if it is non-default and not a loopback
         nbiface = VMInterface(name=iface,
                               virtual_machine=device,
-                              mtu=mtu,
-                              parent=self._get_parent_interface(device, iface))
+                              mtu=mtu)
+
         nbiface.save()
         return nbiface
 
@@ -467,15 +468,97 @@ class Importer:
             # otherwise if the speed is 10000 we make it 10GE
             if net_driver[iface]["speed"] == 10000:
                 iface_fmt = InterfaceTypeChoices.TYPE_10GE_SFP_PLUS
+            elif net_driver[iface]["speed"] == 25000:
+                iface_fmt = InterfaceTypeChoices.TYPE_25GE_SFP28
 
         nbiface = Interface(name=iface,
                             mgmt_only=False,
                             device=device,
                             type=iface_fmt,
-                            mtu=mtu,
-                            parent=self._get_parent_interface(device, iface))
+                            mtu=mtu)
+
         nbiface.save()
         return nbiface
+
+    def _update_int_relations(self, device, nbiface, iface_dict):
+        """ Sets or updates interface link parents, bridge membership and vlan settings
+            as required """
+
+        # Create attachment to related interfaces
+        parent_bridge = self._get_parent_interface(device, iface_dict, "parent_bridge")
+        if parent_bridge and nbiface.bridge != parent_bridge:
+            nbiface.bridge = parent_bridge
+            self.log_info(f"Set interface '{nbiface.name}' as a member port of the '{parent_bridge.name}' bridge")
+
+        parent_link = self._get_parent_interface(device, iface_dict, "parent_link")
+        if parent_link and nbiface.parent != parent_link:
+            nbiface.parent = parent_link
+            self.log_info(f"Set interface '{nbiface.name}' parent link to interface '{parent_link.name}'")
+
+        # If it's a special type of int set type
+        if "kind" in iface_dict:
+            if iface_dict['kind'] == "vlan":
+                # Make sure it's virtual and access vlan set on it, plus tagged on its parent
+                nbiface.type = InterfaceTypeChoices.TYPE_VIRTUAL
+                self._set_subint_vlan(nbiface, iface_dict, device)
+            elif iface_dict['kind'] == "bridge" and nbiface.type != InterfaceTypeChoices.TYPE_BRIDGE:
+                nbiface.type = InterfaceTypeChoices.TYPE_BRIDGE
+                self.log_info(f"Set interface '{nbiface.name}' to type bridge.")
+
+        nbiface.save()
+
+    def _set_subint_vlan(self, nbiface, iface_dict, device):
+        """ Sets 802.1q sub-int and parent int mode, adds vlan to list for both. """
+        try:
+            subint_vlan = VLAN.objects.get(vid=iface_dict['dot1q'], site=device.site.id)
+        except ObjectDoesNotExist:
+            self.log_warning(f"Configured Vlan ID {iface_dict['dot1q']} on {nbiface.name} not found in Netbox")
+            return
+
+        # Set subint parent to tagged mode if required, and add vlan for this subint to it
+        if nbiface.parent.mode != "tagged":
+            self._make_interface_tagged(nbiface.parent)
+        nbiface.parent.tagged_vlans.add(subint_vlan.id)
+        nbiface.parent.save()
+        self.log_info(f"Added vlan {iface_dict['dot1q']} to {nbiface.parent.name} tagged vlans")
+        # Set correct untagged vlan for this sub-int
+        nbiface.mode = "access"
+        nbiface.untagged_vlan_id = subint_vlan.id
+        self.log_info(f"Set vlan {iface_dict['dot1q']} as untagged vlan on {nbiface.name}")
+
+    def _make_interface_tagged(self, nb_int):
+        """ Sets interface mode to tagged, and untagged vlan based on IP address attachment """
+        nb_int.mode = 'tagged'
+        # Set untagged_vlan based on interface IP if present
+        if nb_int.bridge:
+            # If interface is a bridge member it should have no IPs, they'll instead be bound to bridge
+            int_ips = list(nb_int.bridge.ip_addresses.filter())
+        else:
+            int_ips = list(nb_int.ip_addresses.filter())
+        if int_ips:
+            int_ip = int_ips[0].address
+            parent_prefix = Prefix.objects.get(prefix=f"{int_ip.network}/{int_ip.prefixlen}")
+            nb_int.untagged_vlan_id = parent_prefix.vlan.id
+        # Save here as that's required before tagged_vlans can be set
+        nb_int.save()
+
+    def _get_ordered_ints(self, interfaces):
+        """ Interates over interface names from Puppet data, and returns list of them
+            in order that is required for Netbox addition.  Specifically bridges need to
+            be added first, then vlan sub-int parents, then the rest. """
+        # Iterate over ints, add bridges to int_names, and record vlan_parents
+        int_names = []
+        vlan_parents = set()
+        for iface_name, iface_dict in interfaces.items():
+            if "kind" in iface_dict:
+                if iface_dict['kind'] == "bridge":
+                    int_names.append(iface_name)
+            if "parent_link" in iface_dict:
+                vlan_parents.add(iface_dict['parent_link'])
+        # Append first the vlan parents then remaining ints to list and return
+        int_names = int_names + list(vlan_parents)
+        int_names = int_names + [name for name in interfaces.keys() if name not in int_names]
+        return int_names
 
     def _import_interfaces_for_device(self, device, net_driver, networking, lldp, is_vm=False):
         """Resolve one device's interfaces and ip addresses based on a net_driver, networking and lldp dictionary
@@ -485,13 +568,29 @@ class Importer:
         for device_interface in device.interfaces.all():
             # Clean up potential ##PRIMARY## interfaces
             if device_interface.name == '##PRIMARY##' and 'primary' in networking:
-                device_interface.name = networking['primary']
-                if ((not is_vm) and (net_driver[networking['primary']]["speed"] == 10000)):
-                    device_interface.type = InterfaceTypeChoices.TYPE_10GE_SFP_PLUS
+                primary_name = networking['primary']
+                # If primary is a bridge device we need to find physical member instead
+                if "kind" in networking['interfaces'][primary_name] and \
+                        networking['interfaces'][primary_name]['kind'] == "bridge":
+                    for iface_name, iface_detail in networking['interfaces'].items():
+                        if "parent_bridge" in iface_detail and iface_detail['parent_bridge'] == primary_name:
+                            if iface_name in lldp:
+                                if lldp[iface_name]['router']:
+                                    primary_name = iface_name
+
+                device_interface.name = primary_name
+                if not is_vm:
+                    if net_driver[primary_name]["speed"] == 10000:
+                        device_interface.type = InterfaceTypeChoices.TYPE_10GE_SFP_PLUS
+                    elif net_driver[primary_name]["speed"] == 25000:
+                        device_interface.type = InterfaceTypeChoices.TYPE_25G_SFP28
                 device_interface.save()
                 self.log_success(f"{device.name}: renamed ##PRIMARY## interface to {device_interface.name}")
-        # Sorted dict to avoid race condition when finding a potential parent
-        for iface, iface_dict in dict(sorted(networking["interfaces"].items())).items():
+
+        # Import in correct order so parents added before children
+        ordered_ints = self._get_ordered_ints(networking['interfaces'])
+        for iface in ordered_ints:
+            iface_dict = networking['interfaces'][iface]
             is_vdev = ((":" in iface) or ("." in iface) or ("lo" == iface))
             is_anycast = (iface.startswith("lo:anycast"))
             if any(r.match(iface) for r in INTERFACE_IMPORT_BLOCKLIST_RE):
@@ -511,6 +610,9 @@ class Importer:
                         nbiface = self._make_interface_vm(device, iface, mtu)
                     else:
                         nbiface = self._make_interface(device, iface, net_driver, is_vdev, mtu)
+
+                # Update interface parent, bridge and set vlans if needed
+                self._update_int_relations(device, nbiface, iface_dict)
 
             # FIXME /32 bug things here
             vipexempt = any([r.match(device.name) for r in NO_VIP_RE])
@@ -542,6 +644,13 @@ class Importer:
                     continue
                 # First we get or create the remote interface
                 z_nbiface = self._get_z_interface(lldp[iface])
+
+                # If nbiface already existed, or LLDP reports switch has 1514 MTU, nbiface.mtu may not be set,
+                # but as this is a L2 switch port we should set 9192 to avoid risk of lowering IRB MTU (T329535)
+                if not z_nbiface.mtu:
+                    z_nbiface.mtu = 9192
+                    z_nbiface.save()
+                    self.log_info(f"Updated {z_nbiface.device.name} {z_nbiface.name} MTU to 9192")
 
                 # If possible, we create/update the vlans details
                 if 'vlans' in lldp[iface]:
