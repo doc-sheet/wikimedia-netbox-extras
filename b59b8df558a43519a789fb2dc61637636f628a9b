@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ce38b37_24aeda8d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-08-15T09:17:26Z",
+      "side": 1,
+      "message": "took a quick pass, lgtm but see inline for comments",
+      "revId": "b59b8df558a43519a789fb2dc61637636f628a9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7421bb78_98f501c1",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-08-15T09:17:26Z",
+      "side": 1,
+      "message": "nit: you can get rid of this if statment and just catch KeyError below e.g.\n  try:\n    return Interface.objects.get(name\u003diface_dict[parent_type], device\u003ddevice)\n  except (Interface.DoesNotExist, KeyError):\n    return None",
+      "range": {
+        "startLine": 445,
+        "startChar": 8,
+        "endLine": 445,
+        "endChar": 37
+      },
+      "revId": "b59b8df558a43519a789fb2dc61637636f628a9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "04e0b91b_766c7af5",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-08-15T09:17:26Z",
+      "side": 1,
+      "message": "this seems like a change in behaviour to me.  [it seems like] previously vlans would have the parent correctly set and the bridge was never set.  however now we have the opposite behaviour.  i think you could do the following to have both?\n\n        nbiface \u003d VMInterface(name\u003diface,\n                              virtual_machine\u003ddevice,\n                              mtu\u003dmtu,\n                              parent\u003dself._get_parent_interface(device, iface, \"parent_link\"))\n                              bridge\u003dself._get_parent_interface(device, iface_dict, \"parent_bridge\"))",
+      "range": {
+        "startLine": 457,
+        "startChar": 30,
+        "endLine": 457,
+        "endChar": 101
+      },
+      "revId": "b59b8df558a43519a789fb2dc61637636f628a9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b83dce29_abd0b64c",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-08-15T09:17:26Z",
+      "side": 1,
+      "message": "nit: do we need to save twice?  if not id just save once at the end",
+      "range": {
+        "startLine": 485,
+        "startChar": 8,
+        "endLine": 485,
+        "endChar": 22
+      },
+      "revId": "b59b8df558a43519a789fb2dc61637636f628a9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9756a0b7_c8b00903",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-08-15T09:17:26Z",
+      "side": 1,
+      "message": "if we set parent when we create the interface we can simplify this so its just doing the vlan stuff",
+      "range": {
+        "startLine": 500,
+        "startChar": 8,
+        "endLine": 500,
+        "endChar": 82
+      },
+      "revId": "b59b8df558a43519a789fb2dc61637636f628a9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fec43268_f44e7aab",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-08-15T09:17:26Z",
+      "side": 1,
+      "message": "is this so that vlan parents are created after bridge interfaces?  if so its probably worth adding that to the comment",
+      "range": {
+        "startLine": 521,
+        "startChar": 8,
+        "endLine": 521,
+        "endChar": 20
+      },
+      "revId": "b59b8df558a43519a789fb2dc61637636f628a9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
