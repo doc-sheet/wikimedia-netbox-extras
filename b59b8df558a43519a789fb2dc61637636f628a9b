@@ -18,6 +18,23 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cea4a8a7_ff1c4438",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-08-17T21:14:22Z",
+      "side": 1,
+      "message": "Thanks for the review John, some replies in-line, I\u0027ll submit a new patch set tomorrow.  If you\u0027ve any thoughts on the resulting netbox model please also let me know (or on the task).  That\u0027s something we should consider independent of any of these mechanics.",
+      "revId": "b59b8df558a43519a789fb2dc61637636f628a9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7421bb78_98f501c1",
@@ -41,6 +58,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "54d678bc_ebd60dc0",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-08-17T21:14:22Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7421bb78_98f501c1",
+      "range": {
+        "startLine": 445,
+        "startChar": 8,
+        "endLine": 445,
+        "endChar": 37
+      },
+      "revId": "b59b8df558a43519a789fb2dc61637636f628a9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "04e0b91b_766c7af5",
@@ -54,6 +95,30 @@
       "writtenOn": "2022-08-15T09:17:26Z",
       "side": 1,
       "message": "this seems like a change in behaviour to me.  [it seems like] previously vlans would have the parent correctly set and the bridge was never set.  however now we have the opposite behaviour.  i think you could do the following to have both?\n\n        nbiface \u003d VMInterface(name\u003diface,\n                              virtual_machine\u003ddevice,\n                              mtu\u003dmtu,\n                              parent\u003dself._get_parent_interface(device, iface, \"parent_link\"))\n                              bridge\u003dself._get_parent_interface(device, iface_dict, \"parent_bridge\"))",
+      "range": {
+        "startLine": 457,
+        "startChar": 30,
+        "endLine": 457,
+        "endChar": 101
+      },
+      "revId": "b59b8df558a43519a789fb2dc61637636f628a9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "549c83ad_d507a9e6",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-08-17T21:14:22Z",
+      "side": 1,
+      "message": "You are correct on the old behaviour, but incorrect on how this changes things.  It now sets the interface\u0027s master bridge var here, and moves setting the vlan parent to the _set_subint_vlans() function which is called on line 461 if needed.",
+      "parentUuid": "04e0b91b_766c7af5",
       "range": {
         "startLine": 457,
         "startChar": 30,
@@ -89,6 +154,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9b5b8d12_c036ead2",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-08-17T21:14:22Z",
+      "side": 1,
+      "message": "For whatever reason Netbox doesn\u0027t allow you to modify the \"tagged_vlans\" param for an interface until it has an ID, i.e. before it\u0027s saved.  Hence saving twice, although possibly I could move this so it\u0027s only executed in that scenario.  See https://phabricator.wikimedia.org/P32470",
+      "parentUuid": "b83dce29_abd0b64c",
+      "range": {
+        "startLine": 485,
+        "startChar": 8,
+        "endLine": 485,
+        "endChar": 22
+      },
+      "revId": "b59b8df558a43519a789fb2dc61637636f628a9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9756a0b7_c8b00903",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 2
@@ -112,6 +201,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8b0b8996_44f36efd",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-08-17T21:14:22Z",
+      "side": 1,
+      "message": "No objection as such to changing.  But not completely sure it\u0027s of benefit.  If we add the parent link when we create it we still need to have this line to get this object here, so we can add the vlans to it.  So it\u0027d just be adding an additional line, plus we\u0027d be running the \"get_parent()\" function for every int, rather than just when we knew it was a vlan-based one.  No great objection though I thought this was probably best.",
+      "parentUuid": "9756a0b7_c8b00903",
+      "range": {
+        "startLine": 500,
+        "startChar": 8,
+        "endLine": 500,
+        "endChar": 82
+      },
+      "revId": "b59b8df558a43519a789fb2dc61637636f628a9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fec43268_f44e7aab",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 2
@@ -123,6 +236,30 @@
       "writtenOn": "2022-08-15T09:17:26Z",
       "side": 1,
       "message": "is this so that vlan parents are created after bridge interfaces?  if so its probably worth adding that to the comment",
+      "range": {
+        "startLine": 521,
+        "startChar": 8,
+        "endLine": 521,
+        "endChar": 20
+      },
+      "revId": "b59b8df558a43519a789fb2dc61637636f628a9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "972f296c_3c355e4c",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-08-17T21:14:22Z",
+      "side": 1,
+      "message": "Yep exactly, the first thing we need to add are the bridges, as they can be master for physical ints, which in turn can be parents for vlan sub-ints.  So bridges, then vlan_parents, after which the order doesn\u0027t matter.  This was previously done with a \"sort\" on the names, but including the bridges means we need to iterate over them to get it right.",
+      "parentUuid": "fec43268_f44e7aab",
       "range": {
         "startLine": 521,
         "startChar": 8,
