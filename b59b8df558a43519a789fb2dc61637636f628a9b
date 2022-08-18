@@ -169,6 +169,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fc199b2_24c1a270",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-08-18T09:46:55Z",
+      "side": 1,
+      "message": "Ack, nice!",
+      "parentUuid": "305cdccd_1ffd439a",
+      "range": {
+        "startLine": 459,
+        "startChar": 8,
+        "endLine": 460,
+        "endChar": 44
+      },
+      "revId": "b59b8df558a43519a789fb2dc61637636f628a9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b83dce29_abd0b64c",
@@ -311,6 +335,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba32631f_c83b9558",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-08-18T09:46:55Z",
+      "side": 1,
+      "message": "Ok thanks, I\u0027ll try to incorporate this approach looks good.  As the function is called by both _make_interface_vm() and _make_interface(), would it not create a lot of duplication to remove the separate function?",
+      "parentUuid": "2705eb49_01f7dd13",
+      "range": {
+        "startLine": 500,
+        "startChar": 8,
+        "endLine": 500,
+        "endChar": 82
+      },
+      "revId": "b59b8df558a43519a789fb2dc61637636f628a9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fec43268_f44e7aab",
@@ -372,6 +420,30 @@
       "side": 1,
       "message": "ack could you update the doc string to indicate the expected order e.g. \n\n\"Returns list of interface names in the order we should add to netbox, ensuring the following order: bridges; vlan parents; all other interfaces\"\"\"",
       "parentUuid": "972f296c_3c355e4c",
+      "range": {
+        "startLine": 521,
+        "startChar": 8,
+        "endLine": 521,
+        "endChar": 20
+      },
+      "revId": "b59b8df558a43519a789fb2dc61637636f628a9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c7fc548_5c5aa78b",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2022-08-18T09:46:55Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2bea5ac0_21778daa",
       "range": {
         "startLine": 521,
         "startChar": 8,
