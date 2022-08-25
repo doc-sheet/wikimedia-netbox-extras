@@ -161,6 +161,10 @@ class Netbox:
             if address.assigned_object is None:
                 name = NO_DEVICE_NAME
                 physical = False
+            elif address.assigned_object_type == 'ipam.fhrpgroup':
+                # FHRP groups can be assigned to 0 or more interfaces/devices
+                name = NO_DEVICE_NAME
+                physical = False
             elif address.assigned_object_type == 'dcim.interface':
                 address.assigned_object = self.physical_interfaces[address.assigned_object_id]
                 name = address.assigned_object.device.name
