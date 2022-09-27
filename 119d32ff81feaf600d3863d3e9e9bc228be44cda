@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d02f66a_982f87e6",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-09-27T13:40:23Z",
+      "side": 1,
+      "message": "This seems a bit brittle as we don\u0027t enforce anywhere that a server\u0027s location/row contains \"-row-\", cf. in eqdfw and eqord now, even though we don\u0027t have any mgmt there.",
+      "range": {
+        "startLine": 96,
+        "startChar": 12,
+        "endLine": 96,
+        "endChar": 61
+      },
+      "revId": "119d32ff81feaf600d3863d3e9e9bc228be44cda",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
