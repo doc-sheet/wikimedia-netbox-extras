@@ -91,6 +91,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "56770037_4ddfdc96",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2022-09-28T13:40:13Z",
+      "side": 1,
+      "message": "\u003e If we remove the split then we\u0027d get metrics with sth like the following, which IMHO isn\u0027t easy to use/read\n\nI think that consistency across the various tools should win here.  i.e. we should have whatever is in netbox.  if the row name is not correct in netbox we should fix it there (may not be possible) instead of having a values that differ depending on if you look in netbox vs promethues.  This is specifically important for controlling things programmatically consider the following sudo code \n\n  switch_been_powered_down \u003d netbox.get_device(\u0027some switch\u0027)\n  # the row needs to be the same in both netbox and alertmanager for this to work\n  alertmanager.silence_alerts(row\u003dswitch_been_powered_down.row)",
+      "parentUuid": "023e92d6_6a6fc915",
+      "range": {
+        "startLine": 96,
+        "startChar": 12,
+        "endLine": 96,
+        "endChar": 61
+      },
+      "revId": "119d32ff81feaf600d3863d3e9e9bc228be44cda",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9e429e49_55122634",
         "filename": "customscripts/hiera_export.py",
         "patchSetId": 2
