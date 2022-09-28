@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dfb9724d_6fe6d45d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-09-28T13:34:31Z",
+      "side": 1,
+      "message": "replies inline",
+      "revId": "119d32ff81feaf600d3863d3e9e9bc228be44cda",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3d02f66a_982f87e6",
@@ -43,6 +60,53 @@
         "startChar": 12,
         "endLine": 96,
         "endChar": 61
+      },
+      "revId": "119d32ff81feaf600d3863d3e9e9bc228be44cda",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfabaf8e_4e71ec4d",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-09-28T13:34:31Z",
+      "side": 1,
+      "message": "I think we should stick with what is in Netbox and in case decide to update Netbox instead of doing some magic transformation in various places. For example the same data is already exported in the hosts files too and would be weird to have them differ from one another.\nHow do you plan to use the location data for the mgmt interfaces, for silencing purposes?",
+      "parentUuid": "023e92d6_6a6fc915",
+      "range": {
+        "startLine": 96,
+        "startChar": 12,
+        "endLine": 96,
+        "endChar": 61
+      },
+      "revId": "119d32ff81feaf600d3863d3e9e9bc228be44cda",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e429e49_55122634",
+        "filename": "customscripts/hiera_export.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-09-28T13:34:31Z",
+      "side": 1,
+      "message": "given that this will require anyway a patch in the related cookbook, I think that probably is better to map it to the current Puppet pattern of having hosts and common:\n\n  results \u003d {\u0027hosts\u0027: {}, \u0027common\u0027: {\u0027mgmt\u0027: {}}}",
+      "range": {
+        "startLine": 109,
+        "startChar": 31,
+        "endLine": 109,
+        "endChar": 43
       },
       "revId": "119d32ff81feaf600d3863d3e9e9bc228be44cda",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
