@@ -16,6 +16,23 @@
       "message": "Looks like CI failure is unrelated\n\n  17:15:58 [213] /src$ /src/.tox/py38-mypy/bin/mypy dns tools/ganeti-netbox-sync.py\n  17:15:58 dns/generate_dns_snippets.py:303: error: Unused \"type: ignore\" comment\n  17:15:58 Found 1 error in 1 file (checked 2 source files)\n  17:15:58 ERROR: InvocationError for command /src/.tox/py38-mypy/bin/mypy dns tools/ganeti-netbox-sync.py (exited with code 1)",
       "revId": "fc729c8d8731cd523f7beaad60168e9da726c29d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec117b7f_75dbad25",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1629
+      },
+      "writtenOn": "2022-09-29T09:25:25Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "fc729c8d8731cd523f7beaad60168e9da726c29d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
