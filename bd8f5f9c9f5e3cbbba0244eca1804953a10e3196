@@ -1,0 +1,8 @@
+Verified+2: jenkins-bot
+Code-Review+1: Filippo Giunchedi <fgiunchedi@wikimedia.org>
+Code-Review+2: Jbond <jbond@wikimedia.org>
+Submitted-by: Jbond <jbond@wikimedia.org>
+Submitted-at: Thu, 29 Sep 2022 10:06:27 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/c/operations/software/netbox-extras/+/836740
+Project: operations/software/netbox-extras
+Branch: refs/heads/master
