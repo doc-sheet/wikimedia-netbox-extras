@@ -33,6 +33,23 @@
       "message": "I had a look at the cookbook side and I now see how it all works!\nCurrent implementation makes sens to me while the reserve about DNS and parent/child relationship still holds (but not a blocker).",
       "revId": "9683af42720cbf2f6856bac6a53c1a1d8f5f8879",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08a68391_0968fbdd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1629
+      },
+      "writtenOn": "2022-09-29T12:40:05Z",
+      "side": 1,
+      "message": "Thanks all for the reviews! I\u0027ll wait for Riccardo\u0027s thoughts in case he has any other comments",
+      "revId": "9683af42720cbf2f6856bac6a53c1a1d8f5f8879",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
