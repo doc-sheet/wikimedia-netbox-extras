@@ -50,6 +50,23 @@
       "message": "Thanks all for the reviews! I\u0027ll wait for Riccardo\u0027s thoughts in case he has any other comments",
       "revId": "9683af42720cbf2f6856bac6a53c1a1d8f5f8879",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0eaef97_e66ad4c7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-09-29T14:02:04Z",
+      "side": 1,
+      "message": "LGTM, we now just need to update the cookbook accordingly:\nhttps://gerrit.wikimedia.org/r/plugins/gitiles/operations/cookbooks/+/refs/heads/master/cookbooks/sre/puppet/sync-netbox-hiera.py#104",
+      "revId": "9683af42720cbf2f6856bac6a53c1a1d8f5f8879",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
