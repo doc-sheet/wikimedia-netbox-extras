@@ -16,6 +16,132 @@
       "message": "Not 100% sure yet, but I think this could be a Custom Validator now, see T310590.",
       "revId": "03562644909042e2bb087407f4fa6b6f5329325a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fe1e0b8_15edf84c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-10-07T16:52:20Z",
+      "side": 1,
+      "message": "Some comments but overall LGTM! That will help catch cabling errors sooner.",
+      "revId": "03562644909042e2bb087407f4fa6b6f5329325a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ef5db7b_0255f1f0",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 944,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-10-07T16:52:20Z",
+      "side": 1,
+      "message": "might be cleaner to have the switch model check inside \"_is_invalid_switchport_combo\".",
+      "range": {
+        "startLine": 944,
+        "startChar": 8,
+        "endLine": 944,
+        "endChar": 42
+      },
+      "revId": "03562644909042e2bb087407f4fa6b6f5329325a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9209358b_a37f0c61",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 944,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-10-07T16:52:20Z",
+      "side": 1,
+      "message": "Might be cleaner to move to a global variable",
+      "range": {
+        "startLine": 944,
+        "startChar": 43,
+        "endLine": 944,
+        "endChar": 57
+      },
+      "revId": "03562644909042e2bb087407f4fa6b6f5329325a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e13f70e6_eefa35e4",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1378,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-10-07T16:52:20Z",
+      "side": 1,
+      "message": "Some more comments might be useful here and below for future reference (or in the docstring)",
+      "revId": "03562644909042e2bb087407f4fa6b6f5329325a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f1678d2_1fa5319e",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1384,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-10-07T16:52:20Z",
+      "side": 1,
+      "message": "that\u0027s a bit confusing, it might be better to move it to the log failure message.",
+      "range": {
+        "startLine": 1384,
+        "startChar": 85,
+        "endLine": 1384,
+        "endChar": 114
+      },
+      "revId": "03562644909042e2bb087407f4fa6b6f5329325a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b357e04_488b6c8d",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1385,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-10-07T16:52:20Z",
+      "side": 1,
+      "message": "A suggestion of failure message maybe more actionable:\nInterface {new_iface} ({new_iface_type}) incompatible with existing neighbor ports. Ports {block_members} can only be {interface.type}. Please use a different port.",
+      "range": {
+        "startLine": 1385,
+        "startChar": 21,
+        "endLine": 1385,
+        "endChar": 32
+      },
+      "revId": "03562644909042e2bb087407f4fa6b6f5329325a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
