@@ -35,6 +35,23 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "57391c5e_7ca408f8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-10-10T10:58:32Z",
+      "side": 1,
+      "message": "one comment inline",
+      "revId": "03562644909042e2bb087407f4fa6b6f5329325a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7ef5db7b_0255f1f0",
@@ -94,6 +111,29 @@
       "writtenOn": "2022-10-07T16:52:20Z",
       "side": 1,
       "message": "Some more comments might be useful here and below for future reference (or in the docstring)",
+      "revId": "03562644909042e2bb087407f4fa6b6f5329325a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94a935c4_794a8352",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1379,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-10-10T10:58:32Z",
+      "side": 1,
+      "message": "What if the device is the VC master? IIRC netbox UI returns all ifaces of the VC, what does the above query do?\nI also wonder if it would be simpler to just get the ifaces for the interested block, querying for names that end in {device ID in the VC OR 1}/0/(N|N+1|N+2|N+3)\nas N can easily be derived from the new_iface_num",
+      "range": {
+        "startLine": 1379,
+        "startChar": 25,
+        "endLine": 1379,
+        "endChar": 31
+      },
       "revId": "03562644909042e2bb087407f4fa6b6f5329325a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
