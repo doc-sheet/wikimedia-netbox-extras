@@ -120,7 +120,6 @@ class Netbox:
     """Class to manage all data from Netbox."""
 
     NETBOX_DEVICE_STATUSES = ('active', 'planned', 'staged', 'failed', 'inventory', 'decommissioning',)
-    NETBOX_DEVICE_MGMT_ONLY_STATUSES = ('inventory', 'decommissioning')
 
     def __init__(self, url: str, token: str):
         """Initialize the instance.
@@ -442,15 +441,12 @@ class Records:
         if not physical or device is None or device.device_role.slug != 'server':
             records.append(ForwardRecord(zone, hostname, address.address))
         else:
-            if device.status.value not in Netbox.NETBOX_DEVICE_MGMT_ONLY_STATUSES:
-                # Primary/management with hostname IPs defined only in certain Netbox states
-                records.append(ForwardRecord(zone, hostname, address.address))
+            records.append(ForwardRecord(zone, hostname, address.address))
 
             # Generate the additional asset tag mgmt record only for physical devices for which the hostname is
             # different from the asset tag.
-            if (address.assigned_object is not None and address.assigned_object.mgmt_only and (
-                    device.name.lower() != device.asset_tag.lower()
-                    or device.status.value in Netbox.NETBOX_DEVICE_MGMT_ONLY_STATUSES)):
+            if address.assigned_object is not None and address.assigned_object.mgmt_only and (
+                    device.name.lower() != device.asset_tag.lower()):
                 records.append(ForwardRecord(zone, device.asset_tag.lower(), address.address))
 
         return records
