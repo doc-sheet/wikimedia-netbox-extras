@@ -16,6 +16,24 @@
       "message": "LGTM, let\u0027s carefully check the quite long diff that will be generated and possibly get a non-negative feedback from DCOps :)",
       "revId": "f78dc1eb248c99eb2c675b8cf134b087aa7dcd85",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1acd66f_184f3c46",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1629
+      },
+      "writtenOn": "2022-10-26T10:03:35Z",
+      "side": 1,
+      "message": "Indeed! I checked on netbox-next and got this (for example)\n\n  --- dns-c25pcHBldHM-mc63xkrv/mgmt.codfw.wmnet\t2022-10-26 09:19:39.370779325 \n  +0000\n  +++ dns-c25pcHBldHM-8wjjm7v3/mgmt.codfw.wmnet\t2022-10-26 09:23:34.083134250 \n  +0000\n  @@ -91,6 +91,7 @@\n   db2085                                   1H IN A 10.193.2.121\n   db2086                                   1H IN A 10.193.2.122\n   db2087                                   1H IN A 10.193.2.123\n  +db2088                                   1H IN A 10.193.2.124\n   db2091                                   1H IN A 10.193.2.127\n   db2092                                   1H IN A 10.193.2.128\n   db2093                                   1H IN A 10.193.1.43\n  @@ -674,6 +675,9 @@\n   restbase-dev2001                         1H IN A 10.193.0.247\n   restbase-dev2002                         1H IN A 10.193.0.248\n   restbase-dev2003                         1H IN A 10.193.0.249\n  +restbase2009                             1H IN A 10.193.3.7\n  +restbase2010                             1H IN A 10.193.1.153\n  +restbase2011                             1H IN A 10.193.1.154\n   restbase2012                             1H IN A 10.193.1.155\n   restbase2013                             1H IN A 10.193.1.222\n   restbase2014                             1H IN A 10.193.1.223\n\nAnd indeed e.g. db2088 is in decommissioning",
+      "parentUuid": "09aeaff0_f00a6265",
+      "revId": "f78dc1eb248c99eb2c675b8cf134b087aa7dcd85",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
