@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09aeaff0_f00a6265",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-10-26T09:32:17Z",
+      "side": 1,
+      "message": "LGTM, let\u0027s carefully check the quite long diff that will be generated and possibly get a non-negative feedback from DCOps :)",
+      "revId": "f78dc1eb248c99eb2c675b8cf134b087aa7dcd85",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
