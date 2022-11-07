@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b2f300b_a26db865",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-11-07T16:25:55Z",
+      "side": 1,
+      "message": "I think you can happily filter out any device with tenant !\u003d None as they are all non-reachable/non-managed by the production environment and by Puppet. There is no point in having them at all.",
+      "revId": "75ebd2deb68fee46cb973742d0deea5edcaa96e6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "05ea2138_a34932a8",
@@ -14,6 +31,23 @@
       "writtenOn": "2022-11-07T15:58:15Z",
       "side": 1,
       "message": "When deploying the mgmt probes in https://gerrit.wikimedia.org/r/c/operations/puppet/+/845529 I realized fr-tech mgmt interfaces can\u0027t be reached from prod, thus we\u0027d need to filter on tenant (at puppet time)\n\nI\u0027m not attached to this particular method but it seems the lowest hanging fruit, let me know!",
+      "revId": "75ebd2deb68fee46cb973742d0deea5edcaa96e6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a36f9df7_240a11d1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-11-07T16:25:55Z",
+      "side": 1,
+      "message": "I think we should just filter them out",
       "revId": "75ebd2deb68fee46cb973742d0deea5edcaa96e6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
