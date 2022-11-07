@@ -92,12 +92,19 @@ class HieraExport(Script):
             if interface.count_ipaddresses < 1:
                 continue
 
-            address = interface.ip_addresses.first()
+            if device.tenant is None:
+                tenant = None
+            else:
+                tenant = device.tenant.slug
+
             data = {
                 'row': device.rack.location.slug,
                 'rack': device.rack.name,
                 'site': device.site.slug,
+                'tenant': tenant,
             }
+
+            address = interface.ip_addresses.first()
             res[address.dns_name] = data
 
         return res
