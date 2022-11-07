@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05ea2138_a34932a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1629
+      },
+      "writtenOn": "2022-11-07T15:58:15Z",
+      "side": 1,
+      "message": "When deploying the mgmt probes in https://gerrit.wikimedia.org/r/c/operations/puppet/+/845529 I realized fr-tech mgmt interfaces can\u0027t be reached from prod, thus we\u0027d need to filter on tenant (at puppet time)\n\nI\u0027m not attached to this particular method but it seems the lowest hanging fruit, let me know!",
+      "revId": "75ebd2deb68fee46cb973742d0deea5edcaa96e6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
