@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "52a143d3_12791282",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-11-09T18:18:47Z",
+      "side": 1,
+      "message": "Tested on netbox-next, merging to clear some errors in the report, I\u0027ll address any later comment in a subsequent patch.",
+      "revId": "b6ba39f85f234971f826b7030914eaf6a2c674f9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
