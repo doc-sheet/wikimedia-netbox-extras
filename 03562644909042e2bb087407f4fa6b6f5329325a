@@ -146,6 +146,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "671969c3_836c13e9",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 944,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-11-28T09:43:11Z",
+      "side": 1,
+      "message": "The initial idea was the same way as we have for example \"SWITCH_INTERFACES_PREFIX_ALLOWLIST\" we could have a variable with a (single element) list [\"qfx5120-48y-8c\"]. So it\u0027s easier to add similar devices in the future and the device name is not mixed with the code.\nBut as it\u0027s only used once it\u0027s fine to keep it as it and revisit if other models have the same limitation.",
+      "parentUuid": "a40769f6_1049fd4c",
+      "range": {
+        "startLine": 944,
+        "startChar": 43,
+        "endLine": 944,
+        "endChar": 57
+      },
+      "revId": "03562644909042e2bb087407f4fa6b6f5329325a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e13f70e6_eefa35e4",
