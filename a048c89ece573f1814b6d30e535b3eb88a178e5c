@@ -16,6 +16,41 @@
       "message": "The CI error doesn\u0027t seem to be related to this CR.\n\n/dns/generate_dns_snippets.py:24:1: F401 \u0027typing.XXX\u0027 imported but unused",
       "revId": "a048c89ece573f1814b6d30e535b3eb88a178e5c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6627db83_01d8742f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-12-19T10:21:24Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "a048c89ece573f1814b6d30e535b3eb88a178e5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8cca636_cbea7da4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2022-12-19T10:21:24Z",
+      "side": 1,
+      "message": "Fixed in https://gerrit.wikimedia.org/r/c/operations/software/netbox-extras/+/869180",
+      "parentUuid": "88f2bf16_0057e964",
+      "revId": "a048c89ece573f1814b6d30e535b3eb88a178e5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
