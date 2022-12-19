@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ecf4eefb_3f6e084d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-12-19T09:28:36Z",
+      "side": 1,
+      "message": "Why not removing \"NO_PUPPETDB_VMS\" as well? It would help keep the code lean.\nI\u0027m worried it slowly becomes tech debt.",
+      "revId": "abeea2a70d22bed2ffdc95d4fa993114ee30f42d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
