@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "88f2bf16_0057e964",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2022-12-19T09:44:59Z",
+      "side": 1,
+      "message": "The CI error doesn\u0027t seem to be related to this CR.\n\n/dns/generate_dns_snippets.py:24:1: F401 \u0027typing.XXX\u0027 imported but unused",
+      "revId": "a048c89ece573f1814b6d30e535b3eb88a178e5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
