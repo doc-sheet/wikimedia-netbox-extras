@@ -16,6 +16,57 @@
       "message": "LGTM",
       "revId": "cb613c1cc565fc60e8a881801821d3d0a8d668b0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f097e628_4283e62b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-02-17T14:20:02Z",
+      "side": 1,
+      "message": "Wow great work!  Really good stuff, and gives me a really good template on how to build such rules thanks.  One or two comments in line, but more just questions I had.  +1",
+      "revId": "cb613c1cc565fc60e8a881801821d3d0a8d668b0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c487ed3_c1a4fed6",
+        "filename": "validators/dcim/interface.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-02-17T14:20:02Z",
+      "side": 1,
+      "message": "No real issue with this.  I was expecting the code would only enforce the presence of a value, rather than 9192 across the board.  Or possibly enforce 9192 on access ports only.\n\nI can imagine a situation where a L3 service (transit, peering port etc.) has an MTU other than 9192 we need to set to match the far-side?  Perhaps not.  Overall looks good to me anyway.",
+      "revId": "cb613c1cc565fc60e8a881801821d3d0a8d668b0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28e07594_876a46e2",
+        "filename": "validators/dcim/interface.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-02-17T14:20:02Z",
+      "side": 1,
+      "message": "I wonder if this might restrict us operationally?  Is there ever a time we want to disable an interface for some reason temporarily via Netbox?  Like maybe say a flapping link or something before we get optics swapped etc?  And we\u0027d not want to remove all the attached data cos we want to re-enable shortly?\n\nFor the typical disabled case - unused int - makes perfect sense.",
+      "revId": "cb613c1cc565fc60e8a881801821d3d0a8d668b0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
