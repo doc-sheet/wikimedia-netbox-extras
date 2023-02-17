@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ad2951a_6cce062f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-02-17T13:26:05Z",
+      "side": 1,
+      "message": "Thanks. I addressed all the comments and added validators/dcim/interface.py",
+      "revId": "707590495fefdc5cd1d99a846b7deb1f35f11baf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}

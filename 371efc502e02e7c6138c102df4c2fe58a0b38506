@@ -41,6 +41,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5fef5db4_1de41941",
+        "filename": "validators/dcim/cable.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-02-17T13:26:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "98d53b8c_b3f081d5",
+      "range": {
+        "startLine": 12,
+        "startChar": 6,
+        "endLine": 12,
+        "endChar": 10
+      },
+      "revId": "371efc502e02e7c6138c102df4c2fe58a0b38506",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3414b640_b3b1d007",
@@ -54,6 +78,30 @@
       "writtenOn": "2023-02-17T11:54:57Z",
       "side": 1,
       "message": "nit, optional: i think we can drop the `_for_cable` nit here and below, its inferred that we are dealing with cables as this is the cable module (adding typing would improve this inference)",
+      "range": {
+        "startLine": 31,
+        "startChar": 8,
+        "endLine": 31,
+        "endChar": 32
+      },
+      "revId": "371efc502e02e7c6138c102df4c2fe58a0b38506",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbb24ad5_2a6a6017",
+        "filename": "validators/dcim/cable.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-02-17T13:26:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3414b640_b3b1d007",
       "range": {
         "startLine": 31,
         "startChar": 8,
@@ -87,6 +135,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a499d602_d6ad5856",
+        "filename": "validators/dcim/cable.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-02-17T13:26:05Z",
+      "side": 1,
+      "message": "awesome!",
+      "parentUuid": "a02fc962_b42b0e6c",
+      "range": {
+        "startLine": 39,
+        "startChar": 12,
+        "endLine": 39,
+        "endChar": 19
+      },
+      "revId": "371efc502e02e7c6138c102df4c2fe58a0b38506",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f7a6b01a_2d9bef38",
@@ -100,6 +172,24 @@
       "writtenOn": "2023-02-17T11:54:57Z",
       "side": 1,
       "message": "possibly as a TODO but we should do:\n\n  from wmflib.constants import ALL_DATACENTERS\n  if instance.slug.lower not in ALL_DATACENTERS:\n    self.fail",
+      "revId": "371efc502e02e7c6138c102df4c2fe58a0b38506",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8fc355f_fea17db8",
+        "filename": "validators/dcim/site.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-02-17T13:26:05Z",
+      "side": 1,
+      "message": "wmflib is already in the requirement file. But unfortunately ALL_DATACENTERS doesn\u0027t include network POPs.\n\u003e\u003e\u003e ALL_DATACENTERS\n(\u0027eqiad\u0027, \u0027codfw\u0027, \u0027esams\u0027, \u0027ulsfo\u0027, \u0027eqsin\u0027, \u0027drmrs\u0027)",
+      "parentUuid": "f7a6b01a_2d9bef38",
       "revId": "371efc502e02e7c6138c102df4c2fe58a0b38506",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
@@ -127,6 +217,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f4a5920_2f0b25d0",
+        "filename": "validators/ipam/ipaddress.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-02-17T13:26:05Z",
+      "side": 1,
+      "message": "Indeed, added to I656e5db8961003551520793531a9f88a23742092",
+      "parentUuid": "d8001e17_c39b87d0",
+      "range": {
+        "startLine": 3,
+        "startChar": 5,
+        "endLine": 3,
+        "endChar": 15
+      },
+      "revId": "371efc502e02e7c6138c102df4c2fe58a0b38506",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ac91e8b3_555655d4",
@@ -140,6 +254,24 @@
       "writtenOn": "2023-02-17T11:54:57Z",
       "side": 1,
       "message": "question: dose netbox already validate the ip address or should we add that here as well?",
+      "revId": "371efc502e02e7c6138c102df4c2fe58a0b38506",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b854c18_2d1d1ae9",
+        "filename": "validators/ipam/ipaddress.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-02-17T13:26:05Z",
+      "side": 1,
+      "message": "Yep it does.",
+      "parentUuid": "ac91e8b3_555655d4",
       "revId": "371efc502e02e7c6138c102df4c2fe58a0b38506",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
