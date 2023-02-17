@@ -70,6 +70,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4330ca21_d7d07c41",
+        "filename": "validators/dcim/interface.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-02-17T14:42:48Z",
+      "side": 1,
+      "message": "My bad didn\u0027t catch the implication of that one.  Cool thanks!",
+      "parentUuid": "2d389f5f_757aa3ac",
+      "revId": "cb613c1cc565fc60e8a881801821d3d0a8d668b0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "28e07594_876a46e2",
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "Yep, you can add \"no-mon\" in the description. Which probably should be a custom field for better visibility. Cf. https://phabricator.wikimedia.org/T305126\nOverall I agree that some reports will be better to stay as reports.",
       "parentUuid": "28e07594_876a46e2",
+      "revId": "cb613c1cc565fc60e8a881801821d3d0a8d668b0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d0ce3ce_dc00032e",
+        "filename": "validators/dcim/interface.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-02-17T14:42:48Z",
+      "side": 1,
+      "message": "Ofc yeah, just pre-pend with that in those occasions.  Cool, thanks for clarifying :)",
+      "parentUuid": "ee3da810_d8289ba4",
       "revId": "cb613c1cc565fc60e8a881801821d3d0a8d668b0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
