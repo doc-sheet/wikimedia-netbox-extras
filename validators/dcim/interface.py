@@ -1,0 +1,30 @@
+from extras.validators import CustomValidator
+
+NETWORK_ROLES = ("asw", "cr", "mr", "pfw", "cloudsw")
+
+
+class Main(CustomValidator):
+
+    def validate(self, instance):
+        # Tags
+        if instance.tags:
+            self.fail("Tags not allowed")
+
+        # MTU
+        if (hasattr(instance.connected_endpoint, 'device')
+           and instance.device_role.slug in NETWORK_ROLES  # Network devices
+           and instance.mtu != 9192  # Ignore good MTU
+           and not instance.lag  # Ignore LAG members
+           and instance.device.tenant.slug != "fr-tech"  # Ignore frack devices
+           and instance.enabled  # Ignore disabled interfaces
+           and not str(instance.name).startswith('vcp-')):  # Ignore VC links
+            self.fail("Invalid MTU (must be 9192)")
+
+        # Attributes
+        attributes = ['description', 'lag', 'mtu', 'mode', 'mac_address', 'count_ipaddresses']
+        if (not (instance.description and "no-mon" in instance.description)  # doesn't have "no-mon" in description
+           and not instance.enabled  # disabled interface
+           and instance.device.device_role.slug in NETWORK_ROLES):  # network devices only
+            for attribute in attributes:
+                if getattr(instance, attribute):
+                    self.fail(f"Invalid {attribute} (must not be set on disabled interfaces)")

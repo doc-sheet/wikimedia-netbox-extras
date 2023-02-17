@@ -7,13 +7,10 @@ BLOCKLISTS:
 
 import re
 
-from collections import defaultdict
-
 from django.contrib.contenttypes.models import ContentType
 
-from dcim.choices import DeviceStatusChoices, LinkStatusChoices
-
-from dcim.models import Cable, ConsolePort, ConsoleServerPort, Interface, PowerPort, PowerOutlet
+from dcim.choices import DeviceStatusChoices
+from dcim.models import ConsolePort, ConsoleServerPort, Interface, PowerPort, PowerOutlet
 from extras.reports import Report
 
 # these are statuses for devices that we care about
@@ -41,9 +38,6 @@ INTERFACES_REGEXP = (
     r"^(public|private)$",  # ganeti interfaces
     r"^##PRIMARY##$",  # interface name placeholder
 )
-
-BLANK_CABLES_SITE_BLOCKLIST = ()
-CORE_SITES = ('eqiad', 'codfw')
 
 interface_ct = ContentType.objects.get_for_model(Interface)
 
@@ -117,81 +111,3 @@ class Cables(Report):
             re.compile((r"|".join(INTERFACES_REGEXP))),
             "interface",
         )
-
-    def _get_site_slug_for_cable(self, cable):
-        """Get a representative site slug given a cable.
-
-        Since cables do not have their own site objects, we need to get it from a subsidiary object, which,
-        depending on the termination type, may be on the termination object or the device object in the termination.
-        """
-        site = "none"
-        if cable.termination_a_type.name == "circuit termination" and cable.termination_a.site:
-            site = cable.termination_a.site.slug
-        elif cable.termination_a.device and cable.termination_a.device.site:
-            site = cable.termination_a.device.site.slug
-        return site
-
-    def _core_site_server_cable(self, cable):
-        """check if the cable is a core site server cable.
-
-         Arguments:
-            cable: Netbox cable
-        Returns:
-            true: the cable is a core site server cable.
-            false: it's not.
-        """
-        if (cable.termination_a_type == interface_ct
-                and cable.termination_a.device.device_role.slug == 'server'
-                and cable.termination_a.device.site.slug in CORE_SITES):
-            return True
-        if (cable.termination_b_type == interface_ct
-                and cable.termination_b.device.device_role.slug == 'server'
-                and cable.termination_b.device.site.slug in CORE_SITES):
-            return True
-        return False
-
-    def test_duplicate_cable_label(self):
-        """Cables within sites should have unique labels."""
-        labelcounts = defaultdict(list)
-        for cable in (
-            Cable.objects.exclude(label__isnull=True)
-            .exclude(label='')
-            .exclude(termination_a_id__isnull=True)
-            .exclude(termination_b_id__isnull=True)
-        ):
-            if cable.label.strip():
-                # Uniquify per site (duplicates between sites are ok, within sites not ok).
-                site = self._get_site_slug_for_cable(cable)
-                labelcounts[(cable.label.strip(), site)].append(cable)
-
-        success = 0
-        for label, cables in labelcounts.items():
-            if len(cables) > 1:
-                for cable in cables:
-                    self.log_failure(cable, "duplicate cable label (site {})".format(label[1]))
-            else:
-                success += 1
-        self.log_success(None, "{} non-duplicate cable labels".format(success))
-
-    def test_blank_cable_label(self):
-        """Cables should not have blank labels.
-
-        Except for core sites servers (see T266533).
-        """
-        success = 0
-        for cable in Cable.objects.filter(status=LinkStatusChoices.STATUS_CONNECTED):
-            if cable.label is None or not cable.label.strip():
-                site = self._get_site_slug_for_cable(cable)
-                if self._core_site_server_cable(cable):
-                    continue
-                if (cable.termination_a_type == interface_ct
-                        and cable.termination_a.name.startswith('vcp-')):
-                    self.log_warning(cable, "VC link with no cable ID (site {})".format(site))
-                    continue
-                if site in BLANK_CABLES_SITE_BLOCKLIST:
-                    self.log_warning(cable, "blank cable label (site {})".format(site))
-                    continue
-                self.log_failure(cable, "blank cable label (site {})".format(site))
-            else:
-                success += 1
-        self.log_success(None, "{} non-blank cable labels".format(success))
