@@ -1,0 +1,147 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6600973_78914283",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2023-02-17T11:54:57Z",
+      "side": 1,
+      "message": "lgtm some minor nits,comments",
+      "revId": "371efc502e02e7c6138c102df4c2fe58a0b38506",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98d53b8c_b3f081d5",
+        "filename": "validators/dcim/cable.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2023-02-17T11:54:57Z",
+      "side": 1,
+      "message": "we should use PascalCase i.e. Main",
+      "range": {
+        "startLine": 12,
+        "startChar": 6,
+        "endLine": 12,
+        "endChar": 10
+      },
+      "revId": "371efc502e02e7c6138c102df4c2fe58a0b38506",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3414b640_b3b1d007",
+        "filename": "validators/dcim/cable.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2023-02-17T11:54:57Z",
+      "side": 1,
+      "message": "nit, optional: i think we can drop the `_for_cable` nit here and below, its inferred that we are dealing with cables as this is the cable module (adding typing would improve this inference)",
+      "range": {
+        "startLine": 31,
+        "startChar": 8,
+        "endLine": 31,
+        "endChar": 32
+      },
+      "revId": "371efc502e02e7c6138c102df4c2fe58a0b38506",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a02fc962_b42b0e6c",
+        "filename": "validators/dcim/cable.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2023-02-17T11:54:57Z",
+      "side": 1,
+      "message": "nit: you can return here instead of maintaining the site variable\n\n if cable.termination_a_type.name \u003d\u003d \"circuit termination\" and cable.termination_a.site:\n    return cable.termination_a.site.slug\n if cable.termination_a.device and cable.termination_a.device.site:\n    return cable.termination_a.device.site.slug\n return \u0027none\u0027  # perhaps its better to just self.fail at this point?",
+      "range": {
+        "startLine": 39,
+        "startChar": 12,
+        "endLine": 39,
+        "endChar": 19
+      },
+      "revId": "371efc502e02e7c6138c102df4c2fe58a0b38506",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7a6b01a_2d9bef38",
+        "filename": "validators/dcim/site.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2023-02-17T11:54:57Z",
+      "side": 1,
+      "message": "possibly as a TODO but we should do:\n\n  from wmflib.constants import ALL_DATACENTERS\n  if instance.slug.lower not in ALL_DATACENTERS:\n    self.fail",
+      "revId": "371efc502e02e7c6138c102df4c2fe58a0b38506",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8001e17_c39b87d0",
+        "filename": "validators/ipam/ipaddress.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2023-02-17T11:54:57Z",
+      "side": 1,
+      "message": "nit: will need to install this",
+      "range": {
+        "startLine": 3,
+        "startChar": 5,
+        "endLine": 3,
+        "endChar": 15
+      },
+      "revId": "371efc502e02e7c6138c102df4c2fe58a0b38506",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac91e8b3_555655d4",
+        "filename": "validators/ipam/ipaddress.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2023-02-17T11:54:57Z",
+      "side": 1,
+      "message": "question: dose netbox already validate the ip address or should we add that here as well?",
+      "revId": "371efc502e02e7c6138c102df4c2fe58a0b38506",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
