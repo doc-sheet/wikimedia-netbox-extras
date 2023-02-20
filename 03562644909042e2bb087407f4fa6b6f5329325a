@@ -52,6 +52,23 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "333c1f77_5f252f8e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-02-20T10:23:43Z",
+      "side": 1,
+      "message": "Now that there is progress on custom validation it\u0027s probably better to have this as a validator and decom the report once the validator is deployed. \nIc14fd9fb24194926c770369cbd296262c3813e24",
+      "revId": "03562644909042e2bb087407f4fa6b6f5329325a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7ef5db7b_0255f1f0",
