@@ -16,6 +16,69 @@
       "message": "Thanks for the explainers +1 from me.",
       "revId": "807feef6b5d50c1af35efa398ead33db7927c3c5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21728a3c_72dd1766",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2023-03-16T12:24:20Z",
+      "side": 1,
+      "message": "lgtm just a typo and a minor optional nit",
+      "revId": "807feef6b5d50c1af35efa398ead33db7927c3c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e97a819_ca05e03f",
+        "filename": "validators/dcim/device.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2023-03-16T12:24:20Z",
+      "side": 1,
+      "message": "nit: typo must",
+      "range": {
+        "startLine": 72,
+        "startChar": 60,
+        "endLine": 72,
+        "endChar": 64
+      },
+      "revId": "807feef6b5d50c1af35efa398ead33db7927c3c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f7d9c97_6e3f7963",
+        "filename": "validators/dcim/interface.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2023-03-16T12:24:20Z",
+      "side": 1,
+      "message": "nit: this line is not the easiest to parse perhaps:\n\n  if instance.description and \"no-mon\" not in instance.description:\n\nor even:\n  # We cast to str to deal with the case when description is None\n  if \"no-mon\" not in  str(instance.description):",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 25,
+        "endChar": 75
+      },
+      "revId": "807feef6b5d50c1af35efa398ead33db7927c3c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
