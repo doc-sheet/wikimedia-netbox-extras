@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60eded19_57cff48a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-03-28T19:15:26Z",
+      "side": 1,
+      "message": "LGTM!  All the ops I was trying on netbox-next are working with the latest patchset.",
+      "revId": "81c2a50acc5a62780411f7758888a2ae0c0b9fe5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
