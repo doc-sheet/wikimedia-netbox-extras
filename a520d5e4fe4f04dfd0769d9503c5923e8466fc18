@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bafc6419_3ee659ff",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 572,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-03-30T15:13:28Z",
+      "side": 1,
+      "message": "Just to note that this is a pre-existing problem, just we don\u0027t hit it as we do the puppetdb import after d-i finishes, and before puppet makes any additional network changes (say on a Ganeti host).  But having the parent relationships now means we can solve it so things work regardless of when import is done.",
+      "range": {
+        "startLine": 572,
+        "startChar": 0,
+        "endLine": 572,
+        "endChar": 3
+      },
+      "revId": "a520d5e4fe4f04dfd0769d9503c5923e8466fc18",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
