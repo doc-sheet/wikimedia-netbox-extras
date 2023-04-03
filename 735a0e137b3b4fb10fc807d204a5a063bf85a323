@@ -16,6 +16,46 @@
       "message": "Tested on netbox-next\n",
       "revId": "735a0e137b3b4fb10fc807d204a5a063bf85a323",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d552a37_84fc0ddd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-04-03T13:03:49Z",
+      "side": 1,
+      "message": "One comment, overall lgtm",
+      "revId": "735a0e137b3b4fb10fc807d204a5a063bf85a323",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1501850a_a87838d7",
+        "filename": "reports/accounting.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-04-03T13:03:49Z",
+      "side": 1,
+      "message": "I don\u0027t see those 2 variables in netbox-dev2002:/etc/netbox/gsheets.cfg\nIs it expected? Could you add a comment on what they\u0027re used for? Compared to the \"range\" one",
+      "range": {
+        "startLine": 38,
+        "startChar": 77,
+        "endLine": 39,
+        "endChar": 49
+      },
+      "revId": "735a0e137b3b4fb10fc807d204a5a063bf85a323",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
