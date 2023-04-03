@@ -35,6 +35,23 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "28478b0c_1cfb21b7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-04-03T13:07:13Z",
+      "side": 1,
+      "message": "reply inline",
+      "revId": "735a0e137b3b4fb10fc807d204a5a063bf85a323",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1501850a_a87838d7",
@@ -48,6 +65,30 @@
       "writtenOn": "2023-04-03T13:03:49Z",
       "side": 1,
       "message": "I don\u0027t see those 2 variables in netbox-dev2002:/etc/netbox/gsheets.cfg\nIs it expected? Could you add a comment on what they\u0027re used for? Compared to the \"range\" one",
+      "range": {
+        "startLine": 38,
+        "startChar": 77,
+        "endLine": 39,
+        "endChar": 49
+      },
+      "revId": "735a0e137b3b4fb10fc807d204a5a063bf85a323",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a544c8ac_15d16624",
+        "filename": "reports/accounting.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-04-03T13:07:13Z",
+      "side": 1,
+      "message": "Yes sorry I didn\u0027t mention it here, this will go along with a patch in the private puppet repo to add the exclude_range and rename the existing \u0027range\u0027 into include_range.\nThose are cell ranges in the account sheet, the new one will be Recycled!A:C",
+      "parentUuid": "1501850a_a87838d7",
       "range": {
         "startLine": 38,
         "startChar": 77,
