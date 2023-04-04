@@ -1,0 +1,65 @@
+strictness: high
+inherits:
+  - strictness_high
+
+doc-warnings: true
+member-warnings: true
+test-warnings: true
+
+autodetect: false
+output-format: grouped
+
+ignore-paths:
+  - doc/source/conf.py
+  - build/
+  - dist/
+  - logs/
+
+profile-validator:
+  disable:
+    - deprecated-tool-code
+
+pep8:
+  full: true
+  options:
+    max-line-length: 120
+
+pep257:
+  explain: true
+  source: true
+  disable:
+    - D203  # 1 blank line required before class docstring, D211 (after) is enforce instead
+    - D213  # Multi-line docstring summary should start at the second line, D212 (first line) is enforced instead
+    - D406  # Section name should end with a newline, incompatible with Google Style Python Docstrings
+    - D407  # Missing dashed underline after section, incompatible with Google Style Python Docstrings
+    - D100  # Missing docstring, TODO to be re-enabled in the future
+    - D101  # Missing docstring, TODO to be re-enabled in the future
+    - D107  # Missing docstring, TODO to be re-enabled in the future
+    - D415  # First line should end with, TODO to be re-enabled in the future
+
+pylint:
+  disable:
+    - pointless-string-statement  # used as documentation for class attributes
+    - import-error  # Custom scripts, reports and validators un in Netbox's venv
+    - missing-module-docstring # TODO to be re-enabled in the future
+    - too-many-boolean-expressions # TODO to be re-enabled in the future
+  options:
+    ignore: vulture_whitelist.py
+    max-line-length: 120
+    max-args: 6
+    max-attributes: 14
+    max-locals: 16
+    include-naming-hint: true
+    variable-rgx: (([a-z][a-z0-9_]{0,30})|(_[a-z0-9_]*))$
+    variable-name-hint: (([a-z][a-z0-9_]{0,30})|(_[a-z0-9_]*))$
+    extension-pkg-whitelist: lxml
+
+pyroma:
+  run: true
+
+vulture:
+  run: true
+
+mccabe:
+  disable:
+    - MC0001 # "is too complex", TODO to be re-enabled in the future
