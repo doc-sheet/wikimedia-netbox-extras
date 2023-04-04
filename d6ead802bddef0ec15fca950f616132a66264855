@@ -33,6 +33,24 @@
       "message": "This might be a bit overkill for this repo, but YMMV :) ",
       "revId": "d6ead802bddef0ec15fca950f616132a66264855",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d77d9c49_9d382a44",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-04-04T12:23:00Z",
+      "side": 1,
+      "message": "Sure, let me know which checks we should disable.\nA few of them I can see improving the current readability of those files.\n\nA question is: \"how to ease fixing those issues?\" could we for example only alert on new issues by default?",
+      "parentUuid": "f0a1d8e2_ee46c999",
+      "revId": "d6ead802bddef0ec15fca950f616132a66264855",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
