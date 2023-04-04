@@ -97,6 +97,30 @@
       },
       "revId": "735a0e137b3b4fb10fc807d204a5a063bf85a323",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "65b24188_17f63f8a",
+        "filename": "reports/accounting.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-04-04T11:46:53Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a544c8ac_15d16624",
+      "range": {
+        "startLine": 38,
+        "startChar": 77,
+        "endLine": 39,
+        "endChar": 49
+      },
+      "revId": "735a0e137b3b4fb10fc807d204a5a063bf85a323",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
