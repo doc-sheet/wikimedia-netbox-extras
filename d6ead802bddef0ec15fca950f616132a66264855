@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4a5350b_61acf3f3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-04-04T09:08:56Z",
+      "side": 1,
+      "message": "Quick looks shows some false positives, but still plenty to fix.",
+      "revId": "d6ead802bddef0ec15fca950f616132a66264855",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
