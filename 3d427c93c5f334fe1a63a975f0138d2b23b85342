@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b317981b_95e6d02b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-04-06T13:36:34Z",
+      "side": 1,
+      "message": "A few comments inline. Overall lgtm.\n\nI struggled to do this first pass of review as the file organically grew out of hands... We will need to refactor it sooner or later.\n\nMight be worth to manually run pylint on the file and fix at least what\u0027s relevant to your changes (if any).\nI used this as a test:\n`pylint customscripts/interface_automation.py --max-line-length\u003d120 --disable\u003dpointless-string-statement,import-error --max-args\u003d6 --max-attributes\u003d14 --max-locals\u003d16 --include-naming-hint\u003dtrue --variable-rgx\u003d\"(([a-z][a-z0-9_]{0,30})|(_[a-z0-9_]*))$\" --ignored-classes\u003dImporter`",
+      "revId": "3d427c93c5f334fe1a63a975f0138d2b23b85342",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a542e2cc_fd4b561b",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-04-06T13:36:34Z",
+      "side": 1,
+      "message": "Here and everywhere relevant to this change it could be useful to have more verbose doctypes with a detail of the parameters and the returns",
+      "range": {
+        "startLine": 443,
+        "startChar": 8,
+        "endLine": 443,
+        "endChar": 11
+      },
+      "revId": "3d427c93c5f334fe1a63a975f0138d2b23b85342",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a24f532_eee53061",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-04-06T13:36:34Z",
+      "side": 1,
+      "message": "this could be deduped in a for loop with [\u0027parent_bridge\u0027, \u0027parent_link\u0027]",
+      "range": {
+        "startLine": 488,
+        "startChar": 7,
+        "endLine": 496,
+        "endChar": 106
+      },
+      "revId": "3d427c93c5f334fe1a63a975f0138d2b23b85342",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba77baba_ab4dfd5c",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-04-06T13:36:34Z",
+      "side": 1,
+      "message": "`nbiface` for consistency",
+      "range": {
+        "startLine": 529,
+        "startChar": 37,
+        "endLine": 529,
+        "endChar": 43
+      },
+      "revId": "3d427c93c5f334fe1a63a975f0138d2b23b85342",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d46481a_ecbc4a7a",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-04-06T13:36:34Z",
+      "side": 1,
+      "message": "I think you can just do str(int_ip.network)",
+      "range": {
+        "startLine": 540,
+        "startChar": 54,
+        "endLine": 540,
+        "endChar": 91
+      },
+      "revId": "3d427c93c5f334fe1a63a975f0138d2b23b85342",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
