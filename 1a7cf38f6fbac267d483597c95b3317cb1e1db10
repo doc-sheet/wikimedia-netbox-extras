@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4733d40f_c28c16c7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-04-11T14:43:32Z",
+      "side": 1,
+      "message": "I would not format all with black unless it\u0027s also verified by CI and has an easy way to integrate with the development workflow. See https://doc.wikimedia.org/spicerack/master/development.html#code-style for example",
+      "revId": "1a7cf38f6fbac267d483597c95b3317cb1e1db10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "728d1613_b9c1ce35",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-04-11T14:43:32Z",
+      "side": 1,
+      "message": "Do not mix automatic and manual refactor please, it makes the review impossible.",
+      "revId": "1a7cf38f6fbac267d483597c95b3317cb1e1db10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f8619e2_f2ddf9a0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-04-11T14:43:32Z",
+      "side": 1,
+      "message": "I\u0027m ok with the general approach, but see inline for the details",
+      "revId": "1a7cf38f6fbac267d483597c95b3317cb1e1db10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
