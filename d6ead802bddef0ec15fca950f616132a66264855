@@ -69,6 +69,24 @@
       "parentUuid": "d77d9c49_9d382a44",
       "revId": "d6ead802bddef0ec15fca950f616132a66264855",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3d26b06_4c1d3bda",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-04-11T11:56:45Z",
+      "side": 1,
+      "message": "Thanks, is there a standard WMF config for black? And would it make sens to have it run automatically as Git pre-commit hook?",
+      "parentUuid": "b5b25d8d_39dc570c",
+      "revId": "d6ead802bddef0ec15fca950f616132a66264855",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
