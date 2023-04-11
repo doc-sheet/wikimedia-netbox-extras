@@ -51,6 +51,24 @@
       "parentUuid": "f0a1d8e2_ee46c999",
       "revId": "d6ead802bddef0ec15fca950f616132a66264855",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5b25d8d_39dc570c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2023-04-11T11:52:26Z",
+      "side": 1,
+      "message": "\u003e \"how to ease fixing those issues?\"\nRunning black over things might fix some of the easier ones but AKAIK mostly its just a matter of manually fixing them all \n\n\u003e could we for example only alert on new issues by default?\nNot easily, in the puppet repo we have some tooling that runs CI checks on HEAD~1 and then HEAD and then runs some logic to only show the new ones.  I think this is overkill for this repo. An alternate approach could be to start with a prospector file that disables most of the checks and then slowly fix up and enable each one.",
+      "parentUuid": "d77d9c49_9d382a44",
+      "revId": "d6ead802bddef0ec15fca950f616132a66264855",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
