@@ -87,6 +87,24 @@
       "parentUuid": "b5b25d8d_39dc570c",
       "revId": "d6ead802bddef0ec15fca950f616132a66264855",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "954cbfa3_93d6407a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2023-04-11T12:58:05Z",
+      "side": 1,
+      "message": "\u003e Thanks, is there a standard WMF config for black\nAFAIK the only black setting that is overridden is the default line length which we change to 120[1].\n\n\u003e And would it make sense to have it run automatically as Git pre-commit hook?\nSpicerack (and some others) have two tox jobs one to check the style and one to correct the formatting[2] and i have `tox -e py3-format` in my pre-commit so i think that would be fine 😊\n\n[1]https://github.com/wikimedia/operations-software-spicerack/blob/master/pyproject.toml#L2\n[2]https://github.com/wikimedia/operations-software-spicerack/blob/master/tox.ini#L34-L35",
+      "parentUuid": "c3d26b06_4c1d3bda",
+      "revId": "d6ead802bddef0ec15fca950f616132a66264855",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
