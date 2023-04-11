@@ -43,7 +43,7 @@ INTERFACES_REGEXP = (
 )
 
 BLANK_CABLES_SITE_BLOCKLIST = ()
-CORE_SITES = ('eqiad', 'codfw')
+CORE_SITES = ("eqiad", "codfw")
 
 interface_ct = ContentType.objects.get_for_model(Interface)
 
@@ -69,13 +69,16 @@ class Cables(Report):
             else:
                 dev = cable.device
                 if dev is None:
-                    self.log_failure(None,
-                                     ("incorrectly named {} cable termination not assigned to any device"
-                                      "(interface id: {}): {}")
-                                     .format(label, cable.id, cable.name))
+                    self.log_failure(
+                        None,
+                        (
+                            "incorrectly named {} cable termination not assigned to any device" "(interface id: {}): {}"
+                        ).format(label, cable.id, cable.name),
+                    )
                 else:
-                    self.log_failure(cable.device,
-                                     "incorrectly named {} cable termination: {}".format(label, cable.name))
+                    self.log_failure(
+                        cable.device, "incorrectly named {} cable termination: {}".format(label, cable.name)
+                    )
 
         self.log_success(None, "{} correctly named {} cable terminations".format(successes, label))
 
@@ -112,8 +115,7 @@ class Cables(Report):
     def test_interface_termination_names(self):
         """Proxy to _port_names_test with values for checking interfaces."""
         self._port_names_test(
-            Interface.objects.exclude(device__status__in=EXCLUDE_STATUSES)
-            .exclude(device__device_role__slug='server'),
+            Interface.objects.exclude(device__status__in=EXCLUDE_STATUSES).exclude(device__device_role__slug="server"),
             re.compile((r"|".join(INTERFACES_REGEXP))),
             "interface",
         )
@@ -140,13 +142,17 @@ class Cables(Report):
             true: the cable is a core site server cable.
             false: it's not.
         """
-        if (cable.termination_a_type == interface_ct
-                and cable.termination_a.device.device_role.slug == 'server'
-                and cable.termination_a.device.site.slug in CORE_SITES):
+        if (
+            cable.termination_a_type == interface_ct
+            and cable.termination_a.device.device_role.slug == "server"
+            and cable.termination_a.device.site.slug in CORE_SITES
+        ):
             return True
-        if (cable.termination_b_type == interface_ct
-                and cable.termination_b.device.device_role.slug == 'server'
-                and cable.termination_b.device.site.slug in CORE_SITES):
+        if (
+            cable.termination_b_type == interface_ct
+            and cable.termination_b.device.device_role.slug == "server"
+            and cable.termination_b.device.site.slug in CORE_SITES
+        ):
             return True
         return False
 
@@ -155,7 +161,7 @@ class Cables(Report):
         labelcounts = defaultdict(list)
         for cable in (
             Cable.objects.exclude(label__isnull=True)
-            .exclude(label='')
+            .exclude(label="")
             .exclude(termination_a_id__isnull=True)
             .exclude(termination_b_id__isnull=True)
         ):
@@ -184,8 +190,7 @@ class Cables(Report):
                 site = self._get_site_slug_for_cable(cable)
                 if self._core_site_server_cable(cable):
                     continue
-                if (cable.termination_a_type == interface_ct
-                        and cable.termination_a.name.startswith('vcp-')):
+                if cable.termination_a_type == interface_ct and cable.termination_a.name.startswith("vcp-"):
                     self.log_warning(cable, "VC link with no cable ID (site {})".format(site))
                     continue
                 if site in BLANK_CABLES_SITE_BLOCKLIST:

@@ -17,7 +17,7 @@ DEVICE_ROLE_BLOCKLIST = ("cablemgmt", "storagebin", "optical-device", "patch-pan
 ASSET_TAG_BLOCKLIST = ("patch-panel",)
 ASSET_TAG_RE = re.compile(r"WMF\d{4,}")  # Update the error message if you edit the regex
 TICKET_RE = re.compile(r"RT #\d{2,}|T\d{5,}")
-INVALID_ACTIVE_NAMES = ['future', 'spare']
+INVALID_ACTIVE_NAMES = ["future", "spare"]
 
 
 def _get_devices_query():
@@ -117,8 +117,10 @@ class Coherence(Report):
                     self.log_failure(device, "malformed device name for active device (should be lowercase)")
                 else:
                     warnings.append(device)
-            elif (any(x in device.name for x in INVALID_ACTIVE_NAMES)
-                  and device.status == DeviceStatusChoices.STATUS_ACTIVE):
+            elif (
+                any(x in device.name for x in INVALID_ACTIVE_NAMES)
+                and device.status == DeviceStatusChoices.STATUS_ACTIVE
+            ):
                 self.log_failure(device, "Future or spare in active device name")
             else:
                 success += 1
