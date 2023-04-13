@@ -18,6 +18,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d53e486_3aa80816",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-04-13T21:17:41Z",
+      "side": 1,
+      "message": "I fixed some stuff, anything to do with mine and some low hanging fruit.  Some of it is a bit more involved needs a proper refactor, plus I\u0027m not sure how much a lot of refactoring older parts of the code are going to help with the readability of this CR!",
+      "parentUuid": "b317981b_95e6d02b",
+      "revId": "3d427c93c5f334fe1a63a975f0138d2b23b85342",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a542e2cc_fd4b561b",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-04-06T13:36:34Z",
       "side": 1,
       "message": "Here and everywhere relevant to this change it could be useful to have more verbose doctypes with a detail of the parameters and the returns",
+      "range": {
+        "startLine": 443,
+        "startChar": 8,
+        "endLine": 443,
+        "endChar": 11
+      },
+      "revId": "3d427c93c5f334fe1a63a975f0138d2b23b85342",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24f89350_1799f1e3",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-04-13T21:17:41Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a542e2cc_fd4b561b",
       "range": {
         "startLine": 443,
         "startChar": 8,
@@ -64,6 +106,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f57753d3_1992d1f0",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-04-13T21:17:41Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5a24f532_eee53061",
+      "range": {
+        "startLine": 488,
+        "startChar": 7,
+        "endLine": 496,
+        "endChar": 106
+      },
+      "revId": "3d427c93c5f334fe1a63a975f0138d2b23b85342",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ba77baba_ab4dfd5c",
@@ -87,6 +153,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ecfc04eb_6ea39bc5",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-04-13T21:17:41Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ba77baba_ab4dfd5c",
+      "range": {
+        "startLine": 529,
+        "startChar": 37,
+        "endLine": 529,
+        "endChar": 43
+      },
+      "revId": "3d427c93c5f334fe1a63a975f0138d2b23b85342",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8d46481a_ecbc4a7a",
@@ -100,6 +190,30 @@
       "writtenOn": "2023-04-06T13:36:34Z",
       "side": 1,
       "message": "I think you can just do str(int_ip.network)",
+      "range": {
+        "startLine": 540,
+        "startChar": 54,
+        "endLine": 540,
+        "endChar": 91
+      },
+      "revId": "3d427c93c5f334fe1a63a975f0138d2b23b85342",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f1f712f_74cd4da0",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-04-13T21:17:41Z",
+      "side": 1,
+      "message": "Doesn\u0027t work in this case, the type is \u003cclass \u0027ipam.models.ip.IPAddress\u0027\u003e, I think that\u0027d work if it was \u003cclass ipaddress.IPv4Interface\u003e.  Played about with it a bit but couldn\u0027t find any cleaner way to get there.",
+      "parentUuid": "8d46481a_ecbc4a7a",
       "range": {
         "startLine": 540,
         "startChar": 54,
