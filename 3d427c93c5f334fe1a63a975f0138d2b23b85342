@@ -132,6 +132,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2a195a7c_1e7aa47b",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-04-14T06:48:41Z",
+      "side": 1,
+      "message": "I came up with the following, it\u0027s more compact with no repetition, not sure about more readable :)\nNot tested though but should do the work.\n```\nfor parent_type in [\u0027bridge\u0027, \u0027link\u0027]:\n    parent \u003d self._get_parent_interface(device, iface_dict, f\u0027parent_{parent_type}\u0027)\n    nb_parent_type \u003d \u0027parent\u0027 if parent_type \u003d\u003d \u0027link\u0027 else parent_type  # What we call link here, NB calls it parent\n    if getattr(nbiface, nb_parent_type, None) !\u003d parent:\n        setattr(nbiface, nb_parent_type, parent)\n        self.log_info(f\"Attach interface {nbiface.name} to {parent_type} {parent.name}\")\n```",
+      "parentUuid": "f57753d3_1992d1f0",
+      "range": {
+        "startLine": 488,
+        "startChar": 7,
+        "endLine": 496,
+        "endChar": 106
+      },
+      "revId": "3d427c93c5f334fe1a63a975f0138d2b23b85342",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ba77baba_ab4dfd5c",
         "filename": "customscripts/interface_automation.py",
         "patchSetId": 10
