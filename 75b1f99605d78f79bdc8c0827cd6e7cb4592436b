@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c37b507_1aa53f52",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-04-17T08:45:14Z",
+      "side": 1,
+      "message": "Would be nice but not a blocker that @volans reviews it, otherwise let\u0027s give it a try!",
+      "revId": "75b1f99605d78f79bdc8c0827cd6e7cb4592436b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
