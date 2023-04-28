@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "06459dbe_97192e86",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-04-28T06:15:45Z",
+      "side": 1,
+      "message": "Cool, I\u0027ll implement that next, but I\u0027d rather not this change to drift off too much from current prod.",
+      "parentUuid": "4733d40f_c28c16c7",
+      "revId": "1a7cf38f6fbac267d483597c95b3317cb1e1db10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "728d1613_b9c1ce35",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -31,6 +49,24 @@
       "writtenOn": "2023-04-11T14:43:32Z",
       "side": 1,
       "message": "Do not mix automatic and manual refactor please, it makes the review impossible.",
+      "revId": "1a7cf38f6fbac267d483597c95b3317cb1e1db10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4708a997_deeb773e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-04-28T06:15:45Z",
+      "side": 1,
+      "message": "Well, that\u0027s too late and I\u0027d rather not lose all this manual/toil work.",
+      "parentUuid": "728d1613_b9c1ce35",
       "revId": "1a7cf38f6fbac267d483597c95b3317cb1e1db10",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
