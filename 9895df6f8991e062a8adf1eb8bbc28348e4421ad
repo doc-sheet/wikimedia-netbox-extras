@@ -1,0 +1,186 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef557695_ca585c66",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-02T10:28:01Z",
+      "side": 1,
+      "message": "For the future, try to split changes into multiple patches to simplify the review process ;)",
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "83630c89_416ab40d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-02T10:28:01Z",
+      "side": 1,
+      "message": "The change is quite extensive and it\u0027s pretty hard to tell if it\u0027s doing the right thing in all cases. I trust that between you and Arzhel and testing on netbox-next that has been covered. LGTM in general, I\u0027ve left some minor comments inline.",
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37a32fa9_e8614d33",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-02T10:28:01Z",
+      "side": 1,
+      "message": "the whole file is a mix of single and double quotes, both pre-existing and in this change",
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a371b8a5_0820dae1",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-02T10:28:01Z",
+      "side": 1,
+      "message": "[nit] to simplify the reading and reduce indentation you could inverse this IF clause and return if nothing to do:\n\n  if not device_interface.mode or not device_interface.connected_endpoint:\n      return",
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "560c35da_28c8a7c2",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-02T10:28:01Z",
+      "side": 1,
+      "message": "[nit] we\u0027re potentially saving 3 times the same object creating 3 different changelogs, it could be avoided just setting a boolean:\n\n  modified \u003d False\n  if ...:\n      modified \u003d True\n  if ...:\n      modified \u003d True\n      \n  ...\n  if modified:\n      z_nbiface.save()",
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b05594d_86cfc6b9",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-02T10:28:01Z",
+      "side": 1,
+      "message": "This line can\u0027t be reached, you either return in the try, or in the except or raise a different exception.",
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b610e3af_fcc86c82",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-02T10:28:01Z",
+      "side": 1,
+      "message": "This seems an unrelated change.",
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7b07d72_2474c048",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 562,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-02T10:28:01Z",
+      "side": 1,
+      "message": "why an empty filter? did you mean all()?",
+      "range": {
+        "startLine": 562,
+        "startChar": 55,
+        "endLine": 562,
+        "endChar": 61
+      },
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ffd32fdf_15729477",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-02T10:28:01Z",
+      "side": 1,
+      "message": "to follow PEP-8 don\u0027t use backslashes to continue a line but parentheses.\nAlso this can be simplified with:\n\n  if networking[\u0027interfaces\u0027][primary_name].get(\u0027kind\u0027, \u0027\u0027) \u003d\u003d \u0027bridge\u0027:",
+      "range": {
+        "startLine": 607,
+        "startChar": 72,
+        "endLine": 607,
+        "endChar": 73
+      },
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff05b1d5_203a9c10",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 610,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-02T10:28:01Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
