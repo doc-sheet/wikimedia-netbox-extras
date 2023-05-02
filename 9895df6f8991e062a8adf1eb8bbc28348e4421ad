@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "fa943913_44979ea3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-05-02T18:45:14Z",
+      "side": 1,
+      "message": "Indeed that makes sense, it could have been done better.  The only thing I can really say in my defense is that there has been minimal scope creep.  The approach has changed in places due to  comments from previous reviews, or as a result of edge cases encountered in testing.  But the overall functionality is the same, and much of it couldn\u0027t be introduced incrementally.",
+      "parentUuid": "ef557695_ca585c66",
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "83630c89_416ab40d",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 16
@@ -31,6 +49,24 @@
       "writtenOn": "2023-05-02T10:28:01Z",
       "side": 1,
       "message": "The change is quite extensive and it\u0027s pretty hard to tell if it\u0027s doing the right thing in all cases. I trust that between you and Arzhel and testing on netbox-next that has been covered. LGTM in general, I\u0027ve left some minor comments inline.",
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "510b29ba_5290d2f4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-05-02T18:45:14Z",
+      "side": 1,
+      "message": "I can understand that.  I\u0027m fairly comfortable with the logic, it\u0027s been well tested for many different types of servers.  We\u0027ll still want to run against all servers in netbox_next and review the results before going into production of course.",
+      "parentUuid": "83630c89_416ab40d",
       "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
@@ -52,6 +88,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ffa2de6_1c710a68",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-05-02T18:45:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "37a32fa9_e8614d33",
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a371b8a5_0820dae1",
@@ -65,6 +119,24 @@
       "writtenOn": "2023-05-02T10:28:01Z",
       "side": 1,
       "message": "[nit] to simplify the reading and reduce indentation you could inverse this IF clause and return if nothing to do:\n\n  if not device_interface.mode or not device_interface.connected_endpoint:\n      return",
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1b7740f_04ec27a6",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-05-02T18:45:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a371b8a5_0820dae1",
       "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
@@ -86,6 +158,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "875eae4b_1410c0db",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-05-02T18:45:14Z",
+      "side": 1,
+      "message": "Good call.  I just tested and there seems to be no blocker on this.  Previously I think you couldn\u0027t set the vlans on an interface if the mode wasn\u0027t set and saved.\n\nModified now, I called the var \u0027int_changed\u0027 which is similar to other var names in this file.",
+      "parentUuid": "560c35da_28c8a7c2",
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6b05594d_86cfc6b9",
@@ -99,6 +189,24 @@
       "writtenOn": "2023-05-02T10:28:01Z",
       "side": 1,
       "message": "This line can\u0027t be reached, you either return in the try, or in the except or raise a different exception.",
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b14b5c79_38cc8397",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-05-02T18:45:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6b05594d_86cfc6b9",
       "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
@@ -120,6 +228,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e548d6a_ec9482e3",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-05-02T18:45:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b610e3af_fcc86c82",
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d7b07d72_2474c048",
@@ -133,6 +259,30 @@
       "writtenOn": "2023-05-02T10:28:01Z",
       "side": 1,
       "message": "why an empty filter? did you mean all()?",
+      "range": {
+        "startLine": 562,
+        "startChar": 55,
+        "endLine": 562,
+        "endChar": 61
+      },
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e05db8f_afe6d47b",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 562,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-05-02T18:45:14Z",
+      "side": 1,
+      "message": "Yep, and wasn\u0027t aware of all().  Will update :)",
+      "parentUuid": "d7b07d72_2474c048",
       "range": {
         "startLine": 562,
         "startChar": 55,
@@ -166,6 +316,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f3b4ba7_5f184aa8",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-05-02T18:45:14Z",
+      "side": 1,
+      "message": "Much cleaner thanks.",
+      "parentUuid": "ffd32fdf_15729477",
+      "range": {
+        "startLine": 607,
+        "startChar": 72,
+        "endLine": 607,
+        "endChar": 73
+      },
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ff05b1d5_203a9c10",
@@ -179,6 +353,24 @@
       "writtenOn": "2023-05-02T10:28:01Z",
       "side": 1,
       "message": "ditto",
+      "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41b94429_2b62664f",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 610,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-05-02T18:45:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ff05b1d5_203a9c10",
       "revId": "9895df6f8991e062a8adf1eb8bbc28348e4421ad",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
