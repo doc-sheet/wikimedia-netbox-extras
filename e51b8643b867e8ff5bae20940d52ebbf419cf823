@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bbb2c9c_f0b358cb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-03T07:56:14Z",
+      "side": 1,
+      "message": "The new envs can\u0027t be run and the style one is not run by CI",
+      "revId": "e51b8643b867e8ff5bae20940d52ebbf419cf823",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "771d5903_1df6fdb8",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-03T07:56:14Z",
+      "side": 1,
+      "message": "You\u0027re not defining the py3-style and py3-format and/or the py3x-style py3x-format environments. So the new code can\u0027t be run.\n\nSee:\nhttps://gerrit.wikimedia.org/r/plugins/gitiles/operations/software/spicerack/+/refs/heads/master/tox.ini#3\nand\nhttps://gerrit.wikimedia.org/r/plugins/gitiles/operations/software/spicerack/+/refs/heads/master/tox.ini#57",
+      "revId": "e51b8643b867e8ff5bae20940d52ebbf419cf823",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
