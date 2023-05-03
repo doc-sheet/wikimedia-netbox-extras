@@ -33,6 +33,24 @@
       "message": "You\u0027re not defining the py3-style and py3-format and/or the py3x-style py3x-format environments. So the new code can\u0027t be run.\n\nSee:\nhttps://gerrit.wikimedia.org/r/plugins/gitiles/operations/software/spicerack/+/refs/heads/master/tox.ini#3\nand\nhttps://gerrit.wikimedia.org/r/plugins/gitiles/operations/software/spicerack/+/refs/heads/master/tox.ini#57",
       "revId": "e51b8643b867e8ff5bae20940d52ebbf419cf823",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52524679_f2ff55b3",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-05-03T09:58:42Z",
+      "side": 1,
+      "message": "It can be run manually for now with `tox -e py310-format`\nI don\u0027t want it to run automatically for now otherwise CI will complain.\n\nI\u0027ll add it once the interface_automation file went through black in a later commit.",
+      "parentUuid": "771d5903_1df6fdb8",
+      "revId": "e51b8643b867e8ff5bae20940d52ebbf419cf823",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
