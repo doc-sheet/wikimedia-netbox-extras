@@ -22,6 +22,30 @@
       },
       "revId": "802c80a8d70a2cff5032ccf11a47ae6310e98b8f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c164f9f_750b8214",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 703,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-05-08T18:53:59Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c0b66b95_e4eaa3c8",
+      "range": {
+        "startLine": 702,
+        "startChar": 16,
+        "endLine": 703,
+        "endChar": 96
+      },
+      "revId": "802c80a8d70a2cff5032ccf11a47ae6310e98b8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
