@@ -1,8 +1,34 @@
 """Validator class for the Interface model."""
 
+import re
+
 from extras.validators import CustomValidator
 
 NETWORK_ROLES = ("asw", "cr", "mr", "pfw", "cloudsw")
+
+# For ergonomics the regexps that match interface names are placed in this tuple.
+INTERFACES_REGEXP = re.compile(
+    (
+        r"|".join(
+            (
+                r"^mgmt\d?$|^ILO$|^i?DRAC$",  # managment
+                r"^fxp\d-re\d$",  # routing engine management
+                r"^[a-z]{2}-\d+/\d+/\d+(:\d+){0,1}(\.\d+){0,1}$",  # Juniper (eg et-0/0/0:0.0)
+                r"^[a-z]{1,4}(\d+){0,1}(\.\d+){0,1}$",  # typical device names (eg. eth0, vlan.900, etc)
+                r"^en(p\d+)?s\d+(f\d+)?((d|np)\d+)?$",  # systemd 'path' devices
+                r"^cali[a-f0-9]+",  # kubernetes calico
+                r"^(tap|brq)[a-f0-9]+\-[a-f0-9]+",  # cloudnet
+                r"^vxlan-\d+",  # cloudnet vxlan
+                r"^(br-internal|br-external|br-int)$",  # more cloudnet
+                r"^\d+$",  # Netgear switch (just numbers)
+                r"^lo([.:].+)",  # Linux virtual/loopback
+                r"^(public|private)$",  # Ganeti
+                r"^Ethernet\d+$",  # SONiC (eg. Ethernet1)
+                r"^##PRIMARY##$",  # Netbox placeholder
+            )
+        )
+    )
+)
 
 
 class Main(CustomValidator):
@@ -10,6 +36,10 @@ class Main(CustomValidator):
 
     def validate(self, instance):
         """Mandatory entry point"""
+        # Name
+        if not INTERFACES_REGEXP.fullmatch(instance.name):
+            self.fail("Invalid name (must match the INTERFACES_REGEXP options)")
+
         # MTU
         if (
             hasattr(instance.connected_endpoint, "device")
