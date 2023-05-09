@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af1302f5_81b81f9b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-09T13:42:11Z",
+      "side": 1,
+      "message": "some questions inline looks ok otherwise",
+      "revId": "b066b8967e6481ae3c4584b66290ad8067f40584",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37862cdc_dbe02141",
+        "filename": "validators/dcim/device.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-09T13:42:11Z",
+      "side": 1,
+      "message": "Could it make sense to depend and use wmflib here?\nhttps://doc.wikimedia.org/wmflib/master/api/wmflib.constants.html#wmflib.constants.DATACENTER_NUMBERING_PREFIX",
+      "revId": "b066b8967e6481ae3c4584b66290ad8067f40584",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "051e2745_46c80705",
+        "filename": "validators/dcim/device.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-09T13:42:11Z",
+      "side": 1,
+      "message": "I\u0027m not sure that\u0027s true, spare hosts might have that",
+      "revId": "b066b8967e6481ae3c4584b66290ad8067f40584",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db36afda_a5224cb5",
+        "filename": "validators/dcim/device.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-09T13:42:11Z",
+      "side": 1,
+      "message": "I think we can do better here:\n\n*) if servers and have a 4 digit block separated by non-numbers then it must match the site numbering\n*) if network device then it must at least have the site slug in the name\n*) etc... with special cases based on the device category",
+      "revId": "b066b8967e6481ae3c4584b66290ad8067f40584",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82fac41b_a51c097f",
+        "filename": "validators/dcim/poweroutlet.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-09T13:42:11Z",
+      "side": 1,
+      "message": "do you expect instance.name to not be a string?",
+      "range": {
+        "startLine": 12,
+        "startChar": 19,
+        "endLine": 12,
+        "endChar": 32
+      },
+      "revId": "b066b8967e6481ae3c4584b66290ad8067f40584",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "793614d2_ace620ca",
+        "filename": "validators/dcim/poweroutlet.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-09T13:42:11Z",
+      "side": 1,
+      "message": "[nit] is zero a valid name? \"0\"",
+      "revId": "b066b8967e6481ae3c4584b66290ad8067f40584",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
