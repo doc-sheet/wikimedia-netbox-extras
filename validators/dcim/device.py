@@ -20,6 +20,14 @@ ASSET_TAG_RE = re.compile(
 )  # Update the error message if you edit the regex
 TICKET_RE = re.compile(r"RT #\d{2,}|T\d{5,}")
 
+SERVER_ID_TO_SITE_SLUG = {
+    1: "eqiad",
+    2: "codfw",
+    3: "esams",  # Soon knams
+    4: "ulsfo",
+    5: "eqsin",
+}
+
 
 class Main(CustomValidator):
     """Main class referenced in the Netbox config"""
@@ -37,9 +45,27 @@ class Main(CustomValidator):
             )
         if "." in instance.name:
             self.fail("Invalid name (must not contain a dot)")
-        # TODO valid hostname (not FQDN, so no dots) regex
-        # in addition if a 4 digit number is present the first digit
-        # must match the DC's digit prefix rule (eqiad => 1, etc.)
+
+        try:
+            if (
+                SERVER_ID_TO_SITE_SLUG[re.search(r"\d{4}$", instance.name).group()[0]]
+                != instance.site.slug
+            ):
+                self.fail(
+                    f"Invalid name (first of the 4 digits must match selected site {instance.site.slug})"
+                )
+        except AttributeError:
+            # The regex didn't find a 4 digit ID in the name (eg. router, ripe atlas)
+            # In that case their name contains the site (cr1-eqiad, ex4300-spare3-codfw, atlas-codfw, etc)
+            if instance.site.slug not in instance.name:
+                self.fail(
+                    f"Invalid name (must ends with 4 digits or contains the site slug {instance.site.slug})"
+                )
+            pass
+        except KeyError:
+            self.fail(
+                f"Invalid name (first of the 4 digits must be one of {list(SERVER_ID_TO_SITE_SLUG.keys())})"
+            )
 
         # asset_tag
         if instance.device_role.slug not in ROLES_OK_NO_ASSET_TAG:
