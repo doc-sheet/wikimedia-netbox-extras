@@ -16,6 +16,23 @@
       "message": "down to ~250.\n\nhttps://gerrit.wikimedia.org/r/c/operations/software/netbox-extras/+/905570/comments/cf9960a9_a3a54219",
       "revId": "c4d44ff08b50edc6508894a0e444e4088474b335",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7c3877c_c1ebc7d5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-09T08:38:20Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "c4d44ff08b50edc6508894a0e444e4088474b335",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
