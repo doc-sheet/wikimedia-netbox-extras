@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c865309c_409f59f2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-09T10:24:53Z",
+      "side": 1,
+      "message": "Self-merging to unblock cookbooks and netbox changes, happy to revisit later",
+      "revId": "919f2c648e369ef389d6a5b74c432c4029fa043e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
