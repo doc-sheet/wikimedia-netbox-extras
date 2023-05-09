@@ -6,6 +6,7 @@ import datetime
 from dcim.choices import DeviceStatusChoices
 from dcim.models import Device
 from extras.validators import CustomValidator
+from wmflib.constants import DATACENTER_NUMBERING_PREFIX
 
 ROLES_OK_NO_ASSET_TAG = ("patch-panel",)
 ROLES_OK_NO_SERIAL = ("cablemgmt", "storagebin", "optical-device", "patch-panel")
@@ -13,6 +14,7 @@ STATUS_DECOM = (
     DeviceStatusChoices.STATUS_DECOMMISSIONING,
     DeviceStatusChoices.STATUS_OFFLINE,
 )
+STATUS_NAME_CAN_BE_ASSET = STATUS_DECOM + DeviceStatusChoices.STATUS_PLANNED
 INVALID_ACTIVE_NAMES = ["future", "spare"]
 
 ASSET_TAG_RE = re.compile(
@@ -37,9 +39,30 @@ class Main(CustomValidator):
             )
         if "." in instance.name:
             self.fail("Invalid name (must not contain a dot)")
-        # TODO valid hostname (not FQDN, so no dots) regex
-        # in addition if a 4 digit number is present the first digit
-        # must match the DC's digit prefix rule (eqiad => 1, etc.)
+
+        if (
+            instance.name == instance.asset_tag.lower()
+            and instance.status in STATUS_NAME_CAN_BE_ASSET
+        ):
+            # decom/staged devices (can) have their asset tags as name
+            return
+
+        if instance.site.slug in instance.name:
+            # For usual special cases their name contains the site (cr1-eqiad, ex4300-spare3-codfw, atlas-codfw, etc)
+            return
+        host_id = re.search(r"\d{4}", instance.name)
+        if host_id:
+            first_digit = str(host_id.group()[0])
+            matching_site = [
+                site
+                for site, prefix in DATACENTER_NUMBERING_PREFIX.items()
+                if prefix == first_digit
+            ]
+            if instance.site.slug not in matching_site:
+                self.fail(
+                    f"Invalid name (first digit {first_digit} must match device's site {instance.site.slug})"
+                )
+        # We could improve it once we got rid of all the hosts not matching this convention, like "flerovium".
 
         # asset_tag
         if instance.device_role.slug not in ROLES_OK_NO_ASSET_TAG:
