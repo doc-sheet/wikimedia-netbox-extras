@@ -16,6 +16,52 @@
       "message": "Nice!  I wasn\u0027t aware of those prefetch operations very useful.  Thanks :)",
       "revId": "8a31cc56ae44a08ffe2a30b92c09d485eeb79c20",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b13aae37_2ff0a2d4",
+        "filename": "reports/network.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-05-10T14:16:09Z",
+      "side": 1,
+      "message": "nit: might \u0027prefix\u0027 or \u0027subnet\u0027 be a better name for this var than \u0027vlan\u0027?",
+      "range": {
+        "startLine": 277,
+        "startChar": 0,
+        "endLine": 277,
+        "endChar": 1
+      },
+      "revId": "8a31cc56ae44a08ffe2a30b92c09d485eeb79c20",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "017e6115_774484b4",
+        "filename": "reports/network.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-05-10T14:16:09Z",
+      "side": 1,
+      "message": "same here, \u0027vlans\u0027 as a var name confused me a little.",
+      "range": {
+        "startLine": 285,
+        "startChar": 0,
+        "endLine": 285,
+        "endChar": 1
+      },
+      "revId": "8a31cc56ae44a08ffe2a30b92c09d485eeb79c20",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
