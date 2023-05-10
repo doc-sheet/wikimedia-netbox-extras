@@ -105,6 +105,7 @@ class ReplaceDevice(Script):
                 self.log_success(f"Moved {attribute} {src_object.name}")
 
                 # Fix for T259166#7868195
+<<<<<<< HEAD   (8577f6 Netbox 4: replace `device_role` with `role`)
                 if hasattr(src_object, "cable") and src_object.cable:
                     if src_object.cable._termination_a_device == source_device:
                         src_object.cable._termination_a_device = destination_device
@@ -117,6 +118,21 @@ class ReplaceDevice(Script):
                         src_object.cable.save()
                         self.log_success(f"Updated cable {src_object.cable} termination B")
                 src_object.save()
+=======
+                # TODO update for Netbox 3.5 upgrade
+                if hasattr(object, "cable") and object.cable:
+                    if object.cable._termination_a_device == source_device:
+                        object.cable._termination_a_device = destination_device
+                        object.cable._termination_a_device_id = destination_device.id
+                        object.cable.save()
+                        self.log_success(f"Updated cable {object.cable} termination A")
+                    if object.cable._termination_b_device == source_device:
+                        object.cable._termination_b_device = destination_device
+                        object.cable._termination_b_device_id = destination_device.id
+                        object.cable.save()
+                        self.log_success(f"Updated cable {object.cable} termination B")
+                object.save()
+>>>>>>> CHANGE (07bf2d Netbox 3.5: multiple cable terminations and endpoints)
 
         source_device.save()
         destination_device.save()

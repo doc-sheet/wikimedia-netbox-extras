@@ -248,6 +248,7 @@ class Network(Report):
 
         Every IP address bound to a host interface should come from the correct
         subnet, matching the Vlan the equivalent switch port is bound to.
+        Assumes that a server interface only have 1 endpoint connected (no breakout cable, etc)
         """
         success = 0
         for interface in (
@@ -256,19 +257,33 @@ class Network(Report):
             .annotate(Count("ip_addresses"))
             .filter(ip_addresses__count__gte=1)
             .select_related("_path")  # This is the field name for connected_endpoint
+<<<<<<< HEAD   (8577f6 Netbox 4: replace `device_role` with `role`)
             .prefetch_related(
                 "ip_addresses", "connected_endpoint__untagged_vlan__prefixes"
             )
+=======
+            .prefetch_related("ip_addresses", "connected_endpoints__0__untagged_vlan__prefixes")
+>>>>>>> CHANGE (07bf2d Netbox 3.5: multiple cable terminations and endpoints)
         ):
+<<<<<<< HEAD   (8577f6 Netbox 4: replace `device_role` with `role`)
             if interface.connected_endpoint.device.role.slug not in (
                 "asw",
                 "cloudsw",
             ):
+=======
+            if interface.connected_endpoints[0].device.device_role.slug not in ("asw", "cloudsw"):
+>>>>>>> CHANGE (07bf2d Netbox 3.5: multiple cable terminations and endpoints)
                 continue
 
+<<<<<<< HEAD   (8577f6 Netbox 4: replace `device_role` with `role`)
             prefixes = defaultdict(list)
             for prefix in interface.connected_endpoint.untagged_vlan.prefixes.all():
                 prefixes[prefix.family].append(prefix)
+=======
+            vlan_pfxs = defaultdict(list)
+            for vlan in interface.connected_endpoints[0].untagged_vlan.prefixes.all():
+                vlan_pfxs[vlan.family].append(vlan)
+>>>>>>> CHANGE (07bf2d Netbox 3.5: multiple cable terminations and endpoints)
 
             ips = defaultdict(list)
             for ip in interface.ip_addresses.all():
@@ -278,15 +293,20 @@ class Network(Report):
                 family_prefixes = prefixes[family]
                 if not family_prefixes:
                     self.log_warning(
-                        interface.connected_endpoint.untagged_vlan,
+                        interface.connected_endpoints[0].untagged_vlan,
                         f"Vlan has no IPv{family} prefix assigned.",
                     )
                     continue
 
                 if len(family_prefixes) > 1:
                     self.log_failure(
+<<<<<<< HEAD   (8577f6 Netbox 4: replace `device_role` with `role`)
                         interface.connected_endpoint.untagged_vlan,
                         f"Vlan has more than one IPv{family} prefix assigned: {family_prefixes}",
+=======
+                        interface.connected_endpoints[0].untagged_vlan,
+                        f"Vlan has more than one IPv{family} prefix assigned",
+>>>>>>> CHANGE (07bf2d Netbox 3.5: multiple cable terminations and endpoints)
                     )
 
                 prefix = family_prefixes[0]

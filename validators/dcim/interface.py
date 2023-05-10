@@ -39,6 +39,7 @@ class Main(CustomValidator):
             self.fail("Invalid name (must match the INTERFACES_REGEXP options)", field="name")
 
         # MTU
+<<<<<<< HEAD   (8577f6 Netbox 4: replace `device_role` with `role`)
         if (
             hasattr(instance.connected_endpoint, "device")
             and instance.device.device_role.slug in NETWORK_ROLES  # Network devices
@@ -52,6 +53,21 @@ class Main(CustomValidator):
             and not str(instance.name).startswith("vcp-")  # Ignore VC links
         ):
             self.fail(f"Invalid MTU {instance.mtu}, must be 9192", field="mtu")
+=======
+        for connected_endpoint in instance.connected_endpoints:
+            if (
+                hasattr(connected_endpoint, "device")  # If the interface is to a device
+                and instance.device.device_role.slug in NETWORK_ROLES  # Network devices
+                and instance.mtu != 9192  # Ignore good MTU
+                and not instance.lag  # Ignore LAG members
+                and not (
+                    instance.device.tenant and instance.device.tenant.slug == "fr-tech"
+                )  # Ignore frack devices
+                and instance.enabled  # Ignore disabled interfaces
+                and not str(instance.name).startswith("vcp-")
+            ):  # Ignore VC links
+                self.fail("Invalid MTU (must be 9192)")
+>>>>>>> CHANGE (07bf2d Netbox 3.5: multiple cable terminations and endpoints)
 
         # Attributes
         attributes = [
