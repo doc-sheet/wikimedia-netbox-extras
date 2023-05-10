@@ -42,12 +42,12 @@ class GetDeviceStats(Script):
     def run(self, data, commit):
         """The run method"""
         # Delete old versions of this report
-        obj_type = ContentType.objects.get_for_model(models.Script)
+        object_type = ContentType.objects.get_for_model(models.Script)
         name = ".".join((get_module(self.__module__), self.__class__.__name__))
         # Keep any reports from the last 5 minutes to make this less racy
         cutoff = timezone.now() - timedelta(minutes=5)
-        jobs = models.JobResult.objects.filter(
-            obj_type=obj_type,
+        jobs = models.Job.objects.filter(
+            object_type=object_type,
             name=name,
             status__in=JobResultStatusChoices.TERMINAL_STATE_CHOICES,
             created__lt=cutoff,
