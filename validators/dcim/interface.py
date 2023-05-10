@@ -11,18 +11,19 @@ class Main(CustomValidator):
     def validate(self, instance):
         """Mandatory entry point"""
         # MTU
-        if (
-            hasattr(instance.connected_endpoint, "device")
-            and instance.device.device_role.slug in NETWORK_ROLES  # Network devices
-            and instance.mtu != 9192  # Ignore good MTU
-            and not instance.lag  # Ignore LAG members
-            and not (
-                instance.device.tenant and instance.device.tenant.slug == "fr-tech"
-            )  # Ignore frack devices
-            and instance.enabled  # Ignore disabled interfaces
-            and not str(instance.name).startswith("vcp-")
-        ):  # Ignore VC links
-            self.fail("Invalid MTU (must be 9192)")
+        for connected_endpoint in instance.connected_endpoints:
+            if (
+                hasattr(connected_endpoint, "device")  # If the interface is to a device
+                and instance.device.device_role.slug in NETWORK_ROLES  # Network devices
+                and instance.mtu != 9192  # Ignore good MTU
+                and not instance.lag  # Ignore LAG members
+                and not (
+                    instance.device.tenant and instance.device.tenant.slug == "fr-tech"
+                )  # Ignore frack devices
+                and instance.enabled  # Ignore disabled interfaces
+                and not str(instance.name).startswith("vcp-")
+            ):  # Ignore VC links
+                self.fail("Invalid MTU (must be 9192)")
 
         # Attributes
         attributes = [

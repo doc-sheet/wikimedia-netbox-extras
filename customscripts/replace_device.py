@@ -105,6 +105,7 @@ class ReplaceDevice(Script):
                 self.log_success(f"Moved {attribute} {object.name}")
 
                 # Fix for T259166#7868195
+                # TODO update for Netbox 3.5 upgrade
                 if hasattr(object, "cable") and object.cable:
                     if object.cable._termination_a_device == source_device:
                         object.cable._termination_a_device = destination_device

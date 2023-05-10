@@ -352,7 +352,7 @@ class Importer:
             device_id=z_nbdevice.id,
             name__iregex=f"^({'|'.join(SWITCH_INTERFACES_PREFIX_ALLOWLIST)}){port_num}$"
         ):
-            if z_nbdevice_int.connected_endpoint or z_nbdevice_int.count_ipaddresses > 0:
+            if z_nbdevice_int.connected_endpoints or z_nbdevice_int.count_ipaddresses > 0:
                 # TODO Script should abort at this point not just log the error
                 self.log_failure(f"{z_nbdevice.name}: We need to remove interface {z_nbdevice_int.name}, before "
                                  f"creating {z_iface}, however it still has a cable or IP address attached. "
@@ -605,10 +605,8 @@ class Importer:
             color_human = dict(ColorChoices)[color]
             cable_type = CableTypeChoices.TYPE_DAC_PASSIVE
 
-        cable = Cable(termination_a=nbiface,
-                      termination_a_type=interface_ct,
-                      termination_b=z_nbiface,
-                      termination_b_type=interface_ct,
+        cable = Cable(a_terminations=[nbiface],
+                      b_terminations=[z_nbiface],
                       label=label,
                       color=color,
                       type=cable_type,
@@ -972,11 +970,12 @@ class MoveServer(Script, Importer):
         # At this point there is only the one.
         nbiface = ifaces_connected[0]
         nbcable = nbiface.cable
-        # Find old switch interface, one one side or the other of the cable
-        if nbcable.termination_a != nbiface:
-            z_old_nbiface = nbcable.termination_a
-        elif nbcable.termination_b != nbiface:
-            z_old_nbiface = nbcable.termination_b
+        # Find old switch interface, on one side or the other of the cable
+        # Note: only works with single terminations as servers links shouldn't be point to multi-point
+        if nbcable.a_terminations[0] != nbiface:
+            z_old_nbiface = nbcable.a_terminations[0]
+        elif nbcable.b_termination[0] != nbiface:
+            z_old_nbiface = nbcable.b_terminations[0]
 
         # Configure the new switch interface
         z_nbiface = self._update_z_nbiface(z_nbdevice, z_iface, z_old_nbiface.untagged_vlan, z_old_nbiface.type,
@@ -1147,20 +1146,6 @@ class ProvisionServerNetwork(Script, Importer):
             if int(z_iface.split("-")[1].split("/")[0]) != 0:
                 self.log_failure(f"{device}: Interface name {z_iface} invalid, first digit of port "
                                  f"number should be 0 as {z_nbdevice.name} is not a virtual chassis.")
-                return
-
-        # Check that we don't reuse a cable ID, if present
-        if cable_id:
-            cables_with_same_id = Cable.objects.filter(label=cable_id)
-            duplicate_cable_id = False
-            for cable in cables_with_same_id:
-                if cable.termination_a_type == interface_ct and cable.termination_a.device.site == device.site:
-                    duplicate_cable_id = True
-                if cable.termination_b_type == interface_ct and cable.termination_b.device.site == device.site:
-                    duplicate_cable_id = True
-
-            if duplicate_cable_id:
-                self.log_failure(f"Cable ID {cable_id} already assigned in {device.site.slug}.")
                 return
 
         ifaces = device.interfaces.all()

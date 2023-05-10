@@ -260,6 +260,7 @@ class Network(Report):
 
         Every IP address bound to a host interface should come from the correct
         subnet, matching the Vlan the equivalent switch port is bound to.
+        Assumes that a server interface only have 1 endpoint connected (no breakout cable, etc)
         """
         success = 0
         for interface in (
@@ -268,13 +269,13 @@ class Network(Report):
             .annotate(Count("ip_addresses"))
             .filter(ip_addresses__count__gte=1)
             .select_related("_path")  # This is the field name for connected_endpoint
-            .prefetch_related("ip_addresses", "connected_endpoint__untagged_vlan__prefixes")
+            .prefetch_related("ip_addresses", "connected_endpoints__0__untagged_vlan__prefixes")
         ):
-            if interface.connected_endpoint.device.device_role.slug not in ("asw", "cloudsw"):
+            if interface.connected_endpoints[0].device.device_role.slug not in ("asw", "cloudsw"):
                 continue
 
             vlan_pfxs = defaultdict(list)
-            for vlan in interface.connected_endpoint.untagged_vlan.prefixes.all():
+            for vlan in interface.connected_endpoints[0].untagged_vlan.prefixes.all():
                 vlan_pfxs[vlan.family].append(vlan)
 
             ip_addrs = defaultdict(list)
@@ -285,14 +286,14 @@ class Network(Report):
                 vlans = vlan_pfxs[family]
                 if not vlans:
                     self.log_warning(
-                        interface.connected_endpoint.untagged_vlan,
+                        interface.connected_endpoints[0].untagged_vlan,
                         f"Vlan has no IPv{family} prefix assigned.",
                     )
                     continue
 
                 if len(vlans) > 1:
                     self.log_failure(
-                        interface.connected_endpoint.untagged_vlan,
+                        interface.connected_endpoints[0].untagged_vlan,
                         f"Vlan has more than one IPv{family} prefix assigned",
                     )
 
