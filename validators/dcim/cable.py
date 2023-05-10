@@ -35,13 +35,13 @@ class Main(CustomValidator):
         Since cables do not have their own site objects, we need to get it from a subsidiary object, which,
         depending on the termination type, may be on the termination object or the device object in the termination.
         """
-        if (
-            cable.termination_a_type.name == "circuit termination"
-            and cable.termination_a.site
-        ):
-            return cable.termination_a.site.slug
-        if cable.termination_a.device and cable.termination_a.device.site:
-            return cable.termination_a.device.site.slug
+        for termination in cable.terminations.all():
+            site = getattr(termination.termination, 'site', None)
+            if site:
+                return site.slug
+            device = getattr(termination.termination, 'device', None)
+            if device:
+                return device.site.slug
         self.fail("Error: unable to find cable's site")
         return None  # to make pylint happy, but this stops above
 
@@ -54,16 +54,11 @@ class Main(CustomValidator):
             true: the cable is a core site server cable.
             false: it's not.
         """
-        if (
-            cable.termination_a_type == interface_ct
-            and cable.termination_a.device.device_role.slug == "server"
-            and cable.termination_a.device.site.slug in CORE_SITES
-        ):
-            return True
-        if (
-            cable.termination_b_type == interface_ct
-            and cable.termination_b.device.device_role.slug == "server"
-            and cable.termination_b.device.site.slug in CORE_SITES
-        ):
-            return True
+        for termination in cable.terminations.all():
+            if (
+               termination.termination_type == interface_ct
+                and termination.device.device_role.slug == "server"
+                and termination.device.site.slug in CORE_SITES
+            ):
+                return True
         return False
