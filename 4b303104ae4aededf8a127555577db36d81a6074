@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64a4a699_c8f47325",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-12T07:17:25Z",
+      "side": 1,
+      "message": "Tested on netbox-next: https://netbox-next.wikimedia.org/dcim/devices/4642/",
+      "revId": "4b303104ae4aededf8a127555577db36d81a6074",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
