@@ -148,6 +148,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ed0c8f41_698daef6",
+        "filename": "validators/dcim/poweroutlet.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-05-15T15:16:36Z",
+      "side": 1,
+      "message": "yeah, it\u0027s just the port number as a single digit.",
+      "parentUuid": "82fac41b_a51c097f",
+      "range": {
+        "startLine": 12,
+        "startChar": 19,
+        "endLine": 12,
+        "endChar": 32
+      },
+      "revId": "b066b8967e6481ae3c4584b66290ad8067f40584",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "793614d2_ace620ca",
         "filename": "validators/dcim/poweroutlet.py",
         "patchSetId": 4
@@ -159,6 +183,24 @@
       "writtenOn": "2023-05-09T13:42:11Z",
       "side": 1,
       "message": "[nit] is zero a valid name? \"0\"",
+      "revId": "b066b8967e6481ae3c4584b66290ad8067f40584",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0635b090_0c47f7ab",
+        "filename": "validators/dcim/poweroutlet.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-05-15T15:16:36Z",
+      "side": 1,
+      "message": "It could depending on how they\u0027re numbered physically.",
+      "parentUuid": "793614d2_ace620ca",
       "revId": "b066b8967e6481ae3c4584b66290ad8067f40584",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
