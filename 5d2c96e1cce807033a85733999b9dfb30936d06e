@@ -41,6 +41,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "84a704ed_31d8eeff",
+        "filename": "validators/dcim/device.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-05-15T12:18:31Z",
+      "side": 1,
+      "message": "er, right, moved to a dedicated function.",
+      "parentUuid": "5d6cc301_5367b33a",
+      "range": {
+        "startLine": 48,
+        "startChar": 12,
+        "endLine": 48,
+        "endChar": 18
+      },
+      "revId": "5d2c96e1cce807033a85733999b9dfb30936d06e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8b0568ba_a432c0fa",
@@ -54,6 +78,24 @@
       "writtenOn": "2023-05-15T11:45:45Z",
       "side": 1,
       "message": "Wouldn\u0027t be simpler to check the opposite, that the first number correspond to the site.slug one?\n\n  if DATACENTER_NUMBERING_PREFIX[instance.site.slug] !\u003d first_digit:",
+      "revId": "5d2c96e1cce807033a85733999b9dfb30936d06e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3dca25a9_59e3f6d3",
+        "filename": "validators/dcim/device.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-05-15T12:18:31Z",
+      "side": 1,
+      "message": "haha, yeah, much easier :)",
+      "parentUuid": "8b0568ba_a432c0fa",
       "revId": "5d2c96e1cce807033a85733999b9dfb30936d06e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
