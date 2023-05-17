@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17c489e5_80886432",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-05-17T10:17:38Z",
+      "side": 1,
+      "message": "LGTM!  Odd issue I think best to work-around like this without getting too much into the weeds.",
+      "revId": "98305973444cc7479121ff01fee6251e59618910",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
