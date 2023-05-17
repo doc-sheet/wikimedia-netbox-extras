@@ -123,6 +123,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c932919f_2e706f8a",
+        "filename": "validators/dcim/device.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-17T06:10:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b232cc0_d4d5c935",
+      "revId": "b066b8967e6481ae3c4584b66290ad8067f40584",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "82fac41b_a51c097f",
@@ -170,6 +188,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdb4a2c8_a5dc29fb",
+        "filename": "validators/dcim/poweroutlet.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-17T06:10:43Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ed0c8f41_698daef6",
+      "range": {
+        "startLine": 12,
+        "startChar": 19,
+        "endLine": 12,
+        "endChar": 32
+      },
+      "revId": "b066b8967e6481ae3c4584b66290ad8067f40584",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "793614d2_ace620ca",
@@ -201,6 +243,24 @@
       "side": 1,
       "message": "It could depending on how they\u0027re numbered physically.",
       "parentUuid": "793614d2_ace620ca",
+      "revId": "b066b8967e6481ae3c4584b66290ad8067f40584",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57519c1d_88129f0f",
+        "filename": "validators/dcim/poweroutlet.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-05-17T06:10:43Z",
+      "side": 1,
+      "message": "Ack, up to you if want to clarify it",
+      "parentUuid": "0635b090_0c47f7ab",
       "revId": "b066b8967e6481ae3c4584b66290ad8067f40584",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
