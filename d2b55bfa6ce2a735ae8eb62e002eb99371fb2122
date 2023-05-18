@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce5d459c_4784fe74",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-05-18T11:36:54Z",
+      "side": 1,
+      "message": "LGTM!  Some comments in line in terms of the approach with interface names but overall looks good I expect it should work and do what we need.  Some nice checks on the server names good thinking.",
+      "revId": "d2b55bfa6ce2a735ae8eb62e002eb99371fb2122",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38808c27_fe927641",
+        "filename": "validators/dcim/device.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-05-18T11:36:54Z",
+      "side": 1,
+      "message": "LOL TIL.",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 3
+      },
+      "revId": "d2b55bfa6ce2a735ae8eb62e002eb99371fb2122",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a70e3946_aa34b8fd",
+        "filename": "validators/dcim/interface.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-05-18T11:36:54Z",
+      "side": 1,
+      "message": "I wonder if this might not be a bit _too_ prescriptive? I guess the issue derives from the host-side, and ability to create arbitrary interface names.  Perhaps we\u0027d be better only enforcing it for hardware, like the Juniper\u0027s and Dell\u0027s, where it is fixed. Not a blocker, just a thought really.  The worry would be having to revisit this any time new virtual device names are introduced. But maybe it\u0027s worth having oversight of those I\u0027m not sure.",
+      "revId": "d2b55bfa6ce2a735ae8eb62e002eb99371fb2122",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c502dbda_1586ead3",
+        "filename": "validators/dcim/interface.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-05-18T11:36:54Z",
+      "side": 1,
+      "message": "I guess this is where you could extend the conditional and only apply it if the device role was in $NETWORK_ROLES, if we wanted to go that way.",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 13
+      },
+      "revId": "d2b55bfa6ce2a735ae8eb62e002eb99371fb2122",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
