@@ -41,6 +41,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "998a062a_99a14d01",
+        "filename": "validators/dcim/device.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-05-19T17:11:38Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "38808c27_fe927641",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 3
+      },
+      "revId": "d2b55bfa6ce2a735ae8eb62e002eb99371fb2122",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a70e3946_aa34b8fd",
@@ -60,6 +84,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f42223a5_82a9701c",
+        "filename": "validators/dcim/interface.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-05-19T17:11:38Z",
+      "side": 1,
+      "message": "Yeah, that\u0027s a good idea! Updated, but not tested yet.",
+      "parentUuid": "a70e3946_aa34b8fd",
+      "revId": "d2b55bfa6ce2a735ae8eb62e002eb99371fb2122",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c502dbda_1586ead3",
         "filename": "validators/dcim/interface.py",
         "patchSetId": 8
@@ -71,6 +113,30 @@
       "writtenOn": "2023-05-18T11:36:54Z",
       "side": 1,
       "message": "I guess this is where you could extend the conditional and only apply it if the device role was in $NETWORK_ROLES, if we wanted to go that way.",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 13
+      },
+      "revId": "d2b55bfa6ce2a735ae8eb62e002eb99371fb2122",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c6068bf_1fb10234",
+        "filename": "validators/dcim/interface.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-05-19T17:11:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c502dbda_1586ead3",
       "range": {
         "startLine": 40,
         "startChar": 0,
