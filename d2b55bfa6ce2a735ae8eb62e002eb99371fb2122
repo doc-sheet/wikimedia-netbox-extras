@@ -102,6 +102,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a74d47af_61bcfb24",
+        "filename": "validators/dcim/interface.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-05-22T15:23:51Z",
+      "side": 1,
+      "message": "Tested on -next.",
+      "parentUuid": "f42223a5_82a9701c",
+      "revId": "d2b55bfa6ce2a735ae8eb62e002eb99371fb2122",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c502dbda_1586ead3",
         "filename": "validators/dcim/interface.py",
         "patchSetId": 8
