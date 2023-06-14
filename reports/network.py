@@ -262,27 +262,36 @@ class Network(Report):
         subnet, matching the Vlan the equivalent switch port is bound to.
         """
         success = 0
+
+        # Get the prefix for all the vlans in advance as we check each multiple times
+        vlan_pfx = {}
+        for vlan in VLAN.objects.all():
+            vlan_pfx[vlan.id] = defaultdict(list)
+            for prefix in Prefix.objects.filter(vlan_id=vlan.id):
+                vlan_pfx[vlan.id][prefix.family].append(prefix)
+
         for interface in (
             Interface.objects.filter(device__device_role__slug="server")
             .exclude(cable__isnull=True)
             .annotate(Count("ip_addresses"))
             .filter(ip_addresses__count__gte=1)
             .select_related("_path")  # This is the field name for connected_endpoint
-            .prefetch_related("ip_addresses", "connected_endpoint__untagged_vlan__prefixes")
+            .prefetch_related("ip_addresses")
         ):
             if interface.connected_endpoint.device.device_role.slug not in ("asw", "cloudsw"):
                 continue
 
-            prefixes = defaultdict(list)
-            for prefix in interface.connected_endpoint.untagged_vlan.prefixes.all():
-                prefixes[prefix.family].append(prefix)
+            try:
+                vlan_id = interface.connected_endpoint.untagged_vlan.id
+            except AttributeError:
+                continue
 
             ips = defaultdict(list)
             for ip in interface.ip_addresses.all():
                 ips[ip.family].append(ip)
 
             for family in (4, 6):
-                family_prefixes = prefixes[family]
+                family_prefixes = vlan_pfx[vlan_id][family]
                 if not family_prefixes:
                     self.log_warning(
                         interface.connected_endpoint.untagged_vlan,
