@@ -1292,6 +1292,28 @@ class ProvisionServerNetwork(Script, Importer):
                 self.log_failure(f"Cable ID {cable_id} already assigned in {device.site.slug}.")
                 return
 
+        if z_nbdevice.device_type.slug.startswith("qfx5120"):
+            try:
+                port = int(z_iface.split(":")[0].split("/")[-1])
+            except ValueError:
+                self.log_failure(f"{z_iface} is not a valid interface name for a Juniper device.")
+                return
+
+            if port < 48:
+                block_start = port - (port % 4)
+                block_end = block_start + 3
+                iface_prefix = z_iface.split("-")[0]
+
+                for iface in z_nbdevice.interfaces.exclude(type="virtual").exclude(mgmt_only=True).exclude(
+                    enabled=False
+                ):
+                    iface_port = int(iface.name.split(":")[0].split("/")[-1])
+                    if iface_port >= block_start and iface_port <= block_end:
+                        if not iface.name.startswith(iface_prefix):
+                            self.log_failure(f"{z_iface} cannot co-exist with {iface.name} on {z_nbdevice.name}, "
+                                             "different speed interfaces cannot be in the same block of 4 on QFX5120.")
+                            return
+
         ifaces = device.interfaces.all()
         #  If the device have interface(s)
         if ifaces:
