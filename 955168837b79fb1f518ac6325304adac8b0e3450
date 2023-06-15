@@ -16,6 +16,24 @@
       "message": "Could it be a validator instead, to catch the issue if the interface is created/modified manually too? (or with different automation). And that way we can remove the check from the report in the same go.",
       "revId": "955168837b79fb1f518ac6325304adac8b0e3450",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7bb3a16b_8a1fb0e2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-06-15T09:41:28Z",
+      "side": 1,
+      "message": "That\u0027s not a bad idea, I\u0027ll look into it.",
+      "parentUuid": "c15fc995_41e43b0c",
+      "revId": "955168837b79fb1f518ac6325304adac8b0e3450",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
