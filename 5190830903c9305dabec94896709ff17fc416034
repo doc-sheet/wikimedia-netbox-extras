@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8f6702b_311ba159",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-06-15T07:46:20Z",
+      "side": 1,
+      "message": "Overall lgtm, was it tested? Maybe we can compare the execution time to see the improvement?",
+      "revId": "5190830903c9305dabec94896709ff17fc416034",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
