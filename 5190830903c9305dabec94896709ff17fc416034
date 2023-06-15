@@ -16,6 +16,24 @@
       "message": "Overall lgtm, was it tested? Maybe we can compare the execution time to see the improvement?",
       "revId": "5190830903c9305dabec94896709ff17fc416034",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4dc3f756_976cab5e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-06-15T10:03:55Z",
+      "side": 1,
+      "message": "I tested it some time back.  Tbh I don\u0027t think it\u0027ll make a huge difference, if we were dealing with the API then yes - less requests - but running directly on Netbox I\u0027m not sure how much better it would be.  The timeout problems remains despite volans massive improvement in execution time, so its probably not gonna make a material difference.  Might be better to have him weigh in on whether it\u0027s worth it or not.\n\nBut yeah let me try to retest and get some stats if I can.",
+      "parentUuid": "d8f6702b_311ba159",
+      "revId": "5190830903c9305dabec94896709ff17fc416034",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }

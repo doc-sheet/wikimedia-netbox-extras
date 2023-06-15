@@ -22,6 +22,30 @@
       },
       "revId": "9b4c919c4f294c33024c82490aeb5b75dcff32ab",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b7d0c26_cbc1e775",
+        "filename": "reports/network.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-06-15T10:03:55Z",
+      "side": 0,
+      "message": "We get the prefixes for all vlans in advance and store in vlan_pfx, so we don\u0027t need to fetch the associated prefixes for the \u0027untagged vlan\u0027 on every interface we hit.",
+      "parentUuid": "05881a1a_b8594f4f",
+      "range": {
+        "startLine": 271,
+        "startChar": 46,
+        "endLine": 271,
+        "endChar": 91
+      },
+      "revId": "9b4c919c4f294c33024c82490aeb5b75dcff32ab",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
