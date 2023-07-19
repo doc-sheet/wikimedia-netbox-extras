@@ -16,6 +16,46 @@
       "message": "Not familiar with this repo but in theory and the idea looks good.",
       "revId": "bf8967a8caefe74b16971647387979a1713ca04b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3017ffb_eeb29098",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2023-07-19T15:39:18Z",
+      "side": 1,
+      "message": "lgtm optimisation inline",
+      "revId": "bf8967a8caefe74b16971647387979a1713ca04b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "adca5172_4bb2bf66",
+        "filename": "validators/ipam/ipaddress.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2023-07-19T15:39:18Z",
+      "side": 1,
+      "message": "nit: you could be more specific and use \n\n  instance.dns_name.split(\u0027.\u0027)[1] !\u003d \u0027mgmt\u0027",
+      "range": {
+        "startLine": 22,
+        "startChar": 77,
+        "endLine": 22,
+        "endChar": 111
+      },
+      "revId": "bf8967a8caefe74b16971647387979a1713ca04b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
