@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "edb72ce7_de9fd207",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-08-09T12:53:44Z",
+      "side": 1,
+      "message": "LGTM, one typo I noticed.",
+      "revId": "07bf2d436cb4e4c4205147e421779c34b24d4547",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42683415_71df797e",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 977,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-08-09T12:53:44Z",
+      "side": 1,
+      "message": "typo: missing the \u0027s\u0027 in b_terminations",
+      "range": {
+        "startLine": 977,
+        "startChar": 0,
+        "endLine": 977,
+        "endChar": 11
+      },
+      "revId": "07bf2d436cb4e4c4205147e421779c34b24d4547",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
