@@ -39,6 +39,30 @@
       },
       "revId": "6e8e959484d22a7fb195d07ae041b5ca5d2b35ba",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "757f4df9_bbb547fa",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-09-21T10:00:21Z",
+      "side": 1,
+      "message": "ACK, good call",
+      "parentUuid": "53a3c112_92b593ec",
+      "range": {
+        "startLine": 40,
+        "startChar": 14,
+        "endLine": 40,
+        "endChar": 69
+      },
+      "revId": "6e8e959484d22a7fb195d07ae041b5ca5d2b35ba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
