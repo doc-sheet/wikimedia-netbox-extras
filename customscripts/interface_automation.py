@@ -207,7 +207,7 @@ class Importer:
         if ipaddr_changed:
             ipaddr.save()
 
-    def _process_binding_address(self, binding, is_ipv6, is_anycast, vip_exempt):
+    def _process_binding_address(self, binding, is_ipv6, is_anycast, vip_exempt, nbiface):
         """Convert a binding to an ipaddress.ip_interface object.
 
         The binding may be considered for VIP processing, instead of being considered for attaching
@@ -217,22 +217,38 @@ class Importer:
             is_ipv6 (bool): indicate if the binding is for an ipv6 address
             is_anycast (bool): indicate if the binding is for an anycast address
             vip_exempt (bool): indicate if the binding is for a binding exampt from vip processing
+            nbiface (netbox interface): current nb iface being processed
 
         Returns:
-            (ipaddress.ip_interface, None): if the binding is a VIP or SLAAC address return None,
-                otherwise return the converted ipaddress.ip_interface object.
+            (ipaddress.ip_interface, None): Return None if IP is SLAAC, already present on nbiface,
+                defined as a VIP in NB already or we determine it's a VIP.  Otherwise return the
+                converted ipaddress.ip_interface object.
 
         """
         addr = binding["address"]
+        # If IP is already recorded against interface in Netbox skip import
+        if nbiface:
+            nbiface_ips = IPAddress.objects.filter(assigned_object_id=nbiface.id)
+            for nb_ip in nbiface_ips:
+                if str(nb_ip.address.ip) == addr:
+                    self.log_info(f"Skipping import of {addr} on {nbiface.name} as already present.")
+                    return None
+
         if is_ipv6:
             # we need to translate the netmask6 exposed by puppet into a prefix length since ipaddress
             # library does not support this case.
             nm = self._get_ipv6_prefix_length(binding["netmask"])
         else:
             nm = binding["netmask"]
+        address_str = f"{addr}/{nm}"
+
+        # If IP is already defined in Netbox as VIP skip import
+        nb_ips = IPAddress.objects.filter(address=address_str)
+        if nb_ips and nb_ips[0].role and nb_ips[0].role == "vip":
+            self.log_info(f"Skipping import of {addr} as it exists in Netbox as type VIP.")
+            return None
 
         address = ipaddress.ip_interface(f"{addr}/{nm}")
-
         if ((address.is_link_local) or (address.is_loopback)):
             # We skip link local and loopback addresses
             return None
@@ -654,7 +670,8 @@ class Importer:
             vipexempt = any([r.match(device.name) for r in NO_VIP_RE])
             # process ipv4 addresses
             for binding in int_puppet_facts.get('bindings', []):
-                address = self._process_binding_address(binding, False, is_anycast, (vipexempt and not is_vdev))
+                address = self._process_binding_address(binding, False, is_anycast,
+                                                        (vipexempt and not is_vdev), nbiface)
                 if address is None:
                     continue
                 if address in ipaddress.IPv4Network('192.168.0.0/16'):  # non-routed network, ignore it
@@ -663,7 +680,7 @@ class Importer:
                 self._assign_ip_to_interface(address, nbiface, networking, iface, is_primary, False)
             # process ipv6 addresses
             for binding in int_puppet_facts.get('bindings6', []):
-                address = self._process_binding_address(binding, True, is_anycast, (vipexempt and not is_vdev))
+                address = self._process_binding_address(binding, True, is_anycast, (vipexempt and not is_vdev), nbiface)
                 if address is None:
                     continue
                 # the primary ipv6 address is currently a mapped ipv6 address so it should end with networking['ip']
