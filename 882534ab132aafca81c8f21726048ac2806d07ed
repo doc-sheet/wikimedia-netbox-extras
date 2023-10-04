@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a37e306_f7583a9c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2023-10-04T10:18:31Z",
+      "side": 1,
+      "message": "see inline for comments questions",
+      "revId": "882534ab132aafca81c8f21726048ac2806d07ed",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0495a90b_4df6a06d",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2023-10-04T10:18:31Z",
+      "side": 1,
+      "message": "advice: if this is meant to be a tuple you need to add a comma e.g. (\u0027vip\u0027,) otherwise this will be handled as a string so the strings [\u0027vip\u0027, \u0027ip\u0027, \u0027vi\u0027, \u0027v\u0027, \u0027i\u0027, \u0027p\u0027] would all match",
+      "range": {
+        "startLine": 246,
+        "startChar": 59,
+        "endLine": 246,
+        "endChar": 66
+      },
+      "revId": "882534ab132aafca81c8f21726048ac2806d07ed",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "087a6d20_a2db8fc5",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 6710
+      },
+      "writtenOn": "2023-10-04T10:18:31Z",
+      "side": 1,
+      "message": "questions: why use `in` instead of  nb_ips[0].role \u003d\u003d \u0027vip\u0027",
+      "range": {
+        "startLine": 246,
+        "startChar": 51,
+        "endLine": 246,
+        "endChar": 66
+      },
+      "revId": "882534ab132aafca81c8f21726048ac2806d07ed",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
