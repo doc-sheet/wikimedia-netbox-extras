@@ -62,6 +62,54 @@
       },
       "revId": "882534ab132aafca81c8f21726048ac2806d07ed",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a91fa766_6a494300",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-10-09T13:58:18Z",
+      "side": 1,
+      "message": "I\u0027d prepped it to include other types, but perhaps better to go with \u0027\u003d\u003d \"vip\"\u0027 for now agreed.",
+      "parentUuid": "087a6d20_a2db8fc5",
+      "range": {
+        "startLine": 246,
+        "startChar": 51,
+        "endLine": 246,
+        "endChar": 66
+      },
+      "revId": "882534ab132aafca81c8f21726048ac2806d07ed",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4545c7a3_d83ae867",
+        "filename": "customscripts/interface_automation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-10-09T13:58:18Z",
+      "side": 1,
+      "message": "A subtley that I did not know about John.  Thanks and good catch, I\u0027d made it a tupple as I thought in future we might want to add more role types here.",
+      "parentUuid": "0495a90b_4df6a06d",
+      "range": {
+        "startLine": 246,
+        "startChar": 59,
+        "endLine": 246,
+        "endChar": 66
+      },
+      "revId": "882534ab132aafca81c8f21726048ac2806d07ed",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
