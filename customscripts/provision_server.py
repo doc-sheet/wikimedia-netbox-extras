@@ -274,7 +274,7 @@ class ProvisionServerNetwork(Script, Importer):
 
             # Now that we're done with the primary interface, we tackle the switch side
             z_iface = port_to_iface(z_port, z_nbdevice, interface_type)
-            z_nbiface = self._update_z_nbiface(z_nbdevice, z_iface, vlan)
+            z_nbiface = self._update_z_nbiface(z_nbdevice, z_iface, vlan, interface_type)
 
             # And now the cable between the two
             # If the switch port already have a cable, we don't try to delete it
