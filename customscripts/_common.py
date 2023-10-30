@@ -418,11 +418,10 @@ class Importer:
             name__iregex=f"^({'|'.join(SWITCH_INTERFACES_PREFIX_ALLOWLIST)}){port_num}$"
         ):
             if z_nbdevice_int.connected_endpoint or z_nbdevice_int.count_ipaddresses > 0:
-                # TODO Script should abort at this point not just log the error
-                self.log_failure(f"{z_nbdevice.name}: We need to remove interface {z_nbdevice_int.name}, before "
-                                 f"creating {z_iface}, however it still has a cable or IP address attached. "
-                                 "See https://wikitech.wikimedia.org/wiki/Netbox"
-                                 "#Error_removing_interface_after_speed_change")
+                raise AbortScript(f"{z_nbdevice.name}: We need to remove interface {z_nbdevice_int.name}, before "
+                                  f"creating {z_iface}, however it still has a cable or IP address attached. "
+                                  "See https://wikitech.wikimedia.org/wiki/Netbox"
+                                  "#Error_removing_interface_after_speed_change")
             else:
                 z_nbdevice_int_name = z_nbdevice_int.name
                 z_nbdevice_int.delete()
@@ -783,7 +782,6 @@ class Importer:
                 f"{device} has an inappropriate status (must be one of {IMPORT_STATUS_ALLOWLIST}): {device.status}"
             )
             return False
-
         return True
 
     def _create_cable(self, nbiface, z_nbiface, label=''):
@@ -814,15 +812,13 @@ class Importer:
         self.log_success(f"{nbiface.device}: created cable {cable}")
         self.log_warning(f"{nbiface.device}: assuming {color_human} {cable_type} because {nbiface.type}")
 
-    def _update_z_nbiface(self, z_nbdevice, z_iface, vlan, iface_fmt=None, tagged_vlans=None):
+    def _update_z_nbiface(self, z_nbdevice: Device, z_iface: str, vlan: VLAN, iface_fmt=None, tagged_vlans=None):
         """Create switch interface if needed and set vlan info."""
         try:
             # Try to find if the interface exists
             z_nbiface = z_nbdevice.interfaces.get(name=z_iface)
             if z_nbiface.cable:
-                self.log_warning(f"There is already a cable on {z_nbiface.device}:{z_nbiface} (typo?), "
-                                 f"Skipping interface configuration, please do it manually")
-                return z_nbiface
+                raise AbortScript(f"There is already a cable on {z_nbiface.device}:{z_nbiface} (typo?)")
         except ObjectDoesNotExist:  # If interface doesn't exist: create it
             z_nbiface = self._create_z_nbiface(z_nbdevice, z_iface, 9192, iface_fmt)
             z_nbiface.save()
