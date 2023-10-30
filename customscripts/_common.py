@@ -117,6 +117,24 @@ def duplicate_cable_id(cable_id: int, site: Site) -> bool:
     return False
 
 
+def find_tor(server: Device) -> Optional[Device]:
+    """Return the ToR switch a server should be connected to.
+
+    Arguments:
+        server (dcim.models.Device): Netbox device we're interested in.
+
+    Returns:
+        dcim.models.Device: A ToR switch.
+
+    """
+    switch = Device.objects.filter(rack=server.rack,
+                                   device_role__slug__in=('asw', 'cloudsw'),
+                                   device__status__in=('active'))
+    if len(switch) > 1:  # TODO raise AbortScript once Netbox is upgraded.
+        return None
+    return switch
+
+
 class Importer:
     """This is shared functionality for interface and IP address importers."""
 
