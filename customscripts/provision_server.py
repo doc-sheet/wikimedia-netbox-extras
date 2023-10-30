@@ -8,10 +8,10 @@ from django.core.exceptions import ObjectDoesNotExist
 
 from dcim.choices import InterfaceTypeChoices
 from dcim.models import Cable, Device, Interface
-from extras.scripts import BooleanVar, ChoiceVar, FileVar, ObjectVar, Script, StringVar
+from extras.scripts import BooleanVar, ChoiceVar, FileVar, IntegerVar, ObjectVar, Script, StringVar
 from ipam.models import IPAddress, Prefix, VLAN
 
-from _common import interface_ct, format_logs, SWITCH_INTERFACES_PREFIX_ALLOWLIST, Importer
+from _common import interface_ct, format_logs, port_to_iface, duplicate_cable_id, Importer
 
 MGMT_IFACE_NAME = "mgmt"
 PRIMARY_IFACE_NAME = "##PRIMARY##"
@@ -131,7 +131,17 @@ class ProvisionServerNetwork(Script, Importer):
         }
     )
 
-    z_iface = StringVar(label="Switch interface", description="Switch interface. (Required)", required=True)
+    z_port = IntegerVar(label="Switch port #", description="Physical port digits (Required)", required=True)
+
+    interface_type_choices = (
+        (InterfaceTypeChoices.TYPE_1GE_FIXED, '1G'),
+        (InterfaceTypeChoices.TYPE_10GE_SFP_PLUS, '10G'),
+        (InterfaceTypeChoices.TYPE_25GE_SFP28, '25G')
+    )
+    interface_type = ChoiceVar(label="Interface type/speed",
+                               description="Interface speed (Required)",
+                               required=True,
+                               choices=interface_type_choices)
 
     cable_id = StringVar(label="Cable ID", required=False)
 
@@ -179,7 +189,8 @@ class ProvisionServerNetwork(Script, Importer):
         """Process a single device."""
         device = data['device']
         z_nbdevice = data['z_nbdevice']
-        z_iface = data['z_iface']
+        z_port = data['z_port']
+        interface_type = data['interface_type']
         cable_id = data['cable_id']
         assign_mgmt = True
 
@@ -197,12 +208,6 @@ class ProvisionServerNetwork(Script, Importer):
             )
             return
 
-        if not z_nbdevice or z_iface == '':
-            self.log_failure(
-                f"{device}: switch or switch interface missing, skipping."
-            )
-            return
-
         if z_nbdevice.status not in ('active', 'staged'):
             self.log_failure(f"{device}: switch {z_nbdevice} with status {z_nbdevice.status}, "
                              "expected Active or Staged, skipping.")
@@ -210,6 +215,10 @@ class ProvisionServerNetwork(Script, Importer):
 
         if not device.rack:
             self.log_failure(f"{device}: missing rack information, skipping.")
+            return
+        
+        if device.z_port > 48:
+            self.log_failure(f"{device}: Access ports are between 0 and 48, skipping.")
             return
 
         if device.device_role.slug != "server":
@@ -223,37 +232,9 @@ class ProvisionServerNetwork(Script, Importer):
                              "only switches are supported, skipping.")
             return
 
-        if not re.match(f"^{'|'.join(SWITCH_INTERFACES_PREFIX_ALLOWLIST)}", z_iface):
-            self.log_failure(f"{z_nbdevice.name}: Interface name {z_iface} invalid, must start with "
-                             f"{' or '.join(SWITCH_INTERFACES_PREFIX_ALLOWLIST)}.")
+        if cable_id and duplicate_cable_id(cable_id, device.site):
+            self.log_failure(f"Cable ID {cable_id} already assigned in {device.site.slug}.")
             return
-
-        if z_nbdevice.virtual_chassis:
-            zint_vc_id = int(z_iface.split("-")[1].split("/")[0])  # Juniper VC only
-            if zint_vc_id != z_nbdevice.vc_position:
-                self.log_failure(f"{device}: Interface name {z_iface} invalid, first digit of port "
-                                 f"number should be {z_nbdevice.vc_position}, matching {z_nbdevice.name} "
-                                 "virtual-chassis postition.")
-                return
-        else:
-            if z_nbdevice.device_type.manufacturer.slug == 'juniper' and int(z_iface.split("-")[1].split("/")[0]) != 0:
-                self.log_failure(f"{device}: Interface name {z_iface} invalid, first digit of port "
-                                 f"number should be 0 as {z_nbdevice.name} is not a virtual chassis.")
-                return
-
-        # Check that we don't reuse a cable ID, if present
-        if cable_id:
-            cables_with_same_id = Cable.objects.filter(label=cable_id)
-            duplicate_cable_id = False
-            for cable in cables_with_same_id:
-                if cable.termination_a_type == interface_ct and cable.termination_a.device.site == device.site:
-                    duplicate_cable_id = True
-                if cable.termination_b_type == interface_ct and cable.termination_b.device.site == device.site:
-                    duplicate_cable_id = True
-
-            if duplicate_cable_id:
-                self.log_failure(f"Cable ID {cable_id} already assigned in {device.site.slug}.")
-                return
 
         ifaces = device.interfaces.all()
         #  If the device have interface(s)
@@ -289,11 +270,11 @@ class ProvisionServerNetwork(Script, Importer):
             except ValueError:
                 # if this is not set it defaults to ''
                 cassandra_instances = 0
-            iface_fmt = self._get_iface_fmt(z_iface)
-            nbiface = self._assign_primary(device, vlan, iface_type=iface_fmt, skip_ipv6_dns=data["skip_ipv6_dns"],
+            nbiface = self._assign_primary(device, vlan, iface_type=interface_type, skip_ipv6_dns=data["skip_ipv6_dns"],
                                            cassandra_instances=cassandra_instances)
 
             # Now that we're done with the primary interface, we tackle the switch side
+            z_iface = port_to_iface(z_port, z_nbdevice, interface_type)
             z_nbiface = self._update_z_nbiface(z_nbdevice, z_iface, vlan)
 
             # And now the cable between the two
