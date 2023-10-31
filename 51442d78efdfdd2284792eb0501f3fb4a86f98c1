@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab75ffac_eb1e9453",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-10-31T09:08:15Z",
+      "side": 1,
+      "message": "LGTM, minor nit inline",
+      "revId": "51442d78efdfdd2284792eb0501f3fb4a86f98c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08ca80f9_bd8ac9b0",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-10-31T09:08:15Z",
+      "side": 1,
+      "message": "typo: either \"used\" or \"in use\"",
+      "range": {
+        "startLine": 100,
+        "startChar": 48,
+        "endLine": 100,
+        "endChar": 55
+      },
+      "revId": "51442d78efdfdd2284792eb0501f3fb4a86f98c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93c5040a_310f8aab",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-10-31T09:08:15Z",
+      "side": 1,
+      "message": "[nit] we could add min_value\u003d0 and max_value\u003d48 or similar",
+      "revId": "51442d78efdfdd2284792eb0501f3fb4a86f98c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d95cde99_d893f6dd",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-10-31T09:08:15Z",
+      "side": 1,
+      "message": "This can probably be removed with the max_value in the IntegerVar",
+      "revId": "51442d78efdfdd2284792eb0501f3fb4a86f98c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
