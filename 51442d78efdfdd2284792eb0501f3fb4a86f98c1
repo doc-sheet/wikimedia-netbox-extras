@@ -18,6 +18,23 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "06bb76a7_fe52d7d7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-10-31T09:16:09Z",
+      "side": 1,
+      "message": "This change needs to be communicated to DCOps before deploying",
+      "revId": "51442d78efdfdd2284792eb0501f3fb4a86f98c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "08ca80f9_bd8ac9b0",
