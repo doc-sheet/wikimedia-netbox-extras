@@ -41,6 +41,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b346f14_4eba995a",
+        "filename": "customscripts/move_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-10-31T17:48:53Z",
+      "side": 1,
+      "message": "Yeah, here it\u0027s only to make it easier for us to find it in the list as I\u0027m not expecting to need to use it on a daily basis :)",
+      "parentUuid": "842b3e69_06f14a2a",
+      "range": {
+        "startLine": 143,
+        "startChar": 0,
+        "endLine": 143,
+        "endChar": 13
+      },
+      "revId": "3e64cbc3c74fd3e1c6df4d45af8e2cbce3eba0f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3114adfa_9ebf9994",
@@ -54,6 +78,30 @@
       "writtenOn": "2023-10-31T15:51:57Z",
       "side": 1,
       "message": "I think this approach may fail for things like links from LVS servers in remote racks, or maybe some network things like MR?  But we may be best to just process those separately?  The other approach would be to iterate over the old switches ports I guess.",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 7
+      },
+      "revId": "3e64cbc3c74fd3e1c6df4d45af8e2cbce3eba0f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff79dd1e_2fc150b6",
+        "filename": "customscripts/move_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-10-31T17:48:53Z",
+      "side": 1,
+      "message": "If I understand correctly, our plan is to move the \"special cases\" ahead of time.\nOtherwise how to allocate a switch port for a device not in the rack as we derive it from the rack U?",
+      "parentUuid": "3114adfa_9ebf9994",
       "range": {
         "startLine": 160,
         "startChar": 0,
@@ -87,6 +135,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "23b8eaaa_52f2ab97",
+        "filename": "customscripts/move_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-10-31T17:48:53Z",
+      "side": 1,
+      "message": "Good catch! that makes it even easier.",
+      "parentUuid": "8bde061d_15fb5857",
+      "range": {
+        "startLine": 170,
+        "startChar": 0,
+        "endLine": 170,
+        "endChar": 11
+      },
+      "revId": "3e64cbc3c74fd3e1c6df4d45af8e2cbce3eba0f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80541a86_aaf0fa07",
@@ -100,6 +172,30 @@
       "writtenOn": "2023-10-31T15:51:57Z",
       "side": 1,
       "message": "This is perfect I think, happy to submit with this.  An improvement in time may be to have a toggle whereby we either move to port numbers on the new switch based on server rack height, *or* keep the existing port number (i.e. \u0027xe-5/0/3\u0027 moves to \u0027xe-0/0/3\u0027).  I\u0027ve no real preference, but I think in eqiad we don\u0027t have the rack height\u003c-\u003eport convention.  We can talk to dc-ops too, maybe they want to adopt it everywhere and moving could be a chance to do so.",
+      "range": {
+        "startLine": 171,
+        "startChar": 0,
+        "endLine": 171,
+        "endChar": 13
+      },
+      "revId": "3e64cbc3c74fd3e1c6df4d45af8e2cbce3eba0f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc54d8a4_59e9556d",
+        "filename": "customscripts/move_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-10-31T17:48:53Z",
+      "side": 1,
+      "message": "Agreed. I\u0027m only keeping the codfw usecase in mind for now, we can adapt it for future migrations.",
+      "parentUuid": "80541a86_aaf0fa07",
       "range": {
         "startLine": 171,
         "startChar": 0,
