@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fb73404_4ca5e370",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-10-31T15:51:57Z",
+      "side": 1,
+      "message": "LGTM overall, a few comments on the approach but good to go.  The one on the interface naming I think we do need to tackle, not 100% sure how, possibly just default to \u00270\u0027 as the first number in the interface?  Or make it an option/parameter?",
+      "revId": "3e64cbc3c74fd3e1c6df4d45af8e2cbce3eba0f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "842b3e69_06f14a2a",
+        "filename": "customscripts/move_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-10-31T15:51:57Z",
+      "side": 1,
+      "message": "\u0027planned\u0027 may be an idea here too?  although tbh I\u0027m not fully clear myself on how we apply the status\u0027s to network gear versus servers.",
+      "range": {
+        "startLine": 143,
+        "startChar": 0,
+        "endLine": 143,
+        "endChar": 13
+      },
+      "revId": "3e64cbc3c74fd3e1c6df4d45af8e2cbce3eba0f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3114adfa_9ebf9994",
+        "filename": "customscripts/move_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-10-31T15:51:57Z",
+      "side": 1,
+      "message": "I think this approach may fail for things like links from LVS servers in remote racks, or maybe some network things like MR?  But we may be best to just process those separately?  The other approach would be to iterate over the old switches ports I guess.",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 7
+      },
+      "revId": "3e64cbc3c74fd3e1c6df4d45af8e2cbce3eba0f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8bde061d_15fb5857",
+        "filename": "customscripts/move_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-10-31T15:51:57Z",
+      "side": 1,
+      "message": "This won\u0027t quite work for our initial use-case I think.  For instance an interface \u0027xe-5/0/3\u0027, which is on switch 5 of the VC, will be moving to \u0027xe-0/0/x\u0027 on the new independent switch.",
+      "range": {
+        "startLine": 170,
+        "startChar": 0,
+        "endLine": 170,
+        "endChar": 11
+      },
+      "revId": "3e64cbc3c74fd3e1c6df4d45af8e2cbce3eba0f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80541a86_aaf0fa07",
+        "filename": "customscripts/move_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-10-31T15:51:57Z",
+      "side": 1,
+      "message": "This is perfect I think, happy to submit with this.  An improvement in time may be to have a toggle whereby we either move to port numbers on the new switch based on server rack height, *or* keep the existing port number (i.e. \u0027xe-5/0/3\u0027 moves to \u0027xe-0/0/3\u0027).  I\u0027ve no real preference, but I think in eqiad we don\u0027t have the rack height\u003c-\u003eport convention.  We can talk to dc-ops too, maybe they want to adopt it everywhere and moving could be a chance to do so.",
+      "range": {
+        "startLine": 171,
+        "startChar": 0,
+        "endLine": 171,
+        "endChar": 13
+      },
+      "revId": "3e64cbc3c74fd3e1c6df4d45af8e2cbce3eba0f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
