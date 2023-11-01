@@ -112,6 +112,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c04045f2_d890ed32",
+        "filename": "customscripts/move_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-11-01T11:47:15Z",
+      "side": 1,
+      "message": "Yeah I\u0027ve no problem with that approach, was just mentioning.\n\nIt\u0027s only an issue if moving from a \"not based on rack U\" port assignment on old switch to \"based on rack U\" on the new one.  Which I\u0027m not sure will always be the case.  We could just terminate them on ports 40-47 which I believe wouldn\u0027t be used based on \"rack u\".  But we can probably deal with those as improvements if and when the need arises.\n\nCurrently the plan is to move LVS, MR and Atlas connections prior to the servers.  The target for this script should be to allow what remains after that to be moved without us being involved, which I think it fully covered.",
+      "parentUuid": "ff79dd1e_2fc150b6",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 7
+      },
+      "revId": "3e64cbc3c74fd3e1c6df4d45af8e2cbce3eba0f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8bde061d_15fb5857",
