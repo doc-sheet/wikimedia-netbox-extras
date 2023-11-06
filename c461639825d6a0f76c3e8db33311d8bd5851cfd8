@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "321f2005_03024b90",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-11-06T14:47:08Z",
+      "side": 1,
+      "message": "minor nits inline",
+      "revId": "c461639825d6a0f76c3e8db33311d8bd5851cfd8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a0052dd_f9649b6f",
+        "filename": "customscripts/move_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-11-06T14:47:08Z",
+      "side": 1,
+      "message": "No need to have a counter you should be able to len(all_servers)",
+      "revId": "c461639825d6a0f76c3e8db33311d8bd5851cfd8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f4b01f8_542a0fda",
+        "filename": "customscripts/move_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-11-06T14:47:08Z",
+      "side": 1,
+      "message": "I think we should log what we skip",
+      "revId": "c461639825d6a0f76c3e8db33311d8bd5851cfd8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
