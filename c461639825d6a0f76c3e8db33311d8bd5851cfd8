@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3ea367c1_7ea46634",
+        "filename": "customscripts/move_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-11-06T15:33:27Z",
+      "side": 1,
+      "message": "Not sure I understand.",
+      "parentUuid": "7a0052dd_f9649b6f",
+      "revId": "c461639825d6a0f76c3e8db33311d8bd5851cfd8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0f4b01f8_542a0fda",
         "filename": "customscripts/move_server.py",
         "patchSetId": 4
@@ -48,6 +66,24 @@
       "writtenOn": "2023-11-06T14:47:08Z",
       "side": 1,
       "message": "I think we should log what we skip",
+      "revId": "c461639825d6a0f76c3e8db33311d8bd5851cfd8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "663bed03_f98f9091",
+        "filename": "customscripts/move_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-11-06T15:33:27Z",
+      "side": 1,
+      "message": "We do log it in find_primary_interface()",
+      "parentUuid": "0f4b01f8_542a0fda",
       "revId": "c461639825d6a0f76c3e8db33311d8bd5851cfd8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
