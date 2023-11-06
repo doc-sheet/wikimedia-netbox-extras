@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a8641491_f54f3b5f",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-11-06T14:23:00Z",
+      "side": 1,
+      "message": "I kept the current variable name: https://github.com/wikimedia/operations-software-netbox-extras/blob/master/customscripts/interface_automation.py#L25",
+      "parentUuid": "96eacc3d_3d5b3656",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 10
+      },
+      "revId": "fe445b59accae078b64301cf0b534df20950762a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "79032a22_73e843f3",
         "filename": "customscripts/import_server_facts.py",
         "patchSetId": 4
@@ -54,6 +78,24 @@
       "writtenOn": "2023-10-31T10:02:39Z",
       "side": 1,
       "message": "This needs a coordinated release of cookbooks/sre/hosts/reimage.py with a patch to adapt the name of the script, currently is:\n\n  url \u003d self.netbox.api.extras.scripts.get(\u0027interface_automation.ImportPuppetDB\u0027).url\n  \nThis also needs a patch for tools/ganeti-netbox-sync.py in the same commit to adapt the name",
+      "revId": "fe445b59accae078b64301cf0b534df20950762a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f99cb945_926a5c89",
+        "filename": "customscripts/import_server_facts.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-11-06T14:23:00Z",
+      "side": 1,
+      "message": "Iae1ad42b3fbef2c1b4be58c1d52f5fd51b21bfee for the former.\nAnd done for the latter.",
+      "parentUuid": "79032a22_73e843f3",
       "revId": "fe445b59accae078b64301cf0b534df20950762a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
