@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f6b2f08_7bee03eb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-11-06T14:42:04Z",
+      "side": 1,
+      "message": "LGTM, bike shedding inline :D",
+      "revId": "424b3ead497a8f80fbbbde30b8c3061026a294fa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}

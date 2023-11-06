@@ -67,6 +67,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "be9b38ea_38a8c690",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-11-06T14:42:04Z",
+      "side": 1,
+      "message": "I know but one thing was to be in the same file, moving that to a common file means that when importing it we need to understand what kind of config file it is from the name. Hence my suggestion.",
+      "parentUuid": "a8641491_f54f3b5f",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 10
+      },
+      "revId": "fe445b59accae078b64301cf0b534df20950762a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "79032a22_73e843f3",
         "filename": "customscripts/import_server_facts.py",
         "patchSetId": 4
