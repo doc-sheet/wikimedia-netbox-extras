@@ -91,6 +91,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "273ce82c_6e1f24d3",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-11-07T08:37:27Z",
+      "side": 1,
+      "message": "The issue is that it\u0027s a generic config file, for scripts and reports, and have data about puppet and librenms user/passwords. So keeping a generic name seems fine to me.",
+      "parentUuid": "be9b38ea_38a8c690",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 10
+      },
+      "revId": "fe445b59accae078b64301cf0b534df20950762a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "79032a22_73e843f3",
         "filename": "customscripts/import_server_facts.py",
         "patchSetId": 4
