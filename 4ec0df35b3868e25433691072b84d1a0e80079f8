@@ -22,6 +22,30 @@
       },
       "revId": "4ec0df35b3868e25433691072b84d1a0e80079f8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e80652d_f4af28f1",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-11-10T13:25:03Z",
+      "side": 1,
+      "message": "My instincts are to leave as a failure, as it probably represents some broken state on the host in terms of how the interfaces are set up.  But agreed it needs a way to avoid the exception.\n\nFor now I\u0027ve said to continue, and added a note we can change to using AbortScript to cleanly quit when upgraded.  It\u0027s such an edge case that for now I\u0027m not sure it\u0027s worth spending time creating another way to cleaning abort from this point.  Open to discuss thanks.",
+      "parentUuid": "a807b6e8_72973a06",
+      "range": {
+        "startLine": 591,
+        "startChar": 21,
+        "endLine": 591,
+        "endChar": 32
+      },
+      "revId": "4ec0df35b3868e25433691072b84d1a0e80079f8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
