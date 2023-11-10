@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a807b6e8_72973a06",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2023-11-10T12:47:08Z",
+      "side": 1,
+      "message": "should there be a \"continue\" after the log to skip the next steps?\nfailure is usually when the execution stops or doesn\u0027t process something important, otherwise it should be a warning.",
+      "range": {
+        "startLine": 591,
+        "startChar": 21,
+        "endLine": 591,
+        "endChar": 32
+      },
+      "revId": "4ec0df35b3868e25433691072b84d1a0e80079f8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
