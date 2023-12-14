@@ -62,6 +62,26 @@ def format_logs(logs):
     )
 
 
+def failures_in_log(logs):
+    """Parse log and return boolean based on presence of any 'failure' level logs
+
+    Sub-optimal way to detect errors in scripts until we can throw AbortScript
+    exceptions after upgrade.
+
+    Argumnents:
+        logs: Custom script log object (list of tupples with status, message)
+
+    Returns:
+        bool: Boolean reflecting if any logs had status of 'failure'
+    """
+
+    for log in logs:
+        if log[0] == 'failure':
+            return True
+
+    return False
+
+
 def port_to_iface(port: int, nbdevice: Device, interface_type: str) -> Optional[str]:
     """Converts a numerical port ID, device and type to a logical interface name.
 
@@ -84,12 +104,18 @@ def port_to_iface(port: int, nbdevice: Device, interface_type: str) -> Optional[
         return None
 
     if nbdevice.device_type.manufacturer.slug == 'juniper':
+        if port > 47:
+            # TODO: raise AbortScript
+            return None
         prefix = IFACE_TYPE_TO_JUNIPER_PREFIX[interface_type]
         if nbdevice.virtual_chassis:  # VCs are only Juniper
             return f"{prefix}{str(nbdevice.vc_position)}/0/{str(port)}"
         return f"{prefix}0/0/{str(port)}"
 
     elif nbdevice.device_type.manufacturer.slug == 'dell':
+        if port == 0 or port > 48:
+            # TODO: raise AbortScript
+            return None
         return f"Ethernet{str(port-1)}"
     else:
         # TODO once upgraded: raise AbortScript("Unsupported switch vendor (must be Dell or Juniper)")
@@ -129,8 +155,16 @@ def find_tor(server: Device) -> Optional[Device]:
     """
     switch = Device.objects.filter(rack=server.rack,
                                    device_role__slug__in=('asw', 'cloudsw'),
-                                   status='active')
-    if len(switch) > 1:  # TODO raise AbortScript once Netbox is upgraded.
+                                   status='active').exclude(name__startswith='ssw')
+    if len(switch) == 2:
+        # In the case we are migrating from row-wide 'asw' to per-rack 'lsw'
+        # TODO: Should potentially be a new device status like 'frozen' to not select the old one,
+        # for now we can use naming convention to select the 'lsw' if two are state active in rack
+        if switch[0].name.startswith('lsw') and switch[1].name.startswith('asw'):
+            return switch[0]
+        elif switch[0].name.startswith('asw') and switch[1].name.startswith('lsw'):
+            return switch[1]
+    if len(switch) > 1 or len(switch) == 0:  # TODO raise AbortScript once Netbox is upgraded.
         return None
     return switch[0]
 
@@ -411,19 +445,19 @@ class Importer:
 
         return z_nbiface
 
-    def _create_z_nbiface(self, z_nbdevice, z_iface, mtu=None, iface_fmt=None):
+    def _create_z_nbiface(self, z_nbdevice, z_iface, mtu=None, phy_type=None):
         """Create new int on device and return netbox object."""
         if (z_iface.startswith(SWITCH_INTERFACES_PREFIX_ALLOWLIST)
                 and z_nbdevice.device_type.manufacturer.slug == 'juniper'):
             self._delete_orphan_nbiface(z_nbdevice, z_iface)
 
-        if not iface_fmt:
-            iface_fmt = self._get_iface_fmt(z_iface)
+        if not phy_type:
+            phy_type = self._get_phy_type(z_iface)
 
         z_nbiface = Interface(name=z_iface,
                               mgmt_only=False,
                               device=z_nbdevice,
-                              type=iface_fmt,
+                              type=phy_type,
                               mtu=mtu)
         z_nbiface.save()
         self.log_success(f"{z_nbdevice}: created interface {z_iface}")
@@ -447,8 +481,8 @@ class Importer:
                 z_nbdevice_int.delete()
                 self.log_success(f"{z_nbdevice}: deleted orphan interface {z_nbdevice_int_name}")
 
-    def _get_iface_fmt(self, iface_name):
-        """Returns iface_fmt object for correct PHY type based on Juniper interface naming conventions"""
+    def _get_phy_type(self, iface_name):
+        """Returns phy_type object for correct PHY type based on Juniper interface naming conventions"""
         return {
             'xe-': InterfaceTypeChoices.TYPE_10GE_SFP_PLUS,
             'et-': InterfaceTypeChoices.TYPE_25GE_SFP28,
@@ -553,19 +587,19 @@ class Importer:
 
     def _make_interface(self, device, iface, net_driver, is_vdev, mtu):
         # this is the default 'type' for the device
-        iface_fmt = InterfaceTypeChoices.TYPE_1GE_FIXED
+        phy_type = InterfaceTypeChoices.TYPE_1GE_FIXED
         if is_vdev:
             # if it's identified as a virtual device, we make it virtual
-            iface_fmt = InterfaceTypeChoices.TYPE_VIRTUAL
+            phy_type = InterfaceTypeChoices.TYPE_VIRTUAL
         elif iface in net_driver:
             # otherwise if the speed is 10000 we make it 10GE
             if net_driver[iface]["speed"] == 10000:
-                iface_fmt = InterfaceTypeChoices.TYPE_10GE_SFP_PLUS
+                phy_type = InterfaceTypeChoices.TYPE_10GE_SFP_PLUS
 
         nbiface = Interface(name=iface,
                             mgmt_only=False,
                             device=device,
-                            type=iface_fmt,
+                            type=phy_type,
                             mtu=mtu)
 
         nbiface.save()
@@ -835,10 +869,10 @@ class Importer:
                       type=cable_type,
                       status=LinkStatusChoices.STATUS_CONNECTED)
         cable.save()
-        self.log_success(f"{nbiface.device}: created cable {cable}")
-        self.log_warning(f"{nbiface.device}: assuming {color_human} {cable_type} because {nbiface.type}")
+        self.log_success(f"{nbiface.device.name}: created cable {cable}")
+        self.log_warning(f"{nbiface.device.name}: assuming {color_human} {cable_type} because {nbiface.type}")
 
-    def _update_z_nbiface(self, z_nbdevice, z_iface, vlan, iface_fmt=None, tagged_vlans=None) -> Interface:
+    def _update_z_nbiface(self, z_nbdevice, z_iface, vlan, phy_type=None, tagged_vlans=None) -> Interface:
         """Create switch interface if needed and set vlan info."""
         try:
             # Try to find if the interface exists
@@ -849,7 +883,7 @@ class Importer:
                                  f"Skipping interface configuration, please do it manually")
                 return z_nbiface
         except ObjectDoesNotExist:  # If interface doesn't exist: create it
-            z_nbiface = self._create_z_nbiface(z_nbdevice, z_iface, 9192, iface_fmt)
+            z_nbiface = self._create_z_nbiface(z_nbdevice, z_iface, 9192, phy_type)
             z_nbiface.save()
 
         # Then configure it
@@ -862,7 +896,7 @@ class Importer:
         z_nbiface.untagged_vlan = vlan
         z_nbiface.enabled = True
         z_nbiface.save()
-        self.log_success(f"{z_nbiface.device}:{z_nbiface} configured vlan.")
+        self.log_success(f"{z_nbiface.device}:{z_nbiface} configured vlans")
         return z_nbiface
 
     def find_primary_interface(self, device: Device) -> Optional[Interface]:
