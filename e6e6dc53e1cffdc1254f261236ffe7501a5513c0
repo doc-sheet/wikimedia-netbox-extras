@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "551868f4_27cd7474",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-12-18T11:50:55Z",
+      "side": 1,
+      "message": "Could you move that page under Netbox/ and link it from the netbox page please?",
+      "revId": "e6e6dc53e1cffdc1254f261236ffe7501a5513c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08d7d05c_e5715969",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-12-18T11:50:55Z",
+      "side": 1,
+      "message": "Just some early comments, I still need to do a full pass.\nIn general I like the idea although I don\u0027t like the hostname matching hardcoded. I\u0027ll comment more in detail when I\u0027ll do the full pass.",
+      "revId": "e6e6dc53e1cffdc1254f261236ffe7501a5513c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c05d455c_12654868",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-12-18T11:50:55Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 71,
+        "startChar": 4,
+        "endLine": 71,
+        "endChar": 14
+      },
+      "revId": "e6e6dc53e1cffdc1254f261236ffe7501a5513c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c09dc94_417dd346",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-12-18T11:50:55Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 72,
+        "startChar": 48,
+        "endLine": 72,
+        "endChar": 55
+      },
+      "revId": "e6e6dc53e1cffdc1254f261236ffe7501a5513c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4bd3f73d_3bb7ae69",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2023-12-18T11:50:55Z",
+      "side": 1,
+      "message": "I\u0027m wondering if it would be easier (here and below) and avoid to remember what is the placeholder to use python normal formatting syntax here so:\n\n  \u0027{site}.wmnet\u0027\n  \nand then use .format(site\u003d...)",
+      "revId": "e6e6dc53e1cffdc1254f261236ffe7501a5513c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
