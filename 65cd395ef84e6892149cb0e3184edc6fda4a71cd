@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2fd30c9_02dd8e83",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-12-18T12:51:49Z",
+      "side": 1,
+      "message": "Thanks for the review!  Yeah I\u0027m sure there will be improvements.  I don\u0027t like having the big dict in the file either but found it easier to start that way and we can discuss how to better deal with it if there is agreement on the idea in general.  Cheers.",
+      "revId": "65cd395ef84e6892149cb0e3184edc6fda4a71cd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}

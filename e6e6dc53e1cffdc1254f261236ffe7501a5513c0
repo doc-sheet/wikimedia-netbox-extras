@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "de69041f_a447e5d3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-12-18T12:51:49Z",
+      "side": 1,
+      "message": "Yep, sure.",
+      "parentUuid": "551868f4_27cd7474",
+      "revId": "e6e6dc53e1cffdc1254f261236ffe7501a5513c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "08d7d05c_e5715969",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 4
@@ -58,6 +76,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed8e4344_47dcd22b",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-12-18T12:51:49Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c05d455c_12654868",
+      "range": {
+        "startLine": 71,
+        "startChar": 4,
+        "endLine": 71,
+        "endChar": 14
+      },
+      "revId": "e6e6dc53e1cffdc1254f261236ffe7501a5513c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1c09dc94_417dd346",
@@ -81,6 +123,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b635ad84_0d8c2de7",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-12-18T12:51:49Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1c09dc94_417dd346",
+      "range": {
+        "startLine": 72,
+        "startChar": 48,
+        "endLine": 72,
+        "endChar": 55
+      },
+      "revId": "e6e6dc53e1cffdc1254f261236ffe7501a5513c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4bd3f73d_3bb7ae69",
@@ -94,6 +160,24 @@
       "writtenOn": "2023-12-18T11:50:55Z",
       "side": 1,
       "message": "I\u0027m wondering if it would be easier (here and below) and avoid to remember what is the placeholder to use python normal formatting syntax here so:\n\n  \u0027{site}.wmnet\u0027\n  \nand then use .format(site\u003d...)",
+      "revId": "e6e6dc53e1cffdc1254f261236ffe7501a5513c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae60a08b_0d0b1c80",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2023-12-18T12:51:49Z",
+      "side": 1,
+      "message": "Can\u0027t believe that didn\u0027t occur to me.  Good call will do.",
+      "parentUuid": "4bd3f73d_3bb7ae69",
       "revId": "e6e6dc53e1cffdc1254f261236ffe7501a5513c0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
