@@ -16,6 +16,24 @@
       "message": "It\u0027s live on netbox-next.\n\nThere is 1 weird behavior I can\u0027t figure out...\n\nWhen creating a new interface with an invalid speed, it fails with :\n\"Invalid name (must match the INTERFACES_REGEXP options)\"\n\nIf I create it with a valid speed, then edit it to an invalid speed, it fails as expected with :\n\"Invalid type/speed \u00271000base-t\u0027 (must be 10gbase-x-sfpp to match xe-0/0/5 within the same block)\"\n\nIf someone want to test I\u0027ve been using this device : https://netbox-next.wikimedia.org/dcim/devices/4554/interfaces/",
       "revId": "b6307e2182b529f4939d1952bd93269e9c479c9c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2bfeb1c_361ca786",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-01-18T09:28:38Z",
+      "side": 1,
+      "message": "As additional data point, changing:\nself.fail(\"Invalid name (must match the INTERFACES_REGEXP options)\")\nto self.fail(f\"Invalid name (must match the INTERFACES_REGEXP options) - {instance} - {instance.name}\")\nShows empty strings for the two variables.",
+      "parentUuid": "fd550173_4b501ab2",
+      "revId": "b6307e2182b529f4939d1952bd93269e9c479c9c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
