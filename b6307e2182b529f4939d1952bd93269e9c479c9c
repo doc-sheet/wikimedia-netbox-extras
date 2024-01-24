@@ -53,6 +53,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "032f8455_668292bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-01-24T21:28:16Z",
+      "side": 1,
+      "message": "Yeah this is really weird.  I\u0027d a bit of a look and can\u0027t see why that part of the code is getting executed when the check fails.\n\nAs another random test I replaced the last line of the file with a simple \u0027self.fail(\"this is a test\")\u0027, instead of running the port block function.  And it did the exact same thing (error message about INTERFACES_REGEXP).  So I don\u0027t think it\u0027s anything to do with the logic of the function.  But despite looking over it and trying a few other random things I\u0027ve no more insight sorry.",
+      "parentUuid": "a2bfeb1c_361ca786",
+      "revId": "b6307e2182b529f4939d1952bd93269e9c479c9c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7aa00bf3_75f127bc",
