@@ -34,6 +34,46 @@
       "parentUuid": "fd550173_4b501ab2",
       "revId": "b6307e2182b529f4939d1952bd93269e9c479c9c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cad331ab_6e0e9f98",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-01-24T17:29:51Z",
+      "side": 1,
+      "message": "Good stuff thanks!  One comment on edge-case in line, otherwise LGTM.  I\u0027ll check on netbox-next and see if I can figure anything out about the problem you described, nothing in the code jumping out at me.",
+      "revId": "b6307e2182b529f4939d1952bd93269e9c479c9c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7aa00bf3_75f127bc",
+        "filename": "validators/dcim/interface.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-01-24T17:29:51Z",
+      "side": 1,
+      "message": "I think we might need something to deal with the QSFP ports on these devices, one of which could be 40G and the next 100G.  So it needs something like \"if port_num \u003c\u003d 47\" here also?\n\nWe don\u0027t have that scenario currently, and I can\u0027t imagine how we ever would, but probably best to deal with it?",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 19
+      },
+      "revId": "b6307e2182b529f4939d1952bd93269e9c479c9c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
