@@ -71,6 +71,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "76378974_aab9419d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-01-25T13:28:46Z",
+      "side": 1,
+      "message": "Let\u0027s add it to the pile of things to check after upgrading Netbox :)",
+      "parentUuid": "032f8455_668292bb",
+      "revId": "b6307e2182b529f4939d1952bd93269e9c479c9c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7aa00bf3_75f127bc",
