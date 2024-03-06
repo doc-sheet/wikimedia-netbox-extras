@@ -18,6 +18,23 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "93346b38_e64e6ae6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-03-06T10:25:59Z",
+      "side": 1,
+      "message": "addressing comments",
+      "revId": "b704c5a6838c03434fe8f560999c924069da00b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "37c0b37a_7fe69790",
@@ -41,6 +58,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a00c6b74_b3045db7",
+        "filename": "validators/ipam/ipaddress.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-03-06T10:25:59Z",
+      "side": 1,
+      "message": "Ack, removing",
+      "parentUuid": "37c0b37a_7fe69790",
+      "range": {
+        "startLine": 16,
+        "startChar": 76,
+        "endLine": 16,
+        "endChar": 77
+      },
+      "revId": "b704c5a6838c03434fe8f560999c924069da00b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aaca7c08_76913754",
@@ -54,6 +95,30 @@
       "writtenOn": "2024-03-06T09:58:30Z",
       "side": 1,
       "message": "What do you think of checking the \"mgmt_only\" field instead of the name so it validates the network devices (and PDUs, etc) mgmt names ?",
+      "range": {
+        "startLine": 27,
+        "startChar": 50,
+        "endLine": 27,
+        "endChar": 54
+      },
+      "revId": "b704c5a6838c03434fe8f560999c924069da00b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc6694d8_0cf44764",
+        "filename": "validators/ipam/ipaddress.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-03-06T10:25:59Z",
+      "side": 1,
+      "message": "I didn\u0027t want to change the existing logic but yes makes sense.",
+      "parentUuid": "aaca7c08_76913754",
       "range": {
         "startLine": 27,
         "startChar": 50,
