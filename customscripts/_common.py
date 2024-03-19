@@ -9,6 +9,7 @@ from django.contrib.contenttypes.models import ContentType
 
 from dcim.choices import CableTypeChoices, InterfaceTypeChoices, LinkStatusChoices
 from dcim.models import Cable, Device, Interface, Site, VirtualChassis
+from extras.models import JournalEntry
 from ipam.constants import IPADDRESS_ROLES_NONUNIQUE
 from ipam.models import IPAddress, Prefix, VLAN
 from ipam.filtersets import PrefixFilterSet
@@ -133,6 +134,15 @@ def find_tor(server: Device) -> Optional[Device]:
     if len(switch) > 1:  # TODO raise AbortScript once Netbox is upgraded.
         return None
     return switch[0]
+
+
+def log_journal(object, comments):
+    """Write a journal entry for a specific object."""
+    entry = JournalEntry()
+    entry.assigned_object = object
+    entry.comments = comments
+    # Possible improvment : add the .created_by user
+    entry.save()
 
 
 class Importer:
