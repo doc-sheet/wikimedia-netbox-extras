@@ -56,6 +56,30 @@
       },
       "revId": "1f35e48f6e479e1e8369942b6c32d351db270d35",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98a4f15e_341dc4cc",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-03-19T12:47:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "999a9ed6_7679e0fe",
+      "range": {
+        "startLine": 600,
+        "startChar": 58,
+        "endLine": 600,
+        "endChar": 62
+      },
+      "revId": "1f35e48f6e479e1e8369942b6c32d351db270d35",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
