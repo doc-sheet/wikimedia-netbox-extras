@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48f39d1d_eee16013",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-04-08T09:25:53Z",
+      "side": 1,
+      "message": "Nicely done !",
+      "revId": "81ce97ddc887068d3bbe2bffc5a6f89f3d7ed98d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c03b9cd8_88a1aa0c",
+        "filename": "customscripts/add_secondary_ips.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-04-08T09:25:53Z",
+      "side": 1,
+      "message": "nit: not needed, all fields are required by default",
+      "range": {
+        "startLine": 17,
+        "startChar": 8,
+        "endLine": 17,
+        "endChar": 21
+      },
+      "revId": "81ce97ddc887068d3bbe2bffc5a6f89f3d7ed98d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6fec8a1_9fb6e4d6",
+        "filename": "customscripts/add_secondary_ips.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-04-08T09:25:53Z",
+      "side": 1,
+      "message": "nit: not needed, all fields are required by default",
+      "range": {
+        "startLine": 27,
+        "startChar": 8,
+        "endLine": 27,
+        "endChar": 22
+      },
+      "revId": "81ce97ddc887068d3bbe2bffc5a6f89f3d7ed98d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "afeb4f69_9e1e9e92",
+        "filename": "customscripts/add_secondary_ips.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-04-08T09:25:53Z",
+      "side": 1,
+      "message": "nit: this will include a choice 0, it can be changed to range(1,6) to do 1-5",
+      "range": {
+        "startLine": 28,
+        "startChar": 33,
+        "endLine": 28,
+        "endChar": 41
+      },
+      "revId": "81ce97ddc887068d3bbe2bffc5a6f89f3d7ed98d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62801a5a_e31b0621",
+        "filename": "customscripts/add_secondary_ips.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-04-08T09:25:53Z",
+      "side": 1,
+      "message": "it\u0027s possible to get rid of the line below by filtering on v4 with:\n\u003e\u003e\u003e IPAddress.objects.filter(interface\u003d9305,address__family\u003d4)\n\u003cRestrictedQuerySet [\u003cIPAddress: 10.64.5.6/24\u003e, \u003cIPAddress: 10.64.5.21/24\u003e, \u003cIPAddress: 10.64.5.22/24\u003e, \u003cIPAddress: 10.64.5.23/24\u003e, \u003cIPAddress: 10.64.5.25/24\u003e, \u003cIPAddress: 10.64.5.32/24\u003e, \u003cIPAddress: 10.64.5.43/24\u003e]\u003e\n\nvs. the current :\n\u003e\u003e\u003e IPAddress.objects.filter(interface\u003d9305)\n\u003cRestrictedQuerySet [\u003cIPAddress: 10.64.5.6/24\u003e, \u003cIPAddress: 10.64.5.21/24\u003e, \u003cIPAddress: 10.64.5.22/24\u003e, \u003cIPAddress: 10.64.5.23/24\u003e, \u003cIPAddress: 10.64.5.25/24\u003e, \u003cIPAddress: 10.64.5.32/24\u003e, \u003cIPAddress: 10.64.5.43/24\u003e, \u003cIPAddress: 2620:0:861:104:10:64:5:25/64\u003e]\u003e",
+      "range": {
+        "startLine": 41,
+        "startChar": 42,
+        "endLine": 41,
+        "endChar": 48
+      },
+      "revId": "81ce97ddc887068d3bbe2bffc5a6f89f3d7ed98d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81fafaf2_c4cb39c1",
+        "filename": "customscripts/add_secondary_ips.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-04-08T09:25:53Z",
+      "side": 1,
+      "message": "not sure but do you need to call new_addr.save() after creating it ?",
+      "range": {
+        "startLine": 58,
+        "startChar": 12,
+        "endLine": 58,
+        "endChar": 20
+      },
+      "revId": "81ce97ddc887068d3bbe2bffc5a6f89f3d7ed98d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
