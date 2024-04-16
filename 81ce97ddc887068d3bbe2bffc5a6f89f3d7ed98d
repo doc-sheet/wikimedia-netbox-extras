@@ -18,6 +18,23 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c82f6f8_f893286b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-04-16T17:56:51Z",
+      "side": 1,
+      "message": "Thanks for the feedback!  Fixed up those bits now.",
+      "revId": "81ce97ddc887068d3bbe2bffc5a6f89f3d7ed98d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c03b9cd8_88a1aa0c",
@@ -31,6 +48,30 @@
       "writtenOn": "2024-04-08T09:25:53Z",
       "side": 1,
       "message": "nit: not needed, all fields are required by default",
+      "range": {
+        "startLine": 17,
+        "startChar": 8,
+        "endLine": 17,
+        "endChar": 21
+      },
+      "revId": "81ce97ddc887068d3bbe2bffc5a6f89f3d7ed98d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f1efbd1_aa6e5b41",
+        "filename": "customscripts/add_secondary_ips.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-04-16T17:56:51Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "c03b9cd8_88a1aa0c",
       "range": {
         "startLine": 17,
         "startChar": 8,
@@ -64,6 +105,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b753caf1_9dfca82f",
+        "filename": "customscripts/add_secondary_ips.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-04-16T17:56:51Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "e6fec8a1_9fb6e4d6",
+      "range": {
+        "startLine": 27,
+        "startChar": 8,
+        "endLine": 27,
+        "endChar": 22
+      },
+      "revId": "81ce97ddc887068d3bbe2bffc5a6f89f3d7ed98d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "afeb4f69_9e1e9e92",
@@ -77,6 +142,30 @@
       "writtenOn": "2024-04-08T09:25:53Z",
       "side": 1,
       "message": "nit: this will include a choice 0, it can be changed to range(1,6) to do 1-5",
+      "range": {
+        "startLine": 28,
+        "startChar": 33,
+        "endLine": 28,
+        "endChar": 41
+      },
+      "revId": "81ce97ddc887068d3bbe2bffc5a6f89f3d7ed98d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2220ab88_0d8690df",
+        "filename": "customscripts/add_secondary_ips.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-04-16T17:56:51Z",
+      "side": 1,
+      "message": "Ah yeah good shout I\u0027d copied this one over from what we had, but zero makes no sense here.",
+      "parentUuid": "afeb4f69_9e1e9e92",
       "range": {
         "startLine": 28,
         "startChar": 33,
@@ -110,6 +199,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "89364db8_35427c3d",
+        "filename": "customscripts/add_secondary_ips.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-04-16T17:56:51Z",
+      "side": 1,
+      "message": "God damn I looked up and down for this and couldn\u0027t find it, convinced myself the option wasn\u0027t available.  Thanks!",
+      "parentUuid": "62801a5a_e31b0621",
+      "range": {
+        "startLine": 41,
+        "startChar": 42,
+        "endLine": 41,
+        "endChar": 48
+      },
+      "revId": "81ce97ddc887068d3bbe2bffc5a6f89f3d7ed98d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "81fafaf2_c4cb39c1",
@@ -123,6 +236,30 @@
       "writtenOn": "2024-04-08T09:25:53Z",
       "side": 1,
       "message": "not sure but do you need to call new_addr.save() after creating it ?",
+      "range": {
+        "startLine": 58,
+        "startChar": 12,
+        "endLine": 58,
+        "endChar": 20
+      },
+      "revId": "81ce97ddc887068d3bbe2bffc5a6f89f3d7ed98d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8168389c_278a7499",
+        "filename": "customscripts/add_secondary_ips.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-04-16T17:56:51Z",
+      "side": 1,
+      "message": "Hmm good spot.  Thought I had it in there (and worked in testing so must have).  Thanks!",
+      "parentUuid": "81fafaf2_c4cb39c1",
       "range": {
         "startLine": 58,
         "startChar": 12,
