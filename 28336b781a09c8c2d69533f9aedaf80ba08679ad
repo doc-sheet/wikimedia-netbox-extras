@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0570b033_439b1864",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-04-16T07:27:06Z",
+      "side": 1,
+      "message": "LGTM, I\u0027m taking care of merging and deploying as you\u0027re out",
+      "revId": "28336b781a09c8c2d69533f9aedaf80ba08679ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
