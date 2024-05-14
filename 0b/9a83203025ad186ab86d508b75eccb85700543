@@ -1,0 +1,9 @@
+Verified+2: jenkins-bot
+Code-Review+2: Cathal Mooney <cmooney@wikimedia.org>
+Code-Review+1: Volans <rcoccioli@wikimedia.org>
+Submitted-by: jenkins-bot
+Submitted-at: Tue, 14 May 2024 16:10:23 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/c/operations/software/netbox-extras/+/1029226
+Comments-Total: 1
+Project: operations/software/netbox-extras
+Branch: refs/heads/master
