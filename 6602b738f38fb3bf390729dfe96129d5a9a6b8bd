@@ -16,6 +16,46 @@
       "message": "To be tested on netbox-next once back online",
       "revId": "6602b738f38fb3bf390729dfe96129d5a9a6b8bd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd93bf44_abd9ab86",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3113
+      },
+      "writtenOn": "2024-06-03T13:10:18Z",
+      "side": 1,
+      "message": "Left a comment to add some words related to a parameter, feel free to follow up or not :)",
+      "revId": "6602b738f38fb3bf390729dfe96129d5a9a6b8bd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a9eee0b_255af0c1",
+        "filename": "reports/accounting.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 3113
+      },
+      "writtenOn": "2024-06-03T13:10:18Z",
+      "side": 1,
+      "message": "For future readers, I think it would be nice to add a comment about the motherboard_swaps_range, maybe with a link to the task. This is the data_range used below right?",
+      "range": {
+        "startLine": 47,
+        "startChar": 44,
+        "endLine": 47,
+        "endChar": 45
+      },
+      "revId": "6602b738f38fb3bf390729dfe96129d5a9a6b8bd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
