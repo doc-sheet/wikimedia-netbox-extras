@@ -47,10 +47,7 @@ class Accounting(Report):
         )
 
     @staticmethod
-    def get_assets_from_accounting(creds, sheet_id, include_range, exclude_range):  # noqa: MC0001
-        # pylint: disable-msg=too-many-locals
-
-        # Disable the alerting as there is no point for now to work on simplifying the function
+    def get_assets_from_accounting(creds, sheet_id, include_range, exclude_range):
         """Retrieve all assets from a specified Google Spreadsheet."""
         # initialize the credentials API
         creds = service_account.Credentials.from_service_account_info(
@@ -214,7 +211,8 @@ class Accounting(Report):
         for device in recent_devices:
             if device.serial not in self.assets:
                 self.log_failure(
-                    device, f"Device with s/n {device.serial} ({device.asset_tag}) not present in Accounting"
+                    device, (f"Device with s/n {device.serial} ({device.asset_tag})"
+                             " not present in Accounting")
                 )
             else:
                 device_matches += 1
