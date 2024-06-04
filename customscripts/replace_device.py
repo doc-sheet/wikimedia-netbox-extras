@@ -10,7 +10,7 @@ class ReplaceDevice(Script):
             "To be used for RMAs and other in place replacement. "
             "Note that existing attributes on the new device will be deleted."
         )
-        commit_default = False
+        commit_default = False  # noqa: F841
 
     source_device = ObjectVar(
         required=True,
@@ -24,23 +24,23 @@ class ReplaceDevice(Script):
         description=("Replacement device (Required)"),
         model=Device,
     )
-    already_racked = BooleanVar(
+    already_racked = BooleanVar(  # noqa: F841
         label="Already racked",
         description=(
             "The replacement device is already racked at its definitive location. "
             "If checked, the script does NOT touch racking, console and power."
         ),
     )
-    move_inventory = BooleanVar(
+    move_inventory = BooleanVar(  # noqa: F841
         label="Move inventory items",
         description=("By default does NOT touch the inventory items."),
     )
 
-    def run(self, data, commit):
+    def run(self, data, commit):  # noqa: unused-argument
         """Replace the device."""
         try:
             self._run(data)
-        except Exception as e:
+        except Exception as e:  # noqa: broad-exception-caught TODO fix after upgrade
             self.log_failure(f"Failed to run script. {e}")
 
         return self._format_logs()
@@ -96,27 +96,27 @@ class ReplaceDevice(Script):
             source_objects = getattr(source_device, attribute)
             destination_objects = getattr(destination_device, attribute)
             # Delete all objects on the destination
-            for object in destination_objects.all():
-                self.log_info(f"[dst] Deleting {attribute} {object.name}.")
-                object.delete()
+            for dest_object in destination_objects.all():
+                self.log_info(f"[dst] Deleting {attribute} {dest_object.name}.")
+                dest_object.delete()
             # Move the objects from the source to the destination
-            for object in source_objects.all():
-                object.device = destination_device
-                self.log_success(f"Moved {attribute} {object.name}")
+            for src_object in source_objects.all():
+                src_object.device = destination_device
+                self.log_success(f"Moved {attribute} {src_object.name}")
 
                 # Fix for T259166#7868195
-                if hasattr(object, "cable") and object.cable:
-                    if object.cable._termination_a_device == source_device:
-                        object.cable._termination_a_device = destination_device
-                        object.cable._termination_a_device_id = destination_device.id
-                        object.cable.save()
-                        self.log_success(f"Updated cable {object.cable} termination A")
-                    if object.cable._termination_b_device == source_device:
-                        object.cable._termination_b_device = destination_device
-                        object.cable._termination_b_device_id = destination_device.id
-                        object.cable.save()
-                        self.log_success(f"Updated cable {object.cable} termination B")
-                object.save()
+                if hasattr(src_object, "cable") and src_object.cable:
+                    if src_object.cable._termination_a_device == source_device:
+                        src_object.cable._termination_a_device = destination_device
+                        src_object.cable._termination_a_device_id = destination_device.id  # noqa: F841
+                        src_object.cable.save()
+                        self.log_success(f"Updated cable {src_object.cable} termination A")
+                    if src_object.cable._termination_b_device == source_device:
+                        src_object.cable._termination_b_device = destination_device
+                        src_object.cable._termination_b_device_id = destination_device.id  # noqa: F841
+                        src_object.cable.save()
+                        self.log_success(f"Updated cable {src_object.cable} termination B")
+                src_object.save()
 
         source_device.save()
         destination_device.save()
