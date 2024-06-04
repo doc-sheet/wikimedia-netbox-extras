@@ -2,15 +2,17 @@
 #
 # Export specified CustomScript outputs via web.
 #
-import requests
 import time
 
 from functools import lru_cache
+
 from configparser import ConfigParser
+
+import requests
 
 from flask import Flask, abort, make_response
 
-application = app = Flask(__name__)  # flake8: disable=invalid-name
+application = app = Flask(__name__)  # flake8: disable=invalid-name, noqa: unused-variable
 
 ALLOWED_SCRIPTS = ("getstats.GetDeviceStats", "hiera_export.HieraExport")
 TIMEOUT = 300
@@ -28,7 +30,7 @@ def get_result(result_url, headers):
     start = time.time()
     while time.time() < start + TIMEOUT:
         time.sleep(0.2)
-        result = requests.get(result_url, headers=headers)
+        result = requests.get(result_url, headers=headers, timeout=60)
         if not result.ok:
             return make_response(result.text, result.status_code)
         data = result.json()
@@ -47,7 +49,7 @@ def run_script(script):
     api_url = f"{config()['netbox']['api']}api/extras/scripts/{script}/"
     headers = {"Authorization": f"Token {config()['netbox']['token_rw']}"}
     data = {"data": {}, "commit": 1}
-    result = requests.post(api_url, headers=headers, json=data)
+    result = requests.post(api_url, headers=headers, json=data, timeout=60)
 
     # if the request didn't work, return error
     if not result.ok:
