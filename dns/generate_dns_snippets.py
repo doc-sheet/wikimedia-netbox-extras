@@ -318,7 +318,7 @@ class ReverseRecord(RecordBase):
             str: the object representation.
 
         """
-        comment = f" ; {self.comment}" if self.comment else ""
+        comment = f" ; {self.comment}" if self.comment else ""  # noqa: E203,E702
         return f"{self.pointer.ljust(3)} 1H IN PTR {self.hostname}.{comment}"
 
     def to_tuple(self) -> Tuple:
@@ -342,7 +342,7 @@ class ForwardRecord(RecordBase):
 
         """
         record_type = "AAAA" if self.ip.version == 6 else "A"
-        comment = f" ; {self.comment}" if self.comment else ""
+        comment = f" ; {self.comment}" if self.comment else ""  # noqa: E203,E702
         # Fixed justification to avoid large diffs
         return f"{self.hostname.ljust(40)} 1H IN {record_type} {self.ip.compressed}{comment}"
 
