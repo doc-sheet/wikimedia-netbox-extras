@@ -170,7 +170,7 @@ class Accounting(Report):
             except KeyError:
                 if asset_tag_is_formula:
                     asset_tag = "N/A"
-                self.log_failure(None, f"Device with s/n {serial} ({asset_tag}) not present in Netbox")
+                self.log_failure(None, f"Device with s/n {serial} ({asset_tag}) not present in Netbox")  # noqa: E713
                 continue
 
             if asset_tag_is_formula:
@@ -214,7 +214,8 @@ class Accounting(Report):
         for device in recent_devices:
             if device.serial not in self.assets:
                 self.log_failure(
-                    device, f"Device with s/n {device.serial} ({device.asset_tag}) not present in Accounting"
+                    device, (f"Device with s/n {device.serial} ({device.asset_tag})"
+                             " not present in Accounting")  # noqa: E713
                 )
             else:
                 device_matches += 1

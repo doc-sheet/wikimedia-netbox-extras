@@ -24,6 +24,7 @@ def get_module(module):
 
     Returns:
         A string representing the module
+
     """
     if module != "__main__":
         return module
@@ -39,7 +40,7 @@ class GetDeviceStats(Script):
         name = "Get Device Statistics"
         description = "Dump a set of statistics about various devices for Prometheus."
 
-    def run(self, data, commit):
+    def run(self, data, commit):  # noqa: unused-argument
         """The run method"""
         # Delete old versions of this report
         obj_type = ContentType.objects.get_for_model(models.Script)
