@@ -65,6 +65,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b81c7c13_6a181240",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T12:13:41Z",
+      "side": 1,
+      "message": "Bumped in the prospector config.",
+      "parentUuid": "c3f69eb8_2723c2f4",
+      "range": {
+        "startLine": 185,
+        "startChar": 97,
+        "endLine": 185,
+        "endChar": 104
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0e064f64_64d3ede1",
@@ -159,6 +183,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3001760b_4b0996a6",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T12:13:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df512df1_fbda3703",
+      "range": {
+        "startLine": 636,
+        "startChar": 49,
+        "endLine": 636,
+        "endChar": 75
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "95f2e5bf_ee243329",
@@ -220,6 +268,30 @@
       "side": 1,
       "message": "max-args is set to 6 in the next CR and you can also bump it a bit if it helps. I would try to avoid the generic #noqa as it ignores any error on the whole function.",
       "parentUuid": "ada3a500_b5473c6c",
+      "range": {
+        "startLine": 689,
+        "startChar": 96,
+        "endLine": 689,
+        "endChar": 112
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd710fda_b49c5f09",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T12:13:41Z",
+      "side": 1,
+      "message": "It was too many local variables, I bumped it in the prospector config",
+      "parentUuid": "ff2a69f4_bea5631e",
       "range": {
         "startLine": 689,
         "startChar": 96,
@@ -348,6 +420,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f997f14_1d8bb842",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T12:13:41Z",
+      "side": 1,
+      "message": "Thanks!",
+      "parentUuid": "ed31cbd3_70d2c32f",
+      "range": {
+        "startLine": 70,
+        "startChar": 73,
+        "endLine": 70,
+        "endChar": 117
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "28a84fa5_120c9872",
@@ -419,6 +515,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "632e636a_521944fb",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T12:13:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23f4091a_14a79a7b",
+      "range": {
+        "startLine": 43,
+        "startChar": 40,
+        "endLine": 43,
+        "endChar": 44
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e47b1f4b_80360620",
@@ -456,6 +576,30 @@
       "side": 1,
       "message": "Too many parameters iirc.\nI used the generic noqa to not have to split the line and keep it more readable.",
       "parentUuid": "e47b1f4b_80360620",
+      "range": {
+        "startLine": 321,
+        "startChar": 105,
+        "endLine": 321,
+        "endChar": 116
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5c4d185_78b7368f",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T12:13:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3664cb02_06b3ce01",
       "range": {
         "startLine": 321,
         "startChar": 105,
@@ -583,6 +727,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "349b400b_6a9b45db",
+        "filename": "customscripts/replace_device.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T12:13:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9947d05e_6901f0c4",
+      "range": {
+        "startLine": 13,
+        "startChar": 32,
+        "endLine": 13,
+        "endChar": 44
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "61b3a31d_ef38167b",
@@ -596,6 +764,30 @@
       "writtenOn": "2024-06-06T08:15:55Z",
       "side": 1,
       "message": "both seems false positive, to be checked and also don\u0027t use numbers, is painful to check every time what they are",
+      "range": {
+        "startLine": 321,
+        "startChar": 62,
+        "endLine": 321,
+        "endChar": 81
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84ac9449_b0869091",
+        "filename": "dns/generate_dns_snippets.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T12:13:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "61b3a31d_ef38167b",
       "range": {
         "startLine": 321,
         "startChar": 62,
@@ -936,6 +1128,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c54b8bf_26cb2a37",
+        "filename": "reports/puppetdb.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T12:13:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6c3cc3d3_888d92a3",
+      "range": {
+        "startLine": 50,
+        "startChar": 106,
+        "endLine": 50,
+        "endChar": 113
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f891a671_ecbdb762",
@@ -997,6 +1213,30 @@
       "side": 1,
       "message": "Please check if this disables invalid-name on the file content too",
       "parentUuid": "635c3f6f_7159b782",
+      "range": {
+        "startLine": 1,
+        "startChar": 23,
+        "endLine": 1,
+        "endChar": 53
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c025a972_b8809009",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T12:13:41Z",
+      "side": 1,
+      "message": "In a later time I want to rename the file itself too to be compliant, even if it hides other issues right now they will be revealed at that time.\nNote that when I added this \"disable\", there was no other similar issues.\n\nI added a TODO :)",
+      "parentUuid": "37e35042_d753aee6",
       "range": {
         "startLine": 1,
         "startChar": 23,
