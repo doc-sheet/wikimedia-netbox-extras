@@ -1,5 +1,5 @@
 from dcim.models import Device
-from extras.scripts import BooleanVar, Script, ObjectVar
+from extras.scripts import BooleanVar, ObjectVar, Script
 
 
 class ReplaceDevice(Script):
@@ -45,7 +45,9 @@ class ReplaceDevice(Script):
 
         return self._format_logs()
 
-    def _copy_attributes(self, source_device, destination_device, attributes, remove_old=False):
+    def _copy_attributes(
+        self, source_device, destination_device, attributes, remove_old=False
+    ):
         for attribute in attributes:
             source_attribute = getattr(source_device, attribute)
             destination_attribute = getattr(destination_device, attribute)
@@ -70,13 +72,24 @@ class ReplaceDevice(Script):
         source_device.name = source_device.name + "-old"
         source_device.status = "decommissioning"
         destination_device.status = "active"
-        destination_device.comments = destination_device.comments + " - Replaced " + str(source_device.asset_tag)
+        destination_device.comments = (
+            destination_device.comments + " - Replaced " + str(source_device.asset_tag)
+        )
 
         # Direct device attributes that are set to None on the source after the swap
-        attributes = ["cluster", "virtual_chassis", "vc_position", "vc_priority", "primary_ip4", "primary_ip6"]
+        attributes = [
+            "cluster",
+            "virtual_chassis",
+            "vc_position",
+            "vc_priority",
+            "primary_ip4",
+            "primary_ip6",
+        ]
         if not data["already_racked"]:
             attributes.extend(["position"])
-        self._copy_attributes(source_device, destination_device, attributes, remove_old=True)
+        self._copy_attributes(
+            source_device, destination_device, attributes, remove_old=True
+        )
 
         # Direct device attributes that are kept on the source after the swap
         attributes = ["tenant"]
@@ -108,20 +121,30 @@ class ReplaceDevice(Script):
                 if hasattr(src_object, "cable") and src_object.cable:
                     if src_object.cable._termination_a_device == source_device:
                         src_object.cable._termination_a_device = destination_device
-                        src_object.cable._termination_a_device_id = destination_device.id
+                        src_object.cable._termination_a_device_id = (
+                            destination_device.id
+                        )
                         src_object.cable.save()
-                        self.log_success(f"Updated cable {src_object.cable} termination A")
+                        self.log_success(
+                            f"Updated cable {src_object.cable} termination A"
+                        )
                     if src_object.cable._termination_b_device == source_device:
                         src_object.cable._termination_b_device = destination_device
-                        src_object.cable._termination_b_device_id = destination_device.id
+                        src_object.cable._termination_b_device_id = (
+                            destination_device.id
+                        )
                         src_object.cable.save()
-                        self.log_success(f"Updated cable {src_object.cable} termination B")
+                        self.log_success(
+                            f"Updated cable {src_object.cable} termination B"
+                        )
                 src_object.save()
 
         source_device.save()
         destination_device.save()
 
-        self.log_success(f"All done! {destination_device.asset_tag} replaced {source_device.asset_tag}")
+        self.log_success(
+            f"All done! {destination_device.asset_tag} replaced {source_device.asset_tag}"
+        )
 
     def _format_logs(self):
         """Return all log messages properly formatted."""

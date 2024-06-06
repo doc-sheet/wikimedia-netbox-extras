@@ -1,18 +1,15 @@
 """Report on various network related errors."""
-import re
 
+import re
 from collections import defaultdict
 
 from dcim.choices import DeviceStatusChoices
 from dcim.constants import VIRTUAL_IFACE_TYPES
 from dcim.models import Device, Interface
-
+from django.db.models import Count
+from extras.reports import Report
 from ipam.constants import IPADDRESS_ROLES_NONUNIQUE
 from ipam.models import IPAddress
-
-from extras.reports import Report
-
-from django.db.models import Count
 
 EXCLUDE_STATUSES = (
     DeviceStatusChoices.STATUS_DECOMMISSIONING,
@@ -207,8 +204,10 @@ class Network(Report):
             if device.primary_ip4.dns_name != device.primary_ip6.dns_name:
                 self.log_failure(
                     device,
-                    ("Primary IPv4 and IPv6 DNS name mismatch"
-                     f" ({device.primary_ip4.dns_name} vs. {device.primary_ip6.dns_name})"),
+                    (
+                        "Primary IPv4 and IPv6 DNS name mismatch"
+                        f" ({device.primary_ip4.dns_name} vs. {device.primary_ip6.dns_name})"
+                    ),
                 )
                 continue
             success += 1
@@ -229,10 +228,12 @@ class Network(Report):
                 and ipaddress.assigned_object.device.tenant.slug == "fr-tech"
             ):
                 tenant = "frack."
-            expected_fqdn = "{}.mgmt.{}{}.wmnet".format( # noqa: consider-using-f-string
-                ipaddress.assigned_object.device.name,
-                tenant,
-                ipaddress.assigned_object.device.site.slug,
+            expected_fqdn = (
+                "{}.mgmt.{}{}.wmnet".format(  # noqa: consider-using-f-string
+                    ipaddress.assigned_object.device.name,
+                    tenant,
+                    ipaddress.assigned_object.device.site.slug,
+                )
             )
             if not ipaddress.dns_name == expected_fqdn:
                 self.log_failure(
@@ -322,9 +323,11 @@ class Network(Report):
         for device in Device.objects.filter(device_type__slug="qfx5120-48y-8c"):
             port_blocks = {}
             device_failed = False
-            for interface in device.interfaces.exclude(
-                type__in=("virtual", "lag")
-            ).exclude(mgmt_only=True).exclude(enabled=False):
+            for interface in (
+                device.interfaces.exclude(type__in=("virtual", "lag"))
+                .exclude(mgmt_only=True)
+                .exclude(enabled=False)
+            ):
                 try:
                     port = int(interface.name.split(":")[0].split("/")[-1])
                 except ValueError:

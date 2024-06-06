@@ -11,15 +11,14 @@ import configparser
 from datetime import date, datetime, timedelta
 from urllib.parse import urlparse
 
+import googleapiclient.discovery
 from dcim.models import Device
 from extras.reports import Report
-from netbox import configuration
-
-import googleapiclient.discovery
 from google.oauth2 import service_account
 from google_auth_httplib2 import AuthorizedHttp
 from httplib2 import Http, ProxyInfo
 from httplib2.socks import PROXY_TYPE_HTTP
+from netbox import configuration
 
 CONFIG_FILE = "/etc/netbox/gsheets.cfg"
 
@@ -54,8 +53,14 @@ class Accounting(Report):
             creds, scopes=["https://www.googleapis.com/auth/spreadsheets.readonly"]
         )
         try:
-            proxy = urlparse(configuration.HTTP_PROXIES.get("https", configuration.HTTP_PROXIES["http"]))
-            http = Http(proxy_info=ProxyInfo(PROXY_TYPE_HTTP, proxy.hostname, proxy.port))
+            proxy = urlparse(
+                configuration.HTTP_PROXIES.get(
+                    "https", configuration.HTTP_PROXIES["http"]
+                )
+            )
+            http = Http(
+                proxy_info=ProxyInfo(PROXY_TYPE_HTTP, proxy.hostname, proxy.port)
+            )
         except (KeyError, AttributeError):
             # either no or badly formed HTTP_PROXIES
             http = Http()
@@ -91,7 +96,9 @@ class Accounting(Report):
             .execute()
         )
         recycled_values = recycled_result.get("values", [])
-        recycled_serials = [str(row[0]).upper() for row in recycled_values[1:] if row[0]]
+        recycled_serials = [
+            str(row[0]).upper() for row in recycled_values[1:] if row[0]
+        ]
 
         # ignore the first row, as it is the document header; the second row is
         # the header row, with column names, which we map here to our own names
@@ -167,7 +174,10 @@ class Accounting(Report):
             except KeyError:
                 if asset_tag_is_formula:
                     asset_tag = "N/A"
-                self.log_failure(None, f"Device with s/n {serial} ({asset_tag}) not present in Netbox")
+                self.log_failure(
+                    None,
+                    f"Device with s/n {serial} ({asset_tag}) not present in Netbox",
+                )
                 continue
 
             if asset_tag_is_formula:
@@ -188,12 +198,15 @@ class Accounting(Report):
 
             if ticket != netbox_ticket:
                 self.log_warning(
-                    device, f"Ticket mismatch for s/n {serial}: {ticket} (Accounting) vs. {netbox_ticket} (Netbox)"
+                    device,
+                    f"Ticket mismatch for s/n {serial}: {ticket} (Accounting) vs. {netbox_ticket} (Netbox)",
                 )
             else:
                 ticket_matches += 1
 
-        self.log_success(None, f"{asset_tag_matches} asset tags and {ticket_matches} tickets matched")
+        self.log_success(
+            None, f"{asset_tag_matches} asset tags and {ticket_matches} tickets matched"
+        )
 
     def test_missing_assets_from_accounting(self):
         """Searches for assets that are in Netbox but not in Accounting."""
@@ -211,10 +224,15 @@ class Accounting(Report):
         for device in recent_devices:
             if device.serial not in self.assets:
                 self.log_failure(
-                    device, (f"Device with s/n {device.serial} ({device.asset_tag})"
-                             " not present in Accounting")
+                    device,
+                    (
+                        f"Device with s/n {device.serial} ({device.asset_tag})"
+                        " not present in Accounting"
+                    ),
                 )
             else:
                 device_matches += 1
 
-        self.log_success(None, f"{device_matches} devices ({oldest_date} to {newest_date}) matched")
+        self.log_success(
+            None, f"{device_matches} devices ({oldest_date} to {newest_date}) matched"
+        )

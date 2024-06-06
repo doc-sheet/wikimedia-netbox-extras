@@ -4,13 +4,11 @@ from collections import defaultdict
 from io import StringIO
 from re import subn
 
-from django.contrib.contenttypes.models import ContentType
-
 from dcim.models import Interface
+from django.contrib.contenttypes.models import ContentType
+from extras.scripts import Script
 from ipam.models import IPAddress
 from virtualization.models import VMInterface
-
-from extras.scripts import Script
 
 
 class GetHosts(Script):
@@ -30,7 +28,10 @@ class GetHosts(Script):
         # 2. the VIPs
 
         # if the IP is assigned to an interface (physical device)
-        if ipaddress.assigned_object_type == self.interface_ct and ipaddress.assigned_object:
+        if (
+            ipaddress.assigned_object_type == self.interface_ct
+            and ipaddress.assigned_object
+        ):
             # Skip management IPs
             if ipaddress.assigned_object.mgmt_only:
                 return None, None
@@ -57,7 +58,9 @@ class GetHosts(Script):
             sorted_networks = sorted(networks)
             output.write(f"{name} = {str(sorted_networks.pop(0))} # {name}\n")
             for network in sorted_networks:
-                output.write(f"{str(network).rjust(len(name) + len(str(network)) + 3)} # {name}\n")
+                output.write(
+                    f"{str(network).rjust(len(name) + len(str(network)) + 3)} # {name}\n"
+                )
 
         output.write("\n\n\n")  # Give me some space
         # And now create the groups

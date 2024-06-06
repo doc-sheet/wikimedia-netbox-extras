@@ -1,9 +1,8 @@
 """Validator class for the Cable model."""
 
-from django.contrib.contenttypes.models import ContentType
-
 from dcim.choices import LinkStatusChoices
 from dcim.models import Cable, Interface
+from django.contrib.contenttypes.models import ContentType
 from extras.validators import CustomValidator
 
 CORE_SITES = ("eqiad", "codfw")
@@ -21,8 +20,12 @@ class Main(CustomValidator):
             for cable_same_serial in Cable.objects.filter(label=instance.label):
                 if instance.id and cable_same_serial.id == instance.id:
                     continue
-                if self._get_site_slug(cable_same_serial) == self._get_site_slug(instance):
-                    self.fail(f"Duplicate label with {cable_same_serial}", field="label")
+                if self._get_site_slug(cable_same_serial) == self._get_site_slug(
+                    instance
+                ):
+                    self.fail(
+                        f"Duplicate label with {cable_same_serial}", field="label"
+                    )
         # Allow blank cables in core sites
         if (
             (not instance.label or not instance.label.strip())
