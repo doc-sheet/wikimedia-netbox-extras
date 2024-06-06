@@ -208,6 +208,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ff2a69f4_bea5631e",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T10:46:23Z",
+      "side": 1,
+      "message": "max-args is set to 6 in the next CR and you can also bump it a bit if it helps. I would try to avoid the generic #noqa as it ignores any error on the whole function.",
+      "parentUuid": "ada3a500_b5473c6c",
+      "range": {
+        "startLine": 689,
+        "startChar": 96,
+        "endLine": 689,
+        "endChar": 112
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b120d7ef_29ec8efa",
         "filename": "customscripts/_common.py",
         "patchSetId": 6
@@ -302,6 +326,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ed31cbd3_70d2c32f",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T10:46:23Z",
+      "side": 1,
+      "message": "yes but with its parameters. So either you check the parent signature or you make your init generic:\n```\ndef __init__(self, *args, **kwargs):\n    super().__init__(*args, **kwargs)\n    # your code\n```",
+      "parentUuid": "948e12cd_cb009f0f",
+      "range": {
+        "startLine": 70,
+        "startChar": 73,
+        "endLine": 70,
+        "endChar": 117
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "28a84fa5_120c9872",
         "filename": "customscripts/provision_server.py",
         "patchSetId": 6
@@ -337,6 +385,30 @@
       "side": 1,
       "message": "I tried that but it looked like it required the actual code.",
       "parentUuid": "28a84fa5_120c9872",
+      "range": {
+        "startLine": 43,
+        "startChar": 40,
+        "endLine": 43,
+        "endChar": 44
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23f4091a_14a79a7b",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T10:46:23Z",
+      "side": 1,
+      "message": "Right this is a flake8 error, but shouldn\u0027t arm to add next to it the actual name/description ;)",
+      "parentUuid": "5044bbfe_6f9b57ab",
       "range": {
         "startLine": 43,
         "startChar": 40,
@@ -581,6 +653,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "328163ee_b16e1d1a",
+        "filename": "dns/generate_dns_snippets.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T10:46:23Z",
+      "side": 1,
+      "message": "Ok, I used ascii elsewhere in the file, probably for a reason back then. Ignore this for now.",
+      "parentUuid": "800b7663_369839d1",
+      "range": {
+        "startLine": 458,
+        "startChar": 74,
+        "endLine": 458,
+        "endChar": 79
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "be83a458_7ec46a74",
@@ -641,6 +737,30 @@
       "writtenOn": "2024-06-06T08:15:55Z",
       "side": 1,
       "message": "ditto for ascii here and below",
+      "range": {
+        "startLine": 568,
+        "startChar": 34,
+        "endLine": 568,
+        "endChar": 39
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa3d1411_af7e61f5",
+        "filename": "dns/generate_dns_snippets.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T10:46:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bace2eb6_7c0df760",
       "range": {
         "startLine": 568,
         "startChar": 34,
@@ -794,6 +914,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6c3cc3d3_888d92a3",
+        "filename": "reports/puppetdb.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T10:46:23Z",
+      "side": 1,
+      "message": "I guess changing it to RuntimeError doesn\u0027t cause any issue",
+      "parentUuid": "6b55dc13_639f1c54",
+      "range": {
+        "startLine": 50,
+        "startChar": 106,
+        "endLine": 50,
+        "endChar": 113
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f891a671_ecbdb762",
         "filename": "tools/ganeti-netbox-sync.py",
         "patchSetId": 6
@@ -829,6 +973,30 @@
       "side": 1,
       "message": "The file name uses - instead of _.",
       "parentUuid": "f891a671_ecbdb762",
+      "range": {
+        "startLine": 1,
+        "startChar": 23,
+        "endLine": 1,
+        "endChar": 53
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37e35042_d753aee6",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T10:46:23Z",
+      "side": 1,
+      "message": "Please check if this disables invalid-name on the file content too",
+      "parentUuid": "635c3f6f_7159b782",
       "range": {
         "startLine": 1,
         "startChar": 23,
