@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fa6f7a1_b531d865",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:21:05Z",
+      "side": 1,
+      "message": "Few comments inline",
+      "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9bc166c7_cdb62ba4",
+        "filename": "prospector.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:21:05Z",
+      "side": 1,
+      "message": "all these paths don\u0027t apply to this repo",
+      "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da4f9bd0_66f4cca9",
+        "filename": "prospector.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:21:05Z",
+      "side": 1,
+      "message": "probably can be enabled",
+      "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57263dbd_91264721",
+        "filename": "prospector.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:21:05Z",
+      "side": 1,
+      "message": "we could just add the required imports into the venv where pylint runs",
+      "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32e14b5b_e87676e0",
+        "filename": "prospector.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:21:05Z",
+      "side": 1,
+      "message": "to be removed",
+      "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c270a507_6259b2c2",
+        "filename": "prospector.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:21:05Z",
+      "side": 1,
+      "message": "to be disabled",
+      "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8ad0e80_3823a61c",
+        "filename": "prospector.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:21:05Z",
+      "side": 1,
+      "message": "the whole module checks for code complexity, I think it can just be disabled for now",
+      "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "addcf89c_8b9836c1",
+        "filename": "tox.ini",
+        "patchSetId": 18
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:21:05Z",
+      "side": 1,
+      "message": "Don\u0027t set the envdir at all, it makes tests a lot slower on tox 4+",
+      "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
