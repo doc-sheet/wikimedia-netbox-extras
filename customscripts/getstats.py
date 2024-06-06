@@ -1,16 +1,14 @@
 """Produce Prometheus-formatted statistics about devices."""
-import sys
 
+import sys
 from collections import Counter
 from datetime import timedelta
-from pathlib import Path
 from io import StringIO
-
-from django.contrib.contenttypes.models import ContentType
-from django.utils import timezone
+from pathlib import Path
 
 from dcim.models import Device
-
+from django.contrib.contenttypes.models import ContentType
+from django.utils import timezone
 from extras import models
 from extras.choices import JobResultStatusChoices
 from extras.scripts import Script
@@ -59,18 +57,23 @@ class GetDeviceStats(Script):
         counts = Counter()
         output = StringIO()
         for device in Device.objects.all().values_list(
-            "status", "site__slug", "rack__location__slug", "device_type__manufacturer__slug"
+            "status",
+            "site__slug",
+            "rack__location__slug",
+            "device_type__manufacturer__slug",
         ):
             counts[(device[0], device[1], device[2], device[3])] += 1
 
-        output.write("""# HELP netbox_device_count The number of devices with various properties.\n""")
+        output.write(
+            """# HELP netbox_device_count The number of devices with various properties.\n"""
+        )
         output.write("""# TYPE netbox_device_count gauge\n""")
         for params, count in counts.items():
             output.write(
-                ('netbox_device_count{{status="{}",datacenter="{}"'  # noqa: consider-using-f-string
-                 ',rackgroup="{}",manufacturer="{}"}} {}\n').format(
-                    *params, count
-                )
+                (
+                    'netbox_device_count{{status="{}",datacenter="{}"'  # noqa: consider-using-f-string
+                    ',rackgroup="{}",manufacturer="{}"}} {}\n'
+                ).format(*params, count)
             )
 
         return output.getvalue()

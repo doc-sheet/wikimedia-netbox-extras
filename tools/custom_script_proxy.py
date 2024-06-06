@@ -3,13 +3,10 @@
 # Export specified CustomScript outputs via web.
 #
 import time
-
+from configparser import ConfigParser
 from functools import lru_cache
 
-from configparser import ConfigParser
-
 import requests
-
 from flask import Flask, abort, make_response
 
 application = app = Flask(__name__)  # noqa: invalid-name,unused-variable

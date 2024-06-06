@@ -6,15 +6,9 @@ BLOCKLISTS:
 
 import re
 
-from django.contrib.contenttypes.models import ContentType
-
 from dcim.choices import DeviceStatusChoices
-from dcim.models import (
-    ConsolePort,
-    ConsoleServerPort,
-    Interface,
-    PowerPort,
-)
+from dcim.models import ConsolePort, ConsoleServerPort, Interface, PowerPort
+from django.contrib.contenttypes.models import ContentType
 from extras.reports import Report
 
 # these are statuses for devices that we care about

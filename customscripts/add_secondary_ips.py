@@ -1,10 +1,9 @@
 from string import ascii_lowercase
 
 from _common import Importer, format_logs
-
 from dcim.models import Device
-from ipam.models import IPAddress, Prefix
 from extras.scripts import ChoiceVar, ObjectVar, Script
+from ipam.models import IPAddress, Prefix
 
 
 class AddSecondaryIPs(Script, Importer):
@@ -17,34 +16,40 @@ class AddSecondaryIPs(Script, Importer):
         description=("Server. (Required)"),
         model=Device,
         query_params={
-            'role': 'server',
-            'has_primary_ip': True,
-        }
+            "role": "server",
+            "has_primary_ip": True,
+        },
     )
 
     additional_ips = ChoiceVar(  # noqa: unused-variable
         choices=[(i, i) for i in range(1, 6)],
         label="How many additional IPs to assign",
-        description=("This many additional IPv4s will be allocated and their DNS name "
-                     "will be set to $HOSTNAME-a, $HOSTNAME-b, etc.")
+        description=(
+            "This many additional IPv4s will be allocated and their DNS name "
+            "will be set to $HOSTNAME-a, $HOSTNAME-b, etc."
+        ),
     )
 
     def run(self, data, commit):  # noqa: unused-argument
         """Run the script and return all the log messages."""
         self.log_info(f"Called with parameters: {data}")
-        device = data['device']
+        device = data["device"]
 
         # Get existing primary interface IPv4 addresses
         nb_primary_int = device.primary_ip4.assigned_object
-        interface_ip4s = IPAddress.objects.filter(interface=nb_primary_int.id, address__family=4)
+        interface_ip4s = IPAddress.objects.filter(
+            interface=nb_primary_int.id, address__family=4
+        )
 
         # Get primary IP netbox prefix
         primary_ip4 = device.primary_ip4.address
-        prefix_v4 = Prefix.objects.get(prefix=f'{primary_ip4.network}/{primary_ip4.prefixlen}')
+        prefix_v4 = Prefix.objects.get(
+            prefix=f"{primary_ip4.network}/{primary_ip4.prefixlen}"
+        )
 
         # Get indexes of letters to use for additional dns names and suffix
         first_letter_idx = len(interface_ip4s) - 1
-        last_letter_idx = first_letter_idx + int(data['additional_ips'])
+        last_letter_idx = first_letter_idx + int(data["additional_ips"])
         dns_suffix = device.primary_ip4.dns_name.lstrip(device.name)
 
         # Allocate additional IPs
@@ -56,11 +61,15 @@ class AddSecondaryIPs(Script, Importer):
                 address=ip_address,
                 status="active",
                 dns_name=dns_name,
-                assigned_object=nb_primary_int
+                assigned_object=nb_primary_int,
             )
             new_addr.save()
-            self.log_success(f"{device}: assigned additional address {new_addr} to interface {nb_primary_int} "
-                             f"with DNS name '{dns_name}'")
+            self.log_success(
+                f"{device}: assigned additional address {new_addr} to interface {nb_primary_int} "
+                f"with DNS name '{dns_name}'"
+            )
 
-        self.log_success("Additional IPs added, please run sre.dns.netbox cookbook to update DNS records")
+        self.log_success(
+            "Additional IPs added, please run sre.dns.netbox cookbook to update DNS records"
+        )
         return format_logs(self.log)

@@ -2,16 +2,17 @@
 """Synchronize Ganeti data to Netbox."""
 import argparse
 import logging
-
 from collections import Counter
 from configparser import ConfigParser
-from dataclasses import dataclass, field as dataclass_field
+from dataclasses import dataclass
+from dataclasses import field as dataclass_field
 from pathlib import Path
-from typing import Callable, Counter as CounterType, Dict, Optional, Tuple
+from typing import Callable
+from typing import Counter as CounterType
+from typing import Dict, Optional, Tuple
 
 import pynetbox
 import requests
-
 from wmflib.requests import http_session as wmflib_http_session
 
 logger = logging.getLogger()
@@ -20,14 +21,24 @@ logger = logging.getLogger()
 def parse_command_line_args() -> argparse.Namespace:
     """Parse command line options."""
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("profile", help="The profile to use from the configuration file.")
     parser.add_argument(
-        "-c", "--config", default="/etc/netbox/ganeti-sync.cfg", help="The path to the config file to load."
+        "profile", help="The profile to use from the configuration file."
     )
     parser.add_argument(
-        "-d", "--dry-run", action="store_true", help="Don't actually commit any changes, just do a dry-run"
+        "-c",
+        "--config",
+        default="/etc/netbox/ganeti-sync.cfg",
+        help="The path to the config file to load.",
     )
-    parser.add_argument("-v", "--verbose", help="Output more verbosity.", action="store_true")
+    parser.add_argument(
+        "-d",
+        "--dry-run",
+        action="store_true",
+        help="Don't actually commit any changes, just do a dry-run",
+    )
+    parser.add_argument(
+        "-v", "--verbose", help="Output more verbosity.", action="store_true"
+    )
 
     args = parser.parse_args()
 
@@ -42,7 +53,9 @@ def setup_logging(verbose: bool = False, dry_run: bool = False) -> None:
     level = logging.DEBUG if verbose else logging.INFO
     requests_level = logging.INFO if verbose else logging.WARNING
     prefix = "DRY-RUN " if dry_run else ""
-    logging.basicConfig(format=f"%(asctime)s [%(levelname)s] {prefix}%(message)s", level=level)
+    logging.basicConfig(
+        format=f"%(asctime)s [%(levelname)s] {prefix}%(message)s", level=level
+    )
     logging.getLogger("requests").setLevel(requests_level)  # Silence noisy logger
 
 
@@ -64,7 +77,9 @@ class Ganeti:
         )
 
         if response.status_code != requests.codes.ok:
-            raise RuntimeError(f"Ganeti API call to {endpoint} failed with {response.status_code}:\n{response.text}")
+            raise RuntimeError(
+                f"Ganeti API call to {endpoint} failed with {response.status_code}:\n{response.text}"
+            )
 
         return response.json()
 
@@ -78,15 +93,21 @@ class Ganeti:
                     "name": name,
                     "vcpus": instance["beparams"]["vcpus"],
                     "memory": instance["beparams"]["memory"],
-                    "disk": round(sum(instance["disk.sizes"]) / 1024, 0),  # Ganeti returns MB, Netbox expects GB
-                    "status": "active" if instance["admin_state"] == "up" else "offline",
+                    "disk": round(
+                        sum(instance["disk.sizes"]) / 1024, 0
+                    ),  # Ganeti returns MB, Netbox expects GB
+                    "status": (
+                        "active" if instance["admin_state"] == "up" else "offline"
+                    ),
                     "primary_node": instance["pnode"].split(".")[0],
                 }
             except (KeyError, TypeError) as e:
                 logger.error("Failed to get data for Ganeti instance %s: %s", name, e)
                 continue
 
-        logger.debug("Loaded %d Ganeti instances in cluster %s", len(instances), self.url)
+        logger.debug(
+            "Loaded %d Ganeti instances in cluster %s", len(instances), self.url
+        )
         return instances
 
     def get_groups(self) -> Dict:
@@ -95,7 +116,10 @@ class Ganeti:
         for group in self._query("groups?bulk=1"):
             groups[group["name"]] = [node.split(".")[0] for node in group["node_list"]]
             logger.debug(
-                "Loaded %d Ganeti nodes for group %s in cluster %s", len(group["node_list"]), group["name"], self.url
+                "Loaded %d Ganeti nodes for group %s in cluster %s",
+                len(group["node_list"]),
+                group["name"],
+                self.url,
             )
 
         return groups
@@ -112,12 +136,16 @@ class Netbox:
         """Initialize additional instance variables."""
         self.server_id = self.api.dcim.device_roles.get(slug="server").id
 
-    def _create_resource(self, resource: str, func: Callable, data: Dict) -> Optional[pynetbox.core.response.Record]:
+    def _create_resource(
+        self, resource: str, func: Callable, data: Dict
+    ) -> Optional[pynetbox.core.response.Record]:
         """Create a resource, dry-run aware. Returns the created object or None on failure."""
         name = data["name"]
         logger.info("Creating %s %s with data: %s", resource, name, data)
         if self.dry_run:
-            logger.info("Skip resource creation in DRY-RUN mode. The script will fail early.")
+            logger.info(
+                "Skip resource creation in DRY-RUN mode. The script will fail early."
+            )
             return None
 
         try:
@@ -139,27 +167,41 @@ class NetboxClusterGroup(Netbox):
     def __post_init__(self) -> None:
         """Initialize additional instance variables."""
         super().__post_init__()
-        self.cluster_group = self.api.virtualization.cluster_groups.get(name=self.cluster_group_name)
+        self.cluster_group = self.api.virtualization.cluster_groups.get(
+            name=self.cluster_group_name
+        )
         if self.cluster_group is None:
             raise RuntimeError(
                 f"Cluster group {self.cluster_group_name} does not exist. "
                 "It must be created on Netbox before running this script."
             )
-        self.cluster_type_id = self.api.virtualization.cluster_types.get(name="Ganeti").id
+        self.cluster_type_id = self.api.virtualization.cluster_types.get(
+            name="Ganeti"
+        ).id
         self.site_id = self.api.dcim.sites.get(slug=self.site).id
 
     def get_clusters(self) -> Dict:
         """Return all clusters of the current cluster group."""
         clusters = {}
-        for cluster in self.api.virtualization.clusters.filter(group_id=self.cluster_group.id):
-            clusters[cluster.name] = NetboxCluster(api=self.api, cluster=cluster, dry_run=self.dry_run)
-        logger.debug("Loaded %d Netbox clusters in cluster group %s", len(clusters), self.cluster_group_name)
+        for cluster in self.api.virtualization.clusters.filter(
+            group_id=self.cluster_group.id
+        ):
+            clusters[cluster.name] = NetboxCluster(
+                api=self.api, cluster=cluster, dry_run=self.dry_run
+            )
+        logger.debug(
+            "Loaded %d Netbox clusters in cluster group %s",
+            len(clusters),
+            self.cluster_group_name,
+        )
         return clusters
 
     def ensure_cluster(self, data: Dict) -> Tuple[str, Optional["NetboxCluster"]]:
         """Create or move a Cluster with the given data and return it, along with the operation performed."""
         # name and site must be unique in Netbox
-        cluster = self.api.virtualization.clusters.get(name=data["name"], site_id=self.site_id)
+        cluster = self.api.virtualization.clusters.get(
+            name=data["name"], site_id=self.site_id
+        )
         if cluster:
             operation = "updated"
             cluster.type = self.cluster_type_id
@@ -167,14 +209,26 @@ class NetboxClusterGroup(Netbox):
             cluster.save()
         else:
             operation = "created"
-            data.update({"type": self.cluster_type_id, "site": self.site_id, "group": self.cluster_group.id})
-            cluster = self._create_resource("Cluster", self.api.virtualization.clusters.create, data)
+            data.update(
+                {
+                    "type": self.cluster_type_id,
+                    "site": self.site_id,
+                    "group": self.cluster_group.id,
+                }
+            )
+            cluster = self._create_resource(
+                "Cluster", self.api.virtualization.clusters.create, data
+            )
             if not cluster:
                 raise RuntimeError(
                     f'Failed to create cluster {data["name"]} in cluster group {self.cluster_group_name}'
                 )
 
-        return operation, NetboxCluster(api=self.api, cluster=cluster, dry_run=self.dry_run) if cluster else cluster
+        return operation, (
+            NetboxCluster(api=self.api, cluster=cluster, dry_run=self.dry_run)
+            if cluster
+            else cluster
+        )
 
 
 @dataclass
@@ -207,7 +261,9 @@ class NetboxCluster(Netbox):
         """Execute PuppetDB import on any host that have the placeholder PRIMARY interface."""
         reimport = [
             str(iface.virtual_machine)
-            for iface in self.api.virtualization.interfaces.filter(name="##PRIMARY##", cluster_id=self.cluster.id)
+            for iface in self.api.virtualization.interfaces.filter(
+                name="##PRIMARY##", cluster_id=self.cluster.id
+            )
         ]
         if not reimport:
             return
@@ -224,14 +280,27 @@ class NetboxCluster(Netbox):
 
     def get_vms(self) -> Dict:
         """Return all the VMs for the current cluster."""
-        vms = {vm.name: vm for vm in self.api.virtualization.virtual_machines.filter(cluster_id=self.cluster.id)}
+        vms = {
+            vm.name: vm
+            for vm in self.api.virtualization.virtual_machines.filter(
+                cluster_id=self.cluster.id
+            )
+        }
         logger.debug("Loaded %d Netbox VMs in cluster %s", len(vms), self.cluster)
         return vms
 
     def get_devices(self) -> Dict:
         """Return all the physical devices that are part of the current cluster."""
-        devices = {device.name: device for device in self.api.dcim.devices.filter(cluster_id=self.cluster.id)}
-        logger.debug("Loaded %d Netbox devices in cluster %s (ID %d)", len(devices), self.cluster, self.cluster.id)
+        devices = {
+            device.name: device
+            for device in self.api.dcim.devices.filter(cluster_id=self.cluster.id)
+        }
+        logger.debug(
+            "Loaded %d Netbox devices in cluster %s (ID %d)",
+            len(devices),
+            self.cluster,
+            self.cluster.id,
+        )
         return devices
 
     def create_vm(self, orig_data: Dict) -> Optional[pynetbox.core.response.Record]:
@@ -244,9 +313,13 @@ class NetboxCluster(Netbox):
 
         data = {key: value for key, value in orig_data.items() if key != "primary_node"}
         data.update({"cluster": self.cluster.id, "role": self.server_id})
-        vm = self._create_resource("VM", self.api.virtualization.virtual_machines.create, data)
+        vm = self._create_resource(
+            "VM", self.api.virtualization.virtual_machines.create, data
+        )
         if not vm:
-            raise RuntimeError(f'Failed to create VM {orig_data["name"]} in cluster {self.cluster}')
+            raise RuntimeError(
+                f'Failed to create VM {orig_data["name"]} in cluster {self.cluster}'
+            )
         return vm
 
     def add_device(self, device: str) -> bool:
@@ -349,7 +422,9 @@ class GanetiNetboxSyncer:
             self.sync_cluster_vms(cluster, instances)
             cluster.puppetdb_import()
 
-    def sync_cluster_vms(self, cluster: pynetbox.core.response.Record, ganeti_instances: Dict[str, Dict]) -> None:
+    def sync_cluster_vms(
+        self, cluster: pynetbox.core.response.Record, ganeti_instances: Dict[str, Dict]
+    ) -> None:
         """Sync Ganeti VMs to Netbox for the given cluster."""
         netbox_vms = cluster.get_vms()
         for netbox_vm_hostname, netbox_vm in netbox_vms.items():
@@ -360,9 +435,15 @@ class GanetiNetboxSyncer:
                 self.actions["VMs deleted"] += 1
             else:
                 try:
-                    diff_result = self.vm_diff(ganeti_instances[netbox_vm_hostname], netbox_vm)
+                    diff_result = self.vm_diff(
+                        ganeti_instances[netbox_vm_hostname], netbox_vm
+                    )
                 except KeyError as e:
-                    logger.error("Failed to compare VM %s between Ganeti and Netbox: %s", netbox_vm_hostname, e)
+                    logger.error(
+                        "Failed to compare VM %s between Ganeti and Netbox: %s",
+                        netbox_vm_hostname,
+                        e,
+                    )
                     continue
                 if diff_result:
                     logger.info("Updating VM %s in Netbox", netbox_vm_hostname)
@@ -380,20 +461,29 @@ class GanetiNetboxSyncer:
             else:
                 self.actions["VMs failed"] += 1
 
-    def vm_diff(self, ganeti_instance: Dict, netbox_vm: pynetbox.models.virtualization.VirtualMachines) -> bool:
+    def vm_diff(
+        self,
+        ganeti_instance: Dict,
+        netbox_vm: pynetbox.models.virtualization.VirtualMachines,
+    ) -> bool:
         """Update fields on netbox_vm from ganeti_instance, return True if updates are made."""
         updated = False
         for field in ("vcpus", "memory", "disk"):
             curr = getattr(netbox_vm, field)
             new = ganeti_instance[field]
             if curr != new:
-                logger.debug("Updating %s on %s %d -> %d", field, netbox_vm.name, curr, new)
+                logger.debug(
+                    "Updating %s on %s %d -> %d", field, netbox_vm.name, curr, new
+                )
                 setattr(netbox_vm, field, new)
                 updated = True
 
         if netbox_vm.status.value != ganeti_instance["status"]:
             logger.debug(
-                "Updating status on %s %d -> %d", netbox_vm.name, netbox_vm.status.value, ganeti_instance["status"]
+                "Updating status on %s %d -> %d",
+                netbox_vm.name,
+                netbox_vm.status.value,
+                ganeti_instance["status"],
             )
             netbox_vm.status = ganeti_instance["status"]
             updated = True
@@ -421,7 +511,9 @@ def main() -> None:
         http_session=session,
     )
 
-    netbox_api = pynetbox.api(cfg["netbox"]["api"], cfg["auth"]["netbox_token"], threading=True)
+    netbox_api = pynetbox.api(
+        cfg["netbox"]["api"], cfg["auth"]["netbox_token"], threading=True
+    )
     netbox_api.http_session = session
     netbox = NetboxClusterGroup(
         api=netbox_api,

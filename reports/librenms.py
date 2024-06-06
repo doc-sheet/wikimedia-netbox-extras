@@ -1,14 +1,12 @@
 """Report parity errors between LibreNMS and Netbox."""
-import configparser
 
+import configparser
 from functools import lru_cache
 
 import pymysql
-
-from django.db.models import Q
-
 from dcim.choices import DeviceStatusChoices
 from dcim.models import Device, InventoryItem
+from django.db.models import Q
 from extras.reports import Report
 
 CONFIG_FILE = "/etc/netbox/reports.cfg"
@@ -231,8 +229,10 @@ class LibreNMS(Report):
             if serial not in devserials:
                 self.log_failure(
                     None,
-                    ("missing LibreNMS device from Netbox:"
-                     f" serial: {serial} hostname: {device['hostname']} id: {device['id']}")
+                    (
+                        "missing LibreNMS device from Netbox:"
+                        f" serial: {serial} hostname: {device['hostname']} id: {device['id']}"
+                    ),
                 )
             else:
                 success += 1
@@ -265,7 +265,9 @@ class LibreNMS(Report):
                 ]
                 # The replace it to make server_technology match with "server technology" in NB.
                 lnms_device_harddesc = (
-                    lnms_device_hardware + " " + lnms_device_description.replace('_', ' ')
+                    lnms_device_hardware
+                    + " "
+                    + lnms_device_description.replace("_", " ")
                 )
                 if nb_vendor_string in lnms_device_harddesc and (
                     nb_model_string in lnms_device_harddesc
@@ -281,7 +283,7 @@ class LibreNMS(Report):
                             f" Netbox: {nb_vendor_model_string} (vendor model), "
                             f"LibreNMS: {self.librenms.devices[device.serial]['description']} (description) ||"
                             f" {self.librenms.devices[device.serial]['hardware']} (hardware)"
-                        )
+                        ),
                     )
             elif device.serial in self.librenms.inventory:
                 librenms_vendor_model_string = (
@@ -305,7 +307,7 @@ class LibreNMS(Report):
                         (
                             "mismatch between LibreNMS and Netbox inventory; Netbox: {nb_vendor_model_string}"
                             f" (vendor model), LibreNMS: {librenms_vendor_model_string} (vendor model)"
-                        )
+                        ),
                     )
 
         self.log_success(

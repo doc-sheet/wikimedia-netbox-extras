@@ -36,13 +36,16 @@ class Main(CustomValidator):
             instance.device.device_role.slug in NETWORK_ROLES
             and not INTERFACES_REGEXP.fullmatch(instance.name)
         ):
-            self.fail("Invalid name (must match the INTERFACES_REGEXP options)", field="name")
+            self.fail(
+                "Invalid name (must match the INTERFACES_REGEXP options)", field="name"
+            )
 
         # MTU
         if (
             hasattr(instance.connected_endpoint, "device")
             and instance.device.device_role.slug in NETWORK_ROLES  # Network devices
-            and instance.mtu not in (9000, 9192)  # Ignore good MTU (NTT VPLS is 9000 max.)
+            and instance.mtu
+            not in (9000, 9192)  # Ignore good MTU (NTT VPLS is 9000 max.)
             and not instance.lag  # Ignore LAG members
             and not (
                 instance.device.tenant and instance.device.tenant.slug == "fr-tech"
@@ -74,5 +77,7 @@ class Main(CustomValidator):
                 if attribute == "count_ipaddresses" and not instance.id:
                     continue
                 if getattr(instance, attribute):
-                    self.fail(f"Invalid {attribute} (must not be set on disabled interfaces)",
-                              field=attribute if attribute != "count_ipaddresses" else None)
+                    self.fail(
+                        f"Invalid {attribute} (must not be set on disabled interfaces)",
+                        field=attribute if attribute != "count_ipaddresses" else None,
+                    )

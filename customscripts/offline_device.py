@@ -44,7 +44,9 @@ class OfflineDevice(Script):
             )
             return
 
-        self.log_info(f"Setting device {device} status to Offline and unset rack/unit position")
+        self.log_info(
+            f"Setting device {device} status to Offline and unset rack/unit position"
+        )
         device.status = "offline"
         device.rack = None
         device.position = None
