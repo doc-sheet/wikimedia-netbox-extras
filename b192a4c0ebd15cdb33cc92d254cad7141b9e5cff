@@ -18,6 +18,23 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dde7f07d_180bc818",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:47:06Z",
+      "side": 1,
+      "message": "Thanks !",
+      "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9bc166c7_cdb62ba4",
@@ -35,6 +52,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "64547196_68aee355",
+        "filename": "prospector.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:47:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9bc166c7_cdb62ba4",
+      "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "da4f9bd0_66f4cca9",
@@ -48,6 +83,24 @@
       "writtenOn": "2024-06-06T08:21:05Z",
       "side": 1,
       "message": "probably can be enabled",
+      "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ce83f1b_28569649",
+        "filename": "prospector.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:47:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da4f9bd0_66f4cca9",
       "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
@@ -71,6 +124,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "65e568e1_6093b311",
+        "filename": "prospector.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:47:06Z",
+      "side": 1,
+      "message": "I think that would require installing Netbox in the venv ? Is it possible/worth it ?",
+      "parentUuid": "57263dbd_91264721",
+      "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "32e14b5b_e87676e0",
         "filename": "prospector.yaml",
         "patchSetId": 18
@@ -82,6 +153,24 @@
       "writtenOn": "2024-06-06T08:21:05Z",
       "side": 1,
       "message": "to be removed",
+      "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2ca4ee2_3a9ed3da",
+        "filename": "prospector.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:47:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "32e14b5b_e87676e0",
       "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
@@ -103,6 +192,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "09c8be3c_7dbd5b6d",
+        "filename": "prospector.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:47:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c270a507_6259b2c2",
+      "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d8ad0e80_3823a61c",
@@ -120,6 +227,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8160e956_4b0c6b68",
+        "filename": "prospector.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:47:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d8ad0e80_3823a61c",
+      "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "addcf89c_8b9836c1",
@@ -133,6 +258,24 @@
       "writtenOn": "2024-06-06T08:21:05Z",
       "side": 1,
       "message": "Don\u0027t set the envdir at all, it makes tests a lot slower on tox 4+",
+      "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "25a32ec6_09132eaf",
+        "filename": "tox.ini",
+        "patchSetId": 18
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:47:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "addcf89c_8b9836c1",
       "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
