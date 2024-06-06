@@ -1,5 +1,4 @@
-#!/usr/bin/env python3 # pylint: disable=invalid-name
-# TODO: rename file
+#!/usr/bin/env python3
 """Synchronize Ganeti data to Netbox."""
 import argparse
 import logging
