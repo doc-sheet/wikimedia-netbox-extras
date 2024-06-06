@@ -1245,6 +1245,30 @@
       },
       "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e0dd8ff_f104eab6",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T12:22:38Z",
+      "side": 1,
+      "message": "Added a patch to rename it.",
+      "parentUuid": "c025a972_b8809009",
+      "range": {
+        "startLine": 1,
+        "startChar": 23,
+        "endLine": 1,
+        "endChar": 53
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
