@@ -1,0 +1,458 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d5075f6_1e64833a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "I don\u0027t think it\u0027s a good idea to have vulture running, it looks for unused code but without a test suite it will throw a lot of false positives, just drop it and all the related comments ;)",
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8ab363c_6c41d8bd",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "what\u0027s the error here?",
+      "range": {
+        "startLine": 185,
+        "startChar": 97,
+        "endLine": 185,
+        "endChar": 104
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e064f64_64d3ede1",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "just remove the square brackets",
+      "range": {
+        "startLine": 331,
+        "startChar": 68,
+        "endLine": 331,
+        "endChar": 102
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5708f27_7c3b283e",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "I don\u0027t think it\u0027s a good idea to have vulture running, it looks for unused code but without a test suite it will throw a lot of false positives.",
+      "range": {
+        "startLine": 636,
+        "startChar": 49,
+        "endLine": 636,
+        "endChar": 75
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95f2e5bf_ee243329",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "what\u0027s the error?",
+      "range": {
+        "startLine": 689,
+        "startChar": 96,
+        "endLine": 689,
+        "endChar": 112
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b120d7ef_29ec8efa",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 742,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "just remove the square brackets",
+      "range": {
+        "startLine": 742,
+        "startChar": 71,
+        "endLine": 742,
+        "endChar": 95
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "109738d9_c147f0e0",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "just add an __init__() to define them, you just need to make sure it calls the parent init.",
+      "range": {
+        "startLine": 70,
+        "startChar": 73,
+        "endLine": 70,
+        "endChar": 117
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28a84fa5_120c9872",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "don\u0027t use numbers but names, it\u0027s confusing. I also usually use the specific tool disable mechanism to know which one it\u0027s complaining (like `# pylint: disable\u003dfoo-bar`) but YMMV",
+      "range": {
+        "startLine": 43,
+        "startChar": 40,
+        "endLine": 43,
+        "endChar": 44
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e47b1f4b_80360620",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "what is the error?",
+      "range": {
+        "startLine": 321,
+        "startChar": 105,
+        "endLine": 321,
+        "endChar": 116
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff144d6b_20d2bd28",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "unnecessary double parentheses",
+      "range": {
+        "startLine": 407,
+        "startChar": 33,
+        "endLine": 407,
+        "endChar": 34
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08cbe33d_75ecee2a",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "this shouldn\u0027t be necessary",
+      "range": {
+        "startLine": 408,
+        "startChar": 92,
+        "endLine": 408,
+        "endChar": 105
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9947d05e_6901f0c4",
+        "filename": "customscripts/replace_device.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "ditto for using names and not numbers",
+      "range": {
+        "startLine": 13,
+        "startChar": 32,
+        "endLine": 13,
+        "endChar": 44
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61b3a31d_ef38167b",
+        "filename": "dns/generate_dns_snippets.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "both seems false positive, to be checked and also don\u0027t use numbers, is painful to check every time what they are",
+      "range": {
+        "startLine": 321,
+        "startChar": 62,
+        "endLine": 321,
+        "endChar": 81
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db73933f_0469650e",
+        "filename": "dns/generate_dns_snippets.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "are you sure no char oustide ascii is used? why not utf-8?",
+      "range": {
+        "startLine": 458,
+        "startChar": 74,
+        "endLine": 458,
+        "endChar": 79
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be83a458_7ec46a74",
+        "filename": "dns/generate_dns_snippets.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "just remove the square brackets",
+      "range": {
+        "startLine": 529,
+        "startChar": 34,
+        "endLine": 529,
+        "endChar": 67
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bace2eb6_7c0df760",
+        "filename": "dns/generate_dns_snippets.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "ditto for ascii here and below",
+      "range": {
+        "startLine": 568,
+        "startChar": 34,
+        "endLine": 568,
+        "endChar": 39
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1bc6f5f8_1933365e",
+        "filename": "reports/accounting.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "false positive",
+      "range": {
+        "startLine": 173,
+        "startChar": 105,
+        "endLine": 173,
+        "endChar": 117
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39c5c6fe_043676fc",
+        "filename": "reports/accounting.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 218,
+        "startChar": 59,
+        "endLine": 218,
+        "endChar": 72
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e22e80f_7a5afd5d",
+        "filename": "reports/puppetdb.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "what is the error?",
+      "range": {
+        "startLine": 50,
+        "startChar": 106,
+        "endLine": 50,
+        "endChar": 113
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f891a671_ecbdb762",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T08:15:55Z",
+      "side": 1,
+      "message": "which ones?",
+      "range": {
+        "startLine": 1,
+        "startChar": 23,
+        "endLine": 1,
+        "endChar": 53
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
