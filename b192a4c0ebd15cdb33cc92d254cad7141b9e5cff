@@ -176,6 +176,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "52491dac_575c55d3",
+        "filename": "prospector.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-06T15:32:02Z",
+      "side": 1,
+      "message": "Acknowledged, let\u0027s skip for now",
+      "parentUuid": "e7950ae6_2417ac91",
+      "revId": "b192a4c0ebd15cdb33cc92d254cad7141b9e5cff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "32e14b5b_e87676e0",
