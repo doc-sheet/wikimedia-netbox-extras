@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c3f69eb8_2723c2f4",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:56:02Z",
+      "side": 1,
+      "message": "Too many parameters iirc.\nI used the generic noqa to not have to split the line and keep it more readable.",
+      "parentUuid": "b8ab363c_6c41d8bd",
+      "range": {
+        "startLine": 185,
+        "startChar": 97,
+        "endLine": 185,
+        "endChar": 104
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0e064f64_64d3ede1",
         "filename": "customscripts/_common.py",
         "patchSetId": 6
@@ -54,6 +78,30 @@
       "writtenOn": "2024-06-06T08:15:55Z",
       "side": 1,
       "message": "just remove the square brackets",
+      "range": {
+        "startLine": 331,
+        "startChar": 68,
+        "endLine": 331,
+        "endChar": 102
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39a1b6f3_38cc5889",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:56:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e064f64_64d3ede1",
       "range": {
         "startLine": 331,
         "startChar": 68,
@@ -89,6 +137,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "df512df1_fbda3703",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:56:02Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "e5708f27_7c3b283e",
+      "range": {
+        "startLine": 636,
+        "startChar": 49,
+        "endLine": 636,
+        "endChar": 75
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "95f2e5bf_ee243329",
         "filename": "customscripts/_common.py",
         "patchSetId": 6
@@ -112,6 +184,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ada3a500_b5473c6c",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:56:02Z",
+      "side": 1,
+      "message": "Too many parameters iirc.\nI used the generic noqa to not have to split the line and keep it more readable.",
+      "parentUuid": "95f2e5bf_ee243329",
+      "range": {
+        "startLine": 689,
+        "startChar": 96,
+        "endLine": 689,
+        "endChar": 112
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b120d7ef_29ec8efa",
         "filename": "customscripts/_common.py",
         "patchSetId": 6
@@ -123,6 +219,30 @@
       "writtenOn": "2024-06-06T08:15:55Z",
       "side": 1,
       "message": "just remove the square brackets",
+      "range": {
+        "startLine": 742,
+        "startChar": 71,
+        "endLine": 742,
+        "endChar": 95
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5caf6edc_11012eca",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 742,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:56:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b120d7ef_29ec8efa",
       "range": {
         "startLine": 742,
         "startChar": 71,
@@ -158,6 +278,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "948e12cd_cb009f0f",
+        "filename": "customscripts/capirca.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:56:02Z",
+      "side": 1,
+      "message": "How do you call the parent init?\n`super().__init__()` ?",
+      "parentUuid": "109738d9_c147f0e0",
+      "range": {
+        "startLine": 70,
+        "startChar": 73,
+        "endLine": 70,
+        "endChar": 117
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "28a84fa5_120c9872",
         "filename": "customscripts/provision_server.py",
         "patchSetId": 6
@@ -169,6 +313,30 @@
       "writtenOn": "2024-06-06T08:15:55Z",
       "side": 1,
       "message": "don\u0027t use numbers but names, it\u0027s confusing. I also usually use the specific tool disable mechanism to know which one it\u0027s complaining (like `# pylint: disable\u003dfoo-bar`) but YMMV",
+      "range": {
+        "startLine": 43,
+        "startChar": 40,
+        "endLine": 43,
+        "endChar": 44
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5044bbfe_6f9b57ab",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:56:02Z",
+      "side": 1,
+      "message": "I tried that but it looked like it required the actual code.",
+      "parentUuid": "28a84fa5_120c9872",
       "range": {
         "startLine": 43,
         "startChar": 40,
@@ -204,6 +372,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3664cb02_06b3ce01",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:56:02Z",
+      "side": 1,
+      "message": "Too many parameters iirc.\nI used the generic noqa to not have to split the line and keep it more readable.",
+      "parentUuid": "e47b1f4b_80360620",
+      "range": {
+        "startLine": 321,
+        "startChar": 105,
+        "endLine": 321,
+        "endChar": 116
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ff144d6b_20d2bd28",
         "filename": "customscripts/provision_server.py",
         "patchSetId": 6
@@ -215,6 +407,30 @@
       "writtenOn": "2024-06-06T08:15:55Z",
       "side": 1,
       "message": "unnecessary double parentheses",
+      "range": {
+        "startLine": 407,
+        "startChar": 33,
+        "endLine": 407,
+        "endChar": 34
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70e43b28_fa4bc473",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:56:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff144d6b_20d2bd28",
       "range": {
         "startLine": 407,
         "startChar": 33,
@@ -238,6 +454,30 @@
       "writtenOn": "2024-06-06T08:15:55Z",
       "side": 1,
       "message": "this shouldn\u0027t be necessary",
+      "range": {
+        "startLine": 408,
+        "startChar": 92,
+        "endLine": 408,
+        "endChar": 105
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb72a008_ba717b42",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:56:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "08cbe33d_75ecee2a",
       "range": {
         "startLine": 408,
         "startChar": 92,
@@ -319,6 +559,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "800b7663_369839d1",
+        "filename": "dns/generate_dns_snippets.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:56:02Z",
+      "side": 1,
+      "message": "The current files are ascii, so I stayed that way to not break anything. But I agree utf-8 would be better in the long run.",
+      "parentUuid": "db73933f_0469650e",
+      "range": {
+        "startLine": 458,
+        "startChar": 74,
+        "endLine": 458,
+        "endChar": 79
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "be83a458_7ec46a74",
         "filename": "dns/generate_dns_snippets.py",
         "patchSetId": 6
@@ -330,6 +594,30 @@
       "writtenOn": "2024-06-06T08:15:55Z",
       "side": 1,
       "message": "just remove the square brackets",
+      "range": {
+        "startLine": 529,
+        "startChar": 34,
+        "endLine": 529,
+        "endChar": 67
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e415e39_f12fa685",
+        "filename": "dns/generate_dns_snippets.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:56:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "be83a458_7ec46a74",
       "range": {
         "startLine": 529,
         "startChar": 34,
@@ -386,6 +674,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e4a63ed_0adc11da",
+        "filename": "reports/accounting.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:56:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1bc6f5f8_1933365e",
+      "range": {
+        "startLine": 173,
+        "startChar": 105,
+        "endLine": 173,
+        "endChar": 117
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "39c5c6fe_043676fc",
@@ -399,6 +711,30 @@
       "writtenOn": "2024-06-06T08:15:55Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 218,
+        "startChar": 59,
+        "endLine": 218,
+        "endChar": 72
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e668ce6_f1885631",
+        "filename": "reports/accounting.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:56:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "39c5c6fe_043676fc",
       "range": {
         "startLine": 218,
         "startChar": 59,
@@ -434,6 +770,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6b55dc13_639f1c54",
+        "filename": "reports/puppetdb.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:56:02Z",
+      "side": 1,
+      "message": "Too broad use of \"Exception\" not sure what we could raise instead ? Or if the current is appropriate.\nI used the generic noqa to not have to split the line and keep it more readable.",
+      "parentUuid": "9e22e80f_7a5afd5d",
+      "range": {
+        "startLine": 50,
+        "startChar": 106,
+        "endLine": 50,
+        "endChar": 113
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f891a671_ecbdb762",
         "filename": "tools/ganeti-netbox-sync.py",
         "patchSetId": 6
@@ -445,6 +805,30 @@
       "writtenOn": "2024-06-06T08:15:55Z",
       "side": 1,
       "message": "which ones?",
+      "range": {
+        "startLine": 1,
+        "startChar": 23,
+        "endLine": 1,
+        "endChar": 53
+      },
+      "revId": "4c92e8a6f089d6555e7756d44e3449970d0695cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "635c3f6f_7159b782",
+        "filename": "tools/ganeti-netbox-sync.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-06T08:56:02Z",
+      "side": 1,
+      "message": "The file name uses - instead of _.",
+      "parentUuid": "f891a671_ecbdb762",
       "range": {
         "startLine": 1,
         "startChar": 23,
