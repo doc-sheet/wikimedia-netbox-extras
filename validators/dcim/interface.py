@@ -3,6 +3,8 @@
 import re
 
 from extras.validators import CustomValidator
+from ipam.models import VLAN
+from django.core.exceptions import ObjectDoesNotExist
 
 NETWORK_ROLES = ("asw", "cr", "mr", "pfw", "cloudsw")
 
@@ -31,17 +33,25 @@ class Main(CustomValidator):
 
     def validate(self, instance):
         """Mandatory entry point"""
+
+        if instance.device.device_role.slug not in NETWORK_ROLES:
+            return
+
         # Name
-        if (
-            instance.device.device_role.slug in NETWORK_ROLES
-            and not INTERFACES_REGEXP.fullmatch(instance.name)
-        ):
+        if not INTERFACES_REGEXP.fullmatch(instance.name):
             self.fail("Invalid name (must match the INTERFACES_REGEXP options)", field="name")
+
+        # Validate IRB interface names are valid, i.e. correspond to an actual vlan
+        if instance.name.startswith("irb"):
+            try:
+                vid = int(instance.name.split(".")[1])
+                VLAN.objects.get(vid=vid, site=instance.device.site.id)
+            except (ValueError, ObjectDoesNotExist):
+                self.fail("IRB interface invalid - does not match vlan at this site.", field="name")
 
         # MTU
         if (
             hasattr(instance.connected_endpoint, "device")
-            and instance.device.device_role.slug in NETWORK_ROLES  # Network devices
             and instance.mtu not in (9000, 9192)  # Ignore good MTU (NTT VPLS is 9000 max.)
             and not instance.lag  # Ignore LAG members
             and not (
@@ -66,8 +76,7 @@ class Main(CustomValidator):
             "no-mon"
             not in str(instance.description)  # doesn't have "no-mon" in description
             and not instance.enabled  # disabled interface
-            and instance.device.device_role.slug in NETWORK_ROLES
-        ):  # network devices only
+        ):
             for attribute in attributes:
                 # Workaround bug T310590#8851738
                 # At creation time, count_ipaddresses is briefly at 246 then goes back to 0
