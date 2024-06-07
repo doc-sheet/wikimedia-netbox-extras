@@ -3,6 +3,8 @@
 import re
 
 from extras.validators import CustomValidator
+from ipam.models import VLAN
+from django.core.exceptions import ObjectDoesNotExist
 
 NETWORK_ROLES = ("asw", "cr", "mr", "pfw", "cloudsw")
 
@@ -31,48 +33,53 @@ class Main(CustomValidator):
 
     def validate(self, instance):
         """Mandatory entry point"""
-        # Name
-        if (
-            instance.device.device_role.slug in NETWORK_ROLES
-            and not INTERFACES_REGEXP.fullmatch(instance.name)
-        ):
-            self.fail("Invalid name (must match the INTERFACES_REGEXP options)", field="name")
 
-        # MTU
-        if (
-            hasattr(instance.connected_endpoint, "device")
-            and instance.device.device_role.slug in NETWORK_ROLES  # Network devices
-            and instance.mtu not in (9000, 9192)  # Ignore good MTU (NTT VPLS is 9000 max.)
-            and not instance.lag  # Ignore LAG members
-            and not (
-                instance.device.tenant and instance.device.tenant.slug == "fr-tech"
-            )  # Ignore frack devices
-            and instance.enabled  # Ignore disabled interfaces
-            and not instance.mgmt_only  # Ignore mgmt interfaces
-            and not str(instance.name).startswith("vcp-")  # Ignore VC links
-        ):
-            self.fail(f"Invalid MTU {instance.mtu}, must be 9192", field="mtu")
+        if instance.device.device_role.slug in NETWORK_ROLES:
+            # Name
+            if not INTERFACES_REGEXP.fullmatch(instance.name):
+                self.fail("Invalid name (must match the INTERFACES_REGEXP options)", field="name")
 
-        # Attributes
-        attributes = [
-            "description",
-            "lag",
-            "mtu",
-            "mode",
-            "mac_address",
-            "count_ipaddresses",
-        ]
-        if (
-            "no-mon"
-            not in str(instance.description)  # doesn't have "no-mon" in description
-            and not instance.enabled  # disabled interface
-            and instance.device.device_role.slug in NETWORK_ROLES
-        ):  # network devices only
-            for attribute in attributes:
-                # Workaround bug T310590#8851738
-                # At creation time, count_ipaddresses is briefly at 246 then goes back to 0
-                if attribute == "count_ipaddresses" and not instance.id:
-                    continue
-                if getattr(instance, attribute):
-                    self.fail(f"Invalid {attribute} (must not be set on disabled interfaces)",
-                              field=attribute if attribute != "count_ipaddresses" else None)
+            # Validate IRB interface names are valid, i.e. correspond to an actual vlan
+            if instance.name.startswith("irb"):
+                try:
+                    vid = int(instance.name.split(".")[1])
+                    VLAN.objects.get(vid=vid, site=instance.device.site.id)
+                except (ValueError, ObjectDoesNotExist):
+                    self.fail("IRB interface invalid - does not match vlan at this site.", field="name")
+
+            # MTU
+            if (
+                hasattr(instance.connected_endpoint, "device")
+                and instance.mtu not in (9000, 9192)  # Ignore good MTU (NTT VPLS is 9000 max.)
+                and not instance.lag  # Ignore LAG members
+                and not (
+                    instance.device.tenant and instance.device.tenant.slug == "fr-tech"
+                )  # Ignore frack devices
+                and instance.enabled  # Ignore disabled interfaces
+                and not instance.mgmt_only  # Ignore mgmt interfaces
+                and not str(instance.name).startswith("vcp-")  # Ignore VC links
+            ):
+                self.fail(f"Invalid MTU {instance.mtu}, must be 9192", field="mtu")
+
+            # Attributes
+            attributes = [
+                "description",
+                "lag",
+                "mtu",
+                "mode",
+                "mac_address",
+                "count_ipaddresses",
+            ]
+            if (
+                "no-mon"
+                not in str(instance.description)  # doesn't have "no-mon" in description
+                and not instance.enabled  # disabled interface
+            ):
+                for attribute in attributes:
+                    # Workaround bug T310590#8851738
+                    # At creation time, count_ipaddresses is briefly at 246 then goes back to 0
+                    if attribute == "count_ipaddresses" and not instance.id:
+                        continue
+                    if getattr(instance, attribute):
+                        self.fail(f"Invalid {attribute} (must not be set on disabled interfaces)",
+                                  field=attribute if attribute != "count_ipaddresses" else None)
