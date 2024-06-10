@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47d34138_4442818b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-06-10T09:08:22Z",
+      "side": 1,
+      "message": "tested on netbox-next:\nhttps://netbox-next.wikimedia.org/extras/reports/results/5771533/",
+      "revId": "944b99883ac564988795d32a2daa46fb19fcdfb8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
