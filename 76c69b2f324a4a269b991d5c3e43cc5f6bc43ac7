@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad05656b_d54d0c4b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-24T08:44:17Z",
+      "side": 1,
+      "message": "Self merging into dev. Tested on netbox-dev.",
+      "revId": "76c69b2f324a4a269b991d5c3e43cc5f6bc43ac7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
