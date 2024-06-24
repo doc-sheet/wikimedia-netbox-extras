@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13a950b6_da31554f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-24T20:42:45Z",
+      "side": 1,
+      "message": "Description on https://github.com/netbox-community/netbox/releases/tag/v3.3.0\nScript and report tested in dev instance. Validator change is small and more fixes/testing to come on validators.\nSelf merging into dev.",
+      "revId": "c6c39bcfd9601698ab0cb50c9be7e5d09672c6f8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
