@@ -63,6 +63,30 @@
       },
       "revId": "30ff7995b3b01846bdf25b76339e5149c9725b4a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7be6cf1b_22539c9e",
+        "filename": "validators/dcim/interface.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-06-25T16:27:31Z",
+      "side": 1,
+      "message": "ACK not a bad call.",
+      "parentUuid": "e6f9f8ef_f88614d0",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 61
+      },
+      "revId": "30ff7995b3b01846bdf25b76339e5149c9725b4a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
