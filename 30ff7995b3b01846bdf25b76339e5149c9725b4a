@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f18b239_69dd522b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-25T13:23:53Z",
+      "side": 1,
+      "message": "One inline comment.",
+      "revId": "30ff7995b3b01846bdf25b76339e5149c9725b4a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0394493e_c1c2df94",
+        "filename": "validators/dcim/interface.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-25T13:23:53Z",
+      "side": 1,
+      "message": "I haven\u0027t reviewed it all yet, but to prevent the huge diff due to the indentation change, you can maybe do:\n```lang\u003dpython\nif not instance.device.device_role.slug in NETWORK_ROLES:\n   return\n```\nIf it works as expected it will make it easier to review.",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 61
+      },
+      "revId": "30ff7995b3b01846bdf25b76339e5149c9725b4a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
