@@ -16,6 +16,24 @@
       "message": "So far not useful to have them in Netbox as they don\u0027t hold any info (IP or other). Please let me know if you think we should import them.",
       "revId": "588cc7c85ca5f7bf017083ca5c6073695635dfa7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0c7d496_6683e24e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-06-25T16:30:41Z",
+      "side": 1,
+      "message": "Agreed on my side, can\u0027t think of any reason they would be useful.",
+      "parentUuid": "bd4c79b0_2ff2e204",
+      "revId": "588cc7c85ca5f7bf017083ca5c6073695635dfa7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
