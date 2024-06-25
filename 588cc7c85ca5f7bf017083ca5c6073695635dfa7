@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd4c79b0_2ff2e204",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-06-25T09:56:59Z",
+      "side": 1,
+      "message": "So far not useful to have them in Netbox as they don\u0027t hold any info (IP or other). Please let me know if you think we should import them.",
+      "revId": "588cc7c85ca5f7bf017083ca5c6073695635dfa7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
