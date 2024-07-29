@@ -182,6 +182,14 @@ class ProvisionServerNetwork(Script, Importer):
         }
     )
 
+    mgmt_mac = StringVar(
+        required=False,
+        label="MGMT mac address",
+        description=("For some vendors, like Supermicro, we use the mgmt's MAC address to assign an IP to "
+                     "the interface via DHCP."),
+        regex="^[a-fA-F0-9]{2}(:[a-fA-F0-9]{2}){5}$"
+    )
+
     def run(self, data, commit):  # noqa: unused-argument
         """Run the script and return all the log messages."""
         self.log_info(f"Called with parameters: {data}")
@@ -289,12 +297,14 @@ class ProvisionServerNetwork(Script, Importer):
             self._create_cable(nbiface, z_nbiface, label=cable_id if cable_id else '')
 
         if assign_mgmt:
-            self._assign_mgmt(device)
+            self._assign_mgmt(device, mac_address=data["mgmt_mac"])
 
-    def _assign_mgmt(self, device):
+    def _assign_mgmt(self, device, mac_address=None):
         """Create a management interface in the device and assign to it a management IP."""
         iface_type = InterfaceTypeChoices.TYPE_1GE_FIXED
-        iface = self._add_iface(MGMT_IFACE_NAME, device, iface_type=iface_type, mgmt=True)
+        iface = self._add_iface(
+            MGMT_IFACE_NAME, device, iface_type=iface_type,
+            mgmt=True, mac_address=mac_address)
 
         # determine prefix appropriate to site of device
         try:
@@ -454,9 +464,11 @@ class ProvisionServerNetwork(Script, Importer):
 
         return True
 
-    def _add_iface(self, name, device, *, iface_type, mgmt=False):
+    def _add_iface(self, name, device, *, iface_type, mgmt=False, mac_address=None):
         """Add an interface to the device."""
-        iface = Interface(name=name, mgmt_only=mgmt, device=device, type=iface_type)
+        iface = Interface(
+            name=name, mgmt_only=mgmt, device=device, type=iface_type,
+            mac_address=mac_address)
         iface.save()
         self.log_success(f"{device}: created interface {name} (mgmt={mgmt})")
         return iface
