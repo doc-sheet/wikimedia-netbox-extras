@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8c5aac8_b36202cb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3113
+      },
+      "writtenOn": "2024-07-30T14:09:25Z",
+      "side": 1,
+      "message": "I like this one, but I\u0027d add a README.md under customscripts (if it doesn\u0027t break anything) explaining what to up under scripts_imports and what not (and a reference to the github issue etc..)",
+      "revId": "6c917773de0982b5353420fc06e14178b36cd711",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
