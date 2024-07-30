@@ -51,6 +51,40 @@
       "message": "Assuming that it was all tested etc.. :)",
       "revId": "6c917773de0982b5353420fc06e14178b36cd711",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86a91fb7_f8234b8a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-07-30T14:52:29Z",
+      "side": 1,
+      "message": "post-merge -1",
+      "revId": "6c917773de0982b5353420fc06e14178b36cd711",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a6ff1da_8206e13c",
+        "filename": "scripts_imports/wmf_scripts_imports/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-07-30T14:52:29Z",
+      "side": 1,
+      "message": "If we go with the symlink we don\u0027t need the double directory, just one level is enough, as we\u0027re symlinking this directory into the venv that is already part of the python path, the external directory is already there.",
+      "revId": "6c917773de0982b5353420fc06e14178b36cd711",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ],
   "submitRequirementResults": []
