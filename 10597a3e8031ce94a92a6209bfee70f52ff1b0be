@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c99d2ec_ba1a8030",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-01T14:43:20Z",
+      "side": 1,
+      "message": "Example output: https://usercontent.irccloud-cdn.com/file/ASpBVsoV/Screenshot%202024-08-01%20at%2016-36-37%20Editing%20interface%20ge-0_0_3%20NetBox.png",
+      "revId": "10597a3e8031ce94a92a6209bfee70f52ff1b0be",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
