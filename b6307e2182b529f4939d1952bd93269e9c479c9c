@@ -110,6 +110,30 @@
       },
       "revId": "b6307e2182b529f4939d1952bd93269e9c479c9c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "93eeafd2_cc7406c5",
+        "filename": "validators/dcim/interface.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-01T14:32:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa00bf3_75f127bc",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 19
+      },
+      "revId": "b6307e2182b529f4939d1952bd93269e9c479c9c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
