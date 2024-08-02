@@ -16,6 +16,52 @@
       "message": "Manually tested, results in https://netbox-next.wikimedia.org/dcim/interfaces/35261/ (see the mac address field).\n\nTestable here: https://netbox-next.wikimedia.org/extras/scripts/30/",
       "revId": "9658eaae12a7665b7cd20d303c79b818fe3fa8cc",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dbe04df7_91568c49",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-02T13:42:00Z",
+      "side": 1,
+      "message": "nit: small letters by convention in our infra",
+      "range": {
+        "startLine": 187,
+        "startChar": 15,
+        "endLine": 187,
+        "endChar": 19
+      },
+      "revId": "9658eaae12a7665b7cd20d303c79b818fe3fa8cc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f65685a_eead2edf",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-02T13:42:00Z",
+      "side": 1,
+      "message": "nit: capital letters",
+      "range": {
+        "startLine": 187,
+        "startChar": 20,
+        "endLine": 187,
+        "endChar": 23
+      },
+      "revId": "9658eaae12a7665b7cd20d303c79b818fe3fa8cc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
