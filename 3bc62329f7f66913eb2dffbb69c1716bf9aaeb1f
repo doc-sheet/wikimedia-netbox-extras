@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d395c14a_57eab72a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-02T08:39:46Z",
+      "side": 1,
+      "message": "Tested on netbox-next, no (obvious) issues.",
+      "revId": "3bc62329f7f66913eb2dffbb69c1716bf9aaeb1f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
