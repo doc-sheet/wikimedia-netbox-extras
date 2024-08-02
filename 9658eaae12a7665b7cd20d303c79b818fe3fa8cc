@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f80bab1_89bab562",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3113
+      },
+      "writtenOn": "2024-08-02T13:40:32Z",
+      "side": 1,
+      "message": "Manually tested, results in https://netbox-next.wikimedia.org/dcim/interfaces/35261/ (see the mac address field).\n\nTestable here: https://netbox-next.wikimedia.org/extras/scripts/30/",
+      "revId": "9658eaae12a7665b7cd20d303c79b818fe3fa8cc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
