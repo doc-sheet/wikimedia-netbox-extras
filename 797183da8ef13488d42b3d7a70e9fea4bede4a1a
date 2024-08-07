@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f43395a1_5a69cb96",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3113
+      },
+      "writtenOn": "2024-08-07T08:50:10Z",
+      "side": 1,
+      "message": "Left a couple of comments related to the #TODOs, but the rest looks good! Feel free to merge anytime",
+      "revId": "797183da8ef13488d42b3d7a70e9fea4bede4a1a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94208eb4_cfc761d7",
+        "filename": "scripts_imports/wmf_scripts_imports/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 3113
+      },
+      "writtenOn": "2024-08-07T08:50:10Z",
+      "side": 1,
+      "message": "Let\u0027s remove it if you think it shouldn\u0027t matter, no point in leaving these comments around if we are not planning to fix them.",
+      "range": {
+        "startLine": 129,
+        "startChar": 25,
+        "endLine": 129,
+        "endChar": 75
+      },
+      "revId": "797183da8ef13488d42b3d7a70e9fea4bede4a1a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16937682_9592046f",
+        "filename": "scripts_imports/wmf_scripts_imports/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 879,
+      "author": {
+        "id": 3113
+      },
+      "writtenOn": "2024-08-07T08:50:10Z",
+      "side": 1,
+      "message": "same :)",
+      "range": {
+        "startLine": 879,
+        "startChar": 15,
+        "endLine": 879,
+        "endChar": 51
+      },
+      "revId": "797183da8ef13488d42b3d7a70e9fea4bede4a1a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
