@@ -41,6 +41,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4460f75_618452e2",
+        "filename": "scripts_imports/wmf_scripts_imports/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-07T11:37:08Z",
+      "side": 1,
+      "message": "Thanks, I\u0027m not sure yet if it\u0027s worth raising the AbortScript, so it\u0027s more a comment for a future person who works on the script (or future me)",
+      "parentUuid": "94208eb4_cfc761d7",
+      "range": {
+        "startLine": 129,
+        "startChar": 25,
+        "endLine": 129,
+        "endChar": 75
+      },
+      "revId": "797183da8ef13488d42b3d7a70e9fea4bede4a1a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "16937682_9592046f",
@@ -54,6 +78,30 @@
       "writtenOn": "2024-08-07T08:50:10Z",
       "side": 1,
       "message": "same :)",
+      "range": {
+        "startLine": 879,
+        "startChar": 15,
+        "endLine": 879,
+        "endChar": 51
+      },
+      "revId": "797183da8ef13488d42b3d7a70e9fea4bede4a1a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "82bef486_041dda5c",
+        "filename": "scripts_imports/wmf_scripts_imports/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 879,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-07T11:37:08Z",
+      "side": 1,
+      "message": "same :)",
+      "parentUuid": "16937682_9592046f",
       "range": {
         "startLine": 879,
         "startChar": 15,
