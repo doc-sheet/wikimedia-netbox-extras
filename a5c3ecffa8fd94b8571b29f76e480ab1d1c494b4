@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "078d4ff4_22bd7280",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3113
+      },
+      "writtenOn": "2024-08-12T15:54:05Z",
+      "side": 1,
+      "message": "Left a comment, but LGTM!",
+      "revId": "a5c3ecffa8fd94b8571b29f76e480ab1d1c494b4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "364e99bd_1dd1f49d",
+        "filename": "validators/dcim/consoleserverport.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 3113
+      },
+      "writtenOn": "2024-08-12T15:54:05Z",
+      "side": 1,
+      "message": "nit: maybe we can put a maximum number of digits in here? If not possible it is ok like this.",
+      "range": {
+        "startLine": 14,
+        "startChar": 32,
+        "endLine": 14,
+        "endChar": 35
+      },
+      "revId": "a5c3ecffa8fd94b8571b29f76e480ab1d1c494b4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
