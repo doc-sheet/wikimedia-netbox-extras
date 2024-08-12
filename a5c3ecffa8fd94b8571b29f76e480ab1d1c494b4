@@ -39,6 +39,30 @@
       },
       "revId": "a5c3ecffa8fd94b8571b29f76e480ab1d1c494b4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9c08dc1_e85fe33f",
+        "filename": "validators/dcim/consoleserverport.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-12T16:07:28Z",
+      "side": 1,
+      "message": "Sounds good, done.",
+      "parentUuid": "364e99bd_1dd1f49d",
+      "range": {
+        "startLine": 14,
+        "startChar": 32,
+        "endLine": 14,
+        "endChar": 35
+      },
+      "revId": "a5c3ecffa8fd94b8571b29f76e480ab1d1c494b4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
