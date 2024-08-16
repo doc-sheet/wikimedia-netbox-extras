@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0317521_e1e48aa3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3113
+      },
+      "writtenOn": "2024-08-16T14:41:11Z",
+      "side": 1,
+      "message": "It looks good from me on the Python side, but I have to say that my understanding of why this is needed is limited (due to my ignorance). If Cathal is ok with the change on the network/logical side, go ahead!",
+      "revId": "14323d4879e15d688ac7ceb14501f3d14d92670a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
