@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "132d7f8a_596371c4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-19T08:29:57Z",
+      "side": 1,
+      "message": "Self merging as it\u0027s a minor change",
+      "revId": "605ca997f298db56db7250494ac1a9ee68756269",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
