@@ -337,7 +337,15 @@ class Importer:
             self.log_info("VIP exempt: Overriding provided netmask")
 
         # Don't treat /32-/128 IPs in routed VM ranges as VIPs
-        if (is_anycast or (address.network.prefixlen in (32, 128) and parent_prefix.role.slug != 'virtual-machines')):
+        handle_vip=False
+        if is_anycast:
+            handle_vip = True
+        elif address.network.prefixlen in (32,128):
+            if not parent_prefix.role:
+                handle_vip = True
+            elif parent_prefix.role.slug != 'virtual-machines':
+                handle_vip = True
+        if handle_vip:
             self._handle_vip(address, is_anycast)
             return None
 
