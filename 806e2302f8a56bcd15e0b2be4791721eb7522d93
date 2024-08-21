@@ -22,6 +22,30 @@
       },
       "revId": "806e2302f8a56bcd15e0b2be4791721eb7522d93",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74c63bc8_e6ce296d",
+        "filename": "scripts_imports/wmf_scripts_imports/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-08-21T10:39:40Z",
+      "side": 0,
+      "message": "Acknowledged",
+      "parentUuid": "4c38d213_98d5ff9f",
+      "range": {
+        "startLine": 340,
+        "startChar": 65,
+        "endLine": 340,
+        "endChar": 66
+      },
+      "revId": "806e2302f8a56bcd15e0b2be4791721eb7522d93",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
