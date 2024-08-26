@@ -16,6 +16,23 @@
       "message": "Script can be tested over there https://netbox-next.wikimedia.org/extras/scripts/37/",
       "revId": "61373f465baf48e1b393d54c104b4303602b538c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4533db7_2fb56a9e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-26T09:21:39Z",
+      "side": 1,
+      "message": "See related task, let me know if you think it would be useful. Otherwise I\u0027d be ok to close the task as declined.",
+      "revId": "61373f465baf48e1b393d54c104b4303602b538c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
