@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5008827a_daf12cfc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-26T09:20:11Z",
+      "side": 1,
+      "message": "Script can be tested over there https://netbox-next.wikimedia.org/extras/scripts/37/",
+      "revId": "61373f465baf48e1b393d54c104b4303602b538c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
