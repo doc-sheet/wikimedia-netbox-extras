@@ -1,0 +1,205 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b820649_44f05cb8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-28T10:08:30Z",
+      "side": 1,
+      "message": "I left a bunch of comments here and there.\nSeeing the nature of this change, and the probable rebase hell it\u0027s going to be, and all the complex testing later on. I think you should instead create a customscripts/provision_server_v2.py (or any fancier name), that we could run in parallel of the current provisioning script. It will also make it easier to review it as a new script without all the diff color.",
+      "revId": "e9504ea9c831b2e57ec3ba662027d25915365242",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f3b554a_9a8352c4",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-28T10:08:30Z",
+      "side": 1,
+      "message": "Now we can ! :)",
+      "range": {
+        "startLine": 68,
+        "startChar": 67,
+        "endLine": 68,
+        "endChar": 78
+      },
+      "revId": "e9504ea9c831b2e57ec3ba662027d25915365242",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49222975_c907808d",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-28T10:08:30Z",
+      "side": 1,
+      "message": "Probably better to split this to its own small CR (and use AbortScript).",
+      "range": {
+        "startLine": 107,
+        "startChar": 0,
+        "endLine": 118,
+        "endChar": 23
+      },
+      "revId": "e9504ea9c831b2e57ec3ba662027d25915365242",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "882136d8_a9786328",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-28T10:08:30Z",
+      "side": 1,
+      "message": "Same, this can be moved to a different CR for easier review/rollout.",
+      "range": {
+        "startLine": 159,
+        "startChar": 4,
+        "endLine": 159,
+        "endChar": 24
+      },
+      "revId": "e9504ea9c831b2e57ec3ba662027d25915365242",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13768806_ede6c44b",
+        "filename": "customscripts/_common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-28T10:08:30Z",
+      "side": 1,
+      "message": "Same, probably better to do this rename/refactoring (As well as the one in _make_interface and _update_z_nbifac, _create_z_nbiface) in a dedicated CR to reduce the size of that one.\nAnd maybe add the type annotation like \"iface_name: str\" etc in the function signature and where convenient if you don\u0027t mind. That will make the review easier.\nAlso it will separate the change from _common.py and from the actual script.",
+      "range": {
+        "startLine": 484,
+        "startChar": 8,
+        "endLine": 484,
+        "endChar": 21
+      },
+      "revId": "e9504ea9c831b2e57ec3ba662027d25915365242",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6650b453_fd50ca27",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-28T10:08:30Z",
+      "side": 1,
+      "message": "If we decide to use a different script in parallel, you can probably ignore the CSV part for now (and send it in a future CR).",
+      "range": {
+        "startLine": 252,
+        "startChar": 6,
+        "endLine": 252,
+        "endChar": 31
+      },
+      "revId": "e9504ea9c831b2e57ec3ba662027d25915365242",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6436890_744b131a",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 542,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-28T10:08:30Z",
+      "side": 1,
+      "message": "for REQUIRED and OPTIONAL, I\u0027d be more in the opinion to fully remove those mentions to keep the UI clean as the required fields always have a red asterisk.",
+      "range": {
+        "startLine": 542,
+        "startChar": 22,
+        "endLine": 542,
+        "endChar": 30
+      },
+      "revId": "e9504ea9c831b2e57ec3ba662027d25915365242",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29b2af3d_1f738600",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 574,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-28T10:08:30Z",
+      "side": 1,
+      "message": "Not directly related, but I think we should not ask this to the operator anymore, and instead have a hardcoded list of servers prefixes to not have v6. Probably worth sending that change as a earlier CR.",
+      "range": {
+        "startLine": 574,
+        "startChar": 4,
+        "endLine": 574,
+        "endChar": 17
+      },
+      "revId": "e9504ea9c831b2e57ec3ba662027d25915365242",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e1008fa_467ded40",
+        "filename": "customscripts/provision_server.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 859,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-08-28T10:08:30Z",
+      "side": 1,
+      "message": "this has been moved to a validator.",
+      "range": {
+        "startLine": 859,
+        "startChar": 8,
+        "endLine": 859,
+        "endChar": 30
+      },
+      "revId": "e9504ea9c831b2e57ec3ba662027d25915365242",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
