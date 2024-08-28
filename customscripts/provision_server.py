@@ -314,7 +314,9 @@ class ProvisionServerNetwork(Script, Importer):
         else:
             dns_name = f"{device.name}.mgmt.{device.site.slug}.wmnet"
 
-        self._add_ip(ip_address, dns_name, prefix, iface, device)
+        # Create the mgmt IP and assign it as the host's OOB IP as well
+        device.oob_ip = self._add_ip(ip_address, dns_name, prefix, iface, device)
+        device.save()
 
     def _assign_primary(self, device, vlan, *, iface_type, skip_ipv6_dns=False):
         """Create a primary interface in the device and assign to it an IPv4, a mapped IPv6 and related DNS records."""
