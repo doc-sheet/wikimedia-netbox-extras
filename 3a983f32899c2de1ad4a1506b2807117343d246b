@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19fbddb8_a36db7f6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3113
+      },
+      "writtenOn": "2024-09-05T12:35:19Z",
+      "side": 1,
+      "message": "While I am very ignorant on the custom script\u0027s specific, the logic looks good!",
+      "revId": "3a983f32899c2de1ad4a1506b2807117343d246b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
