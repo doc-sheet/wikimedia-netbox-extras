@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d213490c_28d27a73",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3113
+      },
+      "writtenOn": "2024-09-19T07:24:49Z",
+      "side": 1,
+      "message": "It looks good, I am a bit unsure about the move from mac_address defaulting to None to str: \u0027\u0027, but if you tried the script and everything works as expected feel free to merge.",
+      "revId": "0cf1262d69c696ea90a91d30bee77fc8a6650990",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
