@@ -18,6 +18,23 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "82baf32f_6b2e454e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-10-15T14:46:53Z",
+      "side": 1,
+      "message": "I haven\u0027t tested it but looks sane.",
+      "revId": "de719e25451c3838aa3193b0e5ff3a24b00072ff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "adae29e6_081bc75c",
@@ -49,6 +66,24 @@
       "side": 1,
       "message": "The day we will care about it, most likely yeah :) We might need to refactor it based on the lessons learned from codfw too. So I don\u0027t worry much there.",
       "parentUuid": "adae29e6_081bc75c",
+      "revId": "de719e25451c3838aa3193b0e5ff3a24b00072ff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca58fcc3_afebc84f",
+        "filename": "reports/vlan_migration.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2024-10-15T14:46:53Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "68e95f0f_2c2f5455",
       "revId": "de719e25451c3838aa3193b0e5ff3a24b00072ff",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
