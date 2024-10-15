@@ -33,6 +33,24 @@
       "message": "Will we remind to change it when we\u0027ll upgrade eqiad too?",
       "revId": "de719e25451c3838aa3193b0e5ff3a24b00072ff",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68e95f0f_2c2f5455",
+        "filename": "reports/vlan_migration.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-10-15T12:07:53Z",
+      "side": 1,
+      "message": "The day we will care about it, most likely yeah :) We might need to refactor it based on the lessons learned from codfw too. So I don\u0027t worry much there.",
+      "parentUuid": "adae29e6_081bc75c",
+      "revId": "de719e25451c3838aa3193b0e5ff3a24b00072ff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
