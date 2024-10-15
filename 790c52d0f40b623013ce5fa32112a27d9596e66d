@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47ad7b7a_4c4d2aef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-10-15T09:48:27Z",
+      "side": 1,
+      "message": "Currently live on Netbox next: https://netbox-next.wikimedia.org/extras/scripts/38/\nAnd prod: https://netbox.wikimedia.org/extras/scripts/19/ (manually uploaded, will delete before final merge).",
+      "revId": "790c52d0f40b623013ce5fa32112a27d9596e66d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
