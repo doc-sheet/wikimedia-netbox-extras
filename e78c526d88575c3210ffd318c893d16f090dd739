@@ -1,0 +1,129 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "83ea8d04_b7067d34",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 824
+      },
+      "writtenOn": "2024-10-17T11:45:19Z",
+      "side": 1,
+      "message": "Thanks for this! Various inline comments and proposals",
+      "revId": "e78c526d88575c3210ffd318c893d16f090dd739",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "03f4c12c_78330c49",
+        "filename": "reports/vlan_migration.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 824
+      },
+      "writtenOn": "2024-10-17T11:45:19Z",
+      "side": 1,
+      "message": "what? no handling of leap years?\n\n😄",
+      "revId": "e78c526d88575c3210ffd318c893d16f090dd739",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a77202f0_a80f27af",
+        "filename": "reports/vlan_migration.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 824
+      },
+      "writtenOn": "2024-10-17T11:45:19Z",
+      "side": 1,
+      "message": "I \u0027d just to switch to list instead. The count doesn\u0027t need to be kept track of as it can be calculated on the fly as a derivative of the devices list with a len(devices) call.",
+      "revId": "e78c526d88575c3210ffd318c893d16f090dd739",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d3bfd95_6a1acae5",
+        "filename": "reports/vlan_migration.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 824
+      },
+      "writtenOn": "2024-10-17T11:45:19Z",
+      "side": 1,
+      "message": "I think you don\u0027t need to keep the count, you can always just len(devices)",
+      "revId": "e78c526d88575c3210ffd318c893d16f090dd739",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2904829c_d5e41545",
+        "filename": "reports/vlan_migration.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 824
+      },
+      "writtenOn": "2024-10-17T11:45:19Z",
+      "side": 1,
+      "message": "this becomes \n\n  devices_groups[group].append(device)\n  \nif you go down the defaultdict(list) path.",
+      "revId": "e78c526d88575c3210ffd318c893d16f090dd739",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19c40d1b_dc6f790b",
+        "filename": "reports/vlan_migration.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 824
+      },
+      "writtenOn": "2024-10-17T11:45:19Z",
+      "side": 1,
+      "message": "if you defaultdict(list) then just len(item[1]). If you keep to the lambda, len(item[1][\"devices\"])",
+      "range": {
+        "startLine": 58,
+        "startChar": 66,
+        "endLine": 58,
+        "endChar": 71
+      },
+      "revId": "e78c526d88575c3210ffd318c893d16f090dd739",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f461c1f8_b93a62fe",
+        "filename": "reports/vlan_migration.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 824
+      },
+      "writtenOn": "2024-10-17T11:45:19Z",
+      "side": 1,
+      "message": "And then this can become\n\n   devices_groups[group][\"devices\"][0:max(2, len(devices_groups[group][\"devices\"])] to grab up to 3, which especially at the end of the migration, when we will be chasing down stragglers it will be more helpful.",
+      "revId": "e78c526d88575c3210ffd318c893d16f090dd739",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
