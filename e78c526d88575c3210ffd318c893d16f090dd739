@@ -237,6 +237,24 @@
       "parentUuid": "f461c1f8_b93a62fe",
       "revId": "e78c526d88575c3210ffd318c893d16f090dd739",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "312b4840_224cc531",
+        "filename": "reports/vlan_migration.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-10-17T12:20:06Z",
+      "side": 1,
+      "message": "Nevermind, let\u0027s give it a try with the first 3 servers in the log, and the last one in the \"attached object\". So that\u0027s 4 total.",
+      "parentUuid": "9a55b196_744242a1",
+      "revId": "e78c526d88575c3210ffd318c893d16f090dd739",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
