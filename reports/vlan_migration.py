@@ -31,10 +31,9 @@ class VlanMigration(Script):
         legacy_prefixes = []
         for prefix in Prefix.objects.filter(vlan__name__in=LEGACY_VLANS):
             legacy_prefixes.append(prefix)
-            self.log_info("Legacy prefix", prefix)
 
         total_device_count = 0
-        devices_groups: dict = defaultdict(int)
+        devices_groups: dict = defaultdict(lambda: {"devices": [], "count": 0})
         for device in Device.objects.filter(
             role__slug="server",
             status="active",
@@ -48,14 +47,20 @@ class VlanMigration(Script):
                 total_device_count += 1
                 group, sub_count = subn(r"\d{4}", "", device.name)
                 if sub_count:
-                    devices_groups[group] += 1
+                    devices_groups[group]["count"] += 1
+                    devices_groups[group]["devices"].append(device)
 
         devices_groups_sorted = dict(
-            sorted(devices_groups.items(), key=lambda item: item[1], reverse=True)
+            sorted(
+                devices_groups.items(), key=lambda item: item[1]["count"], reverse=True
+            )
         )
 
         self.log_warning(
             f"{total_device_count} baremetal servers still on the legacy vlans"
         )
-        for group, count in devices_groups_sorted.items():
-            self.log_info(f"{group}*: {count} servers")
+        for group, attributes in devices_groups_sorted.items():
+            self.log_info(
+                f"{group}*: {attributes['count']} servers",
+                devices_groups[group]["devices"][0],
+            )
