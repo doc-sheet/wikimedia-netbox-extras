@@ -49,15 +49,16 @@ INVENTORY_ROLES_EXCLUDES = ("license",)
 # These are very specific filters for devices that act incorrectly in LibreNMS. We should document them
 # here as well.
 #
-# srx1500 with name pf3b does not report its serials in a way consistent with other similar devices.
+# srx1600 with name pf1b does not report its serials in a way consistent with other similar devices.
 #
-DEVICE_EXCLUDES = Q(device_type__slug="srx1500", name__contains="pfw3b")
+DEVICE_EXCLUDES = Q(device_type__slug="srx1600", name__contains="pfw1b")
 
 # The slugs for manufacturers that may also match with inventory items by serial
 INVENTORY_MANUFACTURERS = ("juniper",)
 
 # Some minor hacks for inventory items (keyed by netbox 'vendor " " model')
-MODEL_EQUIVS_INVENTORY = {"juniper ex4300-48t": "juniper routing engine"}
+MODEL_EQUIVS_INVENTORY = {"juniper ex4300-48t": "juniper routing engine",
+                          "juniper qfx5100-48s-6q": "qfx5100-48s-afi"}
 
 # See T331519
 MODEL_EQUIVS_DEVICES = {
@@ -113,7 +114,7 @@ class LibreNMSData:
                           lower(entPhysicalDescr) as description,
                           entPhysicalSerialNum as serial,
                           lower(entPhysicalName) as model,
-                          lower(entPhysicalVendorType) as vendor
+                          lower(entPhysicalMfgName) as vendor
                    FROM entPhysical
                    WHERE entPhysicalSerialNum IS NOT NULL
                          AND entPhysicalSerialNum NOT IN ("", "BUILTIN");"""
@@ -285,16 +286,12 @@ class LibreNMS(Report):
                     )
             elif device.serial in self.librenms.inventory:
                 librenms_vendor_model_string = (
-                    self.librenms.inventory[device.serial]["vendor"]
+                    str(self.librenms.inventory[device.serial]["vendor"])
                     + " "
-                    + self.librenms.inventory[device.serial]["model"]
+                    + str(self.librenms.inventory[device.serial]["model"])
                 )
                 if (
-                    nb_vendor_model_string in librenms_vendor_model_string
-                    or (
-                        nb_vendor_string in librenms_vendor_model_string
-                        and nb_model_string in librenms_vendor_model_string
-                    )
+                    nb_model_string in str(self.librenms.inventory[device.serial]["model"])
                     or MODEL_EQUIVS_INVENTORY.get(nb_vendor_model_string, "BADMATCH")
                     in librenms_vendor_model_string
                 ):
@@ -303,8 +300,8 @@ class LibreNMS(Report):
                     self.log_failure(
                         device,
                         (
-                            "mismatch between LibreNMS and Netbox inventory; Netbox: {nb_vendor_model_string}"
-                            f" (vendor model), LibreNMS: {librenms_vendor_model_string} (vendor model)"
+                            f"mismatch between LibreNMS and Netbox inventory; Netbox: {nb_model_string}"
+                            f" (model), LibreNMS: {librenms_vendor_model_string} (vendor model)"
                         )
                     )
 
