@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e09d1789_04304f57",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-11-15T08:13:24Z",
+      "side": 1,
+      "message": "Purely aesthetic and not really needed here as there are not a lot of fields, but FYI you can add a `field\u003d\"XXX\"` in the fail().\nIn that case XXX is the name of the field to highlight in the UI to point the user to the error.\nYou can for example get that name using the browser inspector, or it\u0027s also usually the same string as the variable you\u0027re checking (eg. instance.version, is field\u003d\"version\").",
+      "revId": "6e6ab2787480c47a6bf5c7e7c5e82f11bd6c2f48",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
