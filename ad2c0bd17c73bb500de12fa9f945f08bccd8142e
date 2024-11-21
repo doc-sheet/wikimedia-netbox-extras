@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69b33146_74cbbc77",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-11-21T19:28:31Z",
+      "side": 1,
+      "message": "Thanks for the review!  Took most of the things on-board.  I did hope I could use more of the common.py stuff originally, and tried a little refactor today to try and do it also but it\u0027s not as simple as it seems - and I\u0027m wary of changing the common.py code depending on what else may depend on it working exactly how it does now.  Potentially when working on a new script under T346428 we can make that a single-one that covers all user-cases.",
+      "revId": "ad2c0bd17c73bb500de12fa9f945f08bccd8142e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}

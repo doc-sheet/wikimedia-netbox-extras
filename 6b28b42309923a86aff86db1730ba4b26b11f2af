@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8e471036_94464ff2",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-11-21T19:28:31Z",
+      "side": 1,
+      "message": "Shamelessly copied from the other provision one.  I suspect it\u0027s so the user is forced to select one of the others, and just can\u0027t skip dropping the menu down and selecting?  To me that kind of makes sense.",
+      "parentUuid": "092dc194_b8d28492",
+      "range": {
+        "startLine": 18,
+        "startChar": 4,
+        "endLine": 18,
+        "endChar": 24
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6aca7854_333d4115",
         "filename": "customscripts/frtech_provision_server.py",
         "patchSetId": 2
@@ -37,6 +61,30 @@
       "writtenOn": "2024-11-21T14:16:59Z",
       "side": 1,
       "message": "Here and everywhere else, not needed as the default is true.",
+      "range": {
+        "startLine": 35,
+        "startChar": 8,
+        "endLine": 35,
+        "endChar": 22
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16f3d377_7f32e95e",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-11-21T19:28:31Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "6aca7854_333d4115",
       "range": {
         "startLine": 35,
         "startChar": 8,
@@ -70,6 +118,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dcae4df2_9e57f90f",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-11-21T19:28:31Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "e4c94fc0_06e951c8",
+      "range": {
+        "startLine": 36,
+        "startChar": 50,
+        "endLine": 36,
+        "endChar": 61
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2d5654f7_8813910b",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-11-21T14:16:59Z",
       "side": 1,
       "message": "Is it the MAC of the bonded interface or the primary NIC, or any?",
+      "range": {
+        "startLine": 74,
+        "startChar": 37,
+        "endLine": 74,
+        "endChar": 52
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "462af216_65f0f52f",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-11-21T19:28:31Z",
+      "side": 1,
+      "message": "Yeah that one threw me but me and Jeff tested it.  To begin with when they dhcp they have a single NIC working, however when debian boots and configures the bond0 interface it takes the MAC from the first NIC in the bundle and copies that to both the physicals and the bond.  So the first NIC MAC is the one we can always use (before and after the bond is created).",
+      "parentUuid": "2d5654f7_8813910b",
       "range": {
         "startLine": 74,
         "startChar": 37,
@@ -116,6 +212,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e294935a_01e22bc5",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-11-21T19:28:31Z",
+      "side": 1,
+      "message": "Doesn\u0027t seem to be possible.  The query_params provides no way to negate a query, and the .exclude() you can do on a regular django filter is also not available.  Spent a good time looking but no way to do it :(",
+      "parentUuid": "a90b27df_cd38c6d7",
+      "range": {
+        "startLine": 89,
+        "startChar": 15,
+        "endLine": 89,
+        "endChar": 26
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8b6f4132_24eb6036",
@@ -129,6 +249,30 @@
       "writtenOn": "2024-11-21T14:16:59Z",
       "side": 1,
       "message": "nit: could be useful to log_success() the assigned vlan.",
+      "range": {
+        "startLine": 115,
+        "startChar": 12,
+        "endLine": 115,
+        "endChar": 25
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe063e7c_2da26166",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-11-21T19:28:31Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "8b6f4132_24eb6036",
       "range": {
         "startLine": 115,
         "startChar": 12,
@@ -162,6 +306,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "af9efe85_75d5ff9b",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-11-21T19:28:31Z",
+      "side": 1,
+      "message": "ah good call I wasn\u0027t aware we were doing that.  nice.",
+      "parentUuid": "0f691ae2_ef267881",
+      "range": {
+        "startLine": 124,
+        "startChar": 12,
+        "endLine": 124,
+        "endChar": 24
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9742cb8b_44d9c366",
@@ -175,6 +343,30 @@
       "writtenOn": "2024-11-21T14:16:59Z",
       "side": 1,
       "message": "that\u0027s a bit brittle, maybe at least add a comment, or a filter for v4 prefix?",
+      "range": {
+        "startLine": 129,
+        "startChar": 17,
+        "endLine": 129,
+        "endChar": 36
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "225a7ff9_25b0fdb3",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-11-21T19:28:31Z",
+      "side": 1,
+      "message": "you\u0027re probably right.  I\u0027m assuming these don\u0027t change much and nobody is gonna mess up in Netbox to cause a problem but let me add the v4 filter at least.",
+      "parentUuid": "9742cb8b_44d9c366",
       "range": {
         "startLine": 129,
         "startChar": 17,
@@ -210,6 +402,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "34f3b8fd_00c371ad",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-11-21T19:28:31Z",
+      "side": 1,
+      "message": "So I had considered that and moved away from it.  On the back of this comment I then tried to get it to work - and it is possible - but at the end I reverted to the way it is here.\n\nReason being there are other checks we need here (make sure it\u0027s not enabled as well as if there is a cable, as we\u0027re not recording cables), and when I had them in, plus the other validator stuff, it was actually more lines of code total and quite a bit more complex.  Probably _create_z_nbiface could be refactored to work better with both scripts but I feel for now it\u0027s adding too much complexity.",
+      "parentUuid": "329f5e0a_8d302d74",
+      "range": {
+        "startLine": 136,
+        "startChar": 8,
+        "endLine": 136,
+        "endChar": 18
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b59ff9b8_0c2e45ed",
         "filename": "customscripts/frtech_provision_server.py",
         "patchSetId": 2
@@ -233,6 +449,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "157bde1f_1d2b7b78",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-11-21T19:28:31Z",
+      "side": 1,
+      "message": "See last comment.",
+      "parentUuid": "b59ff9b8_0c2e45ed",
+      "range": {
+        "startLine": 154,
+        "startChar": 8,
+        "endLine": 154,
+        "endChar": 28
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f19d5254_f295627e",
         "filename": "customscripts/frtech_provision_server.py",
         "patchSetId": 2
@@ -244,6 +484,30 @@
       "writtenOn": "2024-11-21T14:16:59Z",
       "side": 1,
       "message": "nit: I\u0027m wondering if `if not ip_address` works too",
+      "range": {
+        "startLine": 173,
+        "startChar": 11,
+        "endLine": 173,
+        "endChar": 29
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "769d79af_a34edc9c",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2024-11-21T19:28:31Z",
+      "side": 1,
+      "message": "Almost certainly... I\u0027ve no objection to changing it, is there any meaningful difference other than in terms of code style?",
+      "parentUuid": "f19d5254_f295627e",
       "range": {
         "startLine": 173,
         "startChar": 11,
