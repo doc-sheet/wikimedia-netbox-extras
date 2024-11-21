@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "092dc194_b8d28492",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-11-21T14:16:59Z",
+      "side": 1,
+      "message": "What\u0027s the usecase for this choice?",
+      "range": {
+        "startLine": 18,
+        "startChar": 4,
+        "endLine": 18,
+        "endChar": 24
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6aca7854_333d4115",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-11-21T14:16:59Z",
+      "side": 1,
+      "message": "Here and everywhere else, not needed as the default is true.",
+      "range": {
+        "startLine": 35,
+        "startChar": 8,
+        "endLine": 35,
+        "endChar": 22
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4c94fc0_06e951c8",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-11-21T14:16:59Z",
+      "side": 1,
+      "message": "Required fields already have a red asterisk in the UI. So this might not be needed.",
+      "range": {
+        "startLine": 36,
+        "startChar": 50,
+        "endLine": 36,
+        "endChar": 61
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d5654f7_8813910b",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-11-21T14:16:59Z",
+      "side": 1,
+      "message": "Is it the MAC of the bonded interface or the primary NIC, or any?",
+      "range": {
+        "startLine": 74,
+        "startChar": 37,
+        "endLine": 74,
+        "endChar": 52
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a90b27df_cd38c6d7",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-11-21T14:16:59Z",
+      "side": 1,
+      "message": "Nit: I think in the \"device \u003d ObjectVar()\" it\u0027s possible to hide devices with no rack.",
+      "range": {
+        "startLine": 89,
+        "startChar": 15,
+        "endLine": 89,
+        "endChar": 26
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b6f4132_24eb6036",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-11-21T14:16:59Z",
+      "side": 1,
+      "message": "nit: could be useful to log_success() the assigned vlan.",
+      "range": {
+        "startLine": 115,
+        "startChar": 12,
+        "endLine": 115,
+        "endChar": 25
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f691ae2_ef267881",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-11-21T14:16:59Z",
+      "side": 1,
+      "message": "Here you can set `device.oob_ip` an example at I69d02d366e3868da5b909e50aae9af2998c7dd85\nAnd the ones that have it set now in prod: https://netbox.wikimedia.org/dcim/devices/?has_oob_ip\u003dTrue",
+      "range": {
+        "startLine": 124,
+        "startChar": 12,
+        "endLine": 124,
+        "endChar": 24
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9742cb8b_44d9c366",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-11-21T14:16:59Z",
+      "side": 1,
+      "message": "that\u0027s a bit brittle, maybe at least add a comment, or a filter for v4 prefix?",
+      "range": {
+        "startLine": 129,
+        "startChar": 17,
+        "endLine": 129,
+        "endChar": 36
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "329f5e0a_8d302d74",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-11-21T14:16:59Z",
+      "side": 1,
+      "message": "In the spirit it\u0027s quite similar to `_create_z_nbiface` in common.py. I\u0027m wondering if it\u0027s wouldn\u0027t be better to add the \"features\" from that function to the common one?  But it\u0027s also quite different parameter, making it a bit more complex to make it more generic. So not sure what\u0027s best here.",
+      "range": {
+        "startLine": 136,
+        "startChar": 8,
+        "endLine": 136,
+        "endChar": 18
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b59ff9b8_0c2e45ed",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-11-21T14:16:59Z",
+      "side": 1,
+      "message": "This seems quite similar to `_delete_orphan_nbiface` in common.py, do you think it could be re-used instead to reduce code duplication ?",
+      "range": {
+        "startLine": 154,
+        "startChar": 8,
+        "endLine": 154,
+        "endChar": 28
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f19d5254_f295627e",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-11-21T14:16:59Z",
+      "side": 1,
+      "message": "nit: I\u0027m wondering if `if not ip_address` works too",
+      "range": {
+        "startLine": 173,
+        "startChar": 11,
+        "endLine": 173,
+        "endChar": 29
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
