@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f194e6a5_98c06228",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-11-22T07:31:16Z",
+      "side": 1,
+      "message": "Awesome! One small point and LGTM.",
+      "revId": "c7addc42304f392ad793c0a014c9dc726d9cfb66",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}

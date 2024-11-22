@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5ed632bb_8b4a8b65",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-11-22T07:31:16Z",
+      "side": 1,
+      "message": "I\u0027m actually wondering if it\u0027s still needed in the prod provisioning script. iirc it was to provide an \"empty\" choice when the user needs instead to use the \"VLAN\" ObjectVar below.\nBut here this \"ChoiceVar\" is similar to the `interface_type` ChoiceVar, it\u0027s mandatory and shows \"------\" when unselected. So it seems safe to remove that option (and simplify the `choices\u003d` to `[(value, value) for value in VLAN_TYPES]`)\n\nAt this point it\u0027s just a \"nit\" but if it can help keeping clean code I think it\u0027s worth it.",
+      "parentUuid": "8e471036_94464ff2",
+      "range": {
+        "startLine": 18,
+        "startChar": 4,
+        "endLine": 18,
+        "endChar": 24
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6aca7854_333d4115",
         "filename": "customscripts/frtech_provision_server.py",
         "patchSetId": 2
@@ -424,6 +448,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9526197_a104f601",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-11-22T07:31:16Z",
+      "side": 1,
+      "message": "Sounds good, thanks for having a look.",
+      "parentUuid": "34f3b8fd_00c371ad",
+      "range": {
+        "startLine": 136,
+        "startChar": 8,
+        "endLine": 136,
+        "endChar": 18
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b59ff9b8_0c2e45ed",
@@ -471,6 +519,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2ac7a09_824ac4b2",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-11-22T07:31:16Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "157bde1f_1d2b7b78",
+      "range": {
+        "startLine": 154,
+        "startChar": 8,
+        "endLine": 154,
+        "endChar": 28
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f19d5254_f295627e",
@@ -508,6 +580,30 @@
       "side": 1,
       "message": "Almost certainly... I\u0027ve no objection to changing it, is there any meaningful difference other than in terms of code style?",
       "parentUuid": "f19d5254_f295627e",
+      "range": {
+        "startLine": 173,
+        "startChar": 11,
+        "endLine": 173,
+        "endChar": 29
+      },
+      "revId": "6b28b42309923a86aff86db1730ba4b26b11f2af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1cecfa02_13240fbb",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2024-11-22T07:31:16Z",
+      "side": 1,
+      "message": "I looked at the code and get_first_available_ip() does return `None` so yeah it\u0027s just about style and no functional difference here.",
+      "parentUuid": "769d79af_a34edc9c",
       "range": {
         "startLine": 173,
         "startChar": 11,
