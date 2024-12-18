@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57a2a8f3_47d18569",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3113
+      },
+      "writtenOn": "2024-12-18T14:23:13Z",
+      "side": 1,
+      "message": "LGTM! Optional: I am wondering if our future-selves will benefit of a one line explanation before the if, so that no git blame/etc.. is needed. If not, proceed :)",
+      "revId": "75035ec9b22a45b8b2cd8c6bcc21bc027b99f8b0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
