@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d5b6486_35f75393",
+        "filename": "scripts_imports/wmf_scripts_imports/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2025-01-16T17:24:42Z",
+      "side": 1,
+      "message": "I wonder if this could have unwanted side effects instantiating it already here. We do restart netbox when changing validators but still I\u0027m not too familiar with Netbox internals to be sure this couldn\u0027t have side effects. Maybe I would move it to the actual method where it\u0027s needed",
+      "revId": "3551dd2542396b0a470435d6fa117e407171a002",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
