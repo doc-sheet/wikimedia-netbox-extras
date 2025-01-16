@@ -3,7 +3,7 @@ import re
 
 from typing import Optional, Union
 
-from django.core.exceptions import ObjectDoesNotExist
+from django.core.exceptions import ObjectDoesNotExist, ValidationError
 
 from django.contrib.contenttypes.models import ContentType
 
@@ -15,6 +15,8 @@ from netbox.choices import ColorChoices
 from utilities.exceptions import AbortScript
 from virtualization.models import VMInterface, VirtualMachine
 
+from validators.dcim.interface import Main as interface_validator
+nbint_validator = interface_validator()
 
 # Prefix of neighbor interfaces names from LLDP to be considered
 SWITCH_INTERFACES_PREFIX_ALLOWLIST = ("et-",
@@ -425,6 +427,12 @@ class Importer:
                               device=z_nbdevice,
                               type=iface_fmt,
                               mtu=mtu)
+        # Run interface validator to ensure port-block consistency
+        try:
+            nbint_validator.validate(z_nbiface, None)
+        except ValidationError as e:
+            raise AbortScript(f"{z_nbdevice}: new interface {z_iface} fails validation checks - {e.messages[0]}.") from e
+
         z_nbiface.save()
         self.log_success(f"{z_nbdevice}: created interface {z_iface}", obj=z_iface)
         return z_nbiface
