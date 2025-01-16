@@ -16,6 +16,24 @@
       "message": "I wonder if this could have unwanted side effects instantiating it already here. We do restart netbox when changing validators but still I\u0027m not too familiar with Netbox internals to be sure this couldn\u0027t have side effects. Maybe I would move it to the actual method where it\u0027s needed",
       "revId": "3551dd2542396b0a470435d6fa117e407171a002",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0b21fa9_13e6bf8f",
+        "filename": "scripts_imports/wmf_scripts_imports/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2025-01-16T17:38:27Z",
+      "side": 1,
+      "message": "ACK.  This is how I\u0027d done it in the provisioning script but there is a better way I think so I\u0027ve removed it.",
+      "parentUuid": "6d5b6486_35f75393",
+      "revId": "3551dd2542396b0a470435d6fa117e407171a002",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
