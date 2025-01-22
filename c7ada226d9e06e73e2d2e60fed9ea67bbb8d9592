@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42252382_cc388a62",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2025-01-22T09:41:36Z",
+      "side": 1,
+      "message": "I haven\u0027t tested it but the code LGTM, optional nit inline.",
+      "revId": "c7ada226d9e06e73e2d2e60fed9ea67bbb8d9592",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a01ae388_cec912fb",
+        "filename": "customscripts/frtech_provision_server.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2025-01-22T09:41:36Z",
+      "side": 1,
+      "message": "[nit, optional] no need, you can just rename the unused parameter with `_` (or `_commit`)",
+      "range": {
+        "startLine": 66,
+        "startChar": 53,
+        "endLine": 66,
+        "endChar": 76
+      },
+      "revId": "c7ada226d9e06e73e2d2e60fed9ea67bbb8d9592",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
