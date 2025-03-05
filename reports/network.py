@@ -31,27 +31,13 @@ NO_V6_DEVICE_NAME_PREFIXES = (
     "dbstore",
     "dumpsdata",
     "es",
-    "ganeti",
-    "graphite",
     "maps",
-    "mc",
-    "mc-gp",
-    "ms-be",
-    "mw",
-    "mwlog",
-    "ores",
-    "parse",
     "pc",
     "restbase",
     "restbase-dev",
-    "sessionstore",
-    "snapshot",
     "thanos-fe",
-    "thumbor",
-    "wdqs",
-    "wtp",
 )
-NO_V6_DEVICE_NAMES = ("scandium",)
+NO_V6_DEVICE_NAMES = ()
 
 
 class Network(Report):
