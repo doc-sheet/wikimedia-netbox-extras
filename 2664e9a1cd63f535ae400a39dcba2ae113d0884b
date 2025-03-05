@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ef47007_070cae52",
+        "filename": "reports/network.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2025-03-05T08:46:59Z",
+      "side": 0,
+      "message": "We still have 4 hosts left, but it\u0027s tracked at https://phabricator.wikimedia.org/T379890 and I think it should be easy to fix them.",
+      "revId": "2664e9a1cd63f535ae400a39dcba2ae113d0884b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
