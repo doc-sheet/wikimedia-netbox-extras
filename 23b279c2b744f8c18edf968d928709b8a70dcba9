@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "65764712_c78e68b0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2025-03-13T14:21:45Z",
+      "side": 1,
+      "message": "If you\u0027ve tested on netbox-next and works on the specific lvs but also a normal host LGTM",
+      "revId": "23b279c2b744f8c18edf968d928709b8a70dcba9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5d5e563c_1d45e977",
@@ -32,6 +49,24 @@
       "side": 1,
       "message": "Yeah.  The \"if\" is looking if the interface is in the list from PuppetDB.  So it is only going to delete interfaces that are not in PuppetDB/configured on the device.  So by that definition it won\u0027t have \u0027moved\u0027 from one to the other, it\u0027s gone completely and needs to be removed.\n\nIn the case where the parent interface name has changed moved it will already have been made a child of the new interface, based on the info from PuppetDB, and the if evaluates to false.",
       "parentUuid": "5d5e563c_1d45e977",
+      "revId": "23b279c2b744f8c18edf968d928709b8a70dcba9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bcb71973_fa39394b",
+        "filename": "scripts_imports/wmf_scripts_imports/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 796,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2025-03-13T14:21:45Z",
+      "side": 1,
+      "message": "got it thx.",
+      "parentUuid": "ae6099d3_421ec7da",
       "revId": "23b279c2b744f8c18edf968d928709b8a70dcba9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
