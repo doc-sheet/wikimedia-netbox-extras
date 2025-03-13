@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d5e563c_1d45e977",
+        "filename": "scripts_imports/wmf_scripts_imports/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 796,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2025-03-13T14:06:51Z",
+      "side": 1,
+      "message": "would this work if a child interface should move from an old parent name to a new parent name?",
+      "revId": "23b279c2b744f8c18edf968d928709b8a70dcba9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
