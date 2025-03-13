@@ -18,6 +18,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9980b3e7_d3fb8ca8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2025-03-13T10:58:30Z",
+      "side": 1,
+      "message": "Right here it should, it ought to only reach this stage once all interfaces that actually exist on the device have been processed (so if children of other physicals exist they will have been moved already).  It\u0027s really just the clean-up stage and a scenario we hadn\u0027t expected due to the two things changing at once.",
+      "parentUuid": "29447039_74916668",
+      "revId": "b1f9a68ea059af8f78a87a44d0870adcb4ab5db9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "91ffd175_001cb6a7",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-03-13T10:20:07Z",
       "side": 1,
       "message": "accessing interface works also after the delete() right?",
+      "revId": "b1f9a68ea059af8f78a87a44d0870adcb4ab5db9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3dec7bf0_4ade8b5f",
+        "filename": "scripts_imports/wmf_scripts_imports/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 821,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2025-03-13T10:58:30Z",
+      "side": 1,
+      "message": "as discussed on irc reworked this, but yes accessing did work.",
+      "parentUuid": "91ffd175_001cb6a7",
       "revId": "b1f9a68ea059af8f78a87a44d0870adcb4ab5db9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
