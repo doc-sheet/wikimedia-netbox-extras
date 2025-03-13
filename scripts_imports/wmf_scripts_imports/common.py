@@ -804,13 +804,21 @@ class Importer:
                         or hasattr(device_interface, 'virtual_machine')):
                     self.log_info(f"{device.name}: removing interface no longer in puppet {device_interface.name}",
                                   obj=device)
-                    device_interface.delete()
+                    self._delete_interface(device_interface)
                 else:
                     self.log_failure(f"{device.name}: We want to remove interface {device_interface.name}, however "
                                      "it still has a cable or IP address associated with it. "
                                      "See https://wikitech.wikimedia.org/wiki/Netbox#Would_like_to_remove_interface",
                                      obj=device_interface)
         return output
+
+    def _delete_interface(self, interface: Interface):
+        """Deletes Interface object and all child interfaces"""
+        for child_interface in interface.child_interfaces.all():
+            child_interface.delete()
+            self.log_info(f"{interface.device}: removed child interface of {interface} {child_interface}")
+        interface.delete()
+        self.log_info(f"{interface.device}: removed interface {interface}")
 
     def _validate_device(self, device: Union[Device, VirtualMachine]) -> bool:
         """Check if device is OK for import."""
