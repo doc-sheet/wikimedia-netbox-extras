@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "29447039_74916668",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2025-03-13T10:20:07Z",
+      "side": 1,
+      "message": "LGTM, but I\u0027m not expert on all the cases we can have child objects in netbox, if it always makes sense to delete.",
+      "revId": "b1f9a68ea059af8f78a87a44d0870adcb4ab5db9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91ffd175_001cb6a7",
+        "filename": "scripts_imports/wmf_scripts_imports/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 821,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2025-03-13T10:20:07Z",
+      "side": 1,
+      "message": "accessing interface works also after the delete() right?",
+      "revId": "b1f9a68ea059af8f78a87a44d0870adcb4ab5db9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
