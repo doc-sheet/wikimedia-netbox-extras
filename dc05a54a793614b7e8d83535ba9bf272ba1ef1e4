@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f0de050_7402025b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2025-04-09T10:02:19Z",
+      "side": 1,
+      "message": "Run on netbox-next (where some mismatch are due to stale data in netbox-next) available here:\nhttps://netbox-next.wikimedia.org/extras/scripts/results/117679/",
+      "revId": "dc05a54a793614b7e8d83535ba9bf272ba1ef1e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
