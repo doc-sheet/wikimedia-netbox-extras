@@ -16,6 +16,23 @@
       "message": "Run on netbox-next (where some mismatch are due to stale data in netbox-next) available here:\nhttps://netbox-next.wikimedia.org/extras/scripts/results/117679/",
       "revId": "dc05a54a793614b7e8d83535ba9bf272ba1ef1e4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b780c53_93abcfb5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4700
+      },
+      "writtenOn": "2025-04-09T10:05:42Z",
+      "side": 1,
+      "message": "thx!",
+      "revId": "dc05a54a793614b7e8d83535ba9bf272ba1ef1e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
