@@ -18,6 +18,23 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "13543831_b803b575",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2025-04-09T08:39:20Z",
+      "side": 1,
+      "message": "Changed in log_failure as suggestes, will self-merge given it was already reviewed",
+      "revId": "dac00164bb03d60a256c50fa6d4dcf1723c369e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e5935730_9a4ceab1",
@@ -31,6 +48,30 @@
       "writtenOn": "2025-04-09T08:36:54Z",
       "side": 1,
       "message": "probably an log_failure instead of warning.",
+      "range": {
+        "startLine": 266,
+        "startChar": 17,
+        "endLine": 266,
+        "endChar": 28
+      },
+      "revId": "dac00164bb03d60a256c50fa6d4dcf1723c369e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "023bc722_8b8a42d5",
+        "filename": "reports/accounting.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2025-04-09T08:39:20Z",
+      "side": 1,
+      "message": "sure, why not",
+      "parentUuid": "e5935730_9a4ceab1",
       "range": {
         "startLine": 266,
         "startChar": 17,
