@@ -16,6 +16,41 @@
       "message": "LGTM.  I guess we could drop the equivalent on line 213 to reduce the lines of code, at the cost of wasted cycles.",
       "revId": "311c59924b247d24aef2234c7ebb6f1f12cf90ce",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "26cb5b7c_3d2f2eed",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2025-04-10T14:29:19Z",
+      "side": 1,
+      "message": "not really because otherwise the second API call will have no vm_names and in that case django would return all the VMs.",
+      "parentUuid": "4786bfa4_7c2d667f",
+      "revId": "311c59924b247d24aef2234c7ebb6f1f12cf90ce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "571791ab_df90f59e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3215
+      },
+      "writtenOn": "2025-04-10T14:29:19Z",
+      "side": 1,
+      "message": "thanks for the review, reply inline",
+      "revId": "311c59924b247d24aef2234c7ebb6f1f12cf90ce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
